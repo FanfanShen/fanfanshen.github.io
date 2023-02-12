@@ -1,6 +1,7 @@
 menu
     Home                [index.html]
     member              [member.html]
+    courses             [courses/BigdataStorage/_book/index.html]
     news                [news.html]
 
 	

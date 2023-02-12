@@ -1,0 +1,66 @@
+{
+    "title": "大数据存储技术课程",
+    "description": "大数据存储技术课程",
+    "author": "Fanfan Shen",
+    "language": "zh-hans",
+    "root": ".",
+    "plugins": [
+        "donate",
+        "github-buttons@2.1.0",
+	"chapter-fold",
+        "splitter",
+        "page-footer-ex",
+        "back-to-top-button",
+        "code",
+        "pageview-count",
+        "popup",
+        "search-plus",
+        "-lunr",
+        "-search",
+        "-sharing",
+	"sidebar-style",
+	"intopic-toc"
+    ],
+    "styles": {
+        "website": "styles/website.css"
+    },
+    "pluginsConfig": {
+        "donate": {
+            "wechat": "images/wechat.jpg",
+            "alipay": "images/alipay.jpg",
+            "title": "谢谢你的支持和鼓励！",
+            "button": "打赏",
+            "alipayText": "支付宝",
+            "wechatText": "微信"
+        },
+        "github-buttons": {
+            "repo": "FanfanShen/",
+            "types": [
+                "star"
+            ],
+            "size": "small"
+        },
+        "page-footer-ex": {
+            "copyright": "Created by [Fanfan Shen](https://fanfanshen.github.io/). 采用[知识共享许可协议](https://creativecommons.org/licenses/by-nc-sa/3.0/cn/)发布",
+            "markdown": true,
+            "update_label": "<i>updated</i>",
+            "update_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "pluginsConfig": {
+            "expandable-chapters": {}
+        },
+ 	"sidebar-style": {
+            "title": "《大数据存储技术》",
+            "author": "Fanfan Shen"
+        },
+	"pluginsConfig": {
+	    "chapter-fold":{}
+	},
+	"intopic-toc": {
+	    "maxDepth": 1,
+	    "isCollapsed": false,
+	    "isScrollspyActive": true,
+	    "label": "页内导航"
+	}
+    }
+}
