@@ -1,9 +1,0 @@
-1.> gitbook init    // generate the initial book in current folder.
-
-2.> gitbook build [source] [output] //source: the README.md source file directory, output: where the html generates.
-
-3.>gitbook serve [source] [output] //source: the README.md source file directory, output: where the html generates.【default in _book folder. we shoud specify the dir】
-
-【The output will overide the folder (eg: _book).】
-
-4.book.json  // the above cmd will access this configure file first.
