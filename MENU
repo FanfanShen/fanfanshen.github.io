@@ -1,9 +1,10 @@
 menu
     Home                [index.html]
-    member              [member.html]
-    courses             [courses/BigdataStorage/_book/index.html]
-    news                [news.html]
+    Member              [member.html]
+    Courses             [courses.html]
+    News                [news.html]
 
 	
 usefull links
    Library   		[library.html]
+   Help                 [https://github.com/FanfanShen/jemdoc/tree/master/www]
