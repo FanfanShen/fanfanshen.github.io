@@ -5,3 +5,5 @@
 3.upload files to github. Use github desktop to upload the updated pages.
 
 note: python2 environment
+
+When modified the *.jemdoc，click 【HTMLGenerator.bat】 to generate the new HTML files.
