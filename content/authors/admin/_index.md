@@ -26,8 +26,8 @@ bio: My research interests include big data audit, artificial intelligence and c
 
 # Interests to show in About widget d
 interests:
-  - 人工智能算法：机器学习、深度学习、联邦学习、机器视觉
-  - 计算机系统：边缘计算存储、资源调度与卸载、隐私保护
+  - 人工智能算法：机器学习、深度学习、联邦学习、计算机视觉
+  - 边缘智能：边缘计算存储、资源调度与卸载、隐私保护
   - 大数据审计：数据分析、信息检索
 
 # Education to show in About widget

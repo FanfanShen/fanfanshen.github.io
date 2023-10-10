@@ -15,7 +15,7 @@ sections:
   - block: features
     id: contact
     content:
-      title: 如果您对计算机系统和人工智能研究感兴趣，欢迎随时与我联系，电子邮箱：ffshen [at] nau [DOT] edu [DOT] cn
+      title: 如果您对边缘智能和人工智能研究感兴趣，欢迎随时与我联系，电子邮箱：ffshen [at] nau [DOT] edu [DOT] cn
 
   - block: collection
     id: news
