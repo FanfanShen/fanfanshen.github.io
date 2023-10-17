@@ -78,6 +78,7 @@ proxy:
 frontmatter:
   lastmod:
   - lastmod
+  - :git
   - :fileModTime
 cascade:
   # Configure blog posts
