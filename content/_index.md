@@ -12,11 +12,6 @@ sections:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
 
-  - block: features
-    id: contact
-    content:
-      title: 如果您对边缘智能和人工智能研究感兴趣，欢迎随时与我联系，电子邮箱：ffshen [at] nau [DOT] edu [DOT] cn
-
   - block: collection
     id: news
     content:
@@ -98,5 +93,39 @@ sections:
     design:
       columns: '2'
       view: list
+
+  - block: contact
+    id: contact
+    content:
+      title: 如果您对边缘智能和人工智能研究感兴趣，欢迎随时与我联系！快捷发送邮件的方式如下：
+      subtitle: ''
+      text: ''
+      # Contact details - edit or remove options as needed
+      email: ffshen@nau.edu.cn
+      address:
+        street: 江苏省
+        city: 南京市
+        region: 浦口区江浦街道雨山西路86号致明楼222办公室
+      office_hours:
+        - '周一至周五 09:00 to 17:00'
+      contact_links:
+        - icon: weixin
+          icon_pack: fab
+          name: WeChat Me
+          link: 'authors/admin/weixin.jpg'
+        # Automatically link email and phone or display them just as text?
+      autolink: true
+      # Choose an email form provider (netlify/formspree)
+      form:
+        provider: formspree
+        formspree:
+          # If using Formspree, enter your Formspree form ID
+          id: 'xleyzoew'
+        netlify:
+          # Enable CAPTCHA challenge to reduce spam?
+          captcha: false
+    design:
+      # Choose how many columns the section has. Valid values: '1' or '2'.
+      columns: '1'
 
 ---

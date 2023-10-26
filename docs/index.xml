@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Academic</title>
+    <title>Fanfan Shen&#39;s Homepage</title>
     <link>https://fanfanshen.github.io/</link>
       <atom:link href="https://fanfanshen.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <description>Academic</description>
+    <description>Fanfan Shen&#39;s Homepage</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
-      <title>Academic</title>
+      <title>Fanfan Shen&#39;s Homepage</title>
       <link>https://fanfanshen.github.io/</link>
     </image>
     
@@ -278,7 +278,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-149657283&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-416785239&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -288,7 +288,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-149657283&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-416785239&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
