@@ -105,6 +105,15 @@
     </item>
     
     <item>
+      <title>应邀参加阿里云栖大会并做报告</title>
+      <link>https://fanfanshen.github.io/news/news/</link>
+      <pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/news/news/</guid>
+      <description>&lt;p&gt;2023年11月2日应邀参加阿里云栖大会并做报告&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>主持、江苏省高等学校自然科学研究重大项目(22KJA520004)，2022.7-2025.8</title>
       <link>https://fanfanshen.github.io/project/22bigdata/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
@@ -278,7 +287,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-185746932&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-913528746&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -288,7 +297,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-185746932&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-913528746&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

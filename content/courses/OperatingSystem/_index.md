@@ -11,6 +11,9 @@ summary: 操作系统是计算机系统的指挥中心，它既是系统中各�
 # Date page published
 date: 2018-09-09
 
+authors: ["admin"]
+author_notes: ["contributor"]
+
 # Book page type (do not modify).
 type: book
 

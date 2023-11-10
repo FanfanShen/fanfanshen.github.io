@@ -30,7 +30,7 @@ module:
 ## ADVANCED
 ############################
 
-enableGitInfo: false
+enableGitInfo: true
 summaryLength: 30
 paginate: 10
 enableEmoji: true
@@ -77,7 +77,6 @@ proxy:
   https://goproxy.cn
 frontmatter:
   lastmod:
-  - lastmod
   - :git
   - :fileModTime
 cascade:
