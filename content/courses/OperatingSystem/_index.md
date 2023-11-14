@@ -54,5 +54,6 @@ weight: 1
 |    6    | 第4章 进程同步 4.6-4.7节<br />第5章 存储器管理5.1-5.2节<br />[第5章思维导图](/courses/OperatingSystem/mindmap/chapter5.png) | 经典进程的同步问题、Linux进程同步机制，存储器的层次结构，程序的装入和链接。 | 第4章作业，课后1，2，13，15，16 |
 |    7    | 第5章 存储器管理5.3-5.5<br />[第5章思维导图](/courses/OperatingSystem/mindmap/chapter5.png) | 对换与覆盖、连续分配存储管理方式、分页存储管理方式 |  |
 |    8    | 第5章 存储器管理5.6-5.7<br />[第5章思维导图](/courses/OperatingSystem/mindmap/chapter5.png)<br />第6章  虚拟存储器6.1-6.3 <br /> [第6章思维导图](/courses/OperatingSystem/mindmap/chapter6.png) | 分段存储管理方式、IA-32/x86-64内存管理、虚拟存储器概述、请求分页存储管理方式、页面置换算法  | 第5章作业，课后15，18 |
-|    9    | 第6章 虚拟存储器6.4-6.6 [第6章思维导图](/courses/OperatingSystem/mindmap/chapter6.png) <br /> 第7章 输入输出系统7.1-7.2 [第7章思维导图](/courses/OperatingSystem/mindmap/chapter7.png)| 抖动、请求分段存储管理方式、I/0系统的功能模型接口、I/O设备控制器、 | 第6章作业，课后13，15，18 |
+|    9    | 第6章 虚拟存储器6.4-6.6 <br /> [第6章思维导图](/courses/OperatingSystem/mindmap/chapter6.png) <br /> 第7章 输入输出系统7.1-7.2 <br /> [第7章思维导图](/courses/OperatingSystem/mindmap/chapter7.png)| 抖动、请求分段存储管理方式、I/0系统的功能模型接口、I/O设备控制器、 | 第6章作业，课后13，15，18 |
+|    10    | 第7章 输入输出系统7.3-7.7 <br /> [第7章思维导图](/courses/OperatingSystem/mindmap/chapter7.png)| 中断和中断处理程序、设备驱动程序、与设备无关的I/O软件、用户层的I/O软件、缓冲区管理 |   |
 
