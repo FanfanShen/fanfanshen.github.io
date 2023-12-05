@@ -1,5 +1,9 @@
 name: Auto Deploy hugo acedemic
-on: [push]
+on:
+  push:
+    branches:
+      - master  # Set a branch to deploy
+
 jobs:
   hugo-auto-deploy:
     runs-on: ubuntu-latest
@@ -9,12 +13,16 @@ jobs:
         with:
             submodules: true
             fetch-depth: 0
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 0.114.0
+          extended: true
+
       - name: Build 
-        run: hugo
+        run: hugo --minify
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
