@@ -1,3 +1,0 @@
-User-agent: *
-
-Sitemap: https://fanfanshen.github.io/sitemap.xml
