@@ -2,120 +2,171 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.com/talk/example-talk/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/event/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/courses/bigdatastorage/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/post/blog-with-jupyter/</loc>
-    <lastmod>2023-11-04T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/courses/operatingsystem/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/post/</loc>
-    <lastmod>2023-11-04T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/library/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/</loc>
-    <lastmod>2022-10-24T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/students/member/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/tag/academic/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/students/achievement/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/categories/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/news/news/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/category/demo/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/tags/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/project/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/post/getting-started/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/tag/research/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/tag/%E5%BC%80%E6%BA%90/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/tags/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/category/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/project/22bigdata/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/post/writing-technical-content/</loc>
-    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/publication-type/1/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/publication/preprint/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/publication_types/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/publication-type/article/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/publication/2021rldc/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/publication_types/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/tag/teaching/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/publication/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/project/22teaching/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/tag/source-themes/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/project/others/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/slides/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/publication-type/0/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/slides/example/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/publication/2020access/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/tag/deep-learning/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/publication-type/2/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/tag/demo/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/publication/2019cee/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/project/example/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/publication/2019js/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/project/external-project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/news/writing-technical-content/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.1/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/publication/journal-article/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.2/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/publication-type/article-journal/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.3/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/publication/conference-paper/</loc>
-    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.4/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://example.com/publication-type/paper-conference/</loc>
-    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+    <loc>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.5/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.6/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.7/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.8/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.9/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://fanfanshen.github.io/courses/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://fanfanshen.github.io/publication/2017computer/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://fanfanshen.github.io/publication/journal-article/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://fanfanshen.github.io/tag/source-themes/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://fanfanshen.github.io/admin/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://fanfanshen.github.io/categories/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://fanfanshen.github.io/news/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://fanfanshen.github.io/publication/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://fanfanshen.github.io/students/</loc>
+    <lastmod>2023-12-06T19:44:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

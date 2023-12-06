@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teaching | Fanfan Shen&#39;s Homepage</title>
+    <link>https://fanfanshen.github.io/tag/teaching/</link>
+      <atom:link href="https://fanfanshen.github.io/tag/teaching/index.xml" rel="self" type="application/rss+xml" />
+    <description>Teaching</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 26 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Teaching</title>
+      <link>https://fanfanshen.github.io/tag/teaching/</link>
+    </image>
+    
+    <item>
+      <title>主持、江苏省教育科学“十四五”规划重点课题(C-b/2021/01/26)、2022.1-2023.12</title>
+      <link>https://fanfanshen.github.io/project/22teaching/</link>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/project/22teaching/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
