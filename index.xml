@@ -105,6 +105,16 @@
     </item>
     
     <item>
+      <title>Our paper &#34;BMSE:Blockchain-based multi-keyword searchable encryption for electronic medical records&#34; is accepted by Computer Standards &amp; Interfaces (中科院2区)</title>
+      <link>https://fanfanshen.github.io/news/2023-paper-csi/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/news/2023-paper-csi/</guid>
+      <description>&lt;p&gt;恭喜课题组成员(史林)的论文被Computer Standards &amp;amp; Interfaces（中科院二区）期刊接收。&lt;/p&gt;
+&lt;p&gt;Title：BMSE: Blockchain-based multi-keyword searchable encryption for electronic medical records&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>应邀参加阿里云栖大会并做报告</title>
       <link>https://fanfanshen.github.io/news/news/</link>
       <pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate>
@@ -292,7 +302,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-869354127&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-385296741&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -302,7 +312,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-869354127&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-385296741&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
