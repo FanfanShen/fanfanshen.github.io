@@ -22,7 +22,7 @@
     </item>
     
     <item>
-      <title>Our paper &#34;基于iFA-LSTM的恶意行为检测方法&#34; is accepted by 计算机工程与科学(CCF-T2). Congratulations to Xinyi Tang.</title>
+      <title>Our paper &#34;基于iFA-LSTM的恶意行为检测方法&#34; is accepted by 计算机工程与科学(CCF-T2). Congratulations to Xingyi Tang.</title>
       <link>https://fanfanshen.github.io/news/2023-paper-ifalstm/</link>
       <pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/news/2023-paper-ifalstm/</guid>
@@ -157,7 +157,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-261497583&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-398526147&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -167,7 +167,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-261497583&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-398526147&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
