@@ -105,6 +105,23 @@
     </item>
     
     <item>
+      <title>Our paper was awarded the best paper of 2023 in 《武汉大学学报（理学版）》. Congratulations to Bofan Yang.</title>
+      <link>https://fanfanshen.github.io/news/2024-reward-bestpaper/</link>
+      <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/news/2024-reward-bestpaper/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://xblx.whu.edu.cn/zh/news/142850/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;致谢 | 2023年度《武汉大学学报（理学版）》 “突出贡献奖”“优秀青年编委”“优秀审稿人”“优秀论文”名单&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Our paper &#34;基于iFA-LSTM的恶意行为检测方法&#34; is accepted by 计算机工程与科学(CCF-T2). Congratulations to Xinyi Tang.</title>
+      <link>https://fanfanshen.github.io/news/2023-paper-ifalstm/</link>
+      <pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/news/2023-paper-ifalstm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Our paper &#34;BMSE:Blockchain-based multi-keyword searchable encryption for electronic medical records&#34; is accepted by Computer Standards &amp; Interfaces (中科院2区)</title>
       <link>https://fanfanshen.github.io/news/2023-paper-csi/</link>
       <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
@@ -116,9 +133,9 @@
     
     <item>
       <title>应邀参加阿里云栖大会并做报告</title>
-      <link>https://fanfanshen.github.io/news/news/</link>
+      <link>https://fanfanshen.github.io/news/2023-conf-aliyun/</link>
       <pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/news/news/</guid>
+      <guid>https://fanfanshen.github.io/news/2023-conf-aliyun/</guid>
       <description>&lt;p&gt;2023年11月2日应邀参加阿里云栖大会并做报告&lt;/p&gt;
 </description>
     </item>
@@ -302,7 +319,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-432519687&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-261497583&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -312,7 +329,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-432519687&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-261497583&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
