@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: January 26, 2024 --><html lang="en-us" >
+<!-- Last Published: February 24, 2024 --><html lang="en-us" >
 
 
 <head>
@@ -318,7 +318,7 @@
 <meta property="twitter:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
 <meta property="og:site_name" content="Fanfan Shen&#39;s Homepage" />
 <meta property="og:url" content="https://fanfanshen.github.io/courses/bigdatastorage/chapter1/" />
-<meta property="og:title" content="第1章 大数据与云计算 | Fanfan Shen&#39;s Homepage" />
+<meta property="og:title" content="第1章 初识MongoDB | Fanfan Shen&#39;s Homepage" />
 <meta property="og:description" content="Blah, blah, blah..." /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
@@ -347,7 +347,7 @@
 
 
   
-  <title>第1章 大数据与云计算 | Fanfan Shen&#39;s Homepage</title>
+  <title>第1章 初识MongoDB | Fanfan Shen&#39;s Homepage</title>
 
   
   
@@ -899,46 +899,34 @@
 
     
       <div class="docs-toc-item">
-        <a class="docs-toc-link  active" href="/courses/bigdatastorage/chapter1/">第1章 大数据与云计算</a>
+        <a class="docs-toc-link  active" href="/courses/bigdatastorage/chapter1/">第1章 初识MongoDB</a>
     
       
         <ul class="nav docs-sidenav">
       
 
 
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.1/">1.1 什么是大数据</a></li>
+  <li class=""><a href="/courses/bigdatastorage/chapter1/1.2/">1.2 MongoDB与Hadoop比较</a></li>
 
 
 
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.2/">1.2 什么是云计算</a></li>
+  <li class=""><a href="/courses/bigdatastorage/chapter1/1.3/">1.3 关键特性</a></li>
 
 
 
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.3/">1.3 大数据与云计算</a></li>
+  <li class=""><a href="/courses/bigdatastorage/chapter1/1.4/">1.4 安装部署</a></li>
 
 
 
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.4/">1.4 什么是MongoDB</a></li>
+  <li class=""><a href="/courses/bigdatastorage/chapter1/1.5/">1.5 几个重要的可执行文件</a></li>
 
 
 
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.5/">1.5 大数据与MongoDB</a></li>
+  <li class=""><a href="/courses/bigdatastorage/chapter1/1.6/">1.6 适合的业务</a></li>
 
 
 
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.6/">1.6 MongoDB特点</a></li>
-
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.7/">1.7 安装MongoDB</a></li>
-
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.8/">1.8 几个重要的进程介绍</a></li>
-
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.9/">1.9 适合哪些业务</a></li>
+  <li class=""><a href="/courses/bigdatastorage/chapter1/1.1/">MongoDB的发展与现状</a></li>
 
       
         </ul>
@@ -984,7 +972,13 @@
         <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
       </ul>
 
-      <nav id="TableOfContents"></nav>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1安装步骤">1.安装步骤</a></li>
+    <li><a href="#2配置数据和日志文件目录自定义">2.配置数据和日志文件目录（自定义）</a></li>
+    <li><a href="#3安装成功与否测试">3.安装成功与否测试</a></li>
+  </ul>
+</nav>
 
       
 
@@ -1045,7 +1039,7 @@
   
 
       <li class="breadcrumb-item active" aria-current="page">
-        第1章 大数据与云计算
+        第1章 初识MongoDB
       </li>
     </ol>
   </nav>
@@ -1062,14 +1056,33 @@
 
       <div class="docs-article-container">
         
-        <h1>第1章 大数据与云计算</h1>
+        <h1>第1章 初识MongoDB</h1>
 
         <article class="article-style">
 
           
           
 
-          <p>333</p>
+          <h2 id="1安装步骤">1.安装步骤</h2>
+<ul>
+<li>下载地址：https://www.mongodb.com/download-center/community  版本4.4或更高版本；</li>
+<li>或者网盘下载：https://pan.baidu.com/s/15KwMqxcVFi8D6BpMBKNQkA?pwd=abt7 提取码: abt7</li>
+<li>安装方法参考：https://www.runoob.com/mongodb/mongodb-window-install.html</li>
+<li>安装过程中不要勾选MongoDB Compass（可视化环境），MongoDB单独安装。</li>
+</ul>
+<h2 id="2配置数据和日志文件目录自定义">2.配置数据和日志文件目录（自定义）</h2>
+<ul>
+<li>创建数据目录：D:\mongodb\data\db</li>
+<li>创建日志目录：D:\mongodb\data\log</li>
+<li>创建日志文件：D:\mongodb\data\log\mongodb.log</li>
+</ul>
+<h2 id="3安装成功与否测试">3.安装成功与否测试</h2>
+<ul>
+<li>启动服务器：C:\Program Files\MongoDB\Server\4.4\bin&gt;.\mongod.exe &ndash;dbpath d:\mongodb\data\db</li>
+<li>看到日志倒数第二行：waiting for connections on port 27017</li>
+<li>浏览器输入：http://localhost:27017/    显示It looks like you are &hellip;
+出现上述情况，说明安装正常</li>
+</ul>
 
 
         </article>
@@ -1098,7 +1111,7 @@
       </div>
 
       <div class="body-footer">
-        <p>Last updated on Dec 6, 2023 7:44 PM</p>
+        <p>Last updated on Feb 24, 2024 5:23 PM</p>
 
         
 
@@ -1226,7 +1239,7 @@
   
 
 
-<script src="/js/vendor-bundle.min.938a3a7554cd9f6602290411f64d2617.js"></script>
+<script src="/js/vendor-bundle.min.f64289d8217e08e3afcd597d60836062.js"></script>
 
 
 
@@ -1323,7 +1336,7 @@
   
 
 
-<script src="/en/js/wowchemy.min.85070d5fe00d43eaedff44310b81dc2c.js"></script>
+<script src="/en/js/wowchemy.min.3322c0d94f0e691b0b24c63f4c41064b.js"></script>
 
 
 
