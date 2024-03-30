@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: March 24, 2024 --><html lang="en-us" >
+<!-- Last Published: March 30, 2024 --><html lang="en-us" >
 
 
 <head>
@@ -276,7 +276,18 @@
 
   
 
-<meta name="description" content="Content&hellip;" />
+<meta name="description" content="1.1 MongoDB 的发展与现状 MongoDB是一个可扩展、开源、表结构自由，用C&#43;&#43;语言编写的面向文档的分布式文件存储的数据库，旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。
+MongoDB 是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。
+数据库引擎综合排行榜：第5名数据来源：https://db-engines.com/en/ranking
+文档数据库排名第一：https://db-engines.com/en/ranking/document&#43;store
+综合排行榜：第5名，数据来源：https://db-engines.com/en/ranking
+上述网站可查询最新数据
+MongoDB能支撑大数据系统
+实时的可操作的大数据存储系统 离线大数据分析系统 MongoDB天生为云计算而生
+可扩展架构，可以启用分片和水平扩展，提供云存储所需的技术； 自动管理被称为“副本集”的冗余服务器； MongoDB为多家领先的云计算供应商，如阿里巴巴，腾讯，360，百度
+关系数据库中最基本的单元是行，MongoDB中最基本的存储单元是document，如：
+用JSON格式类似的键值对来存储，值的类型有字符串、数字、日期等，也称BSON对象；
+MongoDB与关系数据库的重大区别是：可扩展的表结构，即collection中的document所拥有的字段是可以变化的" />
 
 
 
@@ -318,30 +329,36 @@
 <meta property="twitter:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
 <meta property="og:site_name" content="Fanfan Shen&#39;s Homepage" />
 <meta property="og:url" content="https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.1/" />
-<meta property="og:title" content="1.1 MongoDB的发展与现状 | Fanfan Shen&#39;s Homepage" />
-<meta property="og:description" content="Content&hellip;" /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:title" content="Fanfan Shen&#39;s Homepage" />
+<meta property="og:description" content="1.1 MongoDB 的发展与现状 MongoDB是一个可扩展、开源、表结构自由，用C&#43;&#43;语言编写的面向文档的分布式文件存储的数据库，旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。
+MongoDB 是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。
+数据库引擎综合排行榜：第5名数据来源：https://db-engines.com/en/ranking
+文档数据库排名第一：https://db-engines.com/en/ranking/document&#43;store
+综合排行榜：第5名，数据来源：https://db-engines.com/en/ranking
+上述网站可查询最新数据
+MongoDB能支撑大数据系统
+实时的可操作的大数据存储系统 离线大数据分析系统 MongoDB天生为云计算而生
+可扩展架构，可以启用分片和水平扩展，提供云存储所需的技术； 自动管理被称为“副本集”的冗余服务器； MongoDB为多家领先的云计算供应商，如阿里巴巴，腾讯，360，百度
+关系数据库中最基本的单元是行，MongoDB中最基本的存储单元是document，如：
+用JSON格式类似的键值对来存储，值的类型有字符串、数字、日期等，也称BSON对象；
+MongoDB与关系数据库的重大区别是：可扩展的表结构，即collection中的document所拥有的字段是可以变化的" /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
-    <meta
-      property="article:published_time"
-      content="2019-05-05T00:00:00&#43;00:00"
-    />
   
-  
-    <meta property="article:modified_time" content="2024-02-24T21:04:10&#43;08:00">
-  
-
-
-
-
-
-
-
+    <meta property="article:modified_time" content="2024-03-30T21:03:13&#43;08:00">
   
 
 
 
 
+
+
+
+  
+
+
+
+
   
   
   
@@ -353,7 +370,7 @@
 
 
   
-  <title>1.1 MongoDB的发展与现状 | Fanfan Shen&#39;s Homepage</title>
+  <title>Fanfan Shen&#39;s Homepage</title>
 
   
   
@@ -818,188 +835,10 @@
     
     
     
-
-    
-
-
-
-
-<div class="container-fluid docs">
-  <div class="row flex-xl-nowrap">
-    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
-      <form class="docs-search d-flex align-items-center">
-  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    <div class="d-flex">
-      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+      
+      
+      <div class="article-container py-1" style="background: initial">
         
-        
-          第1章 初识MongoDB
-        
-      </span>
-      <span><i class="fas fa-chevron-down"></i></span>
-    </div>
-  </button>
-
-  
-  <button class="form-control sidebar-search js-search d-none d-md-flex">
-    <i class="fas fa-search pr-2"></i>
-    <span class="sidebar-search-text">Search...</span>
-    <span class="sidebar-search-shortcut">/</span>
-  </button>
-  
-</form>
-
-<nav class="collapse docs-links" id="docs-nav">
-  
-  
-  
-  
-  
-  
-
-  
-  
-    
-
-    
-      
-
-      <ul class="nav docs-sidenav">
-        <li><a href="/courses/"><i class="fas fa-arrow-left pr-1"></i>Courses</a></li>
-      </ul>
-
-      
-      
-        
-          
-        
-      
-
-
-  
-    
-    
-    
-    
-      
-    
-    
-
-    
-      <div class="docs-toc-item">
-        <a class="docs-toc-link " href="/courses/bigdatastorage/">课程介绍</a>
-    
-      
-        <ul class="nav docs-sidenav">
-      
-
-
-  
-    
-    
-    
-    
-      
-    
-    
-
-    
-      <div class="docs-toc-item">
-        <a class="docs-toc-link " href="/courses/bigdatastorage/chapter1/">第1章 初识MongoDB</a>
-    
-      
-        <ul class="nav docs-sidenav">
-      
-
-
-  <li class="active"><a href="/courses/bigdatastorage/chapter1/1.1/">1.1 MongoDB的发展与现状</a></li>
-
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.2/">1.2 MongoDB与Hadoop比较</a></li>
-
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.3/">1.3 关键特性</a></li>
-
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.4/">1.4 安装部署</a></li>
-
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.5/">1.5 几个重要的可执行文件</a></li>
-
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.6/">1.6 适合的业务</a></li>
-
-      
-        </ul>
-      
-    
-
-    
-      </div>
-    
-
-      
-        </ul>
-      
-    
-
-    
-      </div>
-    
-
-    
-  
-</nav>
-
-    </div>
-
-    
-    
-    <div class="d-none d-xl-block col-xl-2 docs-toc">
-      
-
-
-
-
-
-
-
-
-
-
-
-
-      <ul class="nav toc-top">
-        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
-      </ul>
-
-      <nav id="TableOfContents"></nav>
-
-      
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-    
-
-    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
-
-      <div class="docs-article-container">
-        
-          
   <nav class="d-none d-md-flex" aria-label="breadcrumb">
     <ol class="breadcrumb">
       
@@ -1050,7 +889,7 @@
   
 
       <li class="breadcrumb-item active" aria-current="page">
-        1.1 MongoDB的发展与现状
+        
       </li>
     </ol>
   </nav>
@@ -1058,77 +897,411 @@
 
 
 
-        
       </div>
+    
 
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1></h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Mar 30, 2024 9:03 PM
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h1 id="11-mongodb-的发展与现状">1.1 MongoDB 的发展与现状</h1>
+<p>MongoDB是一个可扩展、开源、表结构自由，用C++语言编写的<strong>面向文档</strong>的分布式文件存储的数据库，旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。</p>
+<p>MongoDB 是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./images/1.1-1.png" alt="1.1-1" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>数据库引擎综合排行榜：第5名数据来源：https://db-engines.com/en/ranking</p>
+<p>文档数据库排名第一：https://db-engines.com/en/ranking/document+store</p>
+<p>综合排行榜：第5名，数据来源：https://db-engines.com/en/ranking</p>
+<p>上述网站可查询最新数据</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./images/1.1-2.png" alt="1.1-2" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p><strong>MongoDB能支撑大数据系统</strong></p>
+<ul>
+<li>实时的可操作的大数据存储系统</li>
+<li>离线大数据分析系统</li>
+</ul>
+<p><strong>MongoDB天生为云计算而生</strong></p>
+<ul>
+<li>可扩展架构，可以启用分片和水平扩展，提供云存储所需的技术；</li>
+<li>自动管理被称为“副本集”的冗余服务器；</li>
+</ul>
+<p>MongoDB为多家领先的云计算供应商，如阿里巴巴，腾讯，360，百度</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./images/1.1-3.png" alt="1.1-3" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>关系数据库中最基本的单元是行，MongoDB中最基本的存储单元是document，如：</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./images/1.1-4.png" alt="1.1-4" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>用JSON格式类似的键值对来存储，值的类型有字符串、数字、日期等，也称BSON对象；</p>
+<p>MongoDB与关系数据库的重大区别是：可扩展的表结构，即collection中的document所拥有的字段是可以变化的</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./images/1.1-5.png" alt="1.1-5" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
       
       
       
-
-      <div class="docs-article-container">
         
-        <h1>1.1 MongoDB的发展与现状</h1>
-
-        <article class="article-style">
-
-          
-          
-
-          <p>Content&hellip;</p>
-
-
-        </article>
-
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="#" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
         
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Ffanfanshen.github.io%2Fcourses%2Fbigdatastorage%2Fchapter1%2F1.1%2F&amp;title=" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
 
 
 
 
 
-        
 
 
 
-        
-        
-        <div class="article-widget">
-          
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://fanfanshen.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hua4cb2791b55c7b4a065b31c60f81de62_1254882_270x270_fill_q75_lanczos_center.jpg" alt="沈凡凡"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://fanfanshen.github.io/">沈凡凡</a></h5>
+      <h6 class="card-subtitle">博士，副教授，硕士生导师</h6>
+      <p class="card-text">My research interests include big data audit, artificial intelligence and computer system.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/authors/admin/weixin.jpg" >
+        <i class="fab fa-weixin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://blog.csdn.net/fandroid?type=blog" target="_blank" rel="noopener">
+        <i class="fas fa-blog"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/fanfanshen" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="article-widget">
+  
 <div class="post-nav">
   
   
   
   <div class="post-nav-item">
-    <div class="meta-nav">Next</div>
-    <a href="/courses/bigdatastorage/chapter1/1.2/" rel="prev">1.2 MongoDB与Hadoop比较</a>
+    <div class="meta-nav">Previous</div>
+    <a href="/courses/bigdatastorage/chapter1/1.2/" rel="prev"></a>
   </div>
   
 </div>
 
-        </div>
-        
-      </div>
-
-      <div class="body-footer">
-        <p>Last updated on Feb 24, 2024 9:04 PM</p>
-
-        
+</div>
 
 
 
-
-        
-
-
-
-
-        
 
   
   
 
 
-      </div>
 
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
       <footer class="site-footer">
 
   
@@ -1222,15 +1395,7 @@
   </p>
 </footer>
 
-
-    </main>
-  </div>
-</div>
-
-  </div>
-
-  <div class="page-footer">
-    
+    </div>
     
   </div>
 
@@ -1256,11 +1421,6 @@
 
 
 
-
-<script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js" integrity="sha256-aQmOEF2ZD4NM/xt4hthzREIo/2PFkOX/g01WjxEV7Ys=" crossorigin="anonymous"></script>
-<script>
-  anchors.add();
-</script>
 
 
 
@@ -1318,9 +1478,10 @@
 
 
 
-<script id="page-data" type="application/json">{"use_headroom":false}</script>
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
 
 
+  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
 
 
 

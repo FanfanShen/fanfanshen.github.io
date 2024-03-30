@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: March 24, 2024 --><html lang="en-us" >
+<!-- Last Published: March 30, 2024 --><html lang="en-us" >
 
 
 <head>
@@ -276,7 +276,14 @@
 
   
 
-<meta name="description" content="Content&hellip;" />
+<meta name="description" content="1.4安装部署 1.安装步骤
+下载地址：https://www.mongodb.com/download-center/community 版本4.4或更高版本；或者网盘下载：https://pan.baidu.com/s/15KwMqxcVFi8D6BpMBKNQkA?pwd=abt7 提取码: abt7 安装方法参考：https://www.runoob.com/mongodb/mongodb-window-install.html 安装过程中不要勾选MongoDB Compass（可视化环境），MongoDB单独安装。 2.配置数据和日志文件目录（自定义）
+创建数据目录：D:\mongodb\data\db 创建日志目录：D:\mongodb\data\log 创建日志文件：D:\mongodb\data\log\mongodb.log 3.安装成功与否测试
+启动服务器：
+C:\Program Files\MongoDB\Server\4.4\bin&gt;.\mongod.exe --dbpath d:\mongodb\data\db 看到日志倒数第二行：waiting for connections on port 27017
+浏览器输入：http://localhost:27017/
+出现上述情况，说明安装正常 4.MongoDB的后台管理shell（mongo进程）
+MongoDB Shell是MongoDB自带的交互式Javascript shell,用来对MongoDB进行操作和管理的交互式环境。" />
 
 
 
@@ -318,30 +325,32 @@
 <meta property="twitter:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
 <meta property="og:site_name" content="Fanfan Shen&#39;s Homepage" />
 <meta property="og:url" content="https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.4/" />
-<meta property="og:title" content="1.4 安装部署 | Fanfan Shen&#39;s Homepage" />
-<meta property="og:description" content="Content&hellip;" /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:title" content="Fanfan Shen&#39;s Homepage" />
+<meta property="og:description" content="1.4安装部署 1.安装步骤
+下载地址：https://www.mongodb.com/download-center/community 版本4.4或更高版本；或者网盘下载：https://pan.baidu.com/s/15KwMqxcVFi8D6BpMBKNQkA?pwd=abt7 提取码: abt7 安装方法参考：https://www.runoob.com/mongodb/mongodb-window-install.html 安装过程中不要勾选MongoDB Compass（可视化环境），MongoDB单独安装。 2.配置数据和日志文件目录（自定义）
+创建数据目录：D:\mongodb\data\db 创建日志目录：D:\mongodb\data\log 创建日志文件：D:\mongodb\data\log\mongodb.log 3.安装成功与否测试
+启动服务器：
+C:\Program Files\MongoDB\Server\4.4\bin&gt;.\mongod.exe --dbpath d:\mongodb\data\db 看到日志倒数第二行：waiting for connections on port 27017
+浏览器输入：http://localhost:27017/
+出现上述情况，说明安装正常 4.MongoDB的后台管理shell（mongo进程）
+MongoDB Shell是MongoDB自带的交互式Javascript shell,用来对MongoDB进行操作和管理的交互式环境。" /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
-    <meta
-      property="article:published_time"
-      content="2019-05-05T00:00:00&#43;00:00"
-    />
   
-  
-    <meta property="article:modified_time" content="2024-02-24T17:23:52&#43;08:00">
-  
-
-
-
-
-
-
-
+    <meta property="article:modified_time" content="2024-03-30T21:03:13&#43;08:00">
   
 
 
 
 
+
+
+
+  
+
+
+
+
   
   
   
@@ -353,7 +362,7 @@
 
 
   
-  <title>1.4 安装部署 | Fanfan Shen&#39;s Homepage</title>
+  <title>Fanfan Shen&#39;s Homepage</title>
 
   
   
@@ -818,188 +827,10 @@
     
     
     
-
-    
-
-
-
-
-<div class="container-fluid docs">
-  <div class="row flex-xl-nowrap">
-    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
-      <form class="docs-search d-flex align-items-center">
-  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    <div class="d-flex">
-      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+      
+      
+      <div class="article-container py-1" style="background: initial">
         
-        
-          第1章 初识MongoDB
-        
-      </span>
-      <span><i class="fas fa-chevron-down"></i></span>
-    </div>
-  </button>
-
-  
-  <button class="form-control sidebar-search js-search d-none d-md-flex">
-    <i class="fas fa-search pr-2"></i>
-    <span class="sidebar-search-text">Search...</span>
-    <span class="sidebar-search-shortcut">/</span>
-  </button>
-  
-</form>
-
-<nav class="collapse docs-links" id="docs-nav">
-  
-  
-  
-  
-  
-  
-
-  
-  
-    
-
-    
-      
-
-      <ul class="nav docs-sidenav">
-        <li><a href="/courses/"><i class="fas fa-arrow-left pr-1"></i>Courses</a></li>
-      </ul>
-
-      
-      
-        
-          
-        
-      
-
-
-  
-    
-    
-    
-    
-      
-    
-    
-
-    
-      <div class="docs-toc-item">
-        <a class="docs-toc-link " href="/courses/bigdatastorage/">课程介绍</a>
-    
-      
-        <ul class="nav docs-sidenav">
-      
-
-
-  
-    
-    
-    
-    
-      
-    
-    
-
-    
-      <div class="docs-toc-item">
-        <a class="docs-toc-link " href="/courses/bigdatastorage/chapter1/">第1章 初识MongoDB</a>
-    
-      
-        <ul class="nav docs-sidenav">
-      
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.1/">1.1 MongoDB的发展与现状</a></li>
-
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.2/">1.2 MongoDB与Hadoop比较</a></li>
-
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.3/">1.3 关键特性</a></li>
-
-
-
-  <li class="active"><a href="/courses/bigdatastorage/chapter1/1.4/">1.4 安装部署</a></li>
-
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.5/">1.5 几个重要的可执行文件</a></li>
-
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.6/">1.6 适合的业务</a></li>
-
-      
-        </ul>
-      
-    
-
-    
-      </div>
-    
-
-      
-        </ul>
-      
-    
-
-    
-      </div>
-    
-
-    
-  
-</nav>
-
-    </div>
-
-    
-    
-    <div class="d-none d-xl-block col-xl-2 docs-toc">
-      
-
-
-
-
-
-
-
-
-
-
-
-
-      <ul class="nav toc-top">
-        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
-      </ul>
-
-      <nav id="TableOfContents"></nav>
-
-      
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-    
-
-    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
-
-      <div class="docs-article-container">
-        
-          
   <nav class="d-none d-md-flex" aria-label="breadcrumb">
     <ol class="breadcrumb">
       
@@ -1050,7 +881,7 @@
   
 
       <li class="breadcrumb-item active" aria-current="page">
-        1.4 安装部署
+        
       </li>
     </ol>
   </nav>
@@ -1058,84 +889,376 @@
 
 
 
-        
       </div>
+    
 
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1></h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Mar 30, 2024 9:03 PM
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h1 id="14安装部署">1.4安装部署</h1>
+<p><strong>1.安装步骤</strong></p>
+<ul>
+<li>下载地址：https://www.mongodb.com/download-center/community  版本4.4或更高版本；或者网盘下载：https://pan.baidu.com/s/15KwMqxcVFi8D6BpMBKNQkA?pwd=abt7 提取码: abt7</li>
+<li>安装方法参考：https://www.runoob.com/mongodb/mongodb-window-install.html</li>
+<li>安装过程中不要勾选MongoDB Compass（可视化环境），MongoDB单独安装。</li>
+</ul>
+<p><strong>2.配置数据和日志文件目录（自定义）</strong></p>
+<ul>
+<li>创建数据目录：<code>D:\mongodb\data\db</code></li>
+<li>创建日志目录：<code>D:\mongodb\data\log</code></li>
+<li>创建日志文件：<code>D:\mongodb\data\log\mongodb.log</code></li>
+</ul>
+<p><strong>3.安装成功与否测试</strong></p>
+<ul>
+<li>
+<p>启动服务器：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">C:\Program Files\MongoDB\Server\4.4\bin&gt;.\mongod.exe --dbpath d:\mongodb\data\db
+</span></span></code></pre></div></li>
+<li>
+<p>看到日志倒数第二行：<code>waiting for connections on port 27017</code></p>
+</li>
+<li>
+<p>浏览器输入：http://localhost:27017/</p>
+</li>
+</ul>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./images/1.4-1.png" alt="1.4-1" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<ul>
+<li>出现上述情况，说明安装正常</li>
+</ul>
+<p><strong>4.MongoDB的后台管理shell（mongo进程）</strong></p>
+<ul>
+<li>
+<p>MongoDB Shell是MongoDB自带的交互式Javascript shell,用来对MongoDB进行操作和管理的交互式环境。</p>
+</li>
+<li>
+<p>进入安装目录bin下，运行mongo进程：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">`C:\Program Files\MongoDB\Server\4.4\bin&gt;.\mongo.exe --port 27017`
+</span></span></code></pre></div></li>
+<li>
+<p>默认连接到test数据库，可测试加法运算：</p>
+</li>
+</ul>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="./images/1.4-2.png" alt="1.4-2" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
       
       
       
-
-      <div class="docs-article-container">
         
-        <h1>1.4 安装部署</h1>
-
-        <article class="article-style">
-
-          
-          
-
-          <p>Content&hellip;</p>
-
-
-        </article>
-
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="#" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
         
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Ffanfanshen.github.io%2Fcourses%2Fbigdatastorage%2Fchapter1%2F1.4%2F&amp;title=" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
 
 
 
 
 
-        
 
 
 
-        
-        
-        <div class="article-widget">
-          
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://fanfanshen.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hua4cb2791b55c7b4a065b31c60f81de62_1254882_270x270_fill_q75_lanczos_center.jpg" alt="沈凡凡"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://fanfanshen.github.io/">沈凡凡</a></h5>
+      <h6 class="card-subtitle">博士，副教授，硕士生导师</h6>
+      <p class="card-text">My research interests include big data audit, artificial intelligence and computer system.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/authors/admin/weixin.jpg" >
+        <i class="fab fa-weixin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://blog.csdn.net/fandroid?type=blog" target="_blank" rel="noopener">
+        <i class="fas fa-blog"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/fanfanshen" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="article-widget">
+  
 <div class="post-nav">
   
   
   
   <div class="post-nav-item">
-    <div class="meta-nav">Previous</div>
-    <a href="/courses/bigdatastorage/chapter1/1.3/" rel="next">1.3 关键特性</a>
+    <div class="meta-nav">Next</div>
+    <a href="/courses/bigdatastorage/chapter1/1.3/" rel="next"></a>
   </div>
   
   
   
   <div class="post-nav-item">
-    <div class="meta-nav">Next</div>
-    <a href="/courses/bigdatastorage/chapter1/1.5/" rel="prev">1.5 几个重要的可执行文件</a>
+    <div class="meta-nav">Previous</div>
+    <a href="/courses/bigdatastorage/chapter1/1.5/" rel="prev"></a>
   </div>
   
 </div>
 
-        </div>
-        
-      </div>
-
-      <div class="body-footer">
-        <p>Last updated on Feb 24, 2024 5:23 PM</p>
-
-        
+</div>
 
 
 
-
-        
-
-
-
-
-        
 
   
   
 
 
-      </div>
 
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
       <footer class="site-footer">
 
   
@@ -1229,15 +1352,7 @@
   </p>
 </footer>
 
-
-    </main>
-  </div>
-</div>
-
-  </div>
-
-  <div class="page-footer">
-    
+    </div>
     
   </div>
 
@@ -1263,11 +1378,6 @@
 
 
 
-
-<script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js" integrity="sha256-aQmOEF2ZD4NM/xt4hthzREIo/2PFkOX/g01WjxEV7Ys=" crossorigin="anonymous"></script>
-<script>
-  anchors.add();
-</script>
 
 
 
@@ -1325,9 +1435,10 @@
 
 
 
-<script id="page-data" type="application/json">{"use_headroom":false}</script>
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
 
 
+  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
 
 
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: March 24, 2024 --><html lang="en-us" >
+<!-- Last Published: March 30, 2024 --><html lang="en-us" >
 
 
 <head>
@@ -276,7 +276,10 @@
 
   
 
-<meta name="description" content="Content&hellip;" />
+<meta name="description" content="1.5几个重要的可执行文件 mongod进程
+Mongod.exe为启动此数据库实例进程对应的可执行文件，是整个MongoDB中最核心的内容，负责数据库的创建、删除等各项管理工作，运行在服务器端为客户端提供监听，相当于MySQL中的mysqld进程。 mongo进程
+Mongo是一个与mongod进程进行交互的JavaScript Shell进程，它提供了一些交互的接口函数用于系统管理员对数据库系统进行管理。 其他进程
+mongodump提供了一种从mongod实例上导出BSON dump文件的方法，mongorestore能够利用这些dump文件重建数据库，常用命令格式如下： mongodump --port 50000 --db eshop --out e:\bak 参数&ndash;port是mongod实例监听端口，&ndash;db是数据库名称，&ndash;out是备份文件保存目录， mongodump &ndash;help查看更多参数。 mongoexport是一个将MongoDB数据库实例中的数据导出来产生JSON或CVS文件的工具； mongoimport是一个将JSON或CVS文件内容导入到MongoDB实例中的工具； mongos是一个在分片中用到的进程。所以应用程序端的查询操作都会先由它分析，然后将查询定位到具体某一个分片上。 mongofiles提供一个操作MongoDB分布式文件存储系统的命令行接口。 mongostat提供一个展示当前正在运行的mongod实例的状态工具。 mongotop提供一个分析MongoDB实例花在读写数据上的时间跟踪方法。 " />
 
 
 
@@ -318,17 +321,15 @@
 <meta property="twitter:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
 <meta property="og:site_name" content="Fanfan Shen&#39;s Homepage" />
 <meta property="og:url" content="https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.5/" />
-<meta property="og:title" content="1.5 几个重要的可执行文件 | Fanfan Shen&#39;s Homepage" />
-<meta property="og:description" content="Content&hellip;" /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:title" content="Fanfan Shen&#39;s Homepage" />
+<meta property="og:description" content="1.5几个重要的可执行文件 mongod进程
+Mongod.exe为启动此数据库实例进程对应的可执行文件，是整个MongoDB中最核心的内容，负责数据库的创建、删除等各项管理工作，运行在服务器端为客户端提供监听，相当于MySQL中的mysqld进程。 mongo进程
+Mongo是一个与mongod进程进行交互的JavaScript Shell进程，它提供了一些交互的接口函数用于系统管理员对数据库系统进行管理。 其他进程
+mongodump提供了一种从mongod实例上导出BSON dump文件的方法，mongorestore能够利用这些dump文件重建数据库，常用命令格式如下： mongodump --port 50000 --db eshop --out e:\bak 参数&ndash;port是mongod实例监听端口，&ndash;db是数据库名称，&ndash;out是备份文件保存目录， mongodump &ndash;help查看更多参数。 mongoexport是一个将MongoDB数据库实例中的数据导出来产生JSON或CVS文件的工具； mongoimport是一个将JSON或CVS文件内容导入到MongoDB实例中的工具； mongos是一个在分片中用到的进程。所以应用程序端的查询操作都会先由它分析，然后将查询定位到具体某一个分片上。 mongofiles提供一个操作MongoDB分布式文件存储系统的命令行接口。 mongostat提供一个展示当前正在运行的mongod实例的状态工具。 mongotop提供一个分析MongoDB实例花在读写数据上的时间跟踪方法。 " /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
-    <meta
-      property="article:published_time"
-      content="2019-05-05T00:00:00&#43;00:00"
-    />
   
-  
-    <meta property="article:modified_time" content="2024-02-24T17:23:52&#43;08:00">
+    <meta property="article:modified_time" content="2024-03-30T20:44:22&#43;08:00">
   
 
 
@@ -353,7 +354,7 @@
 
 
   
-  <title>1.5 几个重要的可执行文件 | Fanfan Shen&#39;s Homepage</title>
+  <title>Fanfan Shen&#39;s Homepage</title>
 
   
   
@@ -818,188 +819,10 @@
     
     
     
-
-    
-
-
-
-
-<div class="container-fluid docs">
-  <div class="row flex-xl-nowrap">
-    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
-      <form class="docs-search d-flex align-items-center">
-  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    <div class="d-flex">
-      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+      
+      
+      <div class="article-container py-1" style="background: initial">
         
-        
-          第1章 初识MongoDB
-        
-      </span>
-      <span><i class="fas fa-chevron-down"></i></span>
-    </div>
-  </button>
-
-  
-  <button class="form-control sidebar-search js-search d-none d-md-flex">
-    <i class="fas fa-search pr-2"></i>
-    <span class="sidebar-search-text">Search...</span>
-    <span class="sidebar-search-shortcut">/</span>
-  </button>
-  
-</form>
-
-<nav class="collapse docs-links" id="docs-nav">
-  
-  
-  
-  
-  
-  
-
-  
-  
-    
-
-    
-      
-
-      <ul class="nav docs-sidenav">
-        <li><a href="/courses/"><i class="fas fa-arrow-left pr-1"></i>Courses</a></li>
-      </ul>
-
-      
-      
-        
-          
-        
-      
-
-
-  
-    
-    
-    
-    
-      
-    
-    
-
-    
-      <div class="docs-toc-item">
-        <a class="docs-toc-link " href="/courses/bigdatastorage/">课程介绍</a>
-    
-      
-        <ul class="nav docs-sidenav">
-      
-
-
-  
-    
-    
-    
-    
-      
-    
-    
-
-    
-      <div class="docs-toc-item">
-        <a class="docs-toc-link " href="/courses/bigdatastorage/chapter1/">第1章 初识MongoDB</a>
-    
-      
-        <ul class="nav docs-sidenav">
-      
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.1/">1.1 MongoDB的发展与现状</a></li>
-
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.2/">1.2 MongoDB与Hadoop比较</a></li>
-
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.3/">1.3 关键特性</a></li>
-
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.4/">1.4 安装部署</a></li>
-
-
-
-  <li class="active"><a href="/courses/bigdatastorage/chapter1/1.5/">1.5 几个重要的可执行文件</a></li>
-
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter1/1.6/">1.6 适合的业务</a></li>
-
-      
-        </ul>
-      
-    
-
-    
-      </div>
-    
-
-      
-        </ul>
-      
-    
-
-    
-      </div>
-    
-
-    
-  
-</nav>
-
-    </div>
-
-    
-    
-    <div class="d-none d-xl-block col-xl-2 docs-toc">
-      
-
-
-
-
-
-
-
-
-
-
-
-
-      <ul class="nav toc-top">
-        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
-      </ul>
-
-      <nav id="TableOfContents"></nav>
-
-      
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-    
-
-    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
-
-      <div class="docs-article-container">
-        
-          
   <nav class="d-none d-md-flex" aria-label="breadcrumb">
     <ol class="breadcrumb">
       
@@ -1050,7 +873,7 @@
   
 
       <li class="breadcrumb-item active" aria-current="page">
-        1.5 几个重要的可执行文件
+        
       </li>
     </ol>
   </nav>
@@ -1058,84 +881,313 @@
 
 
 
-        
       </div>
+    
 
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1></h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Mar 30, 2024 8:44 PM
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h1 id="15几个重要的可执行文件">1.5几个重要的可执行文件</h1>
+<p><strong>mongod进程</strong></p>
+<ul>
+<li>Mongod.exe为启动此数据库实例进程对应的可执行文件，是整个MongoDB中最核心的内容，负责数据库的创建、删除等各项管理工作，运行在服务器端为客户端提供监听，相当于MySQL中的mysqld进程。</li>
+</ul>
+<p><strong>mongo进程</strong></p>
+<ul>
+<li>Mongo是一个与mongod进程进行交互的JavaScript Shell进程，它提供了一些交互的接口函数用于系统管理员对数据库系统进行管理。</li>
+</ul>
+<p><strong>其他进程</strong></p>
+<ol>
+<li>mongodump提供了一种从mongod实例上导出BSON dump文件的方法，mongorestore能够利用这些dump文件重建数据库，常用命令格式如下：
+<code>mongodump --port 50000 --db eshop --out e:\bak</code>
+参数&ndash;port是mongod实例监听端口，&ndash;db是数据库名称，&ndash;out是备份文件保存目录， mongodump &ndash;help查看更多参数。</li>
+<li>mongoexport是一个将MongoDB数据库实例中的数据导出来产生JSON或CVS文件的工具；</li>
+<li>mongoimport是一个将JSON或CVS文件内容导入到MongoDB实例中的工具；</li>
+<li>mongos是一个在分片中用到的进程。所以应用程序端的查询操作都会先由它分析，然后将查询定位到具体某一个分片上。</li>
+<li>mongofiles提供一个操作MongoDB分布式文件存储系统的命令行接口。</li>
+<li>mongostat提供一个展示当前正在运行的mongod实例的状态工具。</li>
+<li>mongotop提供一个分析MongoDB实例花在读写数据上的时间跟踪方法。</li>
+</ol>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
       
       
       
-
-      <div class="docs-article-container">
         
-        <h1>1.5 几个重要的可执行文件</h1>
-
-        <article class="article-style">
-
-          
-          
-
-          <p>Content&hellip;</p>
-
-
-        </article>
-
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="#" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
         
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Ffanfanshen.github.io%2Fcourses%2Fbigdatastorage%2Fchapter1%2F1.5%2F&amp;title=" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
 
 
 
 
 
-        
 
 
 
-        
-        
-        <div class="article-widget">
-          
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://fanfanshen.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hua4cb2791b55c7b4a065b31c60f81de62_1254882_270x270_fill_q75_lanczos_center.jpg" alt="沈凡凡"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://fanfanshen.github.io/">沈凡凡</a></h5>
+      <h6 class="card-subtitle">博士，副教授，硕士生导师</h6>
+      <p class="card-text">My research interests include big data audit, artificial intelligence and computer system.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/authors/admin/weixin.jpg" >
+        <i class="fab fa-weixin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://blog.csdn.net/fandroid?type=blog" target="_blank" rel="noopener">
+        <i class="fas fa-blog"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/fanfanshen" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="article-widget">
+  
 <div class="post-nav">
   
   
   
   <div class="post-nav-item">
-    <div class="meta-nav">Previous</div>
-    <a href="/courses/bigdatastorage/chapter1/1.4/" rel="next">1.4 安装部署</a>
+    <div class="meta-nav">Next</div>
+    <a href="/courses/bigdatastorage/chapter1/1.4/" rel="next"></a>
   </div>
   
   
   
   <div class="post-nav-item">
-    <div class="meta-nav">Next</div>
-    <a href="/courses/bigdatastorage/chapter1/1.6/" rel="prev">1.6 适合的业务</a>
+    <div class="meta-nav">Previous</div>
+    <a href="/courses/bigdatastorage/chapter1/1.6/" rel="prev"></a>
   </div>
   
 </div>
 
-        </div>
-        
-      </div>
-
-      <div class="body-footer">
-        <p>Last updated on Feb 24, 2024 5:23 PM</p>
-
-        
+</div>
 
 
 
-
-        
-
-
-
-
-        
 
   
   
 
 
-      </div>
 
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
       <footer class="site-footer">
 
   
@@ -1229,15 +1281,7 @@
   </p>
 </footer>
 
-
-    </main>
-  </div>
-</div>
-
-  </div>
-
-  <div class="page-footer">
-    
+    </div>
     
   </div>
 
@@ -1263,11 +1307,6 @@
 
 
 
-
-<script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js" integrity="sha256-aQmOEF2ZD4NM/xt4hthzREIo/2PFkOX/g01WjxEV7Ys=" crossorigin="anonymous"></script>
-<script>
-  anchors.add();
-</script>
 
 
 
@@ -1325,9 +1364,10 @@
 
 
 
-<script id="page-data" type="application/json">{"use_headroom":false}</script>
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
 
 
+  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
 
 
 
