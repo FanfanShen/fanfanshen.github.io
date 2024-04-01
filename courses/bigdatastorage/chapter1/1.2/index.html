@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: March 30, 2024 --><html lang="en-us" >
+<!-- Last Published: April 1, 2024 --><html lang="en-us" >
 
 
 <head>
@@ -276,7 +276,7 @@
 
   
 
-<meta name="description" content="1.2 MongoDB与Hadoop比较 根据 Gartner 调查，70%的 Hadoop大数据分析项目未能体现预期价值 随着业务的发展，实时数据处理场景变得越来越多，Hadoop这种更适合处理离线批量数据的技术变得不适应 因此需要引人新的NOSQL技术来应对这种场景，发挥大数据实时处理的优势 MongoDB可以替换HDFS,作为大数据平台中最核心的部分； 优势如下：
+<meta name="description" content=" 根据 Gartner 调查，70%的 Hadoop大数据分析项目未能体现预期价值 随着业务的发展，实时数据处理场景变得越来越多，Hadoop这种更适合处理离线批量数据的技术变得不适应 因此需要引人新的NOSQL技术来应对这种场景，发挥大数据实时处理的优势 MongoDB可以替换HDFS,作为大数据平台中最核心的部分； 优势如下：
 HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档数据库则表现得更加细颗粒化 MongoDB支持HDFS所没有的索引概念，所以在读取速度上更快，MongoDB比HDFS 更加易于修改其写入后的数据。 HDFS 的响应级别为分钟，而MongoDB的响应级别为毫秒: 如果使用MongoDB数据库，就不用像传统模式那样，到Redis内存数据库计算后，再将其另存到HDFS上。 可以利用MongoDB强大的Aggregate功能进行数据筛选或预处理 " />
 
 
@@ -319,26 +319,31 @@ HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档�
 <meta property="twitter:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
 <meta property="og:site_name" content="Fanfan Shen&#39;s Homepage" />
 <meta property="og:url" content="https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.2/" />
-<meta property="og:title" content="Fanfan Shen&#39;s Homepage" />
-<meta property="og:description" content="1.2 MongoDB与Hadoop比较 根据 Gartner 调查，70%的 Hadoop大数据分析项目未能体现预期价值 随着业务的发展，实时数据处理场景变得越来越多，Hadoop这种更适合处理离线批量数据的技术变得不适应 因此需要引人新的NOSQL技术来应对这种场景，发挥大数据实时处理的优势 MongoDB可以替换HDFS,作为大数据平台中最核心的部分； 优势如下：
+<meta property="og:title" content="1.2MongoDB与Hadoop比较 | Fanfan Shen&#39;s Homepage" />
+<meta property="og:description" content=" 根据 Gartner 调查，70%的 Hadoop大数据分析项目未能体现预期价值 随着业务的发展，实时数据处理场景变得越来越多，Hadoop这种更适合处理离线批量数据的技术变得不适应 因此需要引人新的NOSQL技术来应对这种场景，发挥大数据实时处理的优势 MongoDB可以替换HDFS,作为大数据平台中最核心的部分； 优势如下：
 HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档数据库则表现得更加细颗粒化 MongoDB支持HDFS所没有的索引概念，所以在读取速度上更快，MongoDB比HDFS 更加易于修改其写入后的数据。 HDFS 的响应级别为分钟，而MongoDB的响应级别为毫秒: 如果使用MongoDB数据库，就不用像传统模式那样，到Redis内存数据库计算后，再将其另存到HDFS上。 可以利用MongoDB强大的Aggregate功能进行数据筛选或预处理 " /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
+    <meta
+      property="article:published_time"
+      content="2019-05-05T00:00:00&#43;00:00"
+    />
   
-    <meta property="article:modified_time" content="2024-03-30T21:03:13&#43;08:00">
   
-
-
-
-
-
-
-
+    <meta property="article:modified_time" content="2024-03-31T21:45:25&#43;08:00">
   
 
 
 
 
+
+
+
+  
+
+
+
+
   
   
   
@@ -350,7 +355,7 @@ HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档�
 
 
   
-  <title>Fanfan Shen&#39;s Homepage</title>
+  <title>1.2MongoDB与Hadoop比较 | Fanfan Shen&#39;s Homepage</title>
 
   
   
@@ -815,10 +820,188 @@ HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档�
     
     
     
-      
-      
-      <div class="article-container py-1" style="background: initial">
+
+    
+
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      <form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <div class="d-flex">
+      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
         
+        
+          第1章 初识MongoDB
+        
+      </span>
+      <span><i class="fas fa-chevron-down"></i></span>
+    </div>
+  </button>
+
+  
+  <button class="form-control sidebar-search js-search d-none d-md-flex">
+    <i class="fas fa-search pr-2"></i>
+    <span class="sidebar-search-text">Search...</span>
+    <span class="sidebar-search-shortcut">/</span>
+  </button>
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  
+  
+  
+  
+
+  
+  
+    
+
+    
+      
+
+      <ul class="nav docs-sidenav">
+        <li><a href="/courses/"><i class="fas fa-arrow-left pr-1"></i>Courses</a></li>
+      </ul>
+
+      
+      
+        
+          
+        
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/courses/bigdatastorage/">课程介绍</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/courses/bigdatastorage/chapter1/">第1章 初识MongoDB</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  <li class=""><a href="/courses/bigdatastorage/chapter1/1.5/">1.5几个重要的可执行文件</a></li>
+
+
+
+  <li class=""><a href="/courses/bigdatastorage/chapter1/1.1/">1.1MongoDB的发展与现状</a></li>
+
+
+
+  <li class="active"><a href="/courses/bigdatastorage/chapter1/1.2/">1.2MongoDB与Hadoop比较</a></li>
+
+
+
+  <li class=""><a href="/courses/bigdatastorage/chapter1/1.3/">1.3关键特性</a></li>
+
+
+
+  <li class=""><a href="/courses/bigdatastorage/chapter1/1.4/">1.4安装部署</a></li>
+
+
+
+  <li class=""><a href="/courses/bigdatastorage/chapter1/1.6/">1.6适合的业务</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+    
+  
+</nav>
+
+    </div>
+
+    
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents"></nav>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <div class="docs-article-container">
+        
+          
   <nav class="d-none d-md-flex" aria-label="breadcrumb">
     <ol class="breadcrumb">
       
@@ -869,7 +1052,7 @@ HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档�
   
 
       <li class="breadcrumb-item active" aria-current="page">
-        
+        1.2MongoDB与Hadoop比较
       </li>
     </ol>
   </nav>
@@ -877,153 +1060,30 @@ HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档�
 
 
 
+        
       </div>
-    
 
-    <article class="article">
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-<div class="article-container pt-3">
-  <h1></h1>
-
-  
-
-  
-    
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
       
-          Last updated on
       
-    
-    Mar 30, 2024 9:03 PM
-  </span>
-  
+      
 
-  
+      <div class="docs-article-container">
+        
+        <h1>1.2MongoDB与Hadoop比较</h1>
 
-  
+        <article class="article-style">
 
-  
-  
-  
-  
+          
+          
 
-  
-  
-
-</div>
-
-    
-
-
-
-
-
-  
-</div>
-
-
-
-  <div class="article-container">
-
-    <div class="article-style">
-      <h1 id="12-mongodb与hadoop比较">1.2 MongoDB与Hadoop比较</h1>
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure  >
-  <div class="d-flex justify-content-center">
-    <div class="w-100" ><img src="./images/1.2-1.png" alt="1.2-1" loading="lazy" data-zoomable /></div>
-  </div></figure>
-</p>
+          <img src="./images/1.2-1.png" alt="1.2-1" />
 <ul>
 <li>根据 Gartner 调查，70%的 Hadoop大数据分析项目未能体现预期价值</li>
 <li>随着业务的发展，实时数据处理场景变得越来越多，Hadoop这种更适合处理离线批量数据的技术变得不适应</li>
 <li>因此需要引人新的NOSQL技术来应对这种场景，发挥大数据实时处理的优势</li>
 </ul>
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure  >
-  <div class="d-flex justify-content-center">
-    <div class="w-100" ><img src="./images/1.2-2.png" alt="1.2-2" loading="lazy" data-zoomable /></div>
-  </div></figure>
-</p>
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure  >
-  <div class="d-flex justify-content-center">
-    <div class="w-100" ><img src="./images/1.2-3.png" alt="1.2-3" loading="lazy" data-zoomable /></div>
-  </div></figure>
-</p>
+<img src="./images/1.2-2.png" alt="1.2-2" />
+<img src="./images/1.2-3.png" alt="1.2-3" />
 <ul>
 <li>MongoDB可以替换HDFS,作为大数据平台中最核心的部分；</li>
 </ul>
@@ -1035,235 +1095,67 @@ HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档�
 <li>如果使用MongoDB数据库，就不用像传统模式那样，到Redis内存数据库计算后，再将其另存到HDFS上。</li>
 <li>可以利用MongoDB强大的Aggregate功能进行<strong>数据筛选或预处理</strong></li>
 </ul>
-<p>
+<img src="./images/1.2-4.png" alt="1.2-4" />
 
+        </article>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure  >
-  <div class="d-flex justify-content-center">
-    <div class="w-100" ><img src="./images/1.2-4.png" alt="1.2-4" loading="lazy" data-zoomable /></div>
-  </div></figure>
-</p>
-
-    </div>
-
-    
-
-
-
-
-
-
-
-<div class="share-box">
-  <ul class="share">
-    
-      
-      
-      
         
-      
-      
-      
-      
-      
-      
-      
-      <li>
-        <a href="#" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </li>
-    
-      
-      
-      
+
+
+
+
+
         
-      
-      
-      
-      
-      
-      
-      
-      <li>
-        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Ffanfanshen.github.io%2Fcourses%2Fbigdatastorage%2Fchapter1%2F1.2%2F&amp;title=" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
-          <i class="fab fa-weibo"></i>
-        </a>
-      </li>
-    
-  </ul>
-</div>
 
 
 
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-  
-  
-  
-    
-  
-  
-  
-  <div class="media author-card content-widget-hr">
-    
-      
-      <a href="https://fanfanshen.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hua4cb2791b55c7b4a065b31c60f81de62_1254882_270x270_fill_q75_lanczos_center.jpg" alt="沈凡凡"></a>
-    
-
-    <div class="media-body">
-      <h5 class="card-title"><a href="https://fanfanshen.github.io/">沈凡凡</a></h5>
-      <h6 class="card-subtitle">博士，副教授，硕士生导师</h6>
-      <p class="card-text">My research interests include big data audit, artificial intelligence and computer system.</p>
-      <ul class="network-icon" aria-hidden="true">
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="/#contact" >
-        <i class="fas fa-envelope"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="/authors/admin/weixin.jpg" >
-        <i class="fab fa-weixin"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://blog.csdn.net/fandroid?type=blog" target="_blank" rel="noopener">
-        <i class="fas fa-blog"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://github.com/fanfanshen" target="_blank" rel="noopener">
-        <i class="fab fa-github"></i>
-      </a>
-    </li>
-  
-</ul>
-
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="article-widget">
-  
+        
+        
+        <div class="article-widget">
+          
 <div class="post-nav">
   
   
   
   <div class="post-nav-item">
-    <div class="meta-nav">Next</div>
-    <a href="/courses/bigdatastorage/chapter1/1.1/" rel="next"></a>
+    <div class="meta-nav">Previous</div>
+    <a href="/courses/bigdatastorage/chapter1/1.1/" rel="next">1.1MongoDB的发展与现状</a>
   </div>
   
   
   
   <div class="post-nav-item">
-    <div class="meta-nav">Previous</div>
-    <a href="/courses/bigdatastorage/chapter1/1.3/" rel="prev"></a>
+    <div class="meta-nav">Next</div>
+    <a href="/courses/bigdatastorage/chapter1/1.3/" rel="prev">1.3关键特性</a>
   </div>
   
 </div>
 
-</div>
+        </div>
+        
+      </div>
+
+      <div class="body-footer">
+        <p>Last updated on Mar 31, 2024 9:45 PM</p>
+
+        
 
 
 
+
+        
+
+
+
+
+        
 
   
   
 
 
+      </div>
 
-
-  </div>
-</article>
-  </div>
-
-  <div class="page-footer">
-    
-    
-    <div class="container">
       <footer class="site-footer">
 
   
@@ -1357,7 +1249,15 @@ HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档�
   </p>
 </footer>
 
-    </div>
+
+    </main>
+  </div>
+</div>
+
+  </div>
+
+  <div class="page-footer">
+    
     
   </div>
 
@@ -1383,6 +1283,11 @@ HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档�
 
 
 
+
+<script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js" integrity="sha256-aQmOEF2ZD4NM/xt4hthzREIo/2PFkOX/g01WjxEV7Ys=" crossorigin="anonymous"></script>
+<script>
+  anchors.add();
+</script>
 
 
 
@@ -1440,10 +1345,9 @@ HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档�
 
 
 
-<script id="page-data" type="application/json">{"use_headroom":true}</script>
+<script id="page-data" type="application/json">{"use_headroom":false}</script>
 
 
-  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
 
 
 
