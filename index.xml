@@ -363,7 +363,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-134829765&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-185649273&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -373,7 +373,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-134829765&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-185649273&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -668,6 +668,56 @@ Crash --&gt; [*]
       <description>&lt;p&gt;MongoDB是一个可扩展、开源、表结构自由，用C++语言编写的&lt;strong&gt;面向文档&lt;/strong&gt;的分布式文件存储的数据库，旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。&lt;/p&gt;
 &lt;p&gt;MongoDB 是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。&lt;/p&gt;
 &lt;img src=&#34;https://fanfanshen.github.io/courses/bigdatastorage/chapter1/images/1.1-1.png&#34; alt=&#34;1.1-1&#34; /&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;1.1-1.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-b-class&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;1.1-2.png&#34; alt=&#34;B class&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      B class
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
 &lt;p&gt;数据库引擎综合排行榜：第5名数据来源：https://db-engines.com/en/ranking&lt;/p&gt;
 &lt;p&gt;文档数据库排名第一：https://db-engines.com/en/ranking/document+store&lt;/p&gt;
 &lt;p&gt;综合排行榜：第5名，数据来源：https://db-engines.com/en/ranking&lt;/p&gt;
