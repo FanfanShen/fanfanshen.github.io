@@ -22,7 +22,7 @@
     查看资源
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h1 id=&#34;一在线数据库检索资源&#34;&gt;一、在线数据库检索资源&lt;/h1&gt;
+&lt;h2 id=&#34;一在线数据库检索资源&#34;&gt;一、在线数据库检索资源&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://dblp.uni-trier.de/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DBLP&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.sci-hub.ren/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;sci-hub&lt;/a&gt;&lt;/li&gt;
@@ -30,7 +30,7 @@
 &lt;li&gt;&lt;a href=&#34;https://xueshu.baidu.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;百度学术&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cnki.net/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;中国知网&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;二学术刊物&#34;&gt;二、学术刊物&lt;/h1&gt;
+&lt;h2 id=&#34;二学术刊物&#34;&gt;二、学术刊物&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.ccf.org.cn/Academic_Evaluation/By_category/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;中国计算机学会推荐国际学术会议和期刊目录&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.ccf.org.cn/Academic_Evaluation/By_category/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CCF发布计算领域高质量科技期刊分级目录&lt;/a&gt;&lt;/li&gt;
@@ -41,7 +41,7 @@
 &lt;li&gt;&lt;a href=&#34;http://www.aas.net.cn/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;自动化学报&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://crad.ict.ac.cn/CN/1000-1239/home.shtml&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;计算机研究与发展&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;三顶级会议期刊&#34;&gt;三、顶级会议/期刊&lt;/h1&gt;
+&lt;h2 id=&#34;三顶级会议期刊&#34;&gt;三、顶级会议/期刊&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;FAST、USENIX ATC、PPOPP、MSST、MASCOTS、SYSTOR、TOS、TC、TPDS、VLDB&lt;/li&gt;
 &lt;li&gt;偏系统：HPCA、ISCA、SOSP、OSDI、NSDI&lt;/li&gt;
@@ -50,14 +50,20 @@
 &lt;li&gt;人工智能：AAAI，CVPR，ICCV，ICML，IJCAI，TPAMI&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;有源代码的会议（见论文右上角的图标Artifact Evaluation）：FAST、USENIX ATC、SOSP、OSDI、HPCA、PPOPP&lt;/p&gt;
+&lt;h2 id=&#34;四学者网站和学术资源&#34;&gt;四、学者网站和学术资源&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;学者网站：
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://hanlab.mit.edu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://hanlab.mit.edu/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;song han, MIT, site: &lt;a href=&#34;https://hanlab.mit.edu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;hanlab&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;学术资源：
+&lt;ul&gt;
+&lt;li&gt;Rutgers Efficient AI (REFAI) Seminar, &lt;a href=&#34;https://sites.google.com/site/boyuaneecs/efficient-ai-seminar-talk?authuser=0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://sites.google.com/site/boyuaneecs/efficient-ai-seminar-talk?authuser=0&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;四科研方法&#34;&gt;四、科研方法&lt;/h1&gt;
+&lt;h2 id=&#34;五科研方法&#34;&gt;五、科研方法&lt;/h2&gt;
 </description>
     </item>
     
@@ -690,7 +696,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-561984372&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-275483196&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -700,7 +706,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-561984372&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-275483196&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
