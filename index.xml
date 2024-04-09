@@ -66,9 +66,7 @@
       <link>https://fanfanshen.github.io/students/member/</link>
       <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/students/member/</guid>
-      <description>&lt;p&gt;Wowchemy is designed to give technical content creators a seamless experience. You can focus on the content and Wowchemy handles the rest.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;On this page, you&amp;rsquo;ll find some examples of the types of technical content that can be rendered with Wowchemy.&lt;/p&gt;
+      <description>&lt;p&gt;介绍历年指导学生过的情况。&lt;/p&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     成员情况
@@ -366,7 +364,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-173254698&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-283467159&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -376,7 +374,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-173254698&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-283467159&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
