@@ -66,18 +66,21 @@
       <link>https://fanfanshen.github.io/students/member/</link>
       <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/students/member/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+      <description>&lt;p&gt;Wowchemy is designed to give technical content creators a seamless experience. You can focus on the content and Wowchemy handles the rest.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;On this page, you&amp;rsquo;ll find some examples of the types of technical content that can be rendered with Wowchemy.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     成员情况
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h1 id=&#34;一研究生&#34;&gt;一、研究生&lt;/h1&gt;
+&lt;h2 id=&#34;一研究生&#34;&gt;一、研究生&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;2023级&lt;/strong&gt;：苏文璋，李倩倩&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;2022级&lt;/strong&gt;：杨博帆，梁琦玮，惠丽洁&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;2021级&lt;/strong&gt;：史林，刘海鹏，汤星译&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;二指导的本科生毕业生&#34;&gt;二、指导的本科生(毕业生)&lt;/h1&gt;
+&lt;h2 id=&#34;二指导的本科生毕业生&#34;&gt;二、指导的本科生(毕业生)&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;2024届&lt;/strong&gt;：缪浩然（无锡海隆），秦子恒（中科创达），唐一宸（雄安联通），汤觉淇（江苏海隆软件），&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;2023届&lt;/strong&gt;：常旭（南京公务员），周瑾（SHEIN），叶国绪（简睿捷软件），曹晨洋，陈一祺，索朗扎巴，陈燚（西南大学读研），陈健（南审读研），任翔宇（南审读研），杨聪（东华大学读研）&lt;/li&gt;
@@ -363,7 +366,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-173654982&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-173254698&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -373,7 +376,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-173654982&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-173254698&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
