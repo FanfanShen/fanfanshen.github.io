@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>第3章 索引 | Fanfan Shen&#39;s Homepage</title>
+    <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/</link>
+      <atom:link href="https://fanfanshen.github.io/courses/bigdatastorage/chapter3/index.xml" rel="self" type="application/rss+xml" />
+    <description>第3章 索引</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 08 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>第3章 索引</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/</link>
+    </image>
+    
+    <item>
+      <title>3.1 创建索引</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.1/</link>
+      <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.1/</guid>
+      <description>&lt;h2 id=&#34;索引的创建方法&#34;&gt;索引的创建方法&lt;/h2&gt;
+&lt;h3 id=&#34;语法格式&#34;&gt;语法格式：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;db.**collection.** createIndex(keys, options)- Key值为你要创建的索引字段，1为按升序创建索引，如果你想按降序来创建索引指定为-1即可&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;3.0.0版本前创建索引方法为 db.collection.ensureIndex()，之后的版本使用了 db.collection.createIndex() 方法，ensureIndex() 还能用，但只是 createIndex() 的别名。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;例如：db.col.createIndex({&amp;ldquo;title&amp;rdquo;:1})&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;查询创建的索引&#34;&gt;查询创建的索引：&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;db.customers.getIndexes()&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;createindex可选参数参考表&#34;&gt;createIndex()可选参数参考表&lt;/h3&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-可选参数参考表&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter3/images/%e5%9b%be%e7%89%871.png&#34; alt=&#34;可选参数参考表&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      可选参数参考表
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>3.2 删除索引</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.2/</link>
+      <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.2/</guid>
+      <description>&lt;h2 id=&#34;321-索引的删除方法&#34;&gt;3.2.1 索引的删除方法&lt;/h2&gt;
+&lt;h3 id=&#34;语法格式如下&#34;&gt;语法格式如下：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;db.collection.dropIndex(“索引名称”) //删除集合指定索引&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;示例：db.user.dropIndex({id:1})&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;db.col.dropIndexes() //删除集合所有索引&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;获取更多命令可以输入dbcollection后双击tab键&#34;&gt;获取更多命令，可以输入db.collection.后双击Tab键。&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>3.3 单字段索引</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.3/</link>
+      <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.3/</guid>
+      <description>&lt;h2 id=&#34;331-了解单字段索引&#34;&gt;3.3.1 了解单字段索引&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;MongoDB默认为所有集合都创建了一个 &lt;strong&gt;_id字段的单字段索引，而且这个索引是唯一的，不能删除&lt;/strong&gt; ；&lt;/li&gt;
+&lt;li&gt;_id字段作为一个集合的主键，值是唯一的；&lt;/li&gt;
+&lt;li&gt;对于一个集合来说，也可以在其他字段上创建单字段的唯一索引；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;332-创建单字段索引准备工作&#34;&gt;3.3.2 创建单字段索引准备工作&lt;/h2&gt;
+&lt;p&gt;准备测试数据:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;for(var i=1;i&amp;lt;10;i++) db.customers.insert({name:&amp;#34;jordan&amp;#34;+i,country:&amp;#34;American&amp;#34;})
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;for(var i=1;i&amp;lt;10;i++) db.customers.insert({name:&amp;#34;gaga&amp;#34;+i,country:&amp;#34;American&amp;#34;})
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;for(var i=1;i&amp;lt;10;i++) db.customers.insert({name:&amp;#34;ham&amp;#34;+i,country:&amp;#34;UK&amp;#34;})
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;for(var i=1;i&amp;lt;10;i++) db.customers.insert({name:&amp;#34;brown&amp;#34;+i,country:&amp;#34;UK&amp;#34;})
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;for(var i=1; i&amp;lt;10; i++)  db.customers.insert({name:&amp;#34;ramda&amp;#34;+i, country:&amp;#34;Malaysia&amp;#34;})
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;注：删除上一章添加的customers数据&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;333-创建单字段唯一索引&#34;&gt;3.3.3 创建单字段唯一索引&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;db.customers.createIndex({name:1},{unique:true})&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;索引创建成功后可通过如下语句查询增加的索引：
+&lt;code&gt;db.customers.getIndexes()&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;v表示索引的版本；
+key表示索引建立在哪个字段上；
+1表示索引按照升序排列；
+ns索引所在的命名空间&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;效果如图&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-显示单字段索引&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter3/images/%e5%9b%be%e7%89%872.png&#34; alt=&#34;显示单字段索引&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      显示单字段索引
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;索引查询效率分析&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;db.customers.find({name:&amp;quot;ramda9&amp;quot;}).explain(&amp;quot;executionStats&amp;quot;) //使用索引字段作为查询选择器 &lt;/code&gt;
+&lt;code&gt;db.customers.find({country:&amp;quot;Malaysia&amp;quot;}).explain(&amp;quot;executionStats&amp;quot;) //不使用索引字段作为查询选择器&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;使用索引：&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-使用索引&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter3/images/%e5%9b%be%e7%89%873.png&#34; alt=&#34;使用索引&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      使用索引
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;不使用索引：&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-不使用索引&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter3/images/%e5%9b%be%e7%89%874.png&#34; alt=&#34;不使用索引&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      不使用索引
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;totalKeysExamined：遍历索引的次数
+totalDocsExamined：遍历文档的次数
+executionTimeMillis：预测需要执行的时间&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>3.4 复合索引</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.4/</link>
+      <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.4/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;MongoDB支持多个字段的复合索引，复合索引支持匹配多个字段的查询。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;for(var i=1; i&amp;lt;10; i++)  db.customers.insert({name:&amp;#34;lanbo&amp;#34;+i, country:&amp;#34;Malaysia&amp;#34;}) //增加测试数据
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;db.customers.find({country:&amp;#34;Malaysia&amp;#34;}).explain(&amp;#34;executionStats&amp;#34;)  //执行查询语句
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;此查询会扫描54个文档，全表扫描，匹配上的文档只有18个，没有用索引；
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;db.customers.createIndex({country:1}) //增加索引
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;再执行查询语句可知，此查询会扫描18个文档，同时匹配18个；
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;db.customers.createIndex({name:1,country:1}) //创建复合索引
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;db.customers.find({name:&amp;#34;lanbo2&amp;#34;,country:&amp;#34;Malaysia&amp;#34;}).explain(&amp;#34;executionStats&amp;#34;) //扫描文档1次即匹配
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>3.5 数组的多键索引</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.5/</link>
+      <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.5/</guid>
+      <description>&lt;h2 id=&#34;351-数组的多键索引在b-tree叶子节点上的排列样式&#34;&gt;3.5.1 数组的多键索引在B-Tree叶子节点上的排列样式&lt;/h2&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-排列样式&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter3/images/%e5%9b%be%e7%89%875.png&#34; alt=&#34;排列样式&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      排列样式
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;352-嵌套文档多键索引&#34;&gt;3.5.2 嵌套文档多键索引&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;如果数组的元素值为一个嵌套文档，结构如下&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-嵌套文档&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter3/images/%e5%9b%be%e7%89%876.png&#34; alt=&#34;嵌套文档&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      嵌套文档
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;可以创建{StatusInfo.desc:1}的多键索引
+&lt;code&gt;db.Order.ensureIndex({StatusInfo.desc:1})&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;创建图示&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-数组多键索引&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter3/images/%e5%9b%be%e7%89%877.png&#34; alt=&#34;数组多键索引&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      数组多键索引
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>3.6 其他索引</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.6/</link>
+      <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.6/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;全文索引，在字符串或字符串数组上
+&lt;code&gt;db.profiles.createIndex({comments:&amp;quot;text&amp;quot;})&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;地理位置索引
+&lt;code&gt;db.address.createIndex({&amp;quot;location&amp;quot;:&amp;quot;2dsphere&amp;quot;})//球面空间&lt;/code&gt;
+&lt;code&gt;db.address.createIndex({&amp;quot;location&amp;quot;:&amp;quot;2d&amp;quot;})//平面空间&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Hash索引
+&lt;code&gt;db.address.createIndex({_id:&amp;quot;hashed&amp;quot;}) //利用hash函数计算字段的值&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;TTL索引
+&lt;code&gt;db.log_event.createIndex({date:1},{expireAfterSeconds:600}) //10分钟后自动删除&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
