@@ -47,7 +47,6 @@
       <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.1/</guid>
       <description>&lt;p&gt;MongoDB是一个可扩展、开源、表结构自由，用C++语言编写的&lt;strong&gt;面向文档&lt;/strong&gt;的分布式文件存储的数据库，旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。&lt;/p&gt;
 &lt;p&gt;MongoDB 是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。&lt;/p&gt;
-&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter1/images/1.1-1.png&#34; alt=&#34;1.1-1&#34; /&gt;
 
 
 
@@ -66,18 +65,42 @@
 
 
 
-&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+&lt;figure  id=&#34;figure-11-1&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter1/images/1.1-1.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter1/images/1.1-1.png&#34; alt=&#34;1.1-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      A caption
+      1.1-1
     &lt;/figcaption&gt;&lt;/figure&gt;
 
 &lt;p&gt;数据库引擎综合排行榜：第5名数据来源：https://db-engines.com/en/ranking&lt;/p&gt;
 &lt;p&gt;文档数据库排名第一：https://db-engines.com/en/ranking/document+store&lt;/p&gt;
 &lt;p&gt;综合排行榜：第5名，数据来源：https://db-engines.com/en/ranking&lt;/p&gt;
 &lt;p&gt;上述网站可查询最新数据&lt;/p&gt;
-&lt;img src=&#34;./images/1.1-2.png&#34; alt=&#34;1.1-2&#34; /&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-11-2&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter1/images/1.1-2.png&#34; alt=&#34;1.1-2&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      1.1-2
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
 &lt;p&gt;&lt;strong&gt;MongoDB能支撑大数据系统&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;实时的可操作的大数据存储系统&lt;/li&gt;
@@ -89,12 +112,84 @@
 &lt;li&gt;自动管理被称为“副本集”的冗余服务器；&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;MongoDB为多家领先的云计算供应商，如阿里巴巴，腾讯，360，百度&lt;/p&gt;
-&lt;img src=&#34;./images/1.1-3.png&#34; alt=&#34;1.1-3&#34; /&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-11-3&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter1/images/1.1-3.png&#34; alt=&#34;1.1-3&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      1.1-3
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
 &lt;p&gt;关系数据库中最基本的单元是行，MongoDB中最基本的存储单元是document，如：&lt;/p&gt;
-&lt;img src=&#34;./images/1.1-4.png&#34; alt=&#34;1.1-4&#34; /&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-11-4&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter1/images/1.1-4.png&#34; alt=&#34;1.1-4&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      1.1-4
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
 &lt;p&gt;用JSON格式类似的键值对来存储，值的类型有字符串、数字、日期等，也称BSON对象；&lt;/p&gt;
 &lt;p&gt;MongoDB与关系数据库的重大区别是：可扩展的表结构，即collection中的document所拥有的字段是可以变化的&lt;/p&gt;
-&lt;img src=&#34;./images/1.1-5.png&#34; alt=&#34;1.1-5&#34; /&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-11-5&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter1/images/1.1-5.png&#34; alt=&#34;1.1-5&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      1.1-5
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
 </description>
     </item>
     
@@ -103,14 +198,86 @@
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.2/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.2/</guid>
-      <description>&lt;img src=&#34;./images/1.2-1.png&#34; alt=&#34;1.2-1&#34; /&gt;
+      <description>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-12-1&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter1/images/1.2-1.png&#34; alt=&#34;1.2-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      1.2-1
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
 &lt;ul&gt;
 &lt;li&gt;根据 Gartner 调查，70%的 Hadoop大数据分析项目未能体现预期价值&lt;/li&gt;
 &lt;li&gt;随着业务的发展，实时数据处理场景变得越来越多，Hadoop这种更适合处理离线批量数据的技术变得不适应&lt;/li&gt;
 &lt;li&gt;因此需要引人新的NOSQL技术来应对这种场景，发挥大数据实时处理的优势&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;./images/1.2-2.png&#34; alt=&#34;1.2-2&#34; /&gt;
-&lt;img src=&#34;./images/1.2-3.png&#34; alt=&#34;1.2-3&#34; /&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-12-2&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter1/images/1.2-2.png&#34; alt=&#34;1.2-2&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      1.2-2
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-12-3&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter1/images/1.2-3.png&#34; alt=&#34;1.2-3&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      1.2-3
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
 &lt;ul&gt;
 &lt;li&gt;MongoDB可以替换HDFS,作为大数据平台中最核心的部分；&lt;/li&gt;
 &lt;/ul&gt;
@@ -122,7 +289,32 @@
 &lt;li&gt;如果使用MongoDB数据库，就不用像传统模式那样，到Redis内存数据库计算后，再将其另存到HDFS上。&lt;/li&gt;
 &lt;li&gt;可以利用MongoDB强大的Aggregate功能进行&lt;strong&gt;数据筛选或预处理&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;./images/1.2-4.png&#34; alt=&#34;1.2-4&#34; /&gt;</description>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-12-4&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter1/images/1.2-4.png&#34; alt=&#34;1.2-4&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      1.2-4
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+</description>
     </item>
     
     <item>
@@ -191,7 +383,31 @@
 &lt;p&gt;浏览器输入：http://localhost:27017/&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;./images/1.4-1.png&#34; alt=&#34;1.4-1&#34; /&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-14-1&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter1/images/1.4-1.png&#34; alt=&#34;1.4-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      1.4-1
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
 &lt;ul&gt;
 &lt;li&gt;出现上述情况，说明安装正常&lt;/li&gt;
 &lt;/ul&gt;
@@ -208,7 +424,31 @@
 &lt;p&gt;默认连接到test数据库，可测试加法运算：&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;./images/1.4-2.png&#34; alt=&#34;1.4-2&#34; /&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-14-2&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter1/images/1.4-2.png&#34; alt=&#34;1.4-2&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      1.4-2
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
 </description>
     </item>
     
@@ -223,14 +463,86 @@
 &lt;li&gt;MongoDB支持分片集群，很容易实现水平扩展，将数据分散到集群中的各个片上，提高了系统存储容量和读写吞吐量；&lt;/li&gt;
 &lt;li&gt;“热数据”读并发高，放在内存中访问更快，MongoDB本身就支持内存映射数据文件。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;./images/1.6-1.png&#34; alt=&#34;1.6-1&#34; /&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-16-1&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter1/images/1.6-1.png&#34; alt=&#34;1.6-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      1.6-1
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
 &lt;p&gt;&lt;strong&gt;2.实时计算类应用&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;如实时营销，实时推荐；&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;./images/1.6-2.png&#34; alt=&#34;1.6-2&#34; /&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-16-2&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter1/images/1.6-2.png&#34; alt=&#34;1.6-2&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      1.6-2
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
 &lt;p&gt;&lt;strong&gt;3.数据中台&lt;/strong&gt;&lt;/p&gt;
-&lt;img src=&#34;./images/1.6-3.png&#34; alt=&#34;1.6-3&#34; /&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-16-3&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter1/images/1.6-3.png&#34; alt=&#34;1.6-3&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      1.6-3
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
 &lt;p&gt;&lt;strong&gt;4.游戏类应用&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;装备、经验值进程变化&lt;/li&gt;
@@ -241,7 +553,31 @@
 &lt;li&gt;海量日志数据查询快&lt;/li&gt;
 &lt;li&gt;为大数据分析和决策提供支持&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;./images/1.6-4.png&#34; alt=&#34;1.6-4&#34; /&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-16-4&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter1/images/1.6-4.png&#34; alt=&#34;1.6-4&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      1.6-4
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
 &lt;p&gt;&lt;strong&gt;6.AI应用场景&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;深度学习输入的数据集，如文本、图像、视频等快速变化&lt;/li&gt;

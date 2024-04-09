@@ -276,8 +276,8 @@
 
   
 
-<meta name="description" content=" 根据 Gartner 调查，70%的 Hadoop大数据分析项目未能体现预期价值 随着业务的发展，实时数据处理场景变得越来越多，Hadoop这种更适合处理离线批量数据的技术变得不适应 因此需要引人新的NOSQL技术来应对这种场景，发挥大数据实时处理的优势 MongoDB可以替换HDFS,作为大数据平台中最核心的部分； 优势如下：
-HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档数据库则表现得更加细颗粒化 MongoDB支持HDFS所没有的索引概念，所以在读取速度上更快，MongoDB比HDFS 更加易于修改其写入后的数据。 HDFS 的响应级别为分钟，而MongoDB的响应级别为毫秒: 如果使用MongoDB数据库，就不用像传统模式那样，到Redis内存数据库计算后，再将其另存到HDFS上。 可以利用MongoDB强大的Aggregate功能进行数据筛选或预处理 " />
+<meta name="description" content=" 1.2-1 根据 Gartner 调查，70%的 Hadoop大数据分析项目未能体现预期价值 随着业务的发展，实时数据处理场景变得越来越多，Hadoop这种更适合处理离线批量数据的技术变得不适应 因此需要引人新的NOSQL技术来应对这种场景，发挥大数据实时处理的优势 1.2-2 1.2-3 MongoDB可以替换HDFS,作为大数据平台中最核心的部分； 优势如下：
+HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档数据库则表现得更加细颗粒化 MongoDB支持HDFS所没有的索引概念，所以在读取速度上更快，MongoDB比HDFS 更加易于修改其写入后的数据。 HDFS 的响应级别为分钟，而MongoDB的响应级别为毫秒: 如果使用MongoDB数据库，就不用像传统模式那样，到Redis内存数据库计算后，再将其另存到HDFS上。 可以利用MongoDB强大的Aggregate功能进行数据筛选或预处理 1.2-4 " />
 
 
 
@@ -320,8 +320,8 @@ HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档�
 <meta property="og:site_name" content="Fanfan Shen&#39;s Homepage" />
 <meta property="og:url" content="https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.2/" />
 <meta property="og:title" content="1.2MongoDB与Hadoop比较 | Fanfan Shen&#39;s Homepage" />
-<meta property="og:description" content=" 根据 Gartner 调查，70%的 Hadoop大数据分析项目未能体现预期价值 随着业务的发展，实时数据处理场景变得越来越多，Hadoop这种更适合处理离线批量数据的技术变得不适应 因此需要引人新的NOSQL技术来应对这种场景，发挥大数据实时处理的优势 MongoDB可以替换HDFS,作为大数据平台中最核心的部分； 优势如下：
-HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档数据库则表现得更加细颗粒化 MongoDB支持HDFS所没有的索引概念，所以在读取速度上更快，MongoDB比HDFS 更加易于修改其写入后的数据。 HDFS 的响应级别为分钟，而MongoDB的响应级别为毫秒: 如果使用MongoDB数据库，就不用像传统模式那样，到Redis内存数据库计算后，再将其另存到HDFS上。 可以利用MongoDB强大的Aggregate功能进行数据筛选或预处理 " /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:description" content=" 1.2-1 根据 Gartner 调查，70%的 Hadoop大数据分析项目未能体现预期价值 随着业务的发展，实时数据处理场景变得越来越多，Hadoop这种更适合处理离线批量数据的技术变得不适应 因此需要引人新的NOSQL技术来应对这种场景，发挥大数据实时处理的优势 1.2-2 1.2-3 MongoDB可以替换HDFS,作为大数据平台中最核心的部分； 优势如下：
+HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档数据库则表现得更加细颗粒化 MongoDB支持HDFS所没有的索引概念，所以在读取速度上更快，MongoDB比HDFS 更加易于修改其写入后的数据。 HDFS 的响应级别为分钟，而MongoDB的响应级别为毫秒: 如果使用MongoDB数据库，就不用像传统模式那样，到Redis内存数据库计算后，再将其另存到HDFS上。 可以利用MongoDB强大的Aggregate功能进行数据筛选或预处理 1.2-4 " /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
     <meta
@@ -330,7 +330,7 @@ HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档�
     />
   
   
-    <meta property="article:modified_time" content="2024-03-31T21:45:25&#43;08:00">
+    <meta property="article:modified_time" content="2024-04-09T12:21:39&#43;08:00">
   
 
 
@@ -1127,14 +1127,86 @@ HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档�
           
           
 
-          <img src="./images/1.2-1.png" alt="1.2-1" />
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-12-1">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter1/images/1.2-1.png" alt="1.2-1" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      1.2-1
+    </figcaption></figure>
+
 <ul>
 <li>根据 Gartner 调查，70%的 Hadoop大数据分析项目未能体现预期价值</li>
 <li>随着业务的发展，实时数据处理场景变得越来越多，Hadoop这种更适合处理离线批量数据的技术变得不适应</li>
 <li>因此需要引人新的NOSQL技术来应对这种场景，发挥大数据实时处理的优势</li>
 </ul>
-<img src="./images/1.2-2.png" alt="1.2-2" />
-<img src="./images/1.2-3.png" alt="1.2-3" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-12-2">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter1/images/1.2-2.png" alt="1.2-2" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      1.2-2
+    </figcaption></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-12-3">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter1/images/1.2-3.png" alt="1.2-3" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      1.2-3
+    </figcaption></figure>
+
 <ul>
 <li>MongoDB可以替换HDFS,作为大数据平台中最核心的部分；</li>
 </ul>
@@ -1146,7 +1218,32 @@ HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档�
 <li>如果使用MongoDB数据库，就不用像传统模式那样，到Redis内存数据库计算后，再将其另存到HDFS上。</li>
 <li>可以利用MongoDB强大的Aggregate功能进行<strong>数据筛选或预处理</strong></li>
 </ul>
-<img src="./images/1.2-4.png" alt="1.2-4" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-12-4">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter1/images/1.2-4.png" alt="1.2-4" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      1.2-4
+    </figcaption></figure>
+
+
 
         </article>
 
@@ -1187,7 +1284,7 @@ HDFS以文件为单位，每个文件大小为64MB~128MB，MongoDB作为文档�
       </div>
 
       <div class="body-footer">
-        <p>Last updated on Mar 31, 2024 9:45 PM</p>
+        <p>Last updated on Apr 9, 2024 12:21 PM</p>
 
         
 

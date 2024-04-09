@@ -277,11 +277,11 @@
   
 
 <meta name="description" content="1.高并发web应用程序
-MongoDB支持无固定结构的表模型，容易增加和减少表中的字段，适应业务变化； MongoDB支持分片集群，很容易实现水平扩展，将数据分散到集群中的各个片上，提高了系统存储容量和读写吞吐量； “热数据”读并发高，放在内存中访问更快，MongoDB本身就支持内存映射数据文件。 2.实时计算类应用
-如实时营销，实时推荐； 3.数据中台
-4.游戏类应用
+MongoDB支持无固定结构的表模型，容易增加和减少表中的字段，适应业务变化； MongoDB支持分片集群，很容易实现水平扩展，将数据分散到集群中的各个片上，提高了系统存储容量和读写吞吐量； “热数据”读并发高，放在内存中访问更快，MongoDB本身就支持内存映射数据文件。 1.6-1 2.实时计算类应用
+如实时营销，实时推荐； 1.6-2 3.数据中台
+1.6-3 4.游戏类应用
 装备、经验值进程变化 实时数据统计分析、促销等 5.日志分析类系统
-海量日志数据查询快 为大数据分析和决策提供支持 6.AI应用场景
+海量日志数据查询快 为大数据分析和决策提供支持 1.6-4 6.AI应用场景
 深度学习输入的数据集，如文本、图像、视频等快速变化 深度学习训练中添加隐藏层、特征标签、超参数和新的输入数据等 银行、电信、石油、汽车、智能家庭等场景 " />
 
 
@@ -326,11 +326,11 @@ MongoDB支持无固定结构的表模型，容易增加和减少表中的字段�
 <meta property="og:url" content="https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.6/" />
 <meta property="og:title" content="1.6适合的业务 | Fanfan Shen&#39;s Homepage" />
 <meta property="og:description" content="1.高并发web应用程序
-MongoDB支持无固定结构的表模型，容易增加和减少表中的字段，适应业务变化； MongoDB支持分片集群，很容易实现水平扩展，将数据分散到集群中的各个片上，提高了系统存储容量和读写吞吐量； “热数据”读并发高，放在内存中访问更快，MongoDB本身就支持内存映射数据文件。 2.实时计算类应用
-如实时营销，实时推荐； 3.数据中台
-4.游戏类应用
+MongoDB支持无固定结构的表模型，容易增加和减少表中的字段，适应业务变化； MongoDB支持分片集群，很容易实现水平扩展，将数据分散到集群中的各个片上，提高了系统存储容量和读写吞吐量； “热数据”读并发高，放在内存中访问更快，MongoDB本身就支持内存映射数据文件。 1.6-1 2.实时计算类应用
+如实时营销，实时推荐； 1.6-2 3.数据中台
+1.6-3 4.游戏类应用
 装备、经验值进程变化 实时数据统计分析、促销等 5.日志分析类系统
-海量日志数据查询快 为大数据分析和决策提供支持 6.AI应用场景
+海量日志数据查询快 为大数据分析和决策提供支持 1.6-4 6.AI应用场景
 深度学习输入的数据集，如文本、图像、视频等快速变化 深度学习训练中添加隐藏层、特征标签、超参数和新的输入数据等 银行、电信、石油、汽车、智能家庭等场景 " /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
@@ -340,7 +340,7 @@ MongoDB支持无固定结构的表模型，容易增加和减少表中的字段�
     />
   
   
-    <meta property="article:modified_time" content="2024-03-31T21:45:25&#43;08:00">
+    <meta property="article:modified_time" content="2024-04-09T12:21:39&#43;08:00">
   
 
 
@@ -1143,14 +1143,86 @@ MongoDB支持无固定结构的表模型，容易增加和减少表中的字段�
 <li>MongoDB支持分片集群，很容易实现水平扩展，将数据分散到集群中的各个片上，提高了系统存储容量和读写吞吐量；</li>
 <li>“热数据”读并发高，放在内存中访问更快，MongoDB本身就支持内存映射数据文件。</li>
 </ul>
-<img src="./images/1.6-1.png" alt="1.6-1" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-16-1">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter1/images/1.6-1.png" alt="1.6-1" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      1.6-1
+    </figcaption></figure>
+
 <p><strong>2.实时计算类应用</strong></p>
 <ul>
 <li>如实时营销，实时推荐；</li>
 </ul>
-<img src="./images/1.6-2.png" alt="1.6-2" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-16-2">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter1/images/1.6-2.png" alt="1.6-2" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      1.6-2
+    </figcaption></figure>
+
 <p><strong>3.数据中台</strong></p>
-<img src="./images/1.6-3.png" alt="1.6-3" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-16-3">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter1/images/1.6-3.png" alt="1.6-3" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      1.6-3
+    </figcaption></figure>
+
 <p><strong>4.游戏类应用</strong></p>
 <ul>
 <li>装备、经验值进程变化</li>
@@ -1161,7 +1233,31 @@ MongoDB支持无固定结构的表模型，容易增加和减少表中的字段�
 <li>海量日志数据查询快</li>
 <li>为大数据分析和决策提供支持</li>
 </ul>
-<img src="./images/1.6-4.png" alt="1.6-4" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-16-4">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter1/images/1.6-4.png" alt="1.6-4" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      1.6-4
+    </figcaption></figure>
+
 <p><strong>6.AI应用场景</strong></p>
 <ul>
 <li>深度学习输入的数据集，如文本、图像、视频等快速变化</li>
@@ -1203,7 +1299,7 @@ MongoDB支持无固定结构的表模型，容易增加和减少表中的字段�
       </div>
 
       <div class="body-footer">
-        <p>Last updated on Mar 31, 2024 9:45 PM</p>
+        <p>Last updated on Apr 9, 2024 12:21 PM</p>
 
         
 
