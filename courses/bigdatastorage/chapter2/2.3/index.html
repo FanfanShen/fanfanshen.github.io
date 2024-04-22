@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: April 21, 2024 --><html lang="en-us" >
+<!-- Last Published: April 22, 2024 --><html lang="en-us" >
 
 
 <head>
@@ -278,9 +278,9 @@
 
 <meta name="description" content="MongoDB中基本命令 数据库更新操作 updateOne:修改单条文档记录，即使查询多条也只更新第一条
 updateMany：修改所有匹配的文档记录
-语法 语法解释 数据库更新操作 replaceOne: 将文档记录替换为一条新文档记录
+语法 2.3-1 语法解释 2.3-2 数据库更新操作 replaceOne: 将文档记录替换为一条新文档记录
 update：相当于前三条的集合，取决于第二个参数
-语法 语法解释 数据库常用修改操作符 $unset表示删除集合字段；
+语法 2.3-3 语法解释 2.3-4 数据库常用修改操作符 $unset表示删除集合字段；
 $rename将name重命名；$currentDate将字段的值修改为当前的时间；
 $mul将字段的值乘以一个数字；
 $min保留修改值和原值中最小的值；
@@ -329,9 +329,9 @@ $max保留修改值和原值中最大的值；" />
 <meta property="og:title" content="2.3修改操作 | Fanfan Shen&#39;s Homepage" />
 <meta property="og:description" content="MongoDB中基本命令 数据库更新操作 updateOne:修改单条文档记录，即使查询多条也只更新第一条
 updateMany：修改所有匹配的文档记录
-语法 语法解释 数据库更新操作 replaceOne: 将文档记录替换为一条新文档记录
+语法 2.3-1 语法解释 2.3-2 数据库更新操作 replaceOne: 将文档记录替换为一条新文档记录
 update：相当于前三条的集合，取决于第二个参数
-语法 语法解释 数据库常用修改操作符 $unset表示删除集合字段；
+语法 2.3-3 语法解释 2.3-4 数据库常用修改操作符 $unset表示删除集合字段；
 $rename将name重命名；$currentDate将字段的值修改为当前的时间；
 $mul将字段的值乘以一个数字；
 $min保留修改值和原值中最小的值；
@@ -344,7 +344,7 @@ $max保留修改值和原值中最大的值；" /><meta property="og:image" cont
     />
   
   
-    <meta property="article:modified_time" content="2024-04-15T20:49:39&#43;08:00">
+    <meta property="article:modified_time" content="2024-04-18T19:24:17&#43;08:00">
   
 
 
@@ -1173,16 +1173,112 @@ $max保留修改值和原值中最大的值；" /><meta property="og:image" cont
 <p>updateOne:修改单条文档记录，即使查询多条也只更新第一条<br>
 updateMany：修改所有匹配的文档记录<br>
 <strong>语法</strong>
-<img src="./images/2.3-1.png" alt="2.2-1" /><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-23-1">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter2/images/2.3-1.png" alt="2.3-1" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      2.3-1
+    </figcaption></figure>
+<br>
 <strong>语法解释</strong>
-<img src="./images/2.3-2.png" alt="2.2-2" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-23-2">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter2/images/2.3-2.png" alt="2.3-2" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      2.3-2
+    </figcaption></figure>
+</p>
 <h2 id="数据库更新操作-1">数据库更新操作</h2>
 <p>replaceOne: 将文档记录替换为一条新文档记录<br>
 update：相当于前三条的集合，取决于第二个参数<br>
 <strong>语法</strong>
-<img src="./images/2.3-3.png" alt="2.2-3" /><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-23-3">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter2/images/2.3-3.png" alt="2.3-3" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      2.3-3
+    </figcaption></figure>
+<br>
 <strong>语法解释</strong>
-<img src="./images/2.3-4.png" alt="2.2-4" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-23-4">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter2/images/2.3-4.png" alt="2.3-4" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      2.3-4
+    </figcaption></figure>
+</p>
 <h2 id="数据库常用修改操作符">数据库常用修改操作符</h2>
 <p>$unset表示删除集合字段；<br>
 $rename将name重命名；$currentDate将字段的值修改为当前的时间；<br>
@@ -1230,7 +1326,7 @@ $max保留修改值和原值中最大的值；</p>
       </div>
 
       <div class="body-footer">
-        <p>Last updated on Apr 15, 2024 8:49 PM</p>
+        <p>Last updated on Apr 18, 2024 7:24 PM</p>
 
         
 

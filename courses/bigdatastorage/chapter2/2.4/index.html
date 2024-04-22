@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: April 21, 2024 --><html lang="en-us" >
+<!-- Last Published: April 22, 2024 --><html lang="en-us" >
 
 
 <head>
@@ -277,7 +277,7 @@
   
 
 <meta name="description" content="MongoDB中基本命令 数据库查询操作 查询操作（ find() ）:BSON结构数据
-语法 语法解释 SQL与MongoDB 条件语法
+语法 2.4-1 语法解释 2.4-2 SQL与MongoDB 2.4-3 条件语法
 1.查询文档find()，$and条件语法：
 对于单键：db.col.find({likes : {$lt :200, $gt : 100}})
 可以传入多个键(key)，每个键(key)以逗号隔开
@@ -286,8 +286,7 @@ db.col.find({key1:value1, key2:value2}).pretty() db.collection.find({$and:[{key1
 db.collection.find({$or:[{key1:value1},{key2:value2}]}).pretty()
 3.查询文档find()，$not条件语法，非运算：
 4.查询文档find()，$exists: 是否包含某个字段
-{field:{$exists:}}，true返回包含field字段的文档记录，false返回不包含该字段的记录 5.查询文档find()，$text: 文本查询
-返回匹配文本的记录" />
+{field:{$exists:}}，true返回包含field字段的文档记录，false返回不包含该字段的记录 5." />
 
 
 
@@ -331,7 +330,7 @@ db.collection.find({$or:[{key1:value1},{key2:value2}]}).pretty()
 <meta property="og:url" content="https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.4/" />
 <meta property="og:title" content="2.4查询操作 | Fanfan Shen&#39;s Homepage" />
 <meta property="og:description" content="MongoDB中基本命令 数据库查询操作 查询操作（ find() ）:BSON结构数据
-语法 语法解释 SQL与MongoDB 条件语法
+语法 2.4-1 语法解释 2.4-2 SQL与MongoDB 2.4-3 条件语法
 1.查询文档find()，$and条件语法：
 对于单键：db.col.find({likes : {$lt :200, $gt : 100}})
 可以传入多个键(key)，每个键(key)以逗号隔开
@@ -340,8 +339,7 @@ db.col.find({key1:value1, key2:value2}).pretty() db.collection.find({$and:[{key1
 db.collection.find({$or:[{key1:value1},{key2:value2}]}).pretty()
 3.查询文档find()，$not条件语法，非运算：
 4.查询文档find()，$exists: 是否包含某个字段
-{field:{$exists:}}，true返回包含field字段的文档记录，false返回不包含该字段的记录 5.查询文档find()，$text: 文本查询
-返回匹配文本的记录" /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+{field:{$exists:}}，true返回包含field字段的文档记录，false返回不包含该字段的记录 5." /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
     <meta
@@ -350,7 +348,7 @@ db.collection.find({$or:[{key1:value1},{key2:value2}]}).pretty()
     />
   
   
-    <meta property="article:modified_time" content="2024-04-15T20:50:06&#43;08:00">
+    <meta property="article:modified_time" content="2024-04-18T19:26:53&#43;08:00">
   
 
 
@@ -1176,11 +1174,83 @@ db.collection.find({$or:[{key1:value1},{key2:value2}]}).pretty()
 <h2 id="数据库查询操作">数据库查询操作</h2>
 <p>查询操作（ find() ）:BSON结构数据<br>
 <strong>语法</strong>
-<img src="./images/2.4-1.png" alt="2.4-1" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-24-1">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter2/images/2.4-1.png" alt="2.4-1" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      2.4-1
+    </figcaption></figure>
+<br>
 <strong>语法解释</strong>
-<img src="./images/2.4-2.png" alt="2.4-2" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-24-2">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter2/images/2.4-2.png" alt="2.4-2" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      2.4-2
+    </figcaption></figure>
+<br>
 <strong>SQL与MongoDB</strong>
-<img src="./images/2.4-3.png" alt="2.4-3" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-24-3">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter2/images/2.4-3.png" alt="2.4-3" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      2.4-3
+    </figcaption></figure>
+<br>
 <strong>条件语法</strong><br>
 1.查询文档find()，$and条件语法：<br>
 对于单键：db.col.find({likes : {$lt :200, $gt : 100}})<br>
@@ -1202,13 +1272,85 @@ db.collection.find({$or:[{key1:value1},{key2:value2}]}).pretty()<br>
 2.匹配数组中的一个元素值<br>
 3.匹配指定位置的元素值<br>
 4.指定数组索引并匹配嵌套文档中的字段值<br>
-<img src="./images/2.4-4.png" alt="2.4-4" />
-<img src="./images/2.4-5.png" alt="2.4-5" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-24-4">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter2/images/2.4-4.png" alt="2.4-4" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      2.4-4
+    </figcaption></figure>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-24-5">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter2/images/2.4-5.png" alt="2.4-5" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      2.4-5
+    </figcaption></figure>
+<br>
 <strong>查询投射</strong><br>
 返回匹配文档的指定字段；<br>
 好处：减少返回数据到客户端的网络流量
-<strong>查询示例</strong>
-<img src="./images/2.4-6.png" alt="2.4-6" /></p>
+<strong>查询示例</strong><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-24-6">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter2/images/2.4-6.png" alt="2.4-6" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      2.4-6
+    </figcaption></figure>
+</p>
 
 
         </article>
@@ -1250,7 +1392,7 @@ db.collection.find({$or:[{key1:value1},{key2:value2}]}).pretty()<br>
       </div>
 
       <div class="body-footer">
-        <p>Last updated on Apr 15, 2024 8:50 PM</p>
+        <p>Last updated on Apr 18, 2024 7:26 PM</p>
 
         
 
