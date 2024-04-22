@@ -322,7 +322,7 @@
 <meta property="twitter:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
 <meta property="og:site_name" content="Fanfan Shen&#39;s Homepage" />
 <meta property="og:url" content="https://fanfanshen.github.io/courses/bigdatastorage/chapter4/4.1/" />
-<meta property="og:title" content="单个集合中的基础聚集函数 | Fanfan Shen&#39;s Homepage" />
+<meta property="og:title" content="4.1单个集合中的基础聚集函数 | Fanfan Shen&#39;s Homepage" />
 <meta property="og:description" content="当需要返回集合中文档记录的总条数或者返回不 重复的文档记录时，可以使用 MongoDB 提供 的单个集合中的基础聚集函数.
 1.db.collection.count(query, options)
 返回集合中的文档记录数量； query 为查询条件； options 可选参数，可包含 limit,skip 等； 例如： db.customers.count({cutst_id:100} 2.db.collection.estimatedDocumentCount(options)
@@ -336,7 +336,7 @@
     />
   
   
-    <meta property="article:modified_time" content="2024-04-11T12:55:22&#43;08:00">
+    <meta property="article:modified_time" content="2024-04-16T20:50:28&#43;08:00">
   
 
 
@@ -361,7 +361,7 @@
 
 
   
-  <title>单个集合中的基础聚集函数 | Fanfan Shen&#39;s Homepage</title>
+  <title>4.1单个集合中的基础聚集函数 | Fanfan Shen&#39;s Homepage</title>
 
   
   
@@ -1024,15 +1024,15 @@
 
 
 
+  <li class="active"><a href="/courses/bigdatastorage/chapter4/4.1/">4.1单个集合中的基础聚集函数</a></li>
+
+
+
   <li class=""><a href="/courses/bigdatastorage/chapter4/4.2/">4.2  管道聚集框架</a></li>
 
 
 
   <li class=""><a href="/courses/bigdatastorage/chapter4/4.3/">4.3 MapReduce编程</a></li>
-
-
-
-  <li class="active"><a href="/courses/bigdatastorage/chapter4/4.1/">单个集合中的基础聚集函数</a></li>
 
       
         </ul>
@@ -1130,7 +1130,7 @@
   
 
       <li class="breadcrumb-item active" aria-current="page">
-        单个集合中的基础聚集函数
+        4.1单个集合中的基础聚集函数
       </li>
     </ol>
   </nav>
@@ -1147,7 +1147,7 @@
 
       <div class="docs-article-container">
         
-        <h1>单个集合中的基础聚集函数</h1>
+        <h1>4.1单个集合中的基础聚集函数</h1>
 
         <article class="article-style">
 
@@ -1176,8 +1176,31 @@
 <li>field为需要distinct的字段名；</li>
 <li>uery为查询过滤条件；</li>
 <li>options可选参数，是否区分大小写或字符串比较规则等。  例如- db.books.distinct({“book_id”})</li>
-<li>嵌套字段：db.address.distinct({“location.type”})- 也支持返回数组字段中非重复值。
-<img src="./images/4.1-1.png" alt="4.1-1" /></li>
+<li>嵌套字段：db.address.distinct({“location.type”})- 也支持返回数组字段中非重复值。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-41-1">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter4/images/4.1-1.png" alt="4.1-1" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      4.1-1
+    </figcaption></figure>
+</li>
 </ul>
 
 
@@ -1203,9 +1226,15 @@
   
   <div class="post-nav-item">
     <div class="meta-nav">Previous</div>
-    <a href="/courses/bigdatastorage/chapter4/4.3/" rel="next">4.3 MapReduce编程</a>
+    <a href="/courses/bigdatastorage/chapter2/2.1/" rel="next">2.1插入操作</a>
   </div>
   
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/courses/bigdatastorage/chapter4/4.2/" rel="prev">4.2  管道聚集框架</a>
+  </div>
   
 </div>
 
@@ -1214,7 +1243,7 @@
       </div>
 
       <div class="body-footer">
-        <p>Last updated on Apr 11, 2024 12:55 PM</p>
+        <p>Last updated on Apr 16, 2024 8:50 PM</p>
 
         
 

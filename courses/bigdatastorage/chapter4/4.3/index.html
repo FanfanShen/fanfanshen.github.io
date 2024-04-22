@@ -278,7 +278,7 @@
 
 <meta name="description" content="MongoDB提供了当前流行的MapReduce并行编程模型，为海量数据的查询分析提供了一种更加高效的方法。
 用MongoDB做分布式存储，再用MapReduce来做分析。Map-Reduce操作有两部分： - 一个map阶段处理每一个文档，并为每一个输入的文档产生一个或多个对象，
-在reduce阶段，对上一步Map产生的输出结果进行合并。map-reduce也可以有一个最终的阶段来对最后的输出结果进行修改，就像其他聚集操作一样 map-reduce能够指定一个查询条件来对输入文档的查询结果进行排序以及部分输出（sort and limit）。 Map-reduce一般采用自定义JavaScript函数来处理map操作与reduce操作以及可选的最后一个最终操作；采用自定义的JavaScript能够比管道聚集更灵活，然而一般情况下map-reduce比管道聚集更加低效，也更加复杂。Map-reduce进行聚集的示例：- 命令：db.orders.mapReduce( function(){emit(this.custid,this.amount);},function(key,values){return Array.sum(values)},{ query:{status:&ldquo;A&rdquo;}, out:&ldquo;order_totals&rdquo; } )- query：查询过滤条件，返回状态为A的值； map：映射对应字段，产生键值对，emit(key,value)； reduce：对map数据进行归约，对数组中value求和； out：输出结果保存在集合order_totals中； 处理流程：query -&gt; map -&gt;reduce" />
+在reduce阶段，对上一步Map产生的输出结果进行合并。map-reduce也可以有一个最终的阶段来对最后的输出结果进行修改，就像其他聚集操作一样 map-reduce能够指定一个查询条件来对输入文档的查询结果进行排序以及部分输出（sort and limit）。 Map-reduce一般采用自定义JavaScript函数来处理map操作与reduce操作以及可选的最后一个最终操作；采用自定义的JavaScript能够比管道聚集更灵活，然而一般情况下map-reduce比管道聚集更加低效，也更加复杂。Map-reduce进行聚集的示例：4.3-1 - 命令：db.orders.mapReduce( function(){emit(this.custid,this.amount);},function(key,values){return Array.sum(values)},{ query:{status:&ldquo;A&rdquo;}, out:&ldquo;order_totals&rdquo; } )- query：查询过滤条件，返回状态为A的值； map：映射对应字段，产生键值对，emit(key,value)； reduce：对map数据进行归约，对数组中value求和； out：输出结果保存在集合order_totals中； 处理流程：query -&gt; map -&gt;reduce4." />
 
 
 
@@ -323,7 +323,7 @@
 <meta property="og:title" content="4.3 MapReduce编程 | Fanfan Shen&#39;s Homepage" />
 <meta property="og:description" content="MongoDB提供了当前流行的MapReduce并行编程模型，为海量数据的查询分析提供了一种更加高效的方法。
 用MongoDB做分布式存储，再用MapReduce来做分析。Map-Reduce操作有两部分： - 一个map阶段处理每一个文档，并为每一个输入的文档产生一个或多个对象，
-在reduce阶段，对上一步Map产生的输出结果进行合并。map-reduce也可以有一个最终的阶段来对最后的输出结果进行修改，就像其他聚集操作一样 map-reduce能够指定一个查询条件来对输入文档的查询结果进行排序以及部分输出（sort and limit）。 Map-reduce一般采用自定义JavaScript函数来处理map操作与reduce操作以及可选的最后一个最终操作；采用自定义的JavaScript能够比管道聚集更灵活，然而一般情况下map-reduce比管道聚集更加低效，也更加复杂。Map-reduce进行聚集的示例：- 命令：db.orders.mapReduce( function(){emit(this.custid,this.amount);},function(key,values){return Array.sum(values)},{ query:{status:&ldquo;A&rdquo;}, out:&ldquo;order_totals&rdquo; } )- query：查询过滤条件，返回状态为A的值； map：映射对应字段，产生键值对，emit(key,value)； reduce：对map数据进行归约，对数组中value求和； out：输出结果保存在集合order_totals中； 处理流程：query -&gt; map -&gt;reduce" /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+在reduce阶段，对上一步Map产生的输出结果进行合并。map-reduce也可以有一个最终的阶段来对最后的输出结果进行修改，就像其他聚集操作一样 map-reduce能够指定一个查询条件来对输入文档的查询结果进行排序以及部分输出（sort and limit）。 Map-reduce一般采用自定义JavaScript函数来处理map操作与reduce操作以及可选的最后一个最终操作；采用自定义的JavaScript能够比管道聚集更灵活，然而一般情况下map-reduce比管道聚集更加低效，也更加复杂。Map-reduce进行聚集的示例：4.3-1 - 命令：db.orders.mapReduce( function(){emit(this.custid,this.amount);},function(key,values){return Array.sum(values)},{ query:{status:&ldquo;A&rdquo;}, out:&ldquo;order_totals&rdquo; } )- query：查询过滤条件，返回状态为A的值； map：映射对应字段，产生键值对，emit(key,value)； reduce：对map数据进行归约，对数组中value求和； out：输出结果保存在集合order_totals中； 处理流程：query -&gt; map -&gt;reduce4." /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
     <meta
@@ -332,7 +332,7 @@
     />
   
   
-    <meta property="article:modified_time" content="2024-04-11T12:56:50&#43;08:00">
+    <meta property="article:modified_time" content="2024-04-16T20:50:28&#43;08:00">
   
 
 
@@ -1020,15 +1020,15 @@
 
 
 
+  <li class=""><a href="/courses/bigdatastorage/chapter4/4.1/">4.1单个集合中的基础聚集函数</a></li>
+
+
+
   <li class=""><a href="/courses/bigdatastorage/chapter4/4.2/">4.2  管道聚集框架</a></li>
 
 
 
   <li class="active"><a href="/courses/bigdatastorage/chapter4/4.3/">4.3 MapReduce编程</a></li>
-
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter4/4.1/">单个集合中的基础聚集函数</a></li>
 
       
         </ul>
@@ -1153,11 +1153,83 @@
           <p>MongoDB提供了当前流行的MapReduce并行编程模型，为<strong>海量数据的查询分析</strong>提供了一种更加高效的方法。</p>
 <p>用MongoDB做分布式存储，再用MapReduce来做分析。Map-Reduce操作有两部分：  - 一个map阶段处理每一个文档，并为每一个输入的文档产生一个或多个对象，</p>
 <ul>
-<li>在reduce阶段，对上一步Map产生的输出结果进行合并。map-reduce也可以有一个最终的阶段来对最后的输出结果进行修改，就像其他聚集操作一样  map-reduce能够指定一个查询条件来对输入文档的查询结果进行排序以及部分输出（sort and limit）。 Map-reduce一般采用自定义JavaScript函数来处理map操作与reduce操作以及可选的最后一个最终操作；采用自定义的JavaScript能够比管道聚集更灵活，然而一般情况下map-reduce<strong>比管道聚集更加低效</strong>，也更加复杂。Map-reduce进行聚集的示例：<img src="./images/4.3-1.png" alt="4.3-1" />- 命令：db.orders.mapReduce(   function(){emit(this.custid,this.amount);},  function(key,values){return Array.sum(values)},  { query:{status:&ldquo;A&rdquo;}, out:&ldquo;order_totals&rdquo; } )- query：查询过滤条件，返回状态为A的值；</li>
+<li>在reduce阶段，对上一步Map产生的输出结果进行合并。map-reduce也可以有一个最终的阶段来对最后的输出结果进行修改，就像其他聚集操作一样  map-reduce能够指定一个查询条件来对输入文档的查询结果进行排序以及部分输出（sort and limit）。 Map-reduce一般采用自定义JavaScript函数来处理map操作与reduce操作以及可选的最后一个最终操作；采用自定义的JavaScript能够比管道聚集更灵活，然而一般情况下map-reduce<strong>比管道聚集更加低效</strong>，也更加复杂。Map-reduce进行聚集的示例：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-43-1">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter4/images/4.3-1.png" alt="4.3-1" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      4.3-1
+    </figcaption></figure>
+- 命令：db.orders.mapReduce(   function(){emit(this.custid,this.amount);},  function(key,values){return Array.sum(values)},  { query:{status:&ldquo;A&rdquo;}, out:&ldquo;order_totals&rdquo; } )- query：查询过滤条件，返回状态为A的值；</li>
 <li>map：映射对应字段，产生键值对，emit(key,value)；</li>
 <li>reduce：对map数据进行归约，对数组中value求和；</li>
 <li>out：输出结果保存在集合order_totals中；</li>
-<li><strong>处理流程：query -&gt; map -&gt;reduce</strong><img src="./images/4.3-2.png" alt="4.3-2" /><img src="./images/4.3-3.png" alt="4.3-3" /></li>
+<li><strong>处理流程：query -&gt; map -&gt;reduce</strong>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-43-2">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter4/images/4.3-2.png" alt="4.3-2" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      4.3-2
+    </figcaption></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-43-3">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter4/images/4.3-3.png" alt="4.3-3" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      4.3-3
+    </figcaption></figure>
+</li>
 </ul>
 
 
@@ -1187,12 +1259,6 @@
   </div>
   
   
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Next</div>
-    <a href="/courses/bigdatastorage/chapter4/4.1/" rel="prev">单个集合中的基础聚集函数</a>
-  </div>
-  
 </div>
 
         </div>
@@ -1200,7 +1266,7 @@
       </div>
 
       <div class="body-footer">
-        <p>Last updated on Apr 11, 2024 12:56 PM</p>
+        <p>Last updated on Apr 16, 2024 8:50 PM</p>
 
         
 

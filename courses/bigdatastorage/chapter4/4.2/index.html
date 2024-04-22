@@ -279,7 +279,7 @@
 <meta name="description" content="MongoDB的管道聚合框架是参考UNIX上的管道命令实现的，数据通过一个多步骤的管道，每个步骤都会对数据进行加工处理，最后返回需要的结果集。
 管道提供了高效的数据分析流程，是MongoDB中首选的数据分析方法。
 例：
-db.books.aggregate([ {$match:{status:&ldquo;normal&rdquo;}}, {$group:{_id:&quot;$bookid&quot;,total:{$sum:&quot;$num&quot;}}} ])管道聚集的语法格式：db.collection.aggregate(pipeline,options) pipeline为数组类型参数，包含一系列处理步骤，常用的管道操作符有以下几个：- $match：过滤文档- $limit：限制管道中文件的数据 $skip：跳过指定的文档数量，返回剩下的- $sort：对所输入的文档进行排序 $group：对文档进行分组后计算聚集结果 $out：输出文档到新集合中（必须是管道操作的最后一步）与$group一起使用的计算聚集操符：- $first：返回group操作后的第一个值 $last：返回group操作后的最后一个值 $max：返回group操作后的最大值 $min：返回group操作后的最小值- $avg：返回group操作后的平均值 $sum：返回group操作后所有值求和 管道中$group分组语法：db.collection.aggregate([ { $group: { _id: “$itemtype”, &lt; field1&gt;: { &lt; accumulator1&gt; : &lt; expression1&gt; }, &hellip; } } ]) - id为必选字段，itemtype为被分组字段, 写成$itemtype，可为空或null;- field1自定义返回字段名，为可选计算操作，$sum等， 为计算传递参数" />
+db.books.aggregate([ {$match:{status:&ldquo;normal&rdquo;}}, {$group:{_id:&quot;$bookid&quot;,total:{$sum:&quot;$num&quot;}}} ])A caption A caption A caption 管道聚集的语法格式：db.collection.aggregate(pipeline,options) pipeline为数组类型参数，包含一系列处理步骤，常用的管道操作符有以下几个：- $match：过滤文档- $limit：限制管道中文件的数据 $skip：跳过指定的文档数量，返回剩下的- $sort：对所输入的文档进行排序 $group：对文档进行分组后计算聚集结果 $out：输出文档到新集合中（必须是管道操作的最后一步）与$group一起使用的计算聚集操符：- $first：返回group操作后的第一个值 $last：返回group操作后的最后一个值 $max：返回group操作后的最大值 $min：返回group操作后的最小值- $avg：返回group操作后的平均值 $sum：返回group操作后所有值求和 管道中$group分组语法：db." />
 
 
 
@@ -325,7 +325,7 @@ db.books.aggregate([ {$match:{status:&ldquo;normal&rdquo;}}, {$group:{_id:&quot;
 <meta property="og:description" content="MongoDB的管道聚合框架是参考UNIX上的管道命令实现的，数据通过一个多步骤的管道，每个步骤都会对数据进行加工处理，最后返回需要的结果集。
 管道提供了高效的数据分析流程，是MongoDB中首选的数据分析方法。
 例：
-db.books.aggregate([ {$match:{status:&ldquo;normal&rdquo;}}, {$group:{_id:&quot;$bookid&quot;,total:{$sum:&quot;$num&quot;}}} ])管道聚集的语法格式：db.collection.aggregate(pipeline,options) pipeline为数组类型参数，包含一系列处理步骤，常用的管道操作符有以下几个：- $match：过滤文档- $limit：限制管道中文件的数据 $skip：跳过指定的文档数量，返回剩下的- $sort：对所输入的文档进行排序 $group：对文档进行分组后计算聚集结果 $out：输出文档到新集合中（必须是管道操作的最后一步）与$group一起使用的计算聚集操符：- $first：返回group操作后的第一个值 $last：返回group操作后的最后一个值 $max：返回group操作后的最大值 $min：返回group操作后的最小值- $avg：返回group操作后的平均值 $sum：返回group操作后所有值求和 管道中$group分组语法：db.collection.aggregate([ { $group: { _id: “$itemtype”, &lt; field1&gt;: { &lt; accumulator1&gt; : &lt; expression1&gt; }, &hellip; } } ]) - id为必选字段，itemtype为被分组字段, 写成$itemtype，可为空或null;- field1自定义返回字段名，为可选计算操作，$sum等， 为计算传递参数" /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+db.books.aggregate([ {$match:{status:&ldquo;normal&rdquo;}}, {$group:{_id:&quot;$bookid&quot;,total:{$sum:&quot;$num&quot;}}} ])A caption A caption A caption 管道聚集的语法格式：db.collection.aggregate(pipeline,options) pipeline为数组类型参数，包含一系列处理步骤，常用的管道操作符有以下几个：- $match：过滤文档- $limit：限制管道中文件的数据 $skip：跳过指定的文档数量，返回剩下的- $sort：对所输入的文档进行排序 $group：对文档进行分组后计算聚集结果 $out：输出文档到新集合中（必须是管道操作的最后一步）与$group一起使用的计算聚集操符：- $first：返回group操作后的第一个值 $last：返回group操作后的最后一个值 $max：返回group操作后的最大值 $min：返回group操作后的最小值- $avg：返回group操作后的平均值 $sum：返回group操作后所有值求和 管道中$group分组语法：db." /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
     <meta
@@ -334,7 +334,7 @@ db.books.aggregate([ {$match:{status:&ldquo;normal&rdquo;}}, {$group:{_id:&quot;
     />
   
   
-    <meta property="article:modified_time" content="2024-04-11T12:56:50&#43;08:00">
+    <meta property="article:modified_time" content="2024-04-16T20:50:28&#43;08:00">
   
 
 
@@ -1022,15 +1022,15 @@ db.books.aggregate([ {$match:{status:&ldquo;normal&rdquo;}}, {$group:{_id:&quot;
 
 
 
+  <li class=""><a href="/courses/bigdatastorage/chapter4/4.1/">4.1单个集合中的基础聚集函数</a></li>
+
+
+
   <li class="active"><a href="/courses/bigdatastorage/chapter4/4.2/">4.2  管道聚集框架</a></li>
 
 
 
   <li class=""><a href="/courses/bigdatastorage/chapter4/4.3/">4.3 MapReduce编程</a></li>
-
-
-
-  <li class=""><a href="/courses/bigdatastorage/chapter4/4.1/">单个集合中的基础聚集函数</a></li>
 
       
         </ul>
@@ -1156,7 +1156,79 @@ db.books.aggregate([ {$match:{status:&ldquo;normal&rdquo;}}, {$group:{_id:&quot;
 <strong>管道提供了高效的数据分析流程，是MongoDB中首选的数据分析方法。</strong><br>
 例：</p>
 <ul>
-<li>db.books.aggregate([    {$match:{status:&ldquo;normal&rdquo;}},    {$group:{_id:&quot;$bookid&quot;,total:{$sum:&quot;$num&quot;}}}  ])<img src="./images/4.2-1.png" alt="4.2-1" /><img src="./images/4.2-2.png" alt="4.2-2" /><img src="./images/4.2-3.png" alt="4.2-3" /><strong>管道聚集的语法格式：</strong>db.collection.aggregate(pipeline,options)  pipeline为数组类型参数，包含一系列处理步骤，常用的管道操作符有以下几个：- $match：过滤文档- $limit：限制管道中文件的数据</li>
+<li>db.books.aggregate([    {$match:{status:&ldquo;normal&rdquo;}},    {$group:{_id:&quot;$bookid&quot;,total:{$sum:&quot;$num&quot;}}}  ])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-a-caption">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter4/images/4.2-1.png" alt="A caption" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      A caption
+    </figcaption></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-a-caption">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter4/images/4.2-2.png" alt="A caption" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      A caption
+    </figcaption></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-a-caption">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter4/images/4.2-3.png" alt="A caption" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      A caption
+    </figcaption></figure>
+<strong>管道聚集的语法格式：</strong>db.collection.aggregate(pipeline,options)  pipeline为数组类型参数，包含一系列处理步骤，常用的管道操作符有以下几个：- $match：过滤文档- $limit：限制管道中文件的数据</li>
 <li>$skip：跳过指定的文档数量，返回剩下的- $sort：对所输入的文档进行排序</li>
 <li>$group：对文档进行分组后计算聚集结果</li>
 <li>$out：输出文档到新集合中（必须是管道操作的最后一步）<strong>与$group一起使用的计算聚集操符：</strong>- $first：返回group操作后的第一个值</li>
@@ -1190,7 +1262,7 @@ db.books.aggregate([ {$match:{status:&ldquo;normal&rdquo;}}, {$group:{_id:&quot;
   
   <div class="post-nav-item">
     <div class="meta-nav">Previous</div>
-    <a href="/courses/bigdatastorage/chapter2/2.1/" rel="next">2.1插入操作</a>
+    <a href="/courses/bigdatastorage/chapter4/4.1/" rel="next">4.1单个集合中的基础聚集函数</a>
   </div>
   
   
@@ -1207,7 +1279,7 @@ db.books.aggregate([ {$match:{status:&ldquo;normal&rdquo;}}, {$group:{_id:&quot;
       </div>
 
       <div class="body-footer">
-        <p>Last updated on Apr 11, 2024 12:56 PM</p>
+        <p>Last updated on Apr 16, 2024 8:50 PM</p>
 
         
 
