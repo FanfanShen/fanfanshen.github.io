@@ -1180,7 +1180,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-745813692&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-654782931&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1190,7 +1190,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-745813692&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-654782931&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -3315,6 +3315,15 @@ Crash --&gt; [*]
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/admin/config.yml</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/task/exp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/task/exp/</guid>
+      <description>&lt;h2 id=&#34;大作业说明测试&#34;&gt;大作业说明测试&lt;/h2&gt;
+</description>
     </item>
     
   </channel>

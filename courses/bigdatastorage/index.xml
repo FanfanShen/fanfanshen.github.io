@@ -735,5 +735,14 @@ db.collection.insertMany([{d1},{d2}&amp;hellip;]):向指定集合中插入多条
 </description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/task/exp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/task/exp/</guid>
+      <description>&lt;h2 id=&#34;大作业说明测试&#34;&gt;大作业说明测试&lt;/h2&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
