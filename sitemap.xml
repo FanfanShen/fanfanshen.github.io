@@ -2,16 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/</loc>
-    <lastmod>2024-04-28T17:29:17+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/</loc>
     <lastmod>2024-02-24T17:23:52+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/</loc>
-    <lastmod>2024-04-28T17:22:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://fanfanshen.github.io/courses/bigdatastorage/</loc>
@@ -20,6 +12,14 @@
   </url><url>
     <loc>https://fanfanshen.github.io/courses/operatingsystem/</loc>
     <lastmod>2023-12-26T18:47:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/</loc>
+    <lastmod>2024-04-28T18:53:50+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/</loc>
+    <lastmod>2024-04-28T18:53:50+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://fanfanshen.github.io/courses/bigdatastorage/chapter4/</loc>
@@ -43,7 +43,7 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://fanfanshen.github.io/courses/</loc>
-    <lastmod>2024-04-28T18:47:00+08:00</lastmod>
+    <lastmod>2024-04-28T18:53:50+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.1/</loc>
