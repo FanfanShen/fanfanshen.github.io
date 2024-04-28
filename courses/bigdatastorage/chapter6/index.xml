@@ -646,5 +646,390 @@
 </description>
     </item>
     
+    <item>
+      <title>6.1复制集概述</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter6/6.1/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter6/6.1/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;复制集Replica Sets与分片集群sharding是MongoDB最具有特色的功能：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;复制集实现了数据库的&lt;strong&gt;冗余备份&lt;/strong&gt;、&lt;strong&gt;故障转移&lt;/strong&gt;，这是数据库管理人员最求的目标；&lt;/li&gt;
+&lt;li&gt;分片实现了数据的&lt;strong&gt;分布式存储&lt;/strong&gt;、&lt;strong&gt;负载均衡&lt;/strong&gt;，这是海量数据云存储平台不可或缺的功能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;数据库总是会遇到各种失败的场景，如网络连接断开、断电等，尽管journaling日志功能也提供了数据恢复的功能，但journaling通常是针对单个节点来说的，只能保证单节点数据的一致性；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;复制集通常是由&lt;strong&gt;多个节点&lt;/strong&gt;组成，每个节点除了journaling日志恢复功能外，整个复制集还具有故障自动转移的功能，这样能保证数据库的&lt;strong&gt;高可用性&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在生产环境中一个复制集最少应该包含三个节点，其中有一个必须是主节点，典型的部署结构如下图：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-61-1&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.1-1.png&#34; alt=&#34;6.1-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      6.1-1
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;每个节点都是一个mongod进程对应的实例，节点之间互相周期性的通过&lt;strong&gt;心跳检查&lt;/strong&gt;对方的状态，默认情况下primary节点负责数据的&lt;strong&gt;读、写&lt;/strong&gt;，second节点&lt;strong&gt;备份&lt;/strong&gt;primary节点上的数据，但是arbiter节点不会从primary节点同步数据；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;从它的名字arbiter可以看出，它起到的作用只是当primary节点故障时，能够参与到复制集剩下的节点中**，选择出一个新**的primary节点，它自己永远不会变为primary节点，也不会参与数据的读写。也就是说，数据库的数据会存在primary和second节点中，second节点相当于一个备份，当然second节点可以有多个，当primary节点故障时，second节点有可能变为primary节点。故障转移流程如图所示。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-61-2&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.1-2.png&#34; alt=&#34;6.1-2&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      6.1-2
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;更多复制集的概念和原理可参考如下链接：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/duanxz/p/10730096.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.cnblogs.com/duanxz/p/10730096.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_24598601/article/details/81150614&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://blog.csdn.net/qq_24598601/article/details/81150614&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.mongodb.com/manual/replication/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://docs.mongodb.com/manual/replication/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>6.2完整部署一个复制集</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter6/6.2/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter6/6.2/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;复制集的创建和配置：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;创建复制集中每个节点存放数据的目录&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;D:\mongodb\db_rs0\data\rs0_0&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;D:\mongodb\db_rs0\data\rs0_1&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;D:\mongodb\db_rs0\data\rs0_2&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;创建复制集中每个节点的日志文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;D:\mongodb\db_rs0\logs\rs0_0.log&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;D:\mongodb\db_rs0\logs\rs0_1.log&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;D:\mongodb\db_rs0\logs\rs0_2.log&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;创建复制集中每个节点启动时的配置文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;第一个节点配置文件为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;D:\mongodb\configs_rs0\rs0_0.conf&lt;/code&gt;，内容如下：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dbpath = D:\mongodb\db_rs0\data\rs0_0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;logpath =  D:\mongodb\db_rs0\logs\rs0_0.log
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;journal = true
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;port = 40000
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;replSet = rs0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第二个节点配置文件为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;D:\mongodb\configs_rs0\rs0_1.conf&lt;/code&gt;，内容如下：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dbpath = D:\mongodb\db_rs0\data\rs0_1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;logpath =  D:\mongodb\db_rs0\logs\rs0_1.log
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;journal = true
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;port = 40001
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;replSet = rs0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第三个节点配置文件为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;D:\mongodb\configs_rs0\rs0_2.conf&lt;/code&gt;，内容如下：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dbpath = D:\mongodb\db_rs0\data\rs0_2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;logpath =  D:\mongodb\db_rs0\logs\rs0_2.log
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;journal = true
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;port = 40002
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;replSet = rs0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;启动上面三个节点对应的MongoDB实例&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;.\mongod.exe --config D:\mongodb\configs_rs0\rs0_0.conf&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;.\mongod.exe --config D:\mongodb\configs_rs0\rs0_1.conf&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;.\mongod.exe --config D:\mongodb\configs_rs0\rs0_2.conf&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;未报错即启动成功。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-62-1&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-1.png&#34; alt=&#34;6.2-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      6.2-1
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;启动一个mongo客户端，连接到MongoDB实例&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;因为第四步复制集没有配置好，还需要确定哪个节点为primary，哪个是second，哪个是arbiter;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;.\mongo.exe --port 40000  //启动客户端并连接到40000&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-62-2&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-2.png&#34; alt=&#34;6.2-2&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      6.2-2
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;rs.initiate()  //初始化复制集，出现ok: 1即成功&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;这时候复制集只有刚才40000这个初始化成员，通过如下命令可查看信息：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;rs.conf()&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;默认情况下，刚才配置的节点为primary节点&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;在复制集中添加second和arbiter节点，继续执行如下命令：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;rs0.PRIMARY&amp;gt; rs.add(“localhost:40001”)&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;出现&lt;code&gt;ok：1&lt;/code&gt;即成功&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;rs0.PRIMARY&amp;gt; rs.addArb(“localhost:40002”)&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;出现&lt;code&gt;ok：1&lt;/code&gt;即成功&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;两个节点添加成功。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;观察整个复制集的状态信息：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rs.status()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-62-3&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-3.png&#34; alt=&#34;6.2-3&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      6.2-3
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-62-4&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-4.png&#34; alt=&#34;6.2-4&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      6.2-4
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-62-5&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-5.png&#34; alt=&#34;6.2-5&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      6.2-5
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;复制集的状态信息输出是基于primary节点实例的，在secondary实例上也可以输出复制集的状态信息。&lt;/li&gt;
+&lt;li&gt;arbiter节点的“syncingTo” : “”为空，说明不需要从primary节点上同步数据；&lt;/li&gt;
+&lt;li&gt;当主节点出现故障时，arbiter节点为仲裁节点，也称为选举节点，可辅助从secondary中选举主节点，不需要占用太多存储空间。&lt;/li&gt;
+&lt;li&gt;“date”表示当前实例所在服务器的时间；&lt;/li&gt;
+&lt;li&gt;“lastHeartbeat”表示当前实例到此远端成员最近一次成功发送与接收心跳包的时间；&lt;/li&gt;
+&lt;li&gt;通过比较这个两个时间可以判断当前实例与此成员相差的时间间隔；&lt;/li&gt;
+&lt;li&gt;比如某个成员宕机了，本实例发生此宕机成员的心跳包就不会被成功接收，随着时间推移，本实例的date字段值与此成员上的lastHeartbeat差值就会逐渐增加。&lt;/li&gt;
+&lt;li&gt;optime字段，这个字段的值说明了本实例最近一次更改数据库的时间“t” : 1376816431以及每秒执行的操作数据库的次数“i” : 1；&lt;/li&gt;
+&lt;li&gt;此字段的值实际上是从本实例上的local数据库中的oplog.rs集合上读取的，这个集合还详细记录了具体是什么操作，如插入语句、修改语句等。&lt;/li&gt;
+&lt;li&gt;复制集中的每一个实例都会有一个这样的数据库和集合，如果复制集运行正常，理论上来说，每一个mongod实例上此集合中的记录应该相同。&lt;/li&gt;
+&lt;li&gt;实际上mongoDB也是根据此集合来实现复制集中primary节点与secondary节点间的数据同步。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
