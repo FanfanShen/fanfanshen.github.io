@@ -115,640 +115,6 @@
     </item>
     
     <item>
-      <title>6.3 单字段索引</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter6/6.3/</link>
-      <pubDate>Thu, 25 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter6/6.3/</guid>
-      <description>&lt;h2 id=&#34;631-数据同步&#34;&gt;6.3.1 数据同步&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;6.1节概述了复制集，整体上对复制集有了个概念，但是复制集最重要的功能：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;数据同步又是如何实现的？&lt;/li&gt;
-&lt;li&gt;自动故障转移是怎么实现的呢？&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;利用mongo客户端登录到复制集的primary节点上。
-&amp;gt;&lt;code&gt;.\mongo.exe --port 40000&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;查看实例上的数据库rs0:PRIMARY&amp;gt;&lt;code&gt; show dbs&lt;/code&gt;，可以看到默认的数据库&lt;/p&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-默认的数据库&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%871.png&#34; alt=&#34;默认的数据库&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          默认的数据库
-        &lt;/figcaption&gt;&lt;/figure&gt;
-
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;rs0:PRIMARY&amp;gt; &lt;code&gt;use local &lt;/code&gt;//使用本地数据库&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;local数据库为复制集所有成员节点上默认创建的数据库，可以查看上面的集合：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;rs0:PRIMARY&amp;gt; &lt;code&gt;show collections&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-集合&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%872.png&#34; alt=&#34;集合&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          集合
-        &lt;/figcaption&gt;&lt;/figure&gt;
-
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;利用mongo客户端登录到复制集的secondary节点上。
-&amp;gt;&lt;code&gt;.\mongo.exe --port 40001&lt;/code&gt;，数据库集合内容是一样的&lt;/p&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-主节点集合&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%873.png&#34; alt=&#34;主节点集合&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          主节点集合
-        &lt;/figcaption&gt;&lt;/figure&gt;
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-次节点集合&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%874.png&#34; alt=&#34;次节点集合&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          次节点集合
-        &lt;/figcaption&gt;&lt;/figure&gt;
-
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;mark&gt;oplog.rs是实现复制集之间数据同步的&lt;/mark&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;replset.election: 复制集选举信息&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;replset.minvalid:内部使用，跟踪复制状态&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;system.replset副本集的配置信息，和使用rs.conf()命令看到的一样&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;注：在secondary节点上出现not master and slaveOk=false错误时，输入：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;rs0:SECONDARY&amp;gt; &lt;code&gt;rs.slaveOk()&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;为了分析复制集节点上数据的变化，先在复制集上的primary节点上创建一个数据库students，然后插入一条记录：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;rs0:PRIMARY&amp;gt;&lt;code&gt; use students&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;rs0:PRIMARY&amp;gt;&lt;code&gt;db.scores.insert({&amp;quot;stuid&amp;quot;:1,&amp;quot;subject&amp;quot;:&amp;quot;math&amp;quot;,&amp;quot;score&amp;quot;:99})&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;接着查看一下primary节点上oplog.rs集合的内容：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;rs0:PRIMARY&amp;gt; &lt;code&gt;use local&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;rs0:PRIMARY&amp;gt;&lt;code&gt;db.oplog.rs.find({“op”:“i”})&lt;/code&gt;//筛选出插入操作的内容&lt;/li&gt;
-&lt;/ul&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-查看过程&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%877.png&#34; alt=&#34;查看过程&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          查看过程
-        &lt;/figcaption&gt;&lt;/figure&gt;
-
-&lt;ul&gt;
-&lt;li&gt;里面有几个重要字段，其中&amp;quot;ts&amp;quot;表示是这条记录的时间截，&amp;ldquo;t&amp;quot;是秒数，&amp;ldquo;i&amp;quot;每秒操作的次数；&lt;/li&gt;
-&lt;li&gt;字段&amp;quot;op&amp;quot;表示的是操作码，值为&amp;quot;i&amp;quot;表示的是insert操作；&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;ns&amp;quot;表示插入操作发生的命名空间，这里值为: &amp;ldquo;students.scores&amp;rdquo;，由数据库和集合名构成；&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;o&amp;quot;表示的是此插入操作包含的文档对象；&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;查看secondary节点上的数据，我们发现在secondary节点上新插入了一个数据库students，这就实现了复制集建的数据同步&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;rs0:SECONDARY&amp;gt; show dbs&lt;/li&gt;
-&lt;li&gt;rs0:SECONDARY&amp;gt; use students&lt;/li&gt;
-&lt;li&gt;rs0:SECONDARY&amp;gt; db.scores.find()&lt;/li&gt;
-&lt;/ul&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-次节点数据库同步&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%878.png&#34; alt=&#34;次节点数据库同步&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          次节点数据库同步
-        &lt;/figcaption&gt;&lt;/figure&gt;
-
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;同步流程&lt;/p&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-同步图解&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%879.png&#34; alt=&#34;同步图解&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          同步图解
-        &lt;/figcaption&gt;&lt;/figure&gt;
-
-&lt;ul&gt;
-&lt;li&gt;当primary节点完成插入操作后，secondary节点为了保证数据的同步也会完成一些动作
-&lt;ul&gt;
-&lt;li&gt;a.所有secondary节点检查自己的local数据上oplog.rs集合，找出最近的一条记录的时间截&lt;/li&gt;
-&lt;li&gt;b.接着它会查询primary节点上的oplog.rs集合，找出所有大于此时间截的记录&lt;/li&gt;
-&lt;li&gt;c.最后它将这些找到的记录插入到自己的oplog.rs集合中并执行这些记录所代表的操作&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;通过这三步策略，就能保证secondary节点上的数据与primary节点上的数据同步了&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;关于oplog.rs集合还有一个很重要的方面，那就是它的大小是固定的：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;假如大小没限制，那么随着时间的推移，在数据库上的操作会&lt;mark&gt;逐渐累积&lt;/mark&gt;，oplog.rs集合中保存的记录也会&lt;mark&gt;逐渐增多&lt;/mark&gt;，这样会消耗大量的存储空间&lt;/li&gt;
-&lt;li&gt;同时对于某个时间点以前的操作记录，早已同步到secondary节点上，也没有必要一直保存这些记录&lt;/li&gt;
-&lt;li&gt;因此mongoDB将oplog.rs集合设置成一个&lt;mark&gt;capped类型&lt;/mark&gt;的集合，实际上就是一个循环使用的缓冲区&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;固定大小的oplog.rs会带来新的问题，考虑下面这种场景：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;假如一个secondary节点因为宕机，长时间不能恢复，而此时大量的写操作发生在primary节点上，当secondary节点恢复时，利用自己oplog.rs集合上最新的时间截去查找primary节点上的oplog.rs集合，会出现找不到任何记录。&lt;/li&gt;
-&lt;li&gt;因为长时间不在线，primary节点上的oplog.rs集合中的记录早已全部刷新了一遍，这样就不得不手动重新同步数据了。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;因此oplog.rs的大小是很重要，在32位的系统上默认大小是50MB，在64位的机器上默认是5%的空闲磁盘空间大小，也可以在mongod启动命令中通过项—oplogSize设置其大小&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;632-故障转移&#34;&gt;6.3.2 故障转移&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;在复制集中的心跳&amp;quot;lastHeartbeat&amp;quot;字段，mongoDB就是靠它来实现自动故障转移的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;mongod实例每隔2秒就向其它成员发送一个心跳包以及通过rs.status()中返回的成员的“health”值来判断成员的状态。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果出现复制集中primary节点不可用了，那么复制集中所有secondary的节点就会触发一次选举操作，选出一个新的primary节点。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如上所配置的复制集中如果primary节点宕机了，那么就会选举secondary节点成为primary节点，arbiter节点只是参与选举其它成员成为primary节点，自己永远不会成为primary节点。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果secondary节点有多个则会选择拥有最新时间截的oplog记录或较高权限的节点成为primary节点。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果是某个secondary节点失败了，只要复制集中还有其它secondary节点或arbiter节点存在，就不会发生重新选举primary节点的过程。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;下面模拟两种失败场景：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;一是secondary节点的失败，然后过一段时间后重启（时间不能无限期，否则会导致oplog.rs集合严重滞后的问题，需要手动才能同步）。以下为步骤：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;1.查看当前复制集的配置情况&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;rs0:PRIMARY&amp;gt; &lt;code&gt;rs.conf()&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;2.通过Kill掉secondary节点所在的mongod实例，模拟第一种故障情况。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;通过&lt;code&gt;rs.status()&lt;/code&gt;命令查看复制集状态，secondary节点状态“health” : 0；&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;3.接着通过primary节点插入一条记录&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;rs0:PRIMARY&amp;gt;&lt;code&gt;db.scores.insert({stuid:2,subject:&amp;quot;english&amp;quot;,score:100})&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;4.再次查看复制集状态信息rs.status()，可以看到primary成员节点上oplpog信息&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;与上面down机的成员节点比较，optime已经不一样，primary节点上要新于down机的节点。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;5.重新启动Kill掉的secondary节点&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;.\mongod.exe --config D:\mongodb\configs_rs0\rs0_1.conf&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;查询复制集状态信息&lt;code&gt;rs.status()&lt;/code&gt;，观看节点“40001”的状态信息&lt;/li&gt;
-&lt;li&gt;说明secondary节点已经恢复，并且从primary节点同步到了最新的操作数据&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;6.登录secondary节点来查询&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;rs0:SECONDARY&amp;gt; &lt;code&gt;use students&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;rs0:SECONDARY&amp;gt; &lt;code&gt;db.scores.find()&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;以下第二条记录正是在primary节点上插入的记录，再次证明数据确实同步过来了。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-插入记录&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%8710.png&#34; alt=&#34;插入记录&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          插入记录
-        &lt;/figcaption&gt;&lt;/figure&gt;
-
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;二是primary节点故障模拟&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;1.将primary节点Kill掉，并查询rs.status()，主节点以及宕机。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;字段&amp;quot;health&amp;quot;的值为0，说明原来的primary节点已经down机了。&lt;/li&gt;
-&lt;li&gt;原来secondary节点变成了primary节点。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;2.在新的primary节点上插入一条记录&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;rs0:PRIMARY&amp;gt;&lt;code&gt;db.scores.insert({stuid:3,subject:&amp;quot;computer&amp;quot;,score:99})&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;3.重新恢复&amp;quot;40000&amp;quot;节点（原来的primary节点）&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;.\mongod.exe --config D:\mongodb\configs_rs0\rs0_0.conf&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;再次查看复制集状态rs.status()&lt;/li&gt;
-&lt;li&gt;“40000”实例被重新激活后，变成了secondary节点，oplog也被同步成最新的了。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;说明当primary节点故障时，复制集能自动转移故障，将其中一个secondary节点变为primary节点，读写操作继续在新的primary节点上进行。原来primary节点恢复后，在复制集中变成了secondary节点。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-数据同步原理&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%8711.png&#34; alt=&#34;数据同步原理&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          数据同步原理
-        &lt;/figcaption&gt;&lt;/figure&gt;
-
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;上面两中情况都得到了验证，但是有一点要注意，mongDB默认情况下只能在primary节点上进行读写操作，如下图所示：&lt;/p&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-图示&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%8712.png&#34; alt=&#34;图示&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          图示
-        &lt;/figcaption&gt;&lt;/figure&gt;
-
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;对于客户端应用程序来说，对复制集的读写操作是透明的，默认情况它总是在primary节点上进行。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;mongoDB提供了很多种常见编程语言的驱动程序，驱动程序位于应用程序与mongod实例之间，应用程发起与复制集的连接，驱动程序自动选择primary节点。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;当primary节点失效，复制集发生故障转移时，复制集将先关闭与所有客户端的socket连接，驱动程序将返回一个异常，应用程序收到这个异常，这个时候需要应用程序开发人员去处理这些异常，同时驱动程序会尝试重新与primary节点建立连接（这个动作对应用程序来说是透明的）。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;假如这个时候正在发生一个读操作，在异常处理中你可以重新发起读数据命令，因为读操作不会改变数据库的数据；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;假如这个时候发生的是写操作，情况就变得微妙起来，&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;如果是&lt;strong&gt;非安全模式&lt;/strong&gt;下的写，就会产生不确定因素，写是否成功不确定。&lt;/li&gt;
-&lt;li&gt;如果是&lt;strong&gt;安全模式&lt;/strong&gt;，驱动程序会通过getlasterror命令知道哪些写操作成功了，哪些失败，驱动程序会返回失败的信息给应用程序，针对这个异常信息，应用程序可以决定怎样处置这个写操作，可以重新执行写操作，也可以直接给用户报出这个错误。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;633-写关注&#34;&gt;6.3.3 写关注&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;对于某些应用程序来说，写关注是重要的。它能&lt;mark&gt;判断哪些写操作成功写入了&lt;/mark&gt;，哪些失败了，对于失败的操作，驱动程序能返回错误，由应用程序决定怎么处理。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果没有写关注，应用程序发送一个写操作到socket后，就不会管后面发生了什么情况，不知道是否成功写入数据库，这种情形对于日志类型的应用程序还是可以接受的，因为偶尔的写失败不会影响整个日志的监控情况。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;带有写关注的操作会等到&lt;mark&gt;数据库确认成功&lt;/mark&gt;写入后才能返回，因此写关注会带来一点性能的损失。下面先分析复制集上写关注配置。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;默认情况下复制集的写关注只针对primary节点，如下图所示:&lt;/p&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-图示&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%8713.png&#34; alt=&#34;图示&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          图示
-        &lt;/figcaption&gt;&lt;/figure&gt;
-
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;w参数&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;为0时，不使用写关注，不需要等待就返回。&lt;/li&gt;
-&lt;li&gt;为1时，只关注primary节点返回确认写成功的消息。&lt;/li&gt;
-&lt;li&gt;为n时，写关注将针对复制集中&lt;mark&gt;n个&lt;/mark&gt;节点，当客户端收到这些节点的反馈信息后，才能返回确认写成功的消息。&lt;/li&gt;
-&lt;li&gt;为majority时，取决于复制集中大多数投票节点的数量。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;w=2的写关注执行流程图&lt;/p&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-流程图&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%8714.png&#34; alt=&#34;流程图&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          流程图
-        &lt;/figcaption&gt;&lt;/figure&gt;
-
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;634-读参考&#34;&gt;6.3.4 读参考&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;读参考是指MongoDB将客户端的读请求路由到复制集中指定的成员上，默认情况下读操作的请求被路由到复制集中的primary节点上；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;从Primary节点上进行读取能够保证读到的数据是最新的，但是将读操作路由到其他secondary节点上去后，由于从primary节点同步数据到secondary节点会产生时间差，可能导致从secondary节点上读到的数据不是最新的。当然这对于实时性要求不是很高的绝大部分应用程序来说，并不是大问题。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;关于读参考还有一点需要注意，因为每一个secondary节点都会从primary节点同步数据，所有secondary节点一般有相同的写操作流量，同时primary节点上的读操作流量也并没有减少，所以读参考并不能提高系统读写的容量。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;它最大的好处是能够使客户端的读请求路由到最佳的secondary节点上(如最近的节点)，提高客户端的读效率。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;MongoDB驱动支持的读参考模式如下：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;primary模式&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;这是默认的读操作模式，所有的读请求都路由到复制集中的primary节点上，如果primary节点故障了，读操作将会产生一个错误或者抛出一个异常。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;primaryPrefered模式&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在大多数模式下，读操作从primary节点上进行，如果primary节点故障无法读取，读操作将会路由到secondary节点上。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;secondary模式&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;读操作只能从secondary节点上进行，如果没有可用的secondary节点，读操作将会产生错误或抛出异常。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;secondaryPrefered模式&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在大多数模式下，读操作从secondary节点上进行，但当复制集中只有一个primary时，读操作将用这个复制集的primary节点。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;neares模式&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;读操作从最近的节点上进行，有可能是primary节点，也有可能是secondary节点，并不会考虑节点的类型。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
       <title>2.2删除操作</title>
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.2/</link>
       <pubDate>Sat, 13 Apr 2024 00:00:00 +0000</pubDate>
@@ -1814,7 +1180,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-241576893&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-745813692&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1824,7 +1190,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-241576893&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-745813692&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -3278,6 +2644,640 @@ Crash --&gt; [*]
 &lt;li&gt;此字段的值实际上是从本实例上的local数据库中的oplog.rs集合上读取的，这个集合还详细记录了具体是什么操作，如插入语句、修改语句等。&lt;/li&gt;
 &lt;li&gt;复制集中的每一个实例都会有一个这样的数据库和集合，如果复制集运行正常，理论上来说，每一个mongod实例上此集合中的记录应该相同。&lt;/li&gt;
 &lt;li&gt;实际上mongoDB也是根据此集合来实现复制集中primary节点与secondary节点间的数据同步。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>6.3 单字段索引</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter6/6.3/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter6/6.3/</guid>
+      <description>&lt;h2 id=&#34;631-数据同步&#34;&gt;6.3.1 数据同步&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;6.1节概述了复制集，整体上对复制集有了个概念，但是复制集最重要的功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数据同步又是如何实现的？&lt;/li&gt;
+&lt;li&gt;自动故障转移是怎么实现的呢？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;利用mongo客户端登录到复制集的primary节点上。
+&amp;gt;&lt;code&gt;.\mongo.exe --port 40000&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;查看实例上的数据库rs0:PRIMARY&amp;gt;&lt;code&gt; show dbs&lt;/code&gt;，可以看到默认的数据库&lt;/p&gt;
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    &lt;figure  id=&#34;figure-默认的数据库&#34;&gt;
+      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%871.png&#34; alt=&#34;默认的数据库&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+          默认的数据库
+        &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;rs0:PRIMARY&amp;gt; &lt;code&gt;use local &lt;/code&gt;//使用本地数据库&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;local数据库为复制集所有成员节点上默认创建的数据库，可以查看上面的集合：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;rs0:PRIMARY&amp;gt; &lt;code&gt;show collections&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    &lt;figure  id=&#34;figure-集合&#34;&gt;
+      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%872.png&#34; alt=&#34;集合&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+          集合
+        &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;利用mongo客户端登录到复制集的secondary节点上。
+&amp;gt;&lt;code&gt;.\mongo.exe --port 40001&lt;/code&gt;，数据库集合内容是一样的&lt;/p&gt;
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    &lt;figure  id=&#34;figure-主节点集合&#34;&gt;
+      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%873.png&#34; alt=&#34;主节点集合&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+          主节点集合
+        &lt;/figcaption&gt;&lt;/figure&gt;
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    &lt;figure  id=&#34;figure-次节点集合&#34;&gt;
+      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%874.png&#34; alt=&#34;次节点集合&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+          次节点集合
+        &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;mark&gt;oplog.rs是实现复制集之间数据同步的&lt;/mark&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;replset.election: 复制集选举信息&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;replset.minvalid:内部使用，跟踪复制状态&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;system.replset副本集的配置信息，和使用rs.conf()命令看到的一样&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注：在secondary节点上出现not master and slaveOk=false错误时，输入：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;rs0:SECONDARY&amp;gt; &lt;code&gt;rs.slaveOk()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;为了分析复制集节点上数据的变化，先在复制集上的primary节点上创建一个数据库students，然后插入一条记录：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;rs0:PRIMARY&amp;gt;&lt;code&gt; use students&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;rs0:PRIMARY&amp;gt;&lt;code&gt;db.scores.insert({&amp;quot;stuid&amp;quot;:1,&amp;quot;subject&amp;quot;:&amp;quot;math&amp;quot;,&amp;quot;score&amp;quot;:99})&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;接着查看一下primary节点上oplog.rs集合的内容：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;rs0:PRIMARY&amp;gt; &lt;code&gt;use local&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;rs0:PRIMARY&amp;gt;&lt;code&gt;db.oplog.rs.find({“op”:“i”})&lt;/code&gt;//筛选出插入操作的内容&lt;/li&gt;
+&lt;/ul&gt;
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    &lt;figure  id=&#34;figure-查看过程&#34;&gt;
+      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%877.png&#34; alt=&#34;查看过程&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+          查看过程
+        &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;里面有几个重要字段，其中&amp;quot;ts&amp;quot;表示是这条记录的时间截，&amp;ldquo;t&amp;quot;是秒数，&amp;ldquo;i&amp;quot;每秒操作的次数；&lt;/li&gt;
+&lt;li&gt;字段&amp;quot;op&amp;quot;表示的是操作码，值为&amp;quot;i&amp;quot;表示的是insert操作；&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;ns&amp;quot;表示插入操作发生的命名空间，这里值为: &amp;ldquo;students.scores&amp;rdquo;，由数据库和集合名构成；&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;o&amp;quot;表示的是此插入操作包含的文档对象；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查看secondary节点上的数据，我们发现在secondary节点上新插入了一个数据库students，这就实现了复制集建的数据同步&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;rs0:SECONDARY&amp;gt; show dbs&lt;/li&gt;
+&lt;li&gt;rs0:SECONDARY&amp;gt; use students&lt;/li&gt;
+&lt;li&gt;rs0:SECONDARY&amp;gt; db.scores.find()&lt;/li&gt;
+&lt;/ul&gt;
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    &lt;figure  id=&#34;figure-次节点数据库同步&#34;&gt;
+      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%878.png&#34; alt=&#34;次节点数据库同步&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+          次节点数据库同步
+        &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;同步流程&lt;/p&gt;
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    &lt;figure  id=&#34;figure-同步图解&#34;&gt;
+      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%879.png&#34; alt=&#34;同步图解&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+          同步图解
+        &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;当primary节点完成插入操作后，secondary节点为了保证数据的同步也会完成一些动作
+&lt;ul&gt;
+&lt;li&gt;a.所有secondary节点检查自己的local数据上oplog.rs集合，找出最近的一条记录的时间截&lt;/li&gt;
+&lt;li&gt;b.接着它会查询primary节点上的oplog.rs集合，找出所有大于此时间截的记录&lt;/li&gt;
+&lt;li&gt;c.最后它将这些找到的记录插入到自己的oplog.rs集合中并执行这些记录所代表的操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;通过这三步策略，就能保证secondary节点上的数据与primary节点上的数据同步了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;关于oplog.rs集合还有一个很重要的方面，那就是它的大小是固定的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;假如大小没限制，那么随着时间的推移，在数据库上的操作会&lt;mark&gt;逐渐累积&lt;/mark&gt;，oplog.rs集合中保存的记录也会&lt;mark&gt;逐渐增多&lt;/mark&gt;，这样会消耗大量的存储空间&lt;/li&gt;
+&lt;li&gt;同时对于某个时间点以前的操作记录，早已同步到secondary节点上，也没有必要一直保存这些记录&lt;/li&gt;
+&lt;li&gt;因此mongoDB将oplog.rs集合设置成一个&lt;mark&gt;capped类型&lt;/mark&gt;的集合，实际上就是一个循环使用的缓冲区&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;固定大小的oplog.rs会带来新的问题，考虑下面这种场景：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;假如一个secondary节点因为宕机，长时间不能恢复，而此时大量的写操作发生在primary节点上，当secondary节点恢复时，利用自己oplog.rs集合上最新的时间截去查找primary节点上的oplog.rs集合，会出现找不到任何记录。&lt;/li&gt;
+&lt;li&gt;因为长时间不在线，primary节点上的oplog.rs集合中的记录早已全部刷新了一遍，这样就不得不手动重新同步数据了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;因此oplog.rs的大小是很重要，在32位的系统上默认大小是50MB，在64位的机器上默认是5%的空闲磁盘空间大小，也可以在mongod启动命令中通过项—oplogSize设置其大小&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;632-故障转移&#34;&gt;6.3.2 故障转移&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在复制集中的心跳&amp;quot;lastHeartbeat&amp;quot;字段，mongoDB就是靠它来实现自动故障转移的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mongod实例每隔2秒就向其它成员发送一个心跳包以及通过rs.status()中返回的成员的“health”值来判断成员的状态。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果出现复制集中primary节点不可用了，那么复制集中所有secondary的节点就会触发一次选举操作，选出一个新的primary节点。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如上所配置的复制集中如果primary节点宕机了，那么就会选举secondary节点成为primary节点，arbiter节点只是参与选举其它成员成为primary节点，自己永远不会成为primary节点。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果secondary节点有多个则会选择拥有最新时间截的oplog记录或较高权限的节点成为primary节点。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果是某个secondary节点失败了，只要复制集中还有其它secondary节点或arbiter节点存在，就不会发生重新选举primary节点的过程。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下面模拟两种失败场景：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;一是secondary节点的失败，然后过一段时间后重启（时间不能无限期，否则会导致oplog.rs集合严重滞后的问题，需要手动才能同步）。以下为步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;1.查看当前复制集的配置情况&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;rs0:PRIMARY&amp;gt; &lt;code&gt;rs.conf()&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2.通过Kill掉secondary节点所在的mongod实例，模拟第一种故障情况。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;通过&lt;code&gt;rs.status()&lt;/code&gt;命令查看复制集状态，secondary节点状态“health” : 0；&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;3.接着通过primary节点插入一条记录&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;rs0:PRIMARY&amp;gt;&lt;code&gt;db.scores.insert({stuid:2,subject:&amp;quot;english&amp;quot;,score:100})&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;4.再次查看复制集状态信息rs.status()，可以看到primary成员节点上oplpog信息&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;与上面down机的成员节点比较，optime已经不一样，primary节点上要新于down机的节点。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;5.重新启动Kill掉的secondary节点&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.\mongod.exe --config D:\mongodb\configs_rs0\rs0_1.conf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;查询复制集状态信息&lt;code&gt;rs.status()&lt;/code&gt;，观看节点“40001”的状态信息&lt;/li&gt;
+&lt;li&gt;说明secondary节点已经恢复，并且从primary节点同步到了最新的操作数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;6.登录secondary节点来查询&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;rs0:SECONDARY&amp;gt; &lt;code&gt;use students&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;rs0:SECONDARY&amp;gt; &lt;code&gt;db.scores.find()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下第二条记录正是在primary节点上插入的记录，再次证明数据确实同步过来了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    &lt;figure  id=&#34;figure-插入记录&#34;&gt;
+      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%8710.png&#34; alt=&#34;插入记录&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+          插入记录
+        &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;二是primary节点故障模拟&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;1.将primary节点Kill掉，并查询rs.status()，主节点以及宕机。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;字段&amp;quot;health&amp;quot;的值为0，说明原来的primary节点已经down机了。&lt;/li&gt;
+&lt;li&gt;原来secondary节点变成了primary节点。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2.在新的primary节点上插入一条记录&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;rs0:PRIMARY&amp;gt;&lt;code&gt;db.scores.insert({stuid:3,subject:&amp;quot;computer&amp;quot;,score:99})&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;3.重新恢复&amp;quot;40000&amp;quot;节点（原来的primary节点）&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.\mongod.exe --config D:\mongodb\configs_rs0\rs0_0.conf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;再次查看复制集状态rs.status()&lt;/li&gt;
+&lt;li&gt;“40000”实例被重新激活后，变成了secondary节点，oplog也被同步成最新的了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;说明当primary节点故障时，复制集能自动转移故障，将其中一个secondary节点变为primary节点，读写操作继续在新的primary节点上进行。原来primary节点恢复后，在复制集中变成了secondary节点。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    &lt;figure  id=&#34;figure-数据同步原理&#34;&gt;
+      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%8711.png&#34; alt=&#34;数据同步原理&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+          数据同步原理
+        &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;上面两中情况都得到了验证，但是有一点要注意，mongDB默认情况下只能在primary节点上进行读写操作，如下图所示：&lt;/p&gt;
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    &lt;figure  id=&#34;figure-图示&#34;&gt;
+      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%8712.png&#34; alt=&#34;图示&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+          图示
+        &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对于客户端应用程序来说，对复制集的读写操作是透明的，默认情况它总是在primary节点上进行。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mongoDB提供了很多种常见编程语言的驱动程序，驱动程序位于应用程序与mongod实例之间，应用程发起与复制集的连接，驱动程序自动选择primary节点。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;当primary节点失效，复制集发生故障转移时，复制集将先关闭与所有客户端的socket连接，驱动程序将返回一个异常，应用程序收到这个异常，这个时候需要应用程序开发人员去处理这些异常，同时驱动程序会尝试重新与primary节点建立连接（这个动作对应用程序来说是透明的）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;假如这个时候正在发生一个读操作，在异常处理中你可以重新发起读数据命令，因为读操作不会改变数据库的数据；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;假如这个时候发生的是写操作，情况就变得微妙起来，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果是&lt;strong&gt;非安全模式&lt;/strong&gt;下的写，就会产生不确定因素，写是否成功不确定。&lt;/li&gt;
+&lt;li&gt;如果是&lt;strong&gt;安全模式&lt;/strong&gt;，驱动程序会通过getlasterror命令知道哪些写操作成功了，哪些失败，驱动程序会返回失败的信息给应用程序，针对这个异常信息，应用程序可以决定怎样处置这个写操作，可以重新执行写操作，也可以直接给用户报出这个错误。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;633-写关注&#34;&gt;6.3.3 写关注&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;对于某些应用程序来说，写关注是重要的。它能&lt;mark&gt;判断哪些写操作成功写入了&lt;/mark&gt;，哪些失败了，对于失败的操作，驱动程序能返回错误，由应用程序决定怎么处理。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果没有写关注，应用程序发送一个写操作到socket后，就不会管后面发生了什么情况，不知道是否成功写入数据库，这种情形对于日志类型的应用程序还是可以接受的，因为偶尔的写失败不会影响整个日志的监控情况。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;带有写关注的操作会等到&lt;mark&gt;数据库确认成功&lt;/mark&gt;写入后才能返回，因此写关注会带来一点性能的损失。下面先分析复制集上写关注配置。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;默认情况下复制集的写关注只针对primary节点，如下图所示:&lt;/p&gt;
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    &lt;figure  id=&#34;figure-图示&#34;&gt;
+      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%8713.png&#34; alt=&#34;图示&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+          图示
+        &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;w参数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;为0时，不使用写关注，不需要等待就返回。&lt;/li&gt;
+&lt;li&gt;为1时，只关注primary节点返回确认写成功的消息。&lt;/li&gt;
+&lt;li&gt;为n时，写关注将针对复制集中&lt;mark&gt;n个&lt;/mark&gt;节点，当客户端收到这些节点的反馈信息后，才能返回确认写成功的消息。&lt;/li&gt;
+&lt;li&gt;为majority时，取决于复制集中大多数投票节点的数量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;w=2的写关注执行流程图&lt;/p&gt;
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    &lt;figure  id=&#34;figure-流程图&#34;&gt;
+      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%8714.png&#34; alt=&#34;流程图&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+          流程图
+        &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;634-读参考&#34;&gt;6.3.4 读参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;读参考是指MongoDB将客户端的读请求路由到复制集中指定的成员上，默认情况下读操作的请求被路由到复制集中的primary节点上；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;从Primary节点上进行读取能够保证读到的数据是最新的，但是将读操作路由到其他secondary节点上去后，由于从primary节点同步数据到secondary节点会产生时间差，可能导致从secondary节点上读到的数据不是最新的。当然这对于实时性要求不是很高的绝大部分应用程序来说，并不是大问题。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;关于读参考还有一点需要注意，因为每一个secondary节点都会从primary节点同步数据，所有secondary节点一般有相同的写操作流量，同时primary节点上的读操作流量也并没有减少，所以读参考并不能提高系统读写的容量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;它最大的好处是能够使客户端的读请求路由到最佳的secondary节点上(如最近的节点)，提高客户端的读效率。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;MongoDB驱动支持的读参考模式如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;primary模式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是默认的读操作模式，所有的读请求都路由到复制集中的primary节点上，如果primary节点故障了，读操作将会产生一个错误或者抛出一个异常。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;primaryPrefered模式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在大多数模式下，读操作从primary节点上进行，如果primary节点故障无法读取，读操作将会路由到secondary节点上。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;secondary模式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;读操作只能从secondary节点上进行，如果没有可用的secondary节点，读操作将会产生错误或抛出异常。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;secondaryPrefered模式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在大多数模式下，读操作从secondary节点上进行，但当复制集中只有一个primary时，读操作将用这个复制集的primary节点。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;neares模式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;读操作从最近的节点上进行，有可能是primary节点，也有可能是secondary节点，并不会考虑节点的类型。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
