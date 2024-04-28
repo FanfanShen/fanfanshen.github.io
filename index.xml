@@ -115,7 +115,7 @@
     </item>
     
     <item>
-      <title>2.2删除操作</title>
+      <title>2.2 删除操作</title>
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.2/</link>
       <pubDate>Sat, 13 Apr 2024 00:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.2/</guid>
@@ -179,7 +179,7 @@ deleteMany:批量删除集合中的文档记录&lt;br&gt;
     </item>
     
     <item>
-      <title>2.3修改操作</title>
+      <title>2.3 修改操作</title>
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.3/</link>
       <pubDate>Sat, 13 Apr 2024 00:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.3/</guid>
@@ -304,7 +304,7 @@ $max保留修改值和原值中最大的值；&lt;/p&gt;
     </item>
     
     <item>
-      <title>2.4查询操作</title>
+      <title>2.4 查询操作</title>
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.4/</link>
       <pubDate>Sat, 13 Apr 2024 00:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.4/</guid>
@@ -493,7 +493,7 @@ db.collection.find({$or:[{key1:value1},{key2:value2}]}).pretty()&lt;br&gt;
     </item>
     
     <item>
-      <title>2.4查询操作</title>
+      <title>2.4 查询操作</title>
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.5/</link>
       <pubDate>Sat, 13 Apr 2024 00:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.5/</guid>
@@ -532,7 +532,7 @@ MongoDB支持将插入操作、修改操作、删除操作放在一个bulkwrite�
     </item>
     
     <item>
-      <title>2.1插入操作</title>
+      <title>2.1 插入操作</title>
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.1/</link>
       <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.1/</guid>
@@ -1044,7 +1044,7 @@ executionTimeMillis：预测需要执行的时间&lt;/p&gt;
     </item>
     
     <item>
-      <title>1.5几个重要的可执行文件</title>
+      <title>1.5 几个重要的可执行文件</title>
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.5/</link>
       <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.5/</guid>
@@ -1180,7 +1180,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-654782931&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-928643571&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1190,7 +1190,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-654782931&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-928643571&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -1478,7 +1478,7 @@ Crash --&gt; [*]
     </item>
     
     <item>
-      <title>1.1MongoDB的发展与现状</title>
+      <title>1.1 MongoDB的发展与现状</title>
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.1/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.1/</guid>
@@ -1631,7 +1631,7 @@ Crash --&gt; [*]
     </item>
     
     <item>
-      <title>1.2MongoDB与Hadoop比较</title>
+      <title>1.2 MongoDB与Hadoop比较</title>
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.2/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.2/</guid>
@@ -1755,7 +1755,7 @@ Crash --&gt; [*]
     </item>
     
     <item>
-      <title>1.3关键特性</title>
+      <title>1.3 关键特性</title>
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.3/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.3/</guid>
@@ -1791,7 +1791,7 @@ Crash --&gt; [*]
     </item>
     
     <item>
-      <title>1.4安装部署</title>
+      <title>1.4 安装部署</title>
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.4/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.4/</guid>
@@ -1890,7 +1890,7 @@ Crash --&gt; [*]
     </item>
     
     <item>
-      <title>1.6适合的业务</title>
+      <title>1.6 适合的业务</title>
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.6/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.6/</guid>
@@ -2025,7 +2025,7 @@ Crash --&gt; [*]
     </item>
     
     <item>
-      <title>4.1单个集合中的基础聚集函数</title>
+      <title>4.1 单个集合中的基础聚集函数</title>
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter4/4.1/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter4/4.1/</guid>
@@ -2047,11 +2047,34 @@ Crash --&gt; [*]
 &lt;/ul&gt;
 &lt;p&gt;3.db.collection.countDocuments(query, options)&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;和count()类似4.db.collection.distinct(field, query, options)- 返回指定字段的非重复值；&lt;/li&gt;
-&lt;li&gt;field为需要distinct的字段名；&lt;/li&gt;
-&lt;li&gt;uery为查询过滤条件；&lt;/li&gt;
-&lt;li&gt;options可选参数，是否区分大小写或字符串比较规则等。  例如- db.books.distinct({“book_id”})&lt;/li&gt;
-&lt;li&gt;嵌套字段：db.address.distinct({“location.type”})- 也支持返回数组字段中非重复值。
+&lt;li&gt;和count()类似&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;4.db.collection.distinct(field, query, options)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;返回指定字段的非重复值；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;field为需要distinct的字段名；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;uery为查询过滤条件；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;options可选参数，是否区分大小写或字符串比较规则等。&lt;br&gt;
+例如&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;db.books.distinct({“book_id”})&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;嵌套字段：db.address.distinct({“location.type”})&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;也支持返回数组字段中非重复值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
 
 
 
@@ -2075,8 +2098,7 @@ Crash --&gt; [*]
   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
       4.1-1
     &lt;/figcaption&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+
 </description>
     </item>
     
