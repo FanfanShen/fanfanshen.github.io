@@ -1103,34 +1103,6 @@ executionTimeMillis：预测需要执行的时间&lt;/p&gt;
     </item>
     
     <item>
-      <title>1.5 几个重要的可执行文件</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.5/</link>
-      <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.5/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;mongod进程&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Mongod.exe为启动此数据库实例进程对应的可执行文件，是整个MongoDB中最核心的内容，负责数据库的创建、删除等各项管理工作，运行在服务器端为客户端提供监听，相当于MySQL中的mysqld进程。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;mongo进程&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Mongo是一个与mongod进程进行交互的JavaScript Shell进程，它提供了一些交互的接口函数用于系统管理员对数据库系统进行管理。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;其他进程&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;mongodump提供了一种从mongod实例上导出BSON dump文件的方法，mongorestore能够利用这些dump文件重建数据库，常用命令格式如下：
-&lt;code&gt;mongodump --port 50000 --db eshop --out e:\bak&lt;/code&gt;
-参数&amp;ndash;port是mongod实例监听端口，&amp;ndash;db是数据库名称，&amp;ndash;out是备份文件保存目录， mongodump &amp;ndash;help查看更多参数。&lt;/li&gt;
-&lt;li&gt;mongoexport是一个将MongoDB数据库实例中的数据导出来产生JSON或CVS文件的工具；&lt;/li&gt;
-&lt;li&gt;mongoimport是一个将JSON或CVS文件内容导入到MongoDB实例中的工具；&lt;/li&gt;
-&lt;li&gt;mongos是一个在分片中用到的进程。所以应用程序端的查询操作都会先由它分析，然后将查询定位到具体某一个分片上。&lt;/li&gt;
-&lt;li&gt;mongofiles提供一个操作MongoDB分布式文件存储系统的命令行接口。&lt;/li&gt;
-&lt;li&gt;mongostat提供一个展示当前正在运行的mongod实例的状态工具。&lt;/li&gt;
-&lt;li&gt;mongotop提供一个分析MongoDB实例花在读写数据上的时间跟踪方法。&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Writing technical content in Markdown</title>
       <link>https://fanfanshen.github.io/news/writing-technical-content/</link>
       <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
@@ -1239,7 +1211,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-964713825&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-648921537&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1249,7 +1221,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-964713825&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-648921537&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -1945,6 +1917,34 @@ Crash --&gt; [*]
       1.4-2
     &lt;/figcaption&gt;&lt;/figure&gt;
 
+</description>
+    </item>
+    
+    <item>
+      <title>1.5几个重要的可执行文件</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.5/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/1.5/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;mongod进程&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mongod.exe为启动此数据库实例进程对应的可执行文件，是整个MongoDB中最核心的内容，负责数据库的创建、删除等各项管理工作，运行在服务器端为客户端提供监听，相当于MySQL中的mysqld进程。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;mongo进程&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mongo是一个与mongod进程进行交互的JavaScript Shell进程，它提供了一些交互的接口函数用于系统管理员对数据库系统进行管理。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;其他进程&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;mongodump提供了一种从mongod实例上导出BSON dump文件的方法，mongorestore能够利用这些dump文件重建数据库，常用命令格式如下：
+&lt;code&gt;mongodump --port 50000 --db eshop --out e:\bak&lt;/code&gt;
+参数&amp;ndash;port是mongod实例监听端口，&amp;ndash;db是数据库名称，&amp;ndash;out是备份文件保存目录， mongodump &amp;ndash;help查看更多参数。&lt;/li&gt;
+&lt;li&gt;mongoexport是一个将MongoDB数据库实例中的数据导出来产生JSON或CVS文件的工具；&lt;/li&gt;
+&lt;li&gt;mongoimport是一个将JSON或CVS文件内容导入到MongoDB实例中的工具；&lt;/li&gt;
+&lt;li&gt;mongos是一个在分片中用到的进程。所以应用程序端的查询操作都会先由它分析，然后将查询定位到具体某一个分片上。&lt;/li&gt;
+&lt;li&gt;mongofiles提供一个操作MongoDB分布式文件存储系统的命令行接口。&lt;/li&gt;
+&lt;li&gt;mongostat提供一个展示当前正在运行的mongod实例的状态工具。&lt;/li&gt;
+&lt;li&gt;mongotop提供一个分析MongoDB实例花在读写数据上的时间跟踪方法。&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
