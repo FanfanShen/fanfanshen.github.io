@@ -1211,7 +1211,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-648921537&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-983214756&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1221,7 +1221,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-648921537&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-983214756&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -2341,6 +2341,414 @@ Crash --&gt; [*]
     &lt;/figcaption&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>5.1 存储引擎的数据结构</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter5/5.1/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter5/5.1/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;存储引擎是什么&lt;/strong&gt;&lt;br&gt;
+磁盘上的数据读到内存并返回给应用&lt;br&gt;
+将应用修改的数据由内存写到磁盘上&lt;br&gt;
+&lt;strong&gt;分类&lt;/strong&gt;&lt;br&gt;
+一、典型的B—tree数据结构&lt;br&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-51-1&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.1-1.png&#34; alt=&#34;5.1-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      5.1-1
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;br&gt;
+在整个B-tree中从上往下依次为根节点、内部节点、叶子节点。每一个节点就是一个page，数据以page为单位在内存和磁盘之间进行调度。每个page的大小决定了相应节点的分支数量，每条索引记录会包含一个数据指针，该指针指向一条数据记录所在文件的偏移量
+二、磁盘中的基础数据结构&lt;br&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-51-2&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.1-2.png&#34; alt=&#34;5.1-2&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      5.1-2
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;三、内存中的基础数据结构&lt;br&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-51-3&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.1-3.png&#34; alt=&#34;5.1-3&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      5.1-3
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;四、page的其他数据结构&lt;br&gt;
+1、WT_PAGE_MODIFY：用于保存page上的事务、脏数据字节大小等与page修改相关的信息&lt;br&gt;
+2、read_gen 当page中的read generation 值作为evictpage使用时，对应page在LRU队列中的位置，决定page被evictsever选中淘汰出去的先后顺序。&lt;br&gt;
+等等还有很多&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>5.2 page eviction进行页面淘汰</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter5/5.2/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter5/5.2/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;为什么要进行页面淘汰&lt;/strong&gt;&lt;br&gt;
+为了有足够的内存空间，保障后面新的插入和修改等操作。&lt;br&gt;
+&lt;strong&gt;定义&lt;/strong&gt;&lt;br&gt;
+当内存中的“脏页”达到一定比例或cache使用量达到一定比例时就会触发相应的evict page线程来将pages（包含干净的pages和脏pages）按一定的算法（LRU队列）淘汰出去。
+&lt;strong&gt;触发page eviction条件的几种参数控制&lt;/strong&gt;&lt;br&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-52-1&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.2-1.png&#34; alt=&#34;5.2-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      5.2-1
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>5.3 page reconcile将数据写入磁盘</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter5/5.3/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter5/5.3/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;br&gt;
+页面淘汰之前，通过reconcile生成磁盘映像page大小，并写入磁盘&lt;br&gt;
+&lt;strong&gt;流程图&lt;/strong&gt;&lt;br&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-53-1&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.3-1.png&#34; alt=&#34;5.3-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      5.3-1
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>5.4 内存的分配规则</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter5/5.4/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter5/5.4/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;规则&lt;/strong&gt;
+WiredTiger启动时，向操作系统申请一部分内存称Internal Cache，如果主机上只运行MongoDB相关的服务进程，则剩下的内存可以作为文件系统的缓存并由操作系统负责管理。
+整个内存使用情况如下图
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-54-1&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.4-1.png&#34; alt=&#34;5.4-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      5.4-1
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>5.5 page的生命周期</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter5/5.5/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter5/5.5/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;步骤&lt;/strong&gt;&lt;br&gt;
+第一步：pages从磁盘读到内存&lt;br&gt;
+第二步：pages在内存中被修改&lt;br&gt;
+第三步：被修改的脏pages在内存被reconcile，完成后将discard这些pages。&lt;br&gt;
+第四步：pages被选中，加入淘汰队列，等待被evict线程淘汰出内存&lt;br&gt;
+第五步：evict线程会将干净的pages直接从内存丢弃（page没修改），将经过reconcile处理后的磁盘映像写到磁盘再丢弃“脏的”pages。&lt;br&gt;
+&lt;strong&gt;流程图&lt;/strong&gt;&lt;br&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-55-1&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.5-1.png&#34; alt=&#34;5.5-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      5.5-1
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>5.6  checkpoint的原理</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter5/5.6/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter5/5.6/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;使用checkpoint的目的&lt;/strong&gt;&lt;br&gt;
+一、是将内存里面发生修改的数据写到数据文件进行持久化保存，确保数据一致性&lt;br&gt;
+二、是实现数据库在某个时刻意外发生故障，再次启动时，缩短数据库的恢复时间&lt;br&gt;
+&lt;strong&gt;checkpoint本质&lt;/strong&gt;&lt;br&gt;
+Checkpoint相当于一个日志，记录了上次Checkpoint后相关数据文件的变化&lt;br&gt;
+&lt;strong&gt;checkpoint包含的关键信息&lt;/strong&gt;&lt;br&gt;
+先看图&lt;br&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-56-1&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.6-1.png&#34; alt=&#34;5.6-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      5.6-1
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;每一个checkpoint包含1个root、3个列表及磁盘文件大小&lt;br&gt;
+详细信息解释:&lt;br&gt;
+(1)root page:包含root page 的大小(size)、在文件中的位置(offset)、校验和(checksum)，当创建一checkpoint时，会生成一个新 root page。&lt;br&gt;
+(2)allocated list page:用于记录最后一次 checkpoint之后，在这次 checkpoint执行时,由WiredTiger块管理器新分配的page记录每个新分配page的size、offset和checksum&lt;br&gt;
+(3)available list page:在执行这次 checkpoint时，所有由WiredTiger 块管理器分配的page还没有被使用;当删除一个之前创建的checkpoint时，它所附带的可用 page 将被合并到最新的checkpoint的可用列表上，也会记录每个可用page的size、offset 和checksum.&lt;br&gt;
+(4)discarded list page:用于记录最后一次 checkpoint之后，在这次 checkpoint 执行时，丢弃不再使用的page，并会记录每个丢弃page的size、offset和checksume&lt;br&gt;
+(5)fle size:在这次 checkpoint执行后，用于记录磁盘中数据文件的大小。&lt;br&gt;
+&lt;strong&gt;checkpoint原理图&lt;/strong&gt;&lt;br&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-56-2&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.6-2.png&#34; alt=&#34;5.6-2&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      5.6-2
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>5.7 wt工具和磁盘中的元数据</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter5/5.7/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter5/5.7/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;wt工具用于何处&lt;/strong&gt;&lt;br&gt;
+WiredTiger生成的磁盘文件基本上是二进制格式，我们并不能直接用编辑工具打开阅读，如果想查看相关元数据，可以用WiredTiger提供的wt工具&lt;br&gt;
+需自行下载编译，linux环境&lt;br&gt;
+&lt;strong&gt;元数据相关文件&lt;/strong&gt;
+collection-xxx.wt和index-xxx.wt，数据库中集合所对应的数据文件和索引文件；&lt;br&gt;
+WiredTiger.lock，运行实例的锁文件&lt;br&gt;
+mongod.lock，锁文件&lt;br&gt;
+storage.bson，配置文件&lt;br&gt;
+sizeStorer.wt，文档容量信息 &lt;br&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-57-1&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.7-1.png&#34; alt=&#34;5.7-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      5.7-1
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>5.8  事务</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter5/5.8/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter5/5.8/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;事务的基本原理&lt;/strong&gt;&lt;br&gt;
+原子性：要么完全执行成功，要么不做任何改变；&lt;br&gt;
+一致性：当多个事务并行执行时，元素的属性在每个事务中保持一致；&lt;br&gt;
+隔离性：当多个事务同时执行时，互不影响；&lt;br&gt;
+持久性：一旦提交事务，数据的更改就不会丢失。&lt;br&gt;
+&lt;strong&gt;事务的数据结构&lt;/strong&gt; &lt;br&gt;
+事务在内存里面也会维护相应的数据结构以支撑事务的并发、回滚、持久化等操作&lt;br&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-58-1&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.8-1.png&#34; alt=&#34;5.8-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      5.8-1
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;strong&gt;字段解释&lt;/strong&gt;&lt;br&gt;
+(1)id字段:这是事务的全局唯一标识，通过分析它与具体的操作关联，就能够知道一个事务包含哪些操作。&lt;br&gt;
+(2)snapshot data 字段:MongoDB 使用的是快照隔离级别的事务，这个字段用于保存事务的快照信息，具体来说它会有 snap_min和 snap_max两个属性，通过这两个属性能够计算一个事务开始时的数据范围，每个事务开始时都会构造一个这样的快照.&lt;br&gt;
+(3)commit_timestamp字段:表示事务提交的时间，
+(4)durable_timestamp字段:表示事务修改的数据已持久化的时间，与具体操作中的 durable_ts 字段关联。
+(5)prepare timestamp字段:表示事务开始准备的时间&lt;br&gt;
+(6)WT_TXN_OP字段:包含事务的修改操作，用于事务回滚和生成事务日志( Journal )。
+(7)1ogrec字段:表示事务日志的缓存，用于在内存中保存事务日志(对于MongoDB来说 Journal日志就是事务日志)。&lt;/p&gt;
 </description>
     </item>
     
