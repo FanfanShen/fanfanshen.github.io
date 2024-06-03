@@ -276,12 +276,26 @@
 
   
 
-<meta name="description" content="Blah, blah, blah..." />
+<meta name="description" content="分片部署架构解决的问题
+存储海量数据
+高效的读/写海量数据
+分片集群部署的原理
+随着运行时间的推移，数据库的索引和数据文件会变得越来越大，对于单节点的机器来说，迟早会突破内存的限制，当磁盘上的数据文件和索引远大于内存的大小时，这个时候操作系统会频繁的进行内存交换，导致整个数据库系统的读写性能下降。
+因此对于大数据的处理，要时刻监控mongoDB的磁盘I/O性能、可用内存的大小，在数据库内存使用率达到一定程度时就要考虑分片了。通过分片使整个数据库分布在各个片上，每个片拥有数据库的一部分数据，从而降低内存使用率，提高读写性能
+分片集群的部署架构
+一、分片shard
+1、每一个片就是一个复制集;
+2、复制集中的每个成员可能是一个mongod实例；
+3、复制集所具备的特性比如：自动故障转移、冗余备份。在每个分片上均有体现 二、mongos路由进程 1、将整个分片集群看成一个整体，使分片集群对整个客户端来说是透明的,当客户端发起读/写操作时，由mongos路由进程将该操作路由到具体的分片上 2、此外,mongos是一个轻量级且非持久性的进程。轻量级表示它不会保存任何数据库中的数据 三、config配置服务器
+1、mongos路由进程会从confg配置服务器上同步元数据信息，因此confg配置服务器要能实现这些元数据信息的持久化。
+2、配置服务器上的数据如果丢失，那么整个分片集群就无法使用
+3、在生产环境中通常利用三台配置服务器来实现冗余备份，这三台服务器是独立的，并不是复制集架构 具体结构见下图
+7.1-1 " />
 
 
 
-<link rel="alternate" hreflang="en-us" href="https://fanfanshen.github.io/courses/bigdatastorage/chapter2/" />
-<link rel="canonical" href="https://fanfanshen.github.io/courses/bigdatastorage/chapter2/" />
+<link rel="alternate" hreflang="en-us" href="https://fanfanshen.github.io/courses/bigdatastorage/chapter7/7.1/" />
+<link rel="canonical" href="https://fanfanshen.github.io/courses/bigdatastorage/chapter7/7.1/" />
 
 
 
@@ -317,12 +331,32 @@
   <meta property="twitter:creator" content="@wowchemy" />
 <meta property="twitter:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
 <meta property="og:site_name" content="Fanfan Shen&#39;s Homepage" />
-<meta property="og:url" content="https://fanfanshen.github.io/courses/bigdatastorage/chapter2/" />
-<meta property="og:title" content="第2章 CRUD操作 | Fanfan Shen&#39;s Homepage" />
-<meta property="og:description" content="Blah, blah, blah..." /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:url" content="https://fanfanshen.github.io/courses/bigdatastorage/chapter7/7.1/" />
+<meta property="og:title" content="7.1 分片集群的部署架构 | Fanfan Shen&#39;s Homepage" />
+<meta property="og:description" content="分片部署架构解决的问题
+存储海量数据
+高效的读/写海量数据
+分片集群部署的原理
+随着运行时间的推移，数据库的索引和数据文件会变得越来越大，对于单节点的机器来说，迟早会突破内存的限制，当磁盘上的数据文件和索引远大于内存的大小时，这个时候操作系统会频繁的进行内存交换，导致整个数据库系统的读写性能下降。
+因此对于大数据的处理，要时刻监控mongoDB的磁盘I/O性能、可用内存的大小，在数据库内存使用率达到一定程度时就要考虑分片了。通过分片使整个数据库分布在各个片上，每个片拥有数据库的一部分数据，从而降低内存使用率，提高读写性能
+分片集群的部署架构
+一、分片shard
+1、每一个片就是一个复制集;
+2、复制集中的每个成员可能是一个mongod实例；
+3、复制集所具备的特性比如：自动故障转移、冗余备份。在每个分片上均有体现 二、mongos路由进程 1、将整个分片集群看成一个整体，使分片集群对整个客户端来说是透明的,当客户端发起读/写操作时，由mongos路由进程将该操作路由到具体的分片上 2、此外,mongos是一个轻量级且非持久性的进程。轻量级表示它不会保存任何数据库中的数据 三、config配置服务器
+1、mongos路由进程会从confg配置服务器上同步元数据信息，因此confg配置服务器要能实现这些元数据信息的持久化。
+2、配置服务器上的数据如果丢失，那么整个分片集群就无法使用
+3、在生产环境中通常利用三台配置服务器来实现冗余备份，这三台服务器是独立的，并不是复制集架构 具体结构见下图
+7.1-1 " /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
-    <meta property="og:updated_time" content="2018-09-09T00:00:00&#43;00:00" />
+    <meta
+      property="article:published_time"
+      content="2019-05-05T00:00:00&#43;00:00"
+    />
+  
+  
+    <meta property="article:modified_time" content="2024-06-01T12:12:32&#43;08:00">
   
 
 
@@ -331,23 +365,23 @@
 
 
 
-
-
-
-  
-  
-  
-
-  
-  
-    <link rel="alternate" href="/courses/bigdatastorage/chapter2/index.xml" type="application/rss+xml" title="Fanfan Shen&#39;s Homepage" />
-  
-
   
 
 
+
+
   
-  <title>第2章 CRUD操作 | Fanfan Shen&#39;s Homepage</title>
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <title>7.1 分片集群的部署架构 | Fanfan Shen&#39;s Homepage</title>
 
   
   
@@ -375,7 +409,7 @@
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="54b67c87f7942353f60892cd023594ac" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="7673fea83993e122347599128022a055" >
 
   
   
@@ -827,7 +861,7 @@
       <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
         
         
-          课程介绍
+          第7章 分片集群
         
       </span>
       <span><i class="fas fa-chevron-down"></i></span>
@@ -950,7 +984,7 @@
 
     
       <div class="docs-toc-item">
-        <a class="docs-toc-link  active" href="/courses/bigdatastorage/chapter2/">第2章 CRUD操作</a>
+        <a class="docs-toc-link " href="/courses/bigdatastorage/chapter2/">第2章 CRUD操作</a>
     
       
         <ul class="nav docs-sidenav">
@@ -1196,7 +1230,7 @@
       
 
 
-  <li class=""><a href="/courses/bigdatastorage/chapter7/7.1/">7.1 分片集群的部署架构</a></li>
+  <li class="active"><a href="/courses/bigdatastorage/chapter7/7.1/">7.1 分片集群的部署架构</a></li>
 
 
 
@@ -1293,11 +1327,7 @@
         <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
       </ul>
 
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#前沿说明">前沿说明</a></li>
-  </ul>
-</nav>
+      <nav id="TableOfContents"></nav>
 
       
 
@@ -1322,6 +1352,8 @@
   <nav class="d-none d-md-flex" aria-label="breadcrumb">
     <ol class="breadcrumb">
       
+  
+    
   
     
   
@@ -1357,8 +1389,17 @@
     </li>
   
 
+    <li class="breadcrumb-item">
+      <a href="/courses/bigdatastorage/chapter7/">
+        
+          第7章 分片集群
+        
+      </a>
+    </li>
+  
+
       <li class="breadcrumb-item active" aria-current="page">
-        第2章 CRUD操作
+        7.1 分片集群的部署架构
       </li>
     </ol>
   </nav>
@@ -1375,14 +1416,57 @@
 
       <div class="docs-article-container">
         
-        <h1>第2章 CRUD操作</h1>
+        <h1>7.1 分片集群的部署架构</h1>
 
         <article class="article-style">
 
           
           
 
-          <h2 id="前沿说明">前沿说明</h2>
+          <p><strong>分片部署架构解决的问题</strong><br>
+存储海量数据<br>
+高效的读/写海量数据<br>
+<strong>分片集群部署的原理</strong><br>
+随着运行时间的推移，数据库的索引和数据文件会变得越来越大，对于单节点的机器来说，迟早会突破内存的限制，当磁盘上的数据文件和索引远大于内存的大小时，这个时候操作系统会频繁的进行内存交换，导致整个数据库系统的读写性能下降。<br>
+因此对于大数据的处理，要时刻监控mongoDB的磁盘I/O性能、可用内存的大小，在数据库内存使用率达到一定程度时就要考虑分片了。通过分片使整个数据库分布在各个片上，每个片拥有数据库的一部分数据，从而降低内存使用率，提高读写性能<br>
+<strong>分片集群的部署架构</strong><br>
+一、分片shard<br>
+1、每一个片就是一个复制集;<br>
+2、复制集中的每个成员可能是一个mongod实例；<br>
+3、复制集所具备的特性比如：自动故障转移、冗余备份。在每个分片上均有体现 <br>
+二、mongos路由进程 <br>
+1、将整个分片集群看成一个整体，使分片集群对整个客户端来说是透明的,当客户端发起读/写操作时，由mongos路由进程将该操作路由到具体的分片上 <br>
+2、此外,mongos是一个轻量级且非持久性的进程。轻量级表示它不会保存任何数据库中的数据
+三、config配置服务器<br>
+1、mongos路由进程会从confg配置服务器上同步元数据信息，因此confg配置服务器要能实现这些元数据信息的持久化。<br>
+2、配置服务器上的数据如果丢失，那么整个分片集群就无法使用<br>
+3、在生产环境中通常利用三台配置服务器来实现冗余备份，这三台服务器是独立的，并不是复制集架构
+<em><strong>具体结构见下图</strong></em><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-71-1">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter7/images/7.1-1.png" alt="7.1-1" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      7.1-1
+    </figcaption></figure>
+</p>
 
 
         </article>
@@ -1404,6 +1488,12 @@
 <div class="post-nav">
   
   
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/courses/bigdatastorage/chapter7/7.2/" rel="prev">7.2 手动部署一个分片集群</a>
+  </div>
+  
 </div>
 
         </div>
@@ -1411,7 +1501,7 @@
       </div>
 
       <div class="body-footer">
-        <p>Last updated on Apr 28, 2024 6:53 PM</p>
+        <p>Last updated on Jun 1, 2024 12:12 PM</p>
 
         
 

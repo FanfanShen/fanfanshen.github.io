@@ -276,12 +276,24 @@
 
   
 
-<meta name="description" content="Blah, blah, blah..." />
+<meta name="description" content="搭建分片集群步骤
+1、创建文件夹db_rs0
+2、在db_rs0文件夹下创建data、logs文件夹
+3、data文件夹下创建rs0_0，rs0_1，rs0_2,logs文件夹下创建rs0_0.log、rs0_1.log、rs0_2.log 4、创建configs_rs0文件夹。代表分片集rs0
+5、在configs_rs0下写入rs0_0.conf 、rs0_1.conf 、rs0_2.conf
+rs0中primary节点的配置文件为rs0_0.conf：
+dbpath = D:\mongodb\db_rs0\data\rs0_0
+logpath = D:\mongodb\db_rs0\logs\rs0_0.log
+journal = true （7.0版本这句话可以删掉） port = 40000
+replSet = rs0
+shardsvr=true //分片服务
+rs0中secondary节点的配置文件为rs0_1.conf：
+dbpath = D:\mongodb\db_rs0\data\rs0_1" />
 
 
 
-<link rel="alternate" hreflang="en-us" href="https://fanfanshen.github.io/courses/bigdatastorage/chapter2/" />
-<link rel="canonical" href="https://fanfanshen.github.io/courses/bigdatastorage/chapter2/" />
+<link rel="alternate" hreflang="en-us" href="https://fanfanshen.github.io/courses/bigdatastorage/chapter7/7.2/" />
+<link rel="canonical" href="https://fanfanshen.github.io/courses/bigdatastorage/chapter7/7.2/" />
 
 
 
@@ -317,37 +329,55 @@
   <meta property="twitter:creator" content="@wowchemy" />
 <meta property="twitter:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
 <meta property="og:site_name" content="Fanfan Shen&#39;s Homepage" />
-<meta property="og:url" content="https://fanfanshen.github.io/courses/bigdatastorage/chapter2/" />
-<meta property="og:title" content="第2章 CRUD操作 | Fanfan Shen&#39;s Homepage" />
-<meta property="og:description" content="Blah, blah, blah..." /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:url" content="https://fanfanshen.github.io/courses/bigdatastorage/chapter7/7.2/" />
+<meta property="og:title" content="7.2 手动部署一个分片集群 | Fanfan Shen&#39;s Homepage" />
+<meta property="og:description" content="搭建分片集群步骤
+1、创建文件夹db_rs0
+2、在db_rs0文件夹下创建data、logs文件夹
+3、data文件夹下创建rs0_0，rs0_1，rs0_2,logs文件夹下创建rs0_0.log、rs0_1.log、rs0_2.log 4、创建configs_rs0文件夹。代表分片集rs0
+5、在configs_rs0下写入rs0_0.conf 、rs0_1.conf 、rs0_2.conf
+rs0中primary节点的配置文件为rs0_0.conf：
+dbpath = D:\mongodb\db_rs0\data\rs0_0
+logpath = D:\mongodb\db_rs0\logs\rs0_0.log
+journal = true （7.0版本这句话可以删掉） port = 40000
+replSet = rs0
+shardsvr=true //分片服务
+rs0中secondary节点的配置文件为rs0_1.conf：
+dbpath = D:\mongodb\db_rs0\data\rs0_1" /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
-    <meta property="og:updated_time" content="2018-09-09T00:00:00&#43;00:00" />
-  
-
-
-
-
-
-
-
-
-
-
+    <meta
+      property="article:published_time"
+      content="2019-05-05T00:00:00&#43;00:00"
+    />
   
   
-  
-
-  
-  
-    <link rel="alternate" href="/courses/bigdatastorage/chapter2/index.xml" type="application/rss+xml" title="Fanfan Shen&#39;s Homepage" />
-  
-
+    <meta property="article:modified_time" content="2024-06-01T12:12:32&#43;08:00">
   
 
 
+
+
+
+
+
   
-  <title>第2章 CRUD操作 | Fanfan Shen&#39;s Homepage</title>
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <title>7.2 手动部署一个分片集群 | Fanfan Shen&#39;s Homepage</title>
 
   
   
@@ -375,7 +405,7 @@
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="54b67c87f7942353f60892cd023594ac" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="cba1f6164dba14ed91006533e635b8df" >
 
   
   
@@ -827,7 +857,7 @@
       <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
         
         
-          课程介绍
+          第7章 分片集群
         
       </span>
       <span><i class="fas fa-chevron-down"></i></span>
@@ -950,7 +980,7 @@
 
     
       <div class="docs-toc-item">
-        <a class="docs-toc-link  active" href="/courses/bigdatastorage/chapter2/">第2章 CRUD操作</a>
+        <a class="docs-toc-link " href="/courses/bigdatastorage/chapter2/">第2章 CRUD操作</a>
     
       
         <ul class="nav docs-sidenav">
@@ -1200,7 +1230,7 @@
 
 
 
-  <li class=""><a href="/courses/bigdatastorage/chapter7/7.2/">7.2 手动部署一个分片集群</a></li>
+  <li class="active"><a href="/courses/bigdatastorage/chapter7/7.2/">7.2 手动部署一个分片集群</a></li>
 
       
         </ul>
@@ -1293,11 +1323,7 @@
         <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
       </ul>
 
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#前沿说明">前沿说明</a></li>
-  </ul>
-</nav>
+      <nav id="TableOfContents"></nav>
 
       
 
@@ -1322,6 +1348,8 @@
   <nav class="d-none d-md-flex" aria-label="breadcrumb">
     <ol class="breadcrumb">
       
+  
+    
   
     
   
@@ -1357,8 +1385,17 @@
     </li>
   
 
+    <li class="breadcrumb-item">
+      <a href="/courses/bigdatastorage/chapter7/">
+        
+          第7章 分片集群
+        
+      </a>
+    </li>
+  
+
       <li class="breadcrumb-item active" aria-current="page">
-        第2章 CRUD操作
+        7.2 手动部署一个分片集群
       </li>
     </ol>
   </nav>
@@ -1375,14 +1412,197 @@
 
       <div class="docs-article-container">
         
-        <h1>第2章 CRUD操作</h1>
+        <h1>7.2 手动部署一个分片集群</h1>
 
         <article class="article-style">
 
           
           
 
-          <h2 id="前沿说明">前沿说明</h2>
+          <p><strong>搭建分片集群步骤</strong><br>
+1、创建文件夹db_rs0<br>
+2、在db_rs0文件夹下创建data、logs文件夹<br>
+3、data文件夹下创建rs0_0，rs0_1，rs0_2,logs文件夹下创建rs0_0.log、rs0_1.log、rs0_2.log <br>
+4、创建configs_rs0文件夹。代表分片集rs0<br>
+5、在configs_rs0下写入rs0_0.conf 、rs0_1.conf 、rs0_2.conf</p>
+<p>rs0中primary节点的配置文件为rs0_0.conf：<br>
+dbpath = D:\mongodb\db_rs0\data\rs0_0<br>
+logpath =  D:\mongodb\db_rs0\logs\rs0_0.log<br>
+journal = true  （7.0版本这句话可以删掉）
+port = 40000<br>
+replSet = rs0<br>
+shardsvr=true   //分片服务</p>
+<p>rs0中secondary节点的配置文件为rs0_1.conf：<br>
+dbpath = D:\mongodb\db_rs0\data\rs0_1<br>
+logpath =  D:\mongodb\db_rs0\logs\rs0_1.log<br>
+journal = true<br>
+port = 40001<br>
+replSet = rs0<br>
+shardsvr=true   //分片服务</p>
+<p>rs0中arbiter节点的配置文件为rs0_2.conf：<br>
+dbpath = D:\mongodb\db_rs0\data\rs0_2<br>
+logpath =  D:\mongodb\db_rs0\logs\rs0_2.log<br>
+journal = true<br>
+port = 40002<br>
+replSet = rs0<br>
+shardsvr=true   //分片服务</p>
+<p>6、rs0中3个节点配置完成后，初始化和配置复制集：<br>
+先启动3个服务器：.\mongod.exe &ndash;config D:\mongodb\configs_rs0\rs0_0.conf<br>
+（将rs0_0.conf替换为rs0_1.conf、rs0_2.conf即可） <br>
+再开一个终端窗口mongo &ndash;port 40000 // 连接实例进行初始化
+rs.initiate()<br>
+rs0:PRIMARY&gt;rs.add(“localhost:40001”)<br>
+rs0:PRIMARY&gt;rs.addArb(“localhost:40002”)<br>
+rs0:PRIMARY&gt;rs.status() //查看状态是否成功<br>
+7、重复步骤1-5建立分片集1
+rs1中primary节点的配置文件为rs1_0.conf：<br>
+dbpath = D:\mongodb\db_rs1\data\rs1_0<br>
+logpath =  D:\mongodb\db_rs1\logs\rs1_0.log<br>
+journal = true<br>
+port = 40003<br>
+replSet = rs1<br>
+shardsvr=true</p>
+<p>rs1中secondary节点的配置文件为rs1_1.conf：<br>
+dbpath = D:\mongodb\db_rs1\data\rs1_1<br>
+logpath =  D:\mongodb\db_rs1\logs\rs1_1.log<br>
+journal = true<br>
+port = 40004<br>
+replSet = rs1<br>
+shardsvr=true</p>
+<p>rs1中arbiter节点的配置文件为rs1_2.conf：<br>
+dbpath = D:\mongodb\db_rs1\data\rs1_2<br>
+logpath =  D:\mongodb\db_rs1\logs\rs1_2.log<br>
+journal = true<br>
+port = 40005<br>
+replSet = rs1<br>
+shardsvr=true</p>
+<p>8、重复步骤6
+先启动3个服务器：.\mongod.exe &ndash;config D:\mongodb\configs_rs0\rs0_3.conf <br>
+（将rs0_3.conf替换为rs0_4.conf、rs0_5.conf即可）   <br>
+再开一个终端窗口mongo &ndash;port 40003 // 连接实例进行初始化<br>
+rs.initiate()<br>
+rs1:PRIMARY&gt;rs.add(“localhost:40004”)<br>
+rs1:PRIMARY&gt;rs.addArb(“localhost:40005”)<br>
+rs1:PRIMARY&gt;rs.status() //查看状态是否成功</p>
+<p>9、配置config服务器（是三个独立的配置服务器）<br>
+首先建立db_configs文件夹<br>
+接着在db_configs建立子文件夹data、logs<br>
+最后在data里创建db_config0、db_config1、db_config2文件夹  在logs文件夹里创建db_config0.log、db_config1.log、db_config2.log<br>
+以下是配置文件：<br>
+config服务器0的配置文件cfgserver0.conf：<br>
+dbpath = D:\mongodb\db_configs\data\db_config0<br>
+logpath =  D:\mongodb\db_configs\logs\db_config0.log<br>
+journal = true<br>
+port = 40006<br>
+configsvr = true   //说明是配置服务器类型的实例<br>
+replSet = rs-config  //复制集，但各个节点独立，不建立关联</p>
+<p>config服务器1的配置文件cfgserver1.conf：<br>
+dbpath = D:\mongodb\db_configs\data\db_config1<br>
+logpath =  D:\mongodb\db_configs\logs\db_config1.log<br>
+journal = true<br>
+port = 40007<br>
+configsvr = true<br>
+replSet = rs-config</p>
+<p>config服务器2的配置文件cfgserver2.conf：<br>
+dbpath = D:\mongodb\db_configs\data\db_config2<br>
+logpath =  D:\mongodb\db_configs\logs\db_config2.log<br>
+journal = true<br>
+port = 40008<br>
+configsvr = true<br>
+replSet = rs-config</p>
+<p>10、配置完3个服务器节点后，需要分别初始化和配置服务器：<br>
+mongo &ndash;port 40006 //分别连接实例进行初始化<br>
+mongo &ndash;port 40007<br>
+mongo &ndash;port 40008<br>
+rs.initiate()   //因为三个节点是独立的，均需要初始化。</p>
+<p>11、配置mongs路由服务器<br>
+首先建立文件夹mongos建立子文件夹logs在该文件里添加mongos.log<br>
+再在文件夹mongos添加cfg_mongos.conf<br>
+其配置文件cfg_mongos.conf内容为：<br>
+logpath =  D:\mongodb\mongos\logs\mongos.log   <br>
+port = 40009<br>
+configdb = rs-config/localhost:40006,localhost:40007,localhost:40008</p>
+<p>12、启动路由服务器：<br>
+mongos &ndash;config D:\mongodb\mongos\cfg_mongos.conf<br>
+<em><strong>注意</strong></em><br>
+实例对应的进程为mongos，路由服务器只是一个轻量级和非持久化操作的进程，因此上面的配置文件里面没有像其它mongod实例那样有一个存放数据文件的路径选项dbpath。</p>
+<p>13、添加各分片到集群<br>
+打开一个mongo客户端连接到mongos服务器：</p>
+<blockquote>
+<p>mongo &ndash;port 40009<br>
+mongos&gt; sh.addShard(“rs0/ localhost :40000,   localhost :40001”)  //出现ok:1，即成功<br>
+mongos&gt; sh.addShard(“rs1/ localhost :40003,   localhost :40004”)  //出现ok:1，即成功</p>
+</blockquote>
+<p>14、通过命令sh.status()检查上面的配置是否正确<br>
+正常的话输出信息类似下面：<br>
+mongos&gt; sh.status() //输出包含shards内容<br>
+shards:<br>
+{  &ldquo;_id&rdquo; : &ldquo;rs0&rdquo;,  &ldquo;host&rdquo; : &ldquo;rs0/ localhost :40000, localhost :40001&rdquo; }<br>
+{  &ldquo;_id&rdquo; : &ldquo;rs1&rdquo;,  &ldquo;host&rdquo; : &ldquo;rs1/ localhost :40003, localhost :40004&rdquo; }</p>
+<p><em><strong>注意</strong></em>
+此时在整个分片集群中还没有创建任何其它数据库，通过路由进程mongos连接集群，执行命令show dbs可以看到集群中只有系统默认创建的一个config数据库，且这个数据库只存在于三个配置服务器上，config数据库中的集合包含了整个集群的配置信息，执行命令show collections，可以看到有如下集合：<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-72-2">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter7/images/7.2-2.png" alt="7.2-2" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      7.2-2
+    </figcaption></figure>
+</p>
+<p>15、正确关闭集群
+第一步：关闭所有mongoss路由实例<br>
+use admin
+db.shutdownServer()
+第二步：关闭所有分片，先secondary再primary<br>
+第三步：关闭所有配置服务器</p>
+<p>16、正确重启集群<br>
+启动配置服务器、启动所有分片、启动mongos
+不正确的顺序可能出现通信问题或失败</p>
+<p><strong>现实生活环境中的实际部署的问题</strong>  <br>
+通过前面的分析可知，一个生产环境最少需要9个mongod实例进程，一个mongos进程实例，理论上说最少需要10台机器才能组成。 <br>
+但是这些进程中有些并不需要很多软硬件资源，它们可以与其它进程共存部署在同一个机器上，如复制集中arbiter进程、mongos进程可以部署到应用程序所在的服务器，综合考虑后可以得到下面一个典型的部署：<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-72-1">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter7/images/7.2-1.png" alt="7.2-1" loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
+      7.2-1
+    </figcaption></figure>
+</p>
 
 
         </article>
@@ -1404,6 +1624,13 @@
 <div class="post-nav">
   
   
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/courses/bigdatastorage/chapter7/7.1/" rel="next">7.1 分片集群的部署架构</a>
+  </div>
+  
+  
 </div>
 
         </div>
@@ -1411,7 +1638,7 @@
       </div>
 
       <div class="body-footer">
-        <p>Last updated on Apr 28, 2024 6:53 PM</p>
+        <p>Last updated on Jun 1, 2024 12:12 PM</p>
 
         
 

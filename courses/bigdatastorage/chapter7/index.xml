@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>第7章 分片集群 | Fanfan Shen&#39;s Homepage</title>
+    <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter7/</link>
+      <atom:link href="https://fanfanshen.github.io/courses/bigdatastorage/chapter7/index.xml" rel="self" type="application/rss+xml" />
+    <description>第7章 分片集群</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 09 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>第7章 分片集群</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter7/</link>
+    </image>
+    
+    <item>
+      <title>7.1 分片集群的部署架构</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter7/7.1/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter7/7.1/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;分片部署架构解决的问题&lt;/strong&gt;&lt;br&gt;
+存储海量数据&lt;br&gt;
+高效的读/写海量数据&lt;br&gt;
+&lt;strong&gt;分片集群部署的原理&lt;/strong&gt;&lt;br&gt;
+随着运行时间的推移，数据库的索引和数据文件会变得越来越大，对于单节点的机器来说，迟早会突破内存的限制，当磁盘上的数据文件和索引远大于内存的大小时，这个时候操作系统会频繁的进行内存交换，导致整个数据库系统的读写性能下降。&lt;br&gt;
+因此对于大数据的处理，要时刻监控mongoDB的磁盘I/O性能、可用内存的大小，在数据库内存使用率达到一定程度时就要考虑分片了。通过分片使整个数据库分布在各个片上，每个片拥有数据库的一部分数据，从而降低内存使用率，提高读写性能&lt;br&gt;
+&lt;strong&gt;分片集群的部署架构&lt;/strong&gt;&lt;br&gt;
+一、分片shard&lt;br&gt;
+1、每一个片就是一个复制集;&lt;br&gt;
+2、复制集中的每个成员可能是一个mongod实例；&lt;br&gt;
+3、复制集所具备的特性比如：自动故障转移、冗余备份。在每个分片上均有体现 &lt;br&gt;
+二、mongos路由进程 &lt;br&gt;
+1、将整个分片集群看成一个整体，使分片集群对整个客户端来说是透明的,当客户端发起读/写操作时，由mongos路由进程将该操作路由到具体的分片上 &lt;br&gt;
+2、此外,mongos是一个轻量级且非持久性的进程。轻量级表示它不会保存任何数据库中的数据
+三、config配置服务器&lt;br&gt;
+1、mongos路由进程会从confg配置服务器上同步元数据信息，因此confg配置服务器要能实现这些元数据信息的持久化。&lt;br&gt;
+2、配置服务器上的数据如果丢失，那么整个分片集群就无法使用&lt;br&gt;
+3、在生产环境中通常利用三台配置服务器来实现冗余备份，这三台服务器是独立的，并不是复制集架构
+&lt;em&gt;&lt;strong&gt;具体结构见下图&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-71-1&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.1-1.png&#34; alt=&#34;7.1-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      7.1-1
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>7.2 手动部署一个分片集群</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter7/7.2/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter7/7.2/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;搭建分片集群步骤&lt;/strong&gt;&lt;br&gt;
+1、创建文件夹db_rs0&lt;br&gt;
+2、在db_rs0文件夹下创建data、logs文件夹&lt;br&gt;
+3、data文件夹下创建rs0_0，rs0_1，rs0_2,logs文件夹下创建rs0_0.log、rs0_1.log、rs0_2.log &lt;br&gt;
+4、创建configs_rs0文件夹。代表分片集rs0&lt;br&gt;
+5、在configs_rs0下写入rs0_0.conf 、rs0_1.conf 、rs0_2.conf&lt;/p&gt;
+&lt;p&gt;rs0中primary节点的配置文件为rs0_0.conf：&lt;br&gt;
+dbpath = D:\mongodb\db_rs0\data\rs0_0&lt;br&gt;
+logpath =  D:\mongodb\db_rs0\logs\rs0_0.log&lt;br&gt;
+journal = true  （7.0版本这句话可以删掉）
+port = 40000&lt;br&gt;
+replSet = rs0&lt;br&gt;
+shardsvr=true   //分片服务&lt;/p&gt;
+&lt;p&gt;rs0中secondary节点的配置文件为rs0_1.conf：&lt;br&gt;
+dbpath = D:\mongodb\db_rs0\data\rs0_1&lt;br&gt;
+logpath =  D:\mongodb\db_rs0\logs\rs0_1.log&lt;br&gt;
+journal = true&lt;br&gt;
+port = 40001&lt;br&gt;
+replSet = rs0&lt;br&gt;
+shardsvr=true   //分片服务&lt;/p&gt;
+&lt;p&gt;rs0中arbiter节点的配置文件为rs0_2.conf：&lt;br&gt;
+dbpath = D:\mongodb\db_rs0\data\rs0_2&lt;br&gt;
+logpath =  D:\mongodb\db_rs0\logs\rs0_2.log&lt;br&gt;
+journal = true&lt;br&gt;
+port = 40002&lt;br&gt;
+replSet = rs0&lt;br&gt;
+shardsvr=true   //分片服务&lt;/p&gt;
+&lt;p&gt;6、rs0中3个节点配置完成后，初始化和配置复制集：&lt;br&gt;
+先启动3个服务器：.\mongod.exe &amp;ndash;config D:\mongodb\configs_rs0\rs0_0.conf&lt;br&gt;
+（将rs0_0.conf替换为rs0_1.conf、rs0_2.conf即可） &lt;br&gt;
+再开一个终端窗口mongo &amp;ndash;port 40000 // 连接实例进行初始化
+rs.initiate()&lt;br&gt;
+rs0:PRIMARY&amp;gt;rs.add(“localhost:40001”)&lt;br&gt;
+rs0:PRIMARY&amp;gt;rs.addArb(“localhost:40002”)&lt;br&gt;
+rs0:PRIMARY&amp;gt;rs.status() //查看状态是否成功&lt;br&gt;
+7、重复步骤1-5建立分片集1
+rs1中primary节点的配置文件为rs1_0.conf：&lt;br&gt;
+dbpath = D:\mongodb\db_rs1\data\rs1_0&lt;br&gt;
+logpath =  D:\mongodb\db_rs1\logs\rs1_0.log&lt;br&gt;
+journal = true&lt;br&gt;
+port = 40003&lt;br&gt;
+replSet = rs1&lt;br&gt;
+shardsvr=true&lt;/p&gt;
+&lt;p&gt;rs1中secondary节点的配置文件为rs1_1.conf：&lt;br&gt;
+dbpath = D:\mongodb\db_rs1\data\rs1_1&lt;br&gt;
+logpath =  D:\mongodb\db_rs1\logs\rs1_1.log&lt;br&gt;
+journal = true&lt;br&gt;
+port = 40004&lt;br&gt;
+replSet = rs1&lt;br&gt;
+shardsvr=true&lt;/p&gt;
+&lt;p&gt;rs1中arbiter节点的配置文件为rs1_2.conf：&lt;br&gt;
+dbpath = D:\mongodb\db_rs1\data\rs1_2&lt;br&gt;
+logpath =  D:\mongodb\db_rs1\logs\rs1_2.log&lt;br&gt;
+journal = true&lt;br&gt;
+port = 40005&lt;br&gt;
+replSet = rs1&lt;br&gt;
+shardsvr=true&lt;/p&gt;
+&lt;p&gt;8、重复步骤6
+先启动3个服务器：.\mongod.exe &amp;ndash;config D:\mongodb\configs_rs0\rs0_3.conf &lt;br&gt;
+（将rs0_3.conf替换为rs0_4.conf、rs0_5.conf即可）   &lt;br&gt;
+再开一个终端窗口mongo &amp;ndash;port 40003 // 连接实例进行初始化&lt;br&gt;
+rs.initiate()&lt;br&gt;
+rs1:PRIMARY&amp;gt;rs.add(“localhost:40004”)&lt;br&gt;
+rs1:PRIMARY&amp;gt;rs.addArb(“localhost:40005”)&lt;br&gt;
+rs1:PRIMARY&amp;gt;rs.status() //查看状态是否成功&lt;/p&gt;
+&lt;p&gt;9、配置config服务器（是三个独立的配置服务器）&lt;br&gt;
+首先建立db_configs文件夹&lt;br&gt;
+接着在db_configs建立子文件夹data、logs&lt;br&gt;
+最后在data里创建db_config0、db_config1、db_config2文件夹  在logs文件夹里创建db_config0.log、db_config1.log、db_config2.log&lt;br&gt;
+以下是配置文件：&lt;br&gt;
+config服务器0的配置文件cfgserver0.conf：&lt;br&gt;
+dbpath = D:\mongodb\db_configs\data\db_config0&lt;br&gt;
+logpath =  D:\mongodb\db_configs\logs\db_config0.log&lt;br&gt;
+journal = true&lt;br&gt;
+port = 40006&lt;br&gt;
+configsvr = true   //说明是配置服务器类型的实例&lt;br&gt;
+replSet = rs-config  //复制集，但各个节点独立，不建立关联&lt;/p&gt;
+&lt;p&gt;config服务器1的配置文件cfgserver1.conf：&lt;br&gt;
+dbpath = D:\mongodb\db_configs\data\db_config1&lt;br&gt;
+logpath =  D:\mongodb\db_configs\logs\db_config1.log&lt;br&gt;
+journal = true&lt;br&gt;
+port = 40007&lt;br&gt;
+configsvr = true&lt;br&gt;
+replSet = rs-config&lt;/p&gt;
+&lt;p&gt;config服务器2的配置文件cfgserver2.conf：&lt;br&gt;
+dbpath = D:\mongodb\db_configs\data\db_config2&lt;br&gt;
+logpath =  D:\mongodb\db_configs\logs\db_config2.log&lt;br&gt;
+journal = true&lt;br&gt;
+port = 40008&lt;br&gt;
+configsvr = true&lt;br&gt;
+replSet = rs-config&lt;/p&gt;
+&lt;p&gt;10、配置完3个服务器节点后，需要分别初始化和配置服务器：&lt;br&gt;
+mongo &amp;ndash;port 40006 //分别连接实例进行初始化&lt;br&gt;
+mongo &amp;ndash;port 40007&lt;br&gt;
+mongo &amp;ndash;port 40008&lt;br&gt;
+rs.initiate()   //因为三个节点是独立的，均需要初始化。&lt;/p&gt;
+&lt;p&gt;11、配置mongs路由服务器&lt;br&gt;
+首先建立文件夹mongos建立子文件夹logs在该文件里添加mongos.log&lt;br&gt;
+再在文件夹mongos添加cfg_mongos.conf&lt;br&gt;
+其配置文件cfg_mongos.conf内容为：&lt;br&gt;
+logpath =  D:\mongodb\mongos\logs\mongos.log   &lt;br&gt;
+port = 40009&lt;br&gt;
+configdb = rs-config/localhost:40006,localhost:40007,localhost:40008&lt;/p&gt;
+&lt;p&gt;12、启动路由服务器：&lt;br&gt;
+mongos &amp;ndash;config D:\mongodb\mongos\cfg_mongos.conf&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
+实例对应的进程为mongos，路由服务器只是一个轻量级和非持久化操作的进程，因此上面的配置文件里面没有像其它mongod实例那样有一个存放数据文件的路径选项dbpath。&lt;/p&gt;
+&lt;p&gt;13、添加各分片到集群&lt;br&gt;
+打开一个mongo客户端连接到mongos服务器：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mongo &amp;ndash;port 40009&lt;br&gt;
+mongos&amp;gt; sh.addShard(“rs0/ localhost :40000,   localhost :40001”)  //出现ok:1，即成功&lt;br&gt;
+mongos&amp;gt; sh.addShard(“rs1/ localhost :40003,   localhost :40004”)  //出现ok:1，即成功&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;14、通过命令sh.status()检查上面的配置是否正确&lt;br&gt;
+正常的话输出信息类似下面：&lt;br&gt;
+mongos&amp;gt; sh.status() //输出包含shards内容&lt;br&gt;
+shards:&lt;br&gt;
+{  &amp;ldquo;_id&amp;rdquo; : &amp;ldquo;rs0&amp;rdquo;,  &amp;ldquo;host&amp;rdquo; : &amp;ldquo;rs0/ localhost :40000, localhost :40001&amp;rdquo; }&lt;br&gt;
+{  &amp;ldquo;_id&amp;rdquo; : &amp;ldquo;rs1&amp;rdquo;,  &amp;ldquo;host&amp;rdquo; : &amp;ldquo;rs1/ localhost :40003, localhost :40004&amp;rdquo; }&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/em&gt;
+此时在整个分片集群中还没有创建任何其它数据库，通过路由进程mongos连接集群，执行命令show dbs可以看到集群中只有系统默认创建的一个config数据库，且这个数据库只存在于三个配置服务器上，config数据库中的集合包含了整个集群的配置信息，执行命令show collections，可以看到有如下集合：&lt;br&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-72-2&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.2-2.png&#34; alt=&#34;7.2-2&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      7.2-2
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;15、正确关闭集群
+第一步：关闭所有mongoss路由实例&lt;br&gt;
+use admin
+db.shutdownServer()
+第二步：关闭所有分片，先secondary再primary&lt;br&gt;
+第三步：关闭所有配置服务器&lt;/p&gt;
+&lt;p&gt;16、正确重启集群&lt;br&gt;
+启动配置服务器、启动所有分片、启动mongos
+不正确的顺序可能出现通信问题或失败&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;现实生活环境中的实际部署的问题&lt;/strong&gt;  &lt;br&gt;
+通过前面的分析可知，一个生产环境最少需要9个mongod实例进程，一个mongos进程实例，理论上说最少需要10台机器才能组成。 &lt;br&gt;
+但是这些进程中有些并不需要很多软硬件资源，它们可以与其它进程共存部署在同一个机器上，如复制集中arbiter进程、mongos进程可以部署到应用程序所在的服务器，综合考虑后可以得到下面一个典型的部署：&lt;br&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-72-1&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.2-1.png&#34; alt=&#34;7.2-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      7.2-1
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
