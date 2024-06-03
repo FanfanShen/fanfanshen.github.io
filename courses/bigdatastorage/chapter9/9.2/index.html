@@ -276,14 +276,13 @@
 
   
 
-<meta name="description" content="索引的创建方法 语法格式： db.**collection.** createIndex(keys, options)- Key值为你要创建的索引字段，1为按升序创建索引，如果你想按降序来创建索引指定为-1即可 3.0.0版本前创建索引方法为 db.collection.ensureIndex()，之后的版本使用了 db.collection.createIndex() 方法，ensureIndex() 还能用，但只是 createIndex() 的别名。
-例如：db.col.createIndex({&ldquo;title&rdquo;:1}) 查询创建的索引： db.customers.getIndexes()
-createIndex()可选参数参考表 可选参数参考表 " />
+<meta name="description" content="支持定期备份与恢复，可开发自动备份脚本；
+备份工具mongodump 通过mongodump &ndash;help命令可以查看到这个工具的常用选项； .\mongodump.exe --host=localhost --port 27017 --db test --out D:\mongodb\bak 在bak目录下可以看到test目录，同时创建了对应的*.bson和*.metadata.json文件，bson文件为相应集合的二进制文件， *.metadata.json为对应集合上创建的索引元数据； 其他选项：&ndash;collection导出指定集合；&ndash;query备份指定查询条件的集合 恢复工具mongorestore 对上面备份的dump文件进行恢复： .\mongorestore.exe --host=localhost --port 27017 --db newtest D:\mongodb\bak\test\ &ndash;db表示将dump文件重建到哪个数据库下，没有指定此参数则会恢复到原来的备份数据库上（默认会覆盖原来的数据） 命令的最后一项是dump文件所在的目录 恢复集合：&ndash;nsInclude=crm.users .\mongorestore.exe --port 27017 --drop --db test D:\mongodb\bak\test\ &ndash;drop：恢复数据前，先删掉此服务器端数据库下的所有集合，然后再恢复数据到服务端 " />
 
 
 
-<link rel="alternate" hreflang="en-us" href="https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.1/" />
-<link rel="canonical" href="https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.1/" />
+<link rel="alternate" hreflang="en-us" href="https://fanfanshen.github.io/courses/bigdatastorage/chapter9/9.2/" />
+<link rel="canonical" href="https://fanfanshen.github.io/courses/bigdatastorage/chapter9/9.2/" />
 
 
 
@@ -319,20 +318,19 @@ createIndex()可选参数参考表 可选参数参考表 " />
   <meta property="twitter:creator" content="@wowchemy" />
 <meta property="twitter:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
 <meta property="og:site_name" content="Fanfan Shen&#39;s Homepage" />
-<meta property="og:url" content="https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.1/" />
-<meta property="og:title" content="3.1 创建索引 | Fanfan Shen&#39;s Homepage" />
-<meta property="og:description" content="索引的创建方法 语法格式： db.**collection.** createIndex(keys, options)- Key值为你要创建的索引字段，1为按升序创建索引，如果你想按降序来创建索引指定为-1即可 3.0.0版本前创建索引方法为 db.collection.ensureIndex()，之后的版本使用了 db.collection.createIndex() 方法，ensureIndex() 还能用，但只是 createIndex() 的别名。
-例如：db.col.createIndex({&ldquo;title&rdquo;:1}) 查询创建的索引： db.customers.getIndexes()
-createIndex()可选参数参考表 可选参数参考表 " /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:url" content="https://fanfanshen.github.io/courses/bigdatastorage/chapter9/9.2/" />
+<meta property="og:title" content="9.2 备份与恢复 | Fanfan Shen&#39;s Homepage" />
+<meta property="og:description" content="支持定期备份与恢复，可开发自动备份脚本；
+备份工具mongodump 通过mongodump &ndash;help命令可以查看到这个工具的常用选项； .\mongodump.exe --host=localhost --port 27017 --db test --out D:\mongodb\bak 在bak目录下可以看到test目录，同时创建了对应的*.bson和*.metadata.json文件，bson文件为相应集合的二进制文件， *.metadata.json为对应集合上创建的索引元数据； 其他选项：&ndash;collection导出指定集合；&ndash;query备份指定查询条件的集合 恢复工具mongorestore 对上面备份的dump文件进行恢复： .\mongorestore.exe --host=localhost --port 27017 --db newtest D:\mongodb\bak\test\ &ndash;db表示将dump文件重建到哪个数据库下，没有指定此参数则会恢复到原来的备份数据库上（默认会覆盖原来的数据） 命令的最后一项是dump文件所在的目录 恢复集合：&ndash;nsInclude=crm.users .\mongorestore.exe --port 27017 --drop --db test D:\mongodb\bak\test\ &ndash;drop：恢复数据前，先删掉此服务器端数据库下的所有集合，然后再恢复数据到服务端 " /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
     <meta
       property="article:published_time"
-      content="2024-04-08T00:00:00&#43;00:00"
+      content="2019-05-05T00:00:00&#43;00:00"
     />
   
   
-    <meta property="article:modified_time" content="2024-04-09T10:43:52&#43;08:00">
+    <meta property="article:modified_time" content="2024-05-31T12:48:43&#43;08:00">
   
 
 
@@ -357,7 +355,7 @@ createIndex()可选参数参考表 可选参数参考表 " /><meta property="og:
 
 
   
-  <title>3.1 创建索引 | Fanfan Shen&#39;s Homepage</title>
+  <title>9.2 备份与恢复 | Fanfan Shen&#39;s Homepage</title>
 
   
   
@@ -385,7 +383,7 @@ createIndex()可选参数参考表 可选参数参考表 " /><meta property="og:
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="426579b2c46f0f1c95ce932922be1362" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="51e0852105ed6611d6e9c39422611060" >
 
   
   
@@ -837,7 +835,7 @@ createIndex()可选参数参考表 可选参数参考表 " /><meta property="og:
       <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
         
         
-          第3章 索引
+          第9章 管理与监控
         
       </span>
       <span><i class="fas fa-chevron-down"></i></span>
@@ -971,7 +969,7 @@ createIndex()可选参数参考表 可选参数参考表 " /><meta property="og:
 
 
 
-  <li class=""><a href="/courses/bigdatastorage/chapter9/9.2/">9.2 备份与恢复</a></li>
+  <li class="active"><a href="/courses/bigdatastorage/chapter9/9.2/">9.2 备份与恢复</a></li>
 
 
 
@@ -1057,7 +1055,7 @@ createIndex()可选参数参考表 可选参数参考表 " /><meta property="og:
       
 
 
-  <li class="active"><a href="/courses/bigdatastorage/chapter3/3.1/">3.1 创建索引</a></li>
+  <li class=""><a href="/courses/bigdatastorage/chapter3/3.1/">3.1 创建索引</a></li>
 
 
 
@@ -1346,17 +1344,7 @@ createIndex()可选参数参考表 可选参数参考表 " /><meta property="og:
         <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
       </ul>
 
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#索引的创建方法">索引的创建方法</a>
-      <ul>
-        <li><a href="#语法格式">语法格式：</a></li>
-        <li><a href="#查询创建的索引">查询创建的索引：</a></li>
-        <li><a href="#createindex可选参数参考表">createIndex()可选参数参考表</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+      <nav id="TableOfContents"></nav>
 
       
 
@@ -1419,16 +1407,16 @@ createIndex()可选参数参考表 可选参数参考表 " /><meta property="og:
   
 
     <li class="breadcrumb-item">
-      <a href="/courses/bigdatastorage/chapter3/">
+      <a href="/courses/bigdatastorage/chapter9/">
         
-          第3章 索引
+          第9章 管理与监控
         
       </a>
     </li>
   
 
       <li class="breadcrumb-item active" aria-current="page">
-        3.1 创建索引
+        9.2 备份与恢复
       </li>
     </ol>
   </nav>
@@ -1445,52 +1433,35 @@ createIndex()可选参数参考表 可选参数参考表 " /><meta property="og:
 
       <div class="docs-article-container">
         
-        <h1>3.1 创建索引</h1>
+        <h1>9.2 备份与恢复</h1>
 
         <article class="article-style">
 
           
           
 
-          <h2 id="索引的创建方法">索引的创建方法</h2>
-<h3 id="语法格式">语法格式：</h3>
+          <p>支持定期备份与恢复，可开发自动备份脚本；</p>
+<ol>
+<li><strong>备份</strong>工具mongodump</li>
+</ol>
 <ul>
-<li><code>db.**collection.** createIndex(keys, options)- Key值为你要创建的索引字段，1为按升序创建索引，如果你想按降序来创建索引指定为-1即可</code></li>
+<li>通过<strong>mongodump &ndash;help</strong>命令可以查看到这个工具的常用选项；</li>
+<li><code>.\mongodump.exe --host=localhost --port 27017 --db test --out D:\mongodb\bak</code></li>
+<li>在bak目录下可以看到test目录，同时创建了对应的*.bson和*.metadata.json文件，bson文件为相应集合的二进制文件， *.metadata.json为对应集合上创建的索引元数据；</li>
+<li>其他选项：&ndash;collection导出指定集合；&ndash;query备份指定查询条件的集合</li>
 </ul>
-<blockquote>
-<p>3.0.0版本前创建索引方法为 db.collection.ensureIndex()，之后的版本使用了 db.collection.createIndex() 方法，ensureIndex() 还能用，但只是 createIndex() 的别名。</p>
-</blockquote>
+<ol start="2">
+<li><strong>恢复</strong>工具mongorestore</li>
+</ol>
 <ul>
-<li>例如：db.col.createIndex({&ldquo;title&rdquo;:1})</li>
+<li>对上面备份的dump文件进行恢复：</li>
+<li><code>.\mongorestore.exe --host=localhost --port 27017 --db newtest D:\mongodb\bak\test\</code></li>
+<li>&ndash;db表示将dump文件重建到哪个数据库下，没有指定此参数则会恢复到原来的备份数据库上（默认会覆盖原来的数据）</li>
+<li>命令的最后一项是dump文件所在的目录</li>
+<li><strong>恢复集合</strong>：&ndash;nsInclude=crm.users</li>
+<li><code>.\mongorestore.exe --port 27017 --drop --db test D:\mongodb\bak\test\</code></li>
+<li>&ndash;drop：恢复数据前，先删掉此服务器端数据库下的所有集合，然后再恢复数据到服务端</li>
 </ul>
-<h3 id="查询创建的索引">查询创建的索引：</h3>
-<p><code>db.customers.getIndexes()</code></p>
-<h3 id="createindex可选参数参考表">createIndex()可选参数参考表</h3>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure  id="figure-可选参数参考表">
-  <div class="d-flex justify-content-center">
-    <div class="w-100" ><img src="/courses/BigDataStorage/chapter3/images/%e5%9b%be%e7%89%871.png" alt="可选参数参考表" loading="lazy" data-zoomable /></div>
-  </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
-      可选参数参考表
-    </figcaption></figure>
-
 
 
         </article>
@@ -1514,8 +1485,15 @@ createIndex()可选参数参考表 可选参数参考表 " /><meta property="og:
   
   
   <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/courses/bigdatastorage/chapter9/9.1/" rel="next">9.1 数据的导入导出</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
     <div class="meta-nav">Next</div>
-    <a href="/courses/bigdatastorage/chapter3/3.2/" rel="prev">3.2 删除索引</a>
+    <a href="/courses/bigdatastorage/chapter9/9.3/" rel="prev">9.3 命令行工具监控管理</a>
   </div>
   
 </div>
@@ -1525,7 +1503,7 @@ createIndex()可选参数参考表 可选参数参考表 " /><meta property="og:
       </div>
 
       <div class="body-footer">
-        <p>Last updated on Apr 9, 2024 10:43 AM</p>
+        <p>Last updated on May 31, 2024 12:48 PM</p>
 
         
 
