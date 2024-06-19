@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>第8章 分布式文件存储 | Fanfan Shen&#39;s Homepage</title>
+    <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter8/</link>
+      <atom:link href="https://fanfanshen.github.io/courses/bigdatastorage/chapter8/index.xml" rel="self" type="application/rss+xml" />
+    <description>第8章 分布式文件存储</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 03 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>第8章 分布式文件存储</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter8/</link>
+    </image>
+    
+    <item>
+      <title>8.1  什么是GridFS</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter8/8.1/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter8/8.1/</guid>
+      <description>&lt;p&gt;关系型数据库读取上传要2步&lt;strong&gt;性能差&lt;/strong&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter8/images/8.1-1.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;MongoDB的存储基本单元是BSON文档对象，字段值可以是二进制类型，支持&lt;strong&gt;一条记录&lt;/strong&gt;存储；&lt;br&gt;
+文件内容&lt;strong&gt;直接保存&lt;/strong&gt;到MongoDB(非路径)，可充分发挥分布式特性&lt;br&gt;
+MongoDB对单个文件有限制，最大不超过&lt;strong&gt;16MB&lt;/strong&gt;，可直接存储；&lt;br&gt;
+当文件大于16MB时，就需要通过GridFS实现。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GridFS不是额外重新开发的文件系统，它依赖MongoDB的整个体系架构，如存储引擎、集合、查询语法、分片集群等。&lt;/li&gt;
+&lt;li&gt;GridFS将大文件切割成许多小块，默认每块255KB，小块作为一条文档记录存入集合。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter8/images/8.1-2.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;文件上传到GridFS后，文件均有2个特殊的集合存储文件内容，chunks集合，存内容块，和files集合，存元数据信息。&lt;/li&gt;
+&lt;li&gt;和分片集群的chunk大小64MB，强调的是片键索引范围的文档记录，和GridFS的不一样。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter8/images/8.1-3.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;从GridFS中获取一个文件分为2个步骤，先查询fs.files中的_id，和fs.chunks中的files_id对应，再将chunks中的files_id的内容合并后返回；&lt;/li&gt;
+&lt;li&gt;db.fs.files.find(); db.fs.chunks.find()&lt;/li&gt;
+&lt;li&gt;db.fs.files.getIndexes({}) //已自动建索引&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter8/images/8.1-4.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>8.2  使用GridFS的场景</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter8/8.2/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter8/8.2/</guid>
+      <description>&lt;p&gt;1）文件的数量超过了文件系统允许的最大数
+对应电脑的文件系统，存储文件的数量是有限制的，windows ntfs，最大2^32-1
+2）只需获取部分文件的内容
+只需要大文件的部分内容，不需要全部加载内存；
+3）分布式异地文件存储&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>8.3  GridFS常用操作</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter8/8.3/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter8/8.3/</guid>
+      <description>&lt;p&gt;GridFS是一个分布式文件系统，支持文件的上传、下载、删除、更新等操作，可以通过MongoDB提供的驱动程序中的API来实现；也可通过mongofiles命令实现。
+mongofiles命令行操作GridFS&lt;/p&gt;
+&lt;p&gt;1.上传大文件到集群GridFS中的mydocs数据库中&lt;br&gt;
+mongofiles &amp;ndash;port 40009 &amp;ndash;db mydocs &amp;ndash;local D:/workspace/books.pdf put books.pdf&lt;br&gt;
+mongofiles &amp;ndash;help   查看更多选项&lt;br&gt;
+&amp;ndash;db mydocs将文档插入数据库；&amp;ndash;local本地系统上的文件；put为上传文件；books.pdf为集合fs.files中的字段filename的值
+2.通过mongo连接集群查看是否上传成功&lt;br&gt;
+use mydocs&lt;br&gt;
+db.fs.files.find() //即可查看到文档&lt;br&gt;
+sh.status() //可查看到mydocs&lt;br&gt;
+3.下载文件到本地&lt;br&gt;
+mongofiles &amp;ndash;port 40009 &amp;ndash;db mydocs &amp;ndash;local D:/workspace/123.pdf get books.pdf&lt;br&gt;
+4.查询集群GridFS中的某个文件是否存在&lt;br&gt;
+mongofiles &amp;ndash;port 40009 &amp;ndash;db mydocs search books.pdf&lt;br&gt;
+5.删除集群GridFS中的某个文件&lt;br&gt;
+mongofiles &amp;ndash;port 40009 &amp;ndash;db mydocs delete books.pdf&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MongoDB驱动程序中的API实现：&lt;br&gt;
+小文件存储：文件&lt;strong&gt;小于16MB&lt;/strong&gt;，用户可以上传自己的pdf,ppt,excel，对于这种需求，直接使用MongoDB的&lt;strong&gt;二进制存储&lt;/strong&gt;功能。&lt;br&gt;
+下面以Python驱动实现小文件存储为例：&lt;br&gt;
+Python3.8，PyMongo 3.10.1，MongoDB 4.4&lt;br&gt;
+Python安装方法参考：&lt;br&gt;
+&lt;a href=&#34;https://www.runoob.com/python3/python3-install.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.runoob.com/python3/python3-install.html&lt;/a&gt;&lt;br&gt;
+PyMongo安装方法参考：&lt;br&gt;
+&lt;a href=&#34;https://www.runoob.com/python3/python-mongodb.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.runoob.com/python3/python-mongodb.html&lt;/a&gt;&lt;br&gt;
+小文件上传：&lt;br&gt;
+参考：https://blog.csdn.net/fandroid/article/  details/104434326&lt;br&gt;
+#!/usr/bin/python3&lt;br&gt;
+from pymongo import MongoClient&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;connecting-to-database-dbtestfile-collectionhello&#34;&gt;connecting to database. db:testfile, collection:hello&lt;/h1&gt;
+&lt;p&gt;myclient = MongoClient(&amp;lsquo;mongodb://localhost:40009/&amp;rsquo;)
+db = myclient.testfile
+collection = db.hello&lt;/p&gt;
+&lt;h1 id=&#34;open-a-file-to-upload&#34;&gt;open a file to upload&lt;/h1&gt;
+&lt;p&gt;myfile = open(file=&amp;lsquo;D:/workspace/language.pdf&amp;rsquo;,mode=&amp;lsquo;rb&amp;rsquo;)
+data = myfile.read()&lt;/p&gt;
+&lt;p&gt;doc = [{&amp;ldquo;userid&amp;rdquo;:&amp;ldquo;5&amp;rdquo;,
+&amp;ldquo;filename&amp;rdquo;:&amp;ldquo;language&amp;rdquo;,
+&amp;ldquo;filettype&amp;rdquo;:&amp;ldquo;pdf&amp;rdquo;,
+&amp;ldquo;content&amp;rdquo;:data,
+&amp;ldquo;size&amp;rdquo;:&amp;ldquo;3000&amp;rdquo;
+}]&lt;/p&gt;
+&lt;h1 id=&#34;insert-document&#34;&gt;insert document&lt;/h1&gt;
+&lt;p&gt;result = collection.insert_many(doc)
+print(result)&lt;/p&gt;
+&lt;p&gt;myfile.close()&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;上述代码执行成功后，查看数据库：
+mongos&amp;gt;db.hello.find({},{content:0})&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;从结果可知代码将PDF格式的文件上传到分布式集群中，content中以二进制形式保存了文件的全部内容。
+{content:0}表示不返回此字段的值。&lt;/p&gt;
+&lt;p&gt;参考：&lt;br&gt;
+&lt;a href=&#34;https://blog.csdn.net/fandroid/article/details/104434326&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://blog.csdn.net/fandroid/article/details/104434326&lt;/a&gt;
+#!/usr/bin/python3
+from pymongo import MongoClient&lt;/p&gt;
+&lt;h1 id=&#34;connecting-to-database-dbtestfile-collectionhello-1&#34;&gt;connecting to database. db:testfile, collection:hello&lt;/h1&gt;
+&lt;p&gt;myclient = MongoClient(&amp;lsquo;mongodb://localhost:40009/&amp;rsquo;)
+db = myclient.testfile
+collection = db.hello&lt;/p&gt;
+&lt;h1 id=&#34;find-a-file-to-download-with-content-value-stored-in-testpdf&#34;&gt;find a file to download with &amp;ldquo;content&amp;rdquo; value. Stored in test.pdf&lt;/h1&gt;
+&lt;p&gt;mydoc = collection.find_one({&amp;ldquo;userid&amp;rdquo;:&amp;ldquo;5&amp;rdquo;},{&amp;quot;_id&amp;quot;:0,&amp;ldquo;content&amp;rdquo;:1})
+myfile = open(file=&amp;lsquo;D:/workspace/test.pdf&amp;rsquo;,mode=&amp;lsquo;ab&amp;rsquo;)
+data = myfile.write(mydoc[&amp;ldquo;content&amp;rdquo;])&lt;/p&gt;
+&lt;p&gt;myfile.close()&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;可以在D:/workspace/test.pdf中查看到下载的文件 。&lt;br&gt;
+上述例子说明，MongoDB可以直接作为一个存储小文件（小于16MB）的分布式文件系统，主要依赖三点：&lt;br&gt;
+MongoDB可以直接存储二进制数据&lt;br&gt;
+MongoDB可以部署成分片集群，实现海量数据存储、读写分离&lt;br&gt;
+集群中的片可以部署成复制集，保证数据的可靠性&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;MongoDB驱动程序中的API实现：
+大文件存储：同样采用Python实现&lt;br&gt;
+参考：
+&lt;a href=&#34;https://blog.csdn.net/fandroid/article/details/104434636&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://blog.csdn.net/fandroid/article/details/104434636&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;大文件上传到GridFS：&lt;br&gt;
+#!/usr/bin/python3&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;from pymongo import MongoClient
+from gridfs import GridFS&lt;/p&gt;
+&lt;h1 id=&#34;connecting-to-database-dbtestfile&#34;&gt;connecting to database. db:testfile&lt;/h1&gt;
+&lt;p&gt;myclient = MongoClient(&amp;lsquo;mongodb://localhost:40009/&amp;rsquo;)
+db = myclient.testfile&lt;/p&gt;
+&lt;h1 id=&#34;create-a-new-instance-of-gridfs&#34;&gt;Create a new instance of GridFS&lt;/h1&gt;
+&lt;p&gt;gridfs_col = GridFS(db)&lt;/p&gt;
+&lt;h1 id=&#34;open-a-file-to-upload-1&#34;&gt;open a file to upload&lt;/h1&gt;
+&lt;p&gt;myfile = open(file=&amp;lsquo;D:/workspace/books.pdf&amp;rsquo;,mode=&amp;lsquo;rb&amp;rsquo;)
+mydata = myfile.read()&lt;/p&gt;
+&lt;h1 id=&#34;upload-file-to-gridfs&#34;&gt;upload file to GridFS&lt;/h1&gt;
+&lt;p&gt;myfile = gridfs_col.put(data=mydata,filename=&amp;ldquo;books.pdf&amp;rdquo;)&lt;/p&gt;
+&lt;p&gt;print(myfile)&lt;/p&gt;
+&lt;p&gt;通过db.fs.files.find()可以查看文件是否上传成功；&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;从GridFS下载大文件：
+#!/usr/bin/python3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;from pymongo import MongoClient
+from gridfs import GridFS&lt;/p&gt;
+&lt;h1 id=&#34;connecting-to-database-dbtestfile-1&#34;&gt;connecting to database. db:testfile&lt;/h1&gt;
+&lt;p&gt;myclient = MongoClient(&amp;lsquo;mongodb://localhost:40009/&amp;rsquo;)
+db = myclient.testfile&lt;/p&gt;
+&lt;h1 id=&#34;create-a-new-instance-of-gridfs-1&#34;&gt;Create a new instance of GridFS&lt;/h1&gt;
+&lt;p&gt;gridfs_col = GridFS(db)&lt;/p&gt;
+&lt;h1 id=&#34;find-a-file-to-download-with-bookspdf-value-stored-in-111pdf&#34;&gt;find a file to download with &amp;ldquo;books.pdf&amp;rdquo; value. Stored in 111.pdf&lt;/h1&gt;
+&lt;p&gt;mydata = gridfs_col.get_version(&amp;ldquo;books.pdf&amp;rdquo;).read()
+myfile = open(file=&amp;lsquo;D:/workspace/111.pdf&amp;rsquo;,mode=&amp;lsquo;wb&amp;rsquo;)
+rs = myfile.write(mydata)&lt;/p&gt;
+&lt;p&gt;print(rs)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;结合大小文件的上传下载分析：
+可以实现存储海量数据的分布式文件存储方案
+对于用户上传的任何文件：
+通过客户端判断，小文件直接存储在普通集合中；
+通过客户端判断，大文件则上传到GridFS中；
+GridFS不适合小文件存储，因为从GridFS中读取数据涉及到两次查询操作，如图所示：&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter8/images/8.1-5.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+</description>
+    </item>
+    
+  </channel>
+</rss>

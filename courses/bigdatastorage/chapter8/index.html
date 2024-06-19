@@ -280,8 +280,8 @@
 
 
 
-<link rel="alternate" hreflang="en-us" href="https://fanfanshen.github.io/courses/bigdatastorage/chapter2/" />
-<link rel="canonical" href="https://fanfanshen.github.io/courses/bigdatastorage/chapter2/" />
+<link rel="alternate" hreflang="en-us" href="https://fanfanshen.github.io/courses/bigdatastorage/chapter8/" />
+<link rel="canonical" href="https://fanfanshen.github.io/courses/bigdatastorage/chapter8/" />
 
 
 
@@ -317,12 +317,12 @@
   <meta property="twitter:creator" content="@wowchemy" />
 <meta property="twitter:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
 <meta property="og:site_name" content="Fanfan Shen&#39;s Homepage" />
-<meta property="og:url" content="https://fanfanshen.github.io/courses/bigdatastorage/chapter2/" />
-<meta property="og:title" content="第2章 CRUD操作 | Fanfan Shen&#39;s Homepage" />
+<meta property="og:url" content="https://fanfanshen.github.io/courses/bigdatastorage/chapter8/" />
+<meta property="og:title" content="第8章 分布式文件存储 | Fanfan Shen&#39;s Homepage" />
 <meta property="og:description" content="Blah, blah, blah..." /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
-    <meta property="og:updated_time" content="2018-09-09T00:00:00&#43;00:00" />
+    <meta property="og:updated_time" content="2024-06-03T00:00:00&#43;00:00" />
   
 
 
@@ -340,14 +340,14 @@
 
   
   
-    <link rel="alternate" href="/courses/bigdatastorage/chapter2/index.xml" type="application/rss+xml" title="Fanfan Shen&#39;s Homepage" />
+    <link rel="alternate" href="/courses/bigdatastorage/chapter8/index.xml" type="application/rss+xml" title="Fanfan Shen&#39;s Homepage" />
   
 
   
 
 
   
-  <title>第2章 CRUD操作 | Fanfan Shen&#39;s Homepage</title>
+  <title>第8章 分布式文件存储 | Fanfan Shen&#39;s Homepage</title>
 
   
   
@@ -375,7 +375,7 @@
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="54b67c87f7942353f60892cd023594ac" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="f66bc0b93ab4465723e5fd8de2bf3272" >
 
   
   
@@ -950,7 +950,7 @@
 
     
       <div class="docs-toc-item">
-        <a class="docs-toc-link  active" href="/courses/bigdatastorage/chapter2/">第2章 CRUD操作</a>
+        <a class="docs-toc-link " href="/courses/bigdatastorage/chapter2/">第2章 CRUD操作</a>
     
       
         <ul class="nav docs-sidenav">
@@ -1224,7 +1224,7 @@
 
     
       <div class="docs-toc-item">
-        <a class="docs-toc-link " href="/courses/bigdatastorage/chapter8/">第8章 分布式文件存储</a>
+        <a class="docs-toc-link  active" href="/courses/bigdatastorage/chapter8/">第8章 分布式文件存储</a>
     
       
         <ul class="nav docs-sidenav">
@@ -1379,11 +1379,7 @@
         <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
       </ul>
 
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#前沿说明">前沿说明</a></li>
-  </ul>
-</nav>
+      <nav id="TableOfContents"></nav>
 
       
 
@@ -1444,7 +1440,7 @@
   
 
       <li class="breadcrumb-item active" aria-current="page">
-        第2章 CRUD操作
+        第8章 分布式文件存储
       </li>
     </ol>
   </nav>
@@ -1461,14 +1457,19 @@
 
       <div class="docs-article-container">
         
-        <h1>第2章 CRUD操作</h1>
+        <h1>第8章 分布式文件存储</h1>
 
         <article class="article-style">
 
           
           
 
-          <h2 id="前沿说明">前沿说明</h2>
+          <ul>
+<li>关系型数据库读取上传要2步性能差</li>
+<li>MongoDB的存储基本单元是BSON文档对象，字段值可以是二进制类型，支持一条记录存储；</li>
+<li>文件内容直接保存到MongoDB(非路径)，可充分发挥分布式特性</li>
+<li>MongoDB对单个文件有限制，最大不超过16MB，可直接存储；当文件大于16MB时，就需要通过GridFS实现。</li>
+</ul>
 
 
         </article>
@@ -1497,7 +1498,7 @@
       </div>
 
       <div class="body-footer">
-        <p>Last updated on Apr 28, 2024 6:53 PM</p>
+        <p>Last updated on Jun 19, 2024 3:07 PM</p>
 
         
 
