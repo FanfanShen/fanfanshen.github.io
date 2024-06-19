@@ -138,7 +138,8 @@
 &lt;/div&gt;
 &lt;h2 id=&#34;一指导学生情况&#34;&gt;一、指导学生情况&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;2024，研究生：惠丽洁，Dynamic Grouping Scheme for Personalized Federated Meta-Learning，投稿中&lt;/li&gt;
+&lt;li&gt;2024年，研究生：刘海鹏，获得校优秀毕业生&lt;/li&gt;
+&lt;li&gt;2024年，研究生：惠丽洁，Dynamic Grouping Scheme for Personalized Federated Meta-Learning，投稿中&lt;/li&gt;
 &lt;li&gt;2024年4月，研究生：杨博帆获得2024年江苏省研究生实践创新计划项目，立项，资助1.5万元&lt;/li&gt;
 &lt;li&gt;2024年4月，研究生：史林，BMSE: Blockchain-based multi-keyword searchable encryption for electronic medical records，Computer Standards &amp;amp; Interfaces(中科院2区)&lt;/li&gt;
 &lt;li&gt;2023年7月，研究生：汤星译，基于iFA-LSTM的恶意行为检测方法，计算机工程与科学（北大核心录用），2024.1&lt;/li&gt;
@@ -1583,7 +1584,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-691823754&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-925431876&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1593,7 +1594,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-691823754&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-925431876&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -4384,6 +4385,715 @@ db.shutdownServer()
       7.2-1
     &lt;/figcaption&gt;&lt;/figure&gt;
 &lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>7.3  分片工作机制</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter7/7.3/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter7/7.3/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;7.3.1  使集合分片&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;1）连接到前面配置集群中的mongos实例&lt;/strong&gt;&lt;br&gt;
+mongo &amp;ndash;port 40009&lt;br&gt;
+&lt;strong&gt;2）在集群中创建数据库eshop和集合users&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mongos&amp;gt; use eshop&lt;/li&gt;
+&lt;li&gt;mongos&amp;gt;&lt;/li&gt;
+&lt;li&gt;db.users.insert({userid:1,username:&amp;ldquo;lili&amp;rdquo;,city:&amp;ldquo;beijing&amp;rdquo;})&lt;/li&gt;
+&lt;li&gt;mongos&amp;gt; sh.status()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以看到此时数据库eshop还没支持分片，且数据库中所有未分片的集合将保存在片rs1中；&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-1.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;3）分片&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;mongoDB的分片是基于范围的，也就是说任何一个文档一定位于指定片键的某个范围内，一旦片键选择好后，chunks就会按照片键来将一部分documents从逻辑上组合在一起。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;这里对users集合选择&amp;quot;city&amp;quot;字段作为片键来分片
+假如现在&amp;quot;city&amp;quot;字段值有&amp;quot;beijing&amp;quot;、&amp;ldquo;guangzhou&amp;rdquo;、&amp;ldquo;changsha&amp;rdquo;，初始的时候随机的向集群中插入包含以上字段值的文档，此时由于chunks的大小未达到默认的阈值64MB，集群中应该只有一个chunk，随着继续插入文档，超过阈值的chunk会被分割成两个chunks，最终的chunks和片键分布可能如下表格所示。&lt;br&gt;
+表格只是大体上描述了分片的情况，实际可能有所变化，其中-∞表示所有键值小于“beijing”的文档，∞表示所有键值大于&amp;quot;guangzhou&amp;quot;的文档。
+开始键值	结束键值	所在分片&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-2.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;另外chunks所包含的文档，并不是物理上的包含，它是一种逻辑包含，它只表示带有片键的文档会落在哪个范围内，而这个范围的文档对应的chunk位于哪个片是可以查询到的，后续的读写操作就定位到这个片上的具体集合中进行。&lt;br&gt;
+通过命令使集合users分片，使集合分片必须先使其所在的数据库支持分片，例如：&lt;br&gt;
+mongos&amp;gt; sh.enableSharding(&amp;ldquo;eshop&amp;rdquo;)  //使数据库支持分片&lt;br&gt;
+对已有数据的集合进行分片，必须先在所选择的片键上创建一个索引，如果集合初始时没有任何数据，则mongoDB会自动在所选择的片键上创建一个索引。&lt;br&gt;
+mongos&amp;gt; db.users.createIndex({city:1})  //创建基于片键的索引&lt;br&gt;
+mongos&amp;gt; sh.shardCollection(&amp;ldquo;eshop.users&amp;rdquo;,{city:1})  //使集合分片&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-3.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;成功执行上面命令后，再次查看集群状态信息：
+mongos&amp;gt; sh.status()&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-4.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;分片
+成功执行上面命令后，再次查看集群状态信息：
+mongos&amp;gt; sh.status()&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;此块的包含键值范围是-∞到∞，且在片rs1上，因为此时集合中只有一条记录，还未进行块的分割、迁移。
+&lt;strong&gt;4）继续插入数据使集合自动分片&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;为了观察到集合被分成多个chunk，并分布在多个片上，继续插入一些数据进行分析：&lt;br&gt;
+for(var i = 1; i&amp;lt;10000;i++) db.users.insert({userid:i,username:&amp;ldquo;lili&amp;rdquo;+i,city:&amp;ldquo;beijing&amp;rdquo;})&lt;br&gt;
+for(var i = 0; i&amp;lt;10000;i++) db.users.insert({userid:i,username:&amp;ldquo;xiaoming&amp;rdquo;+i,city:&amp;ldquo;changsha&amp;rdquo;})&lt;br&gt;
+for(var i = 0; i&amp;lt;10000;i++) db.users.insert({userid:i,username:&amp;ldquo;xiaoqiang&amp;rdquo;+i,city:&amp;ldquo;guangzhou&amp;rdquo;})&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;继续插入数据使集合自动分片
+通过大量插入文档（注：上面插入的数据量不够）后，第一个chunk的大小会超过64MB时，出现chunk分割与迁移的过程。chunk可以修改&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;连接mongos&lt;br&gt;
+use config&lt;br&gt;
+db.settings.save({_id:”chunksize”,value:16})&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-5.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;再次观察集群的状态，字段databases值变为：&lt;/li&gt;
+&lt;/ul&gt;
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;figure  id=&#34;figure-a-caption&#34;&gt;
+   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-6.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+       A caption
+     &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;说明此时集群中有5个块，其中在片rs0上有2个块，在片rs1上有3个块，每个块包含一定区间范围的文档。为了更加清楚的知道这些块是如何分割和迁移的，可以查看changelog集合中的记录信息进行分析。&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;从命令db.changelog.find()输出内容中可以看到有以下几步：&lt;br&gt;
+第一步：分割大于64MB的块，原来此块的片键的区间范围是-∞到∞，分割后区间变为-∞到&amp;quot;beijing&amp;quot;、&amp;ldquo;beijing&amp;quot;到∞两个区间。&lt;/p&gt;
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;figure  id=&#34;figure-a-caption&#34;&gt;
+   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-7.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+       A caption
+     &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;第二步：随着继续插入文档，区间&amp;quot;beijing&amp;quot;到∞所包含的块的大小超过64MB，此时这个区间又被分割为&amp;quot;beijing&amp;quot;到&amp;quot;guangzhou&amp;rdquo;、&amp;ldquo;guangzhou&amp;quot;到∞这两个区间。&lt;/p&gt;
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;figure  id=&#34;figure-a-caption&#34;&gt;
+   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-8.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+       A caption
+     &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;第三步：rs0有三个区块，这一步做的就是将区间-∞到&amp;quot;beijing&amp;quot;对应的chunk从片rs0迁移到片rs1，最终结果是分片rs0上包含&amp;quot;beijing&amp;quot;到&amp;quot;guangzhou&amp;rdquo;、&amp;ldquo;guangzhou&amp;quot;到∞两个块；分片rs1上包含区间-∞到&amp;quot;beijing&amp;quot;的块。&lt;/p&gt;
+&lt;p&gt;不断增加数据，分片分割，依次类推，mongoDB就是这样来实现海量数据的分布式存储的，同时由于每个片又是由复制集组成，保证了数据的可靠性。&lt;/p&gt;
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;figure  id=&#34;figure-a-caption&#34;&gt;
+   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-9.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+       A caption
+     &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;7.3.2  集群平衡器&lt;br&gt;
+上节中块的迁移操作是MongoDB中的一个叫做平衡器的后台进程自动完成的。&lt;br&gt;
+MongoDB的平衡器是一个后台进程，监视每个分片上块的数目。当给定分片上的块数达到特定的迁移阈值时，平衡器会尝试在分片之间自动迁移块，使得每个分片达到相等数量的块。平衡器将比较多块的分片中的块迁移到块数量较少的分片中。平衡器迁移块，直到集合在分片之间的块均匀分布。&lt;br&gt;
+平衡器的迁移阈值&lt;/li&gt;
+&lt;/ul&gt;
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;figure  id=&#34;figure-a-caption&#34;&gt;
+   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-10.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+       A caption
+     &lt;/figcaption&gt;&lt;/figure&gt;
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;figure  id=&#34;figure-a-caption&#34;&gt;
+   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-11.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+       A caption
+     &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;所有块的迁移都遵循如下流程：&lt;br&gt;
+1.平衡器进程将moveChunk命令发送到源分片。&lt;br&gt;
+2.源分片开启一个到目标片的移动进程。在迁移过程中，如果有改变chunk的动作，源分片也会响应这个动作。&lt;br&gt;
+3.目标片开始请求chunk中的文档并复制接收到的数据&lt;br&gt;
+4.当接收完块中的最后一个文档，目标分片将启动同步过程，以确保在迁移过程中引起数据变化的动作能够被重新执行&lt;br&gt;
+5.当完全同步时，源分片连接到配置数据库，并使用块的新位置更新集群元数据。&lt;br&gt;
+6.源分片完成元数据的更新后，一旦块上没有打开光标，源分片将删除其文档副本。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;7.3.3  集群的写与读
+客户端应用程序对集群的读写都是通过mongos这个路由进程来进行的，与对单个mongod实例读写类似。如下图所示：&lt;/li&gt;
+&lt;/ul&gt;
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;figure  id=&#34;figure-a-caption&#34;&gt;
+   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-12.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+       A caption
+     &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;数据的查询效率对集群来说非常重要；&lt;br&gt;
+集群查询性能的因素包括：索引和片键&lt;br&gt;
+查询语句可分为三类：&lt;br&gt;
+第一种，不包含片键和索引的查询，性能较差；&lt;br&gt;
+第二种，只包含片键的查询，性能一般；&lt;br&gt;
+第三种，包含片键和索引的查询，性能较好；&lt;br&gt;
+索引和片键均影响查询性能，当发现查询速度慢时，可以针对性的优化。
+MongoDB是通过片键来路由读写请求操作的，好的路由能得到较好的读写负载均衡，下面对集中不同特性的片键进行分析：&lt;br&gt;
+一、升序字段片键。新插入的文档可能属于某一个区间范围内，导致一个chunk读写过热。&lt;br&gt;
+二、完全随机的片键。太过随机，导致数据太分散，数据会频繁的换进换出，降低性能。&lt;br&gt;
+三、片键的取值范围有限。比如city仅有几个，当数据量大后，可能没有用于分割的片键值。&lt;br&gt;
+可见，对海量数据的读写操作选择一个合适的片键并不容易，一个好的片键应具有：&lt;br&gt;
+一、分发写操作&lt;br&gt;
+二、读操作不能太过随机化，尽量局部化&lt;br&gt;
+三、要能保证chunk能够一直被分割&lt;br&gt;
+满足三点要求的片键通常需要几个字段进行组合，如{city:1,_id:1}，可满足。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>8.1  什么是GridFS</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter8/8.1/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter8/8.1/</guid>
+      <description>&lt;p&gt;关系型数据库读取上传要2步&lt;strong&gt;性能差&lt;/strong&gt;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/8.1-1.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;MongoDB的存储基本单元是BSON文档对象，字段值可以是二进制类型，支持&lt;strong&gt;一条记录&lt;/strong&gt;存储；&lt;br&gt;
+文件内容&lt;strong&gt;直接保存&lt;/strong&gt;到MongoDB(非路径)，可充分发挥分布式特性&lt;br&gt;
+MongoDB对单个文件有限制，最大不超过&lt;strong&gt;16MB&lt;/strong&gt;，可直接存储；&lt;br&gt;
+当文件大于16MB时，就需要通过GridFS实现。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GridFS不是额外重新开发的文件系统，它依赖MongoDB的整个体系架构，如存储引擎、集合、查询语法、分片集群等。&lt;/li&gt;
+&lt;li&gt;GridFS将大文件切割成许多小块，默认每块255KB，小块作为一条文档记录存入集合。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/8.1-2.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;文件上传到GridFS后，文件均有2个特殊的集合存储文件内容，chunks集合，存内容块，和files集合，存元数据信息。&lt;/li&gt;
+&lt;li&gt;和分片集群的chunk大小64MB，强调的是片键索引范围的文档记录，和GridFS的不一样。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/8.1-3.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;从GridFS中获取一个文件分为2个步骤，先查询fs.files中的_id，和fs.chunks中的files_id对应，再将chunks中的files_id的内容合并后返回；&lt;/li&gt;
+&lt;li&gt;db.fs.files.find(); db.fs.chunks.find()&lt;/li&gt;
+&lt;li&gt;db.fs.files.getIndexes({}) //已自动建索引&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/8.1-4.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>8.2  使用GridFS的场景</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter8/8.2/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter8/8.2/</guid>
+      <description>&lt;p&gt;1）文件的数量超过了文件系统允许的最大数
+对应电脑的文件系统，存储文件的数量是有限制的，windows ntfs，最大2^32-1
+2）只需获取部分文件的内容
+只需要大文件的部分内容，不需要全部加载内存；
+3）分布式异地文件存储&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>8.3  GridFS常用操作</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter8/8.3/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter8/8.3/</guid>
+      <description>&lt;p&gt;GridFS是一个分布式文件系统，支持文件的上传、下载、删除、更新等操作，可以通过MongoDB提供的驱动程序中的API来实现；也可通过mongofiles命令实现。
+mongofiles命令行操作GridFS&lt;/p&gt;
+&lt;p&gt;1.上传大文件到集群GridFS中的mydocs数据库中&lt;br&gt;
+mongofiles &amp;ndash;port 40009 &amp;ndash;db mydocs &amp;ndash;local D:/workspace/books.pdf put books.pdf&lt;br&gt;
+mongofiles &amp;ndash;help   查看更多选项&lt;br&gt;
+&amp;ndash;db mydocs将文档插入数据库；&amp;ndash;local本地系统上的文件；put为上传文件；books.pdf为集合fs.files中的字段filename的值
+2.通过mongo连接集群查看是否上传成功&lt;br&gt;
+use mydocs&lt;br&gt;
+db.fs.files.find() //即可查看到文档&lt;br&gt;
+sh.status() //可查看到mydocs&lt;br&gt;
+3.下载文件到本地&lt;br&gt;
+mongofiles &amp;ndash;port 40009 &amp;ndash;db mydocs &amp;ndash;local D:/workspace/123.pdf get books.pdf&lt;br&gt;
+4.查询集群GridFS中的某个文件是否存在&lt;br&gt;
+mongofiles &amp;ndash;port 40009 &amp;ndash;db mydocs search books.pdf&lt;br&gt;
+5.删除集群GridFS中的某个文件&lt;br&gt;
+mongofiles &amp;ndash;port 40009 &amp;ndash;db mydocs delete books.pdf&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MongoDB驱动程序中的API实现：&lt;br&gt;
+小文件存储：文件&lt;strong&gt;小于16MB&lt;/strong&gt;，用户可以上传自己的pdf,ppt,excel，对于这种需求，直接使用MongoDB的&lt;strong&gt;二进制存储&lt;/strong&gt;功能。&lt;br&gt;
+下面以Python驱动实现小文件存储为例：&lt;br&gt;
+Python3.8，PyMongo 3.10.1，MongoDB 4.4&lt;br&gt;
+Python安装方法参考：&lt;br&gt;
+&lt;a href=&#34;https://www.runoob.com/python3/python3-install.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.runoob.com/python3/python3-install.html&lt;/a&gt;&lt;br&gt;
+PyMongo安装方法参考：&lt;br&gt;
+&lt;a href=&#34;https://www.runoob.com/python3/python-mongodb.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.runoob.com/python3/python-mongodb.html&lt;/a&gt;&lt;br&gt;
+小文件上传：&lt;br&gt;
+参考：https://blog.csdn.net/fandroid/article/  details/104434326&lt;br&gt;
+#!/usr/bin/python3&lt;br&gt;
+from pymongo import MongoClient&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;connecting-to-database-dbtestfile-collectionhello&#34;&gt;connecting to database. db:testfile, collection:hello&lt;/h1&gt;
+&lt;p&gt;myclient = MongoClient(&amp;lsquo;mongodb://localhost:40009/&amp;rsquo;)
+db = myclient.testfile
+collection = db.hello&lt;/p&gt;
+&lt;h1 id=&#34;open-a-file-to-upload&#34;&gt;open a file to upload&lt;/h1&gt;
+&lt;p&gt;myfile = open(file=&amp;lsquo;D:/workspace/language.pdf&amp;rsquo;,mode=&amp;lsquo;rb&amp;rsquo;)
+data = myfile.read()&lt;/p&gt;
+&lt;p&gt;doc = [{&amp;ldquo;userid&amp;rdquo;:&amp;ldquo;5&amp;rdquo;,
+&amp;ldquo;filename&amp;rdquo;:&amp;ldquo;language&amp;rdquo;,
+&amp;ldquo;filettype&amp;rdquo;:&amp;ldquo;pdf&amp;rdquo;,
+&amp;ldquo;content&amp;rdquo;:data,
+&amp;ldquo;size&amp;rdquo;:&amp;ldquo;3000&amp;rdquo;
+}]&lt;/p&gt;
+&lt;h1 id=&#34;insert-document&#34;&gt;insert document&lt;/h1&gt;
+&lt;p&gt;result = collection.insert_many(doc)
+print(result)&lt;/p&gt;
+&lt;p&gt;myfile.close()&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;上述代码执行成功后，查看数据库：
+mongos&amp;gt;db.hello.find({},{content:0})&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;从结果可知代码将PDF格式的文件上传到分布式集群中，content中以二进制形式保存了文件的全部内容。
+{content:0}表示不返回此字段的值。&lt;/p&gt;
+&lt;p&gt;参考：&lt;br&gt;
+&lt;a href=&#34;https://blog.csdn.net/fandroid/article/details/104434326&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://blog.csdn.net/fandroid/article/details/104434326&lt;/a&gt;
+#!/usr/bin/python3
+from pymongo import MongoClient&lt;/p&gt;
+&lt;h1 id=&#34;connecting-to-database-dbtestfile-collectionhello-1&#34;&gt;connecting to database. db:testfile, collection:hello&lt;/h1&gt;
+&lt;p&gt;myclient = MongoClient(&amp;lsquo;mongodb://localhost:40009/&amp;rsquo;)
+db = myclient.testfile
+collection = db.hello&lt;/p&gt;
+&lt;h1 id=&#34;find-a-file-to-download-with-content-value-stored-in-testpdf&#34;&gt;find a file to download with &amp;ldquo;content&amp;rdquo; value. Stored in test.pdf&lt;/h1&gt;
+&lt;p&gt;mydoc = collection.find_one({&amp;ldquo;userid&amp;rdquo;:&amp;ldquo;5&amp;rdquo;},{&amp;quot;_id&amp;quot;:0,&amp;ldquo;content&amp;rdquo;:1})
+myfile = open(file=&amp;lsquo;D:/workspace/test.pdf&amp;rsquo;,mode=&amp;lsquo;ab&amp;rsquo;)
+data = myfile.write(mydoc[&amp;ldquo;content&amp;rdquo;])&lt;/p&gt;
+&lt;p&gt;myfile.close()&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;可以在D:/workspace/test.pdf中查看到下载的文件 。&lt;br&gt;
+上述例子说明，MongoDB可以直接作为一个存储小文件（小于16MB）的分布式文件系统，主要依赖三点：&lt;br&gt;
+MongoDB可以直接存储二进制数据&lt;br&gt;
+MongoDB可以部署成分片集群，实现海量数据存储、读写分离&lt;br&gt;
+集群中的片可以部署成复制集，保证数据的可靠性&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;MongoDB驱动程序中的API实现：
+大文件存储：同样采用Python实现&lt;br&gt;
+参考：
+&lt;a href=&#34;https://blog.csdn.net/fandroid/article/details/104434636&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://blog.csdn.net/fandroid/article/details/104434636&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;大文件上传到GridFS：&lt;br&gt;
+#!/usr/bin/python3&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;from pymongo import MongoClient
+from gridfs import GridFS&lt;/p&gt;
+&lt;h1 id=&#34;connecting-to-database-dbtestfile&#34;&gt;connecting to database. db:testfile&lt;/h1&gt;
+&lt;p&gt;myclient = MongoClient(&amp;lsquo;mongodb://localhost:40009/&amp;rsquo;)
+db = myclient.testfile&lt;/p&gt;
+&lt;h1 id=&#34;create-a-new-instance-of-gridfs&#34;&gt;Create a new instance of GridFS&lt;/h1&gt;
+&lt;p&gt;gridfs_col = GridFS(db)&lt;/p&gt;
+&lt;h1 id=&#34;open-a-file-to-upload-1&#34;&gt;open a file to upload&lt;/h1&gt;
+&lt;p&gt;myfile = open(file=&amp;lsquo;D:/workspace/books.pdf&amp;rsquo;,mode=&amp;lsquo;rb&amp;rsquo;)
+mydata = myfile.read()&lt;/p&gt;
+&lt;h1 id=&#34;upload-file-to-gridfs&#34;&gt;upload file to GridFS&lt;/h1&gt;
+&lt;p&gt;myfile = gridfs_col.put(data=mydata,filename=&amp;ldquo;books.pdf&amp;rdquo;)&lt;/p&gt;
+&lt;p&gt;print(myfile)&lt;/p&gt;
+&lt;p&gt;通过db.fs.files.find()可以查看文件是否上传成功；&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;从GridFS下载大文件：
+#!/usr/bin/python3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;from pymongo import MongoClient
+from gridfs import GridFS&lt;/p&gt;
+&lt;h1 id=&#34;connecting-to-database-dbtestfile-1&#34;&gt;connecting to database. db:testfile&lt;/h1&gt;
+&lt;p&gt;myclient = MongoClient(&amp;lsquo;mongodb://localhost:40009/&amp;rsquo;)
+db = myclient.testfile&lt;/p&gt;
+&lt;h1 id=&#34;create-a-new-instance-of-gridfs-1&#34;&gt;Create a new instance of GridFS&lt;/h1&gt;
+&lt;p&gt;gridfs_col = GridFS(db)&lt;/p&gt;
+&lt;h1 id=&#34;find-a-file-to-download-with-bookspdf-value-stored-in-111pdf&#34;&gt;find a file to download with &amp;ldquo;books.pdf&amp;rdquo; value. Stored in 111.pdf&lt;/h1&gt;
+&lt;p&gt;mydata = gridfs_col.get_version(&amp;ldquo;books.pdf&amp;rdquo;).read()
+myfile = open(file=&amp;lsquo;D:/workspace/111.pdf&amp;rsquo;,mode=&amp;lsquo;wb&amp;rsquo;)
+rs = myfile.write(mydata)&lt;/p&gt;
+&lt;p&gt;print(rs)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;结合大小文件的上传下载分析：
+可以实现存储海量数据的分布式文件存储方案
+对于用户上传的任何文件：
+通过客户端判断，小文件直接存储在普通集合中；
+通过客户端判断，大文件则上传到GridFS中；
+GridFS不适合小文件存储，因为从GridFS中读取数据涉及到两次查询操作，如图所示：&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/8.1-5.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
 </description>
     </item>
     

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: June 3, 2024 --><html lang="en-us" >
+<!-- Last Published: June 19, 2024 --><html lang="en-us" >
 
 
 <head>
@@ -1198,6 +1198,10 @@
 
   <li class=""><a href="/courses/bigdatastorage/chapter7/7.2/">7.2 手动部署一个分片集群</a></li>
 
+
+
+  <li class=""><a href="/courses/bigdatastorage/chapter7/7.3/">7.3  分片工作机制</a></li>
+
       
         </ul>
       
@@ -1300,6 +1304,18 @@
 
 
   <li class=""><a href="/courses/bigdatastorage/task/exp/">实验大作业</a></li>
+
+
+
+  <li class=""><a href="/courses/bigdatastorage/chapter8/8.1/">8.1  什么是GridFS</a></li>
+
+
+
+  <li class=""><a href="/courses/bigdatastorage/chapter8/8.2/">8.2  使用GridFS的场景</a></li>
+
+
+
+  <li class=""><a href="/courses/bigdatastorage/chapter8/8.3/">8.3  GridFS常用操作</a></li>
 
       
         </ul>
@@ -1456,6 +1472,20 @@ replSet = rs0
 shardsvr=true //分片服务
 rs0中secondary节点的配置文件为rs0_1.conf：
 dbpath = D:\mongodb\db_rs0\data\rs0_1</p>
+            </li>
+            
+            <li>
+              <h5><a href="/courses/bigdatastorage/chapter7/7.3/">7.3  分片工作机制</a></h5>
+              <p>7.3.1 使集合分片 1）连接到前面配置集群中的mongos实例
+mongo &ndash;port 40009
+2）在集群中创建数据库eshop和集合users
+mongos&gt; use eshop mongos&gt; db.users.insert({userid:1,username:&ldquo;lili&rdquo;,city:&ldquo;beijing&rdquo;}) mongos&gt; sh.status() 可以看到此时数据库eshop还没支持分片，且数据库中所有未分片的集合将保存在片rs1中；
+A caption 3）分片
+mongoDB的分片是基于范围的，也就是说任何一个文档一定位于指定片键的某个范围内，一旦片键选择好后，chunks就会按照片键来将一部分documents从逻辑上组合在一起。
+这里对users集合选择&quot;city&quot;字段作为片键来分片 假如现在&quot;city&quot;字段值有&quot;beijing&quot;、&ldquo;guangzhou&rdquo;、&ldquo;changsha&rdquo;，初始的时候随机的向集群中插入包含以上字段值的文档，此时由于chunks的大小未达到默认的阈值64MB，集群中应该只有一个chunk，随着继续插入文档，超过阈值的chunk会被分割成两个chunks，最终的chunks和片键分布可能如下表格所示。
+表格只是大体上描述了分片的情况，实际可能有所变化，其中-∞表示所有键值小于“beijing”的文档，∞表示所有键值大于&quot;guangzhou&quot;的文档。 开始键值	结束键值	所在分片
+A caption 另外chunks所包含的文档，并不是物理上的包含，它是一种逻辑包含，它只表示带有片键的文档会落在哪个范围内，而这个范围的文档对应的chunk位于哪个片是可以查询到的，后续的读写操作就定位到这个片上的具体集合中进行。
+通过命令使集合users分片，使集合分片必须先使其所在的数据库支持分片，例如：</p>
             </li>
             
           </ul>

@@ -256,5 +256,419 @@ db.shutdownServer()
 </description>
     </item>
     
+    <item>
+      <title>7.3  分片工作机制</title>
+      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter7/7.3/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter7/7.3/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;7.3.1  使集合分片&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;1）连接到前面配置集群中的mongos实例&lt;/strong&gt;&lt;br&gt;
+mongo &amp;ndash;port 40009&lt;br&gt;
+&lt;strong&gt;2）在集群中创建数据库eshop和集合users&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mongos&amp;gt; use eshop&lt;/li&gt;
+&lt;li&gt;mongos&amp;gt;&lt;/li&gt;
+&lt;li&gt;db.users.insert({userid:1,username:&amp;ldquo;lili&amp;rdquo;,city:&amp;ldquo;beijing&amp;rdquo;})&lt;/li&gt;
+&lt;li&gt;mongos&amp;gt; sh.status()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以看到此时数据库eshop还没支持分片，且数据库中所有未分片的集合将保存在片rs1中；&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-1.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;3）分片&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;mongoDB的分片是基于范围的，也就是说任何一个文档一定位于指定片键的某个范围内，一旦片键选择好后，chunks就会按照片键来将一部分documents从逻辑上组合在一起。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;这里对users集合选择&amp;quot;city&amp;quot;字段作为片键来分片
+假如现在&amp;quot;city&amp;quot;字段值有&amp;quot;beijing&amp;quot;、&amp;ldquo;guangzhou&amp;rdquo;、&amp;ldquo;changsha&amp;rdquo;，初始的时候随机的向集群中插入包含以上字段值的文档，此时由于chunks的大小未达到默认的阈值64MB，集群中应该只有一个chunk，随着继续插入文档，超过阈值的chunk会被分割成两个chunks，最终的chunks和片键分布可能如下表格所示。&lt;br&gt;
+表格只是大体上描述了分片的情况，实际可能有所变化，其中-∞表示所有键值小于“beijing”的文档，∞表示所有键值大于&amp;quot;guangzhou&amp;quot;的文档。
+开始键值	结束键值	所在分片&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-2.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;另外chunks所包含的文档，并不是物理上的包含，它是一种逻辑包含，它只表示带有片键的文档会落在哪个范围内，而这个范围的文档对应的chunk位于哪个片是可以查询到的，后续的读写操作就定位到这个片上的具体集合中进行。&lt;br&gt;
+通过命令使集合users分片，使集合分片必须先使其所在的数据库支持分片，例如：&lt;br&gt;
+mongos&amp;gt; sh.enableSharding(&amp;ldquo;eshop&amp;rdquo;)  //使数据库支持分片&lt;br&gt;
+对已有数据的集合进行分片，必须先在所选择的片键上创建一个索引，如果集合初始时没有任何数据，则mongoDB会自动在所选择的片键上创建一个索引。&lt;br&gt;
+mongos&amp;gt; db.users.createIndex({city:1})  //创建基于片键的索引&lt;br&gt;
+mongos&amp;gt; sh.shardCollection(&amp;ldquo;eshop.users&amp;rdquo;,{city:1})  //使集合分片&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-3.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;成功执行上面命令后，再次查看集群状态信息：
+mongos&amp;gt; sh.status()&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-4.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;分片
+成功执行上面命令后，再次查看集群状态信息：
+mongos&amp;gt; sh.status()&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;此块的包含键值范围是-∞到∞，且在片rs1上，因为此时集合中只有一条记录，还未进行块的分割、迁移。
+&lt;strong&gt;4）继续插入数据使集合自动分片&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;为了观察到集合被分成多个chunk，并分布在多个片上，继续插入一些数据进行分析：&lt;br&gt;
+for(var i = 1; i&amp;lt;10000;i++) db.users.insert({userid:i,username:&amp;ldquo;lili&amp;rdquo;+i,city:&amp;ldquo;beijing&amp;rdquo;})&lt;br&gt;
+for(var i = 0; i&amp;lt;10000;i++) db.users.insert({userid:i,username:&amp;ldquo;xiaoming&amp;rdquo;+i,city:&amp;ldquo;changsha&amp;rdquo;})&lt;br&gt;
+for(var i = 0; i&amp;lt;10000;i++) db.users.insert({userid:i,username:&amp;ldquo;xiaoqiang&amp;rdquo;+i,city:&amp;ldquo;guangzhou&amp;rdquo;})&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;继续插入数据使集合自动分片
+通过大量插入文档（注：上面插入的数据量不够）后，第一个chunk的大小会超过64MB时，出现chunk分割与迁移的过程。chunk可以修改&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;连接mongos&lt;br&gt;
+use config&lt;br&gt;
+db.settings.save({_id:”chunksize”,value:16})&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-5.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+      A caption
+    &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;再次观察集群的状态，字段databases值变为：&lt;/li&gt;
+&lt;/ul&gt;
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;figure  id=&#34;figure-a-caption&#34;&gt;
+   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-6.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+       A caption
+     &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;说明此时集群中有5个块，其中在片rs0上有2个块，在片rs1上有3个块，每个块包含一定区间范围的文档。为了更加清楚的知道这些块是如何分割和迁移的，可以查看changelog集合中的记录信息进行分析。&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;从命令db.changelog.find()输出内容中可以看到有以下几步：&lt;br&gt;
+第一步：分割大于64MB的块，原来此块的片键的区间范围是-∞到∞，分割后区间变为-∞到&amp;quot;beijing&amp;quot;、&amp;ldquo;beijing&amp;quot;到∞两个区间。&lt;/p&gt;
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;figure  id=&#34;figure-a-caption&#34;&gt;
+   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-7.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+       A caption
+     &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;第二步：随着继续插入文档，区间&amp;quot;beijing&amp;quot;到∞所包含的块的大小超过64MB，此时这个区间又被分割为&amp;quot;beijing&amp;quot;到&amp;quot;guangzhou&amp;rdquo;、&amp;ldquo;guangzhou&amp;quot;到∞这两个区间。&lt;/p&gt;
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;figure  id=&#34;figure-a-caption&#34;&gt;
+   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-8.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+       A caption
+     &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;第三步：rs0有三个区块，这一步做的就是将区间-∞到&amp;quot;beijing&amp;quot;对应的chunk从片rs0迁移到片rs1，最终结果是分片rs0上包含&amp;quot;beijing&amp;quot;到&amp;quot;guangzhou&amp;rdquo;、&amp;ldquo;guangzhou&amp;quot;到∞两个块；分片rs1上包含区间-∞到&amp;quot;beijing&amp;quot;的块。&lt;/p&gt;
+&lt;p&gt;不断增加数据，分片分割，依次类推，mongoDB就是这样来实现海量数据的分布式存储的，同时由于每个片又是由复制集组成，保证了数据的可靠性。&lt;/p&gt;
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;figure  id=&#34;figure-a-caption&#34;&gt;
+   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-9.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+       A caption
+     &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;7.3.2  集群平衡器&lt;br&gt;
+上节中块的迁移操作是MongoDB中的一个叫做平衡器的后台进程自动完成的。&lt;br&gt;
+MongoDB的平衡器是一个后台进程，监视每个分片上块的数目。当给定分片上的块数达到特定的迁移阈值时，平衡器会尝试在分片之间自动迁移块，使得每个分片达到相等数量的块。平衡器将比较多块的分片中的块迁移到块数量较少的分片中。平衡器迁移块，直到集合在分片之间的块均匀分布。&lt;br&gt;
+平衡器的迁移阈值&lt;/li&gt;
+&lt;/ul&gt;
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;figure  id=&#34;figure-a-caption&#34;&gt;
+   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-10.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+       A caption
+     &lt;/figcaption&gt;&lt;/figure&gt;
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;figure  id=&#34;figure-a-caption&#34;&gt;
+   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-11.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+       A caption
+     &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;所有块的迁移都遵循如下流程：&lt;br&gt;
+1.平衡器进程将moveChunk命令发送到源分片。&lt;br&gt;
+2.源分片开启一个到目标片的移动进程。在迁移过程中，如果有改变chunk的动作，源分片也会响应这个动作。&lt;br&gt;
+3.目标片开始请求chunk中的文档并复制接收到的数据&lt;br&gt;
+4.当接收完块中的最后一个文档，目标分片将启动同步过程，以确保在迁移过程中引起数据变化的动作能够被重新执行&lt;br&gt;
+5.当完全同步时，源分片连接到配置数据库，并使用块的新位置更新集群元数据。&lt;br&gt;
+6.源分片完成元数据的更新后，一旦块上没有打开光标，源分片将删除其文档副本。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;7.3.3  集群的写与读
+客户端应用程序对集群的读写都是通过mongos这个路由进程来进行的，与对单个mongod实例读写类似。如下图所示：&lt;/li&gt;
+&lt;/ul&gt;
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;figure  id=&#34;figure-a-caption&#34;&gt;
+   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-12.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
+       A caption
+     &lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;数据的查询效率对集群来说非常重要；&lt;br&gt;
+集群查询性能的因素包括：索引和片键&lt;br&gt;
+查询语句可分为三类：&lt;br&gt;
+第一种，不包含片键和索引的查询，性能较差；&lt;br&gt;
+第二种，只包含片键的查询，性能一般；&lt;br&gt;
+第三种，包含片键和索引的查询，性能较好；&lt;br&gt;
+索引和片键均影响查询性能，当发现查询速度慢时，可以针对性的优化。
+MongoDB是通过片键来路由读写请求操作的，好的路由能得到较好的读写负载均衡，下面对集中不同特性的片键进行分析：&lt;br&gt;
+一、升序字段片键。新插入的文档可能属于某一个区间范围内，导致一个chunk读写过热。&lt;br&gt;
+二、完全随机的片键。太过随机，导致数据太分散，数据会频繁的换进换出，降低性能。&lt;br&gt;
+三、片键的取值范围有限。比如city仅有几个，当数据量大后，可能没有用于分割的片键值。&lt;br&gt;
+可见，对海量数据的读写操作选择一个合适的片键并不容易，一个好的片键应具有：&lt;br&gt;
+一、分发写操作&lt;br&gt;
+二、读操作不能太过随机化，尽量局部化&lt;br&gt;
+三、要能保证chunk能够一直被分割&lt;br&gt;
+满足三点要求的片键通常需要几个字段进行组合，如{city:1,_id:1}，可满足。&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
