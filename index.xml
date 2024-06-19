@@ -1584,7 +1584,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-592376841&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-758912364&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1594,7 +1594,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-592376841&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-758912364&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -4859,11 +4859,11 @@ MongoDB对单个文件有限制，最大不超过&lt;strong&gt;16MB&lt;/strong&g
 
 
 
-&lt;figure  id=&#34;figure-a-caption&#34;&gt;
+&lt;figure  id=&#34;figure-81-2&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter8/images/8.1-2.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter8/images/8.1-2.png&#34; alt=&#34;8.1-2&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      A caption
+      8.1-2
     &lt;/figcaption&gt;&lt;/figure&gt;
 
 &lt;ul&gt;

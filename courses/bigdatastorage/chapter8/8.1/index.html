@@ -281,7 +281,7 @@ A caption MongoDB的存储基本单元是BSON文档对象，字段值可以是�
 文件内容直接保存到MongoDB(非路径)，可充分发挥分布式特性
 MongoDB对单个文件有限制，最大不超过16MB，可直接存储；
 当文件大于16MB时，就需要通过GridFS实现。
-GridFS不是额外重新开发的文件系统，它依赖MongoDB的整个体系架构，如存储引擎、集合、查询语法、分片集群等。 GridFS将大文件切割成许多小块，默认每块255KB，小块作为一条文档记录存入集合。 A caption 文件上传到GridFS后，文件均有2个特殊的集合存储文件内容，chunks集合，存内容块，和files集合，存元数据信息。 和分片集群的chunk大小64MB，强调的是片键索引范围的文档记录，和GridFS的不一样。 A caption 从GridFS中获取一个文件分为2个步骤，先查询fs.files中的_id，和fs.chunks中的files_id对应，再将chunks中的files_id的内容合并后返回； db.fs.files.find(); db.fs.chunks.find() db.fs.files.getIndexes({}) //已自动建索引 A caption " />
+GridFS不是额外重新开发的文件系统，它依赖MongoDB的整个体系架构，如存储引擎、集合、查询语法、分片集群等。 GridFS将大文件切割成许多小块，默认每块255KB，小块作为一条文档记录存入集合。 8.1-2 文件上传到GridFS后，文件均有2个特殊的集合存储文件内容，chunks集合，存内容块，和files集合，存元数据信息。 和分片集群的chunk大小64MB，强调的是片键索引范围的文档记录，和GridFS的不一样。 A caption 从GridFS中获取一个文件分为2个步骤，先查询fs.files中的_id，和fs.chunks中的files_id对应，再将chunks中的files_id的内容合并后返回； db.fs.files.find(); db.fs.chunks.find() db.fs.files.getIndexes({}) //已自动建索引 A caption " />
 
 
 
@@ -329,7 +329,7 @@ A caption MongoDB的存储基本单元是BSON文档对象，字段值可以是�
 文件内容直接保存到MongoDB(非路径)，可充分发挥分布式特性
 MongoDB对单个文件有限制，最大不超过16MB，可直接存储；
 当文件大于16MB时，就需要通过GridFS实现。
-GridFS不是额外重新开发的文件系统，它依赖MongoDB的整个体系架构，如存储引擎、集合、查询语法、分片集群等。 GridFS将大文件切割成许多小块，默认每块255KB，小块作为一条文档记录存入集合。 A caption 文件上传到GridFS后，文件均有2个特殊的集合存储文件内容，chunks集合，存内容块，和files集合，存元数据信息。 和分片集群的chunk大小64MB，强调的是片键索引范围的文档记录，和GridFS的不一样。 A caption 从GridFS中获取一个文件分为2个步骤，先查询fs.files中的_id，和fs.chunks中的files_id对应，再将chunks中的files_id的内容合并后返回； db.fs.files.find(); db.fs.chunks.find() db.fs.files.getIndexes({}) //已自动建索引 A caption " /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+GridFS不是额外重新开发的文件系统，它依赖MongoDB的整个体系架构，如存储引擎、集合、查询语法、分片集群等。 GridFS将大文件切割成许多小块，默认每块255KB，小块作为一条文档记录存入集合。 8.1-2 文件上传到GridFS后，文件均有2个特殊的集合存储文件内容，chunks集合，存内容块，和files集合，存元数据信息。 和分片集群的chunk大小64MB，强调的是片键索引范围的文档记录，和GridFS的不一样。 A caption 从GridFS中获取一个文件分为2个步骤，先查询fs.files中的_id，和fs.chunks中的files_id对应，再将chunks中的files_id的内容合并后返回； db.fs.files.find(); db.fs.chunks.find() db.fs.files.getIndexes({}) //已自动建索引 A caption " /><meta property="og:image" content="https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
     <meta
@@ -338,7 +338,7 @@ GridFS不是额外重新开发的文件系统，它依赖MongoDB的整个体系�
     />
   
   
-    <meta property="article:modified_time" content="2024-06-19T15:07:21&#43;08:00">
+    <meta property="article:modified_time" content="2024-06-19T15:18:14&#43;08:00">
   
 
 
@@ -1543,11 +1543,11 @@ MongoDB对单个文件有限制，最大不超过<strong>16MB</strong>，可直�
 
 
 
-<figure  id="figure-a-caption">
+<figure  id="figure-81-2">
   <div class="d-flex justify-content-center">
-    <div class="w-100" ><img src="/courses/BigDataStorage/chapter8/images/8.1-2.png" alt="A caption" loading="lazy" data-zoomable /></div>
+    <div class="w-100" ><img src="/courses/BigDataStorage/chapter8/images/8.1-2.png" alt="8.1-2" loading="lazy" data-zoomable /></div>
   </div><figcaption data-pre="Figure&nbsp;" data-post=":&nbsp;" class="numbered">
-      A caption
+      8.1-2
     </figcaption></figure>
 
 <ul>
@@ -1643,7 +1643,7 @@ MongoDB对单个文件有限制，最大不超过<strong>16MB</strong>，可直�
       </div>
 
       <div class="body-footer">
-        <p>Last updated on Jun 19, 2024 3:07 PM</p>
+        <p>Last updated on Jun 19, 2024 3:18 PM</p>
 
         
 
