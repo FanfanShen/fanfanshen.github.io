@@ -346,7 +346,7 @@ mongofiles &ndash;port 40009 &ndash;db mydocs &ndash;local D:/workspace/123." />
     />
   
   
-    <meta property="article:modified_time" content="2024-06-19T15:07:21&#43;08:00">
+    <meta property="article:modified_time" content="2024-06-19T15:11:37&#43;08:00">
   
 
 
@@ -1525,47 +1525,52 @@ Python安装方法参考：<br>
 PyMongo安装方法参考：<br>
 <a href="https://www.runoob.com/python3/python-mongodb.html" target="_blank" rel="noopener">https://www.runoob.com/python3/python-mongodb.html</a><br>
 小文件上传：<br>
-参考：https://blog.csdn.net/fandroid/article/  details/104434326<br>
-#!/usr/bin/python3<br>
-from pymongo import MongoClient</li>
+参考：https://blog.csdn.net/fandroid/article/details/104434326</li>
 </ul>
-<h1 id="connecting-to-database-dbtestfile-collectionhello">connecting to database. db:testfile, collection:hello</h1>
-<p>myclient = MongoClient(&lsquo;mongodb://localhost:40009/&rsquo;)
-db = myclient.testfile
-collection = db.hello</p>
-<h1 id="open-a-file-to-upload">open a file to upload</h1>
-<p>myfile = open(file=&lsquo;D:/workspace/language.pdf&rsquo;,mode=&lsquo;rb&rsquo;)
-data = myfile.read()</p>
-<p>doc = [{&ldquo;userid&rdquo;:&ldquo;5&rdquo;,
-&ldquo;filename&rdquo;:&ldquo;language&rdquo;,
-&ldquo;filettype&rdquo;:&ldquo;pdf&rdquo;,
-&ldquo;content&rdquo;:data,
-&ldquo;size&rdquo;:&ldquo;3000&rdquo;
-}]</p>
-<h1 id="insert-document">insert document</h1>
-<p>result = collection.insert_many(doc)
-print(result)</p>
-<p>myfile.close()</p>
-<ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/python3  </span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pymongo</span> <span class="kn">import</span> <span class="n">MongoClient</span>  
+</span></span><span class="line"><span class="cl"><span class="c1"># connecting to database. db:testfile, collection:hello </span>
+</span></span><span class="line"><span class="cl"><span class="n">myclient</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span><span class="s1">&#39;mongodb://localhost:40009/&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">db</span> <span class="o">=</span> <span class="n">myclient</span><span class="o">.</span><span class="n">testfile</span>
+</span></span><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">hello</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># open a file to upload</span>
+</span></span><span class="line"><span class="cl"><span class="n">myfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;D:/workspace/language.pdf&#39;</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">myfile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">doc</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&#34;userid&#34;</span><span class="p">:</span><span class="s2">&#34;5&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;filename&#34;</span><span class="p">:</span><span class="s2">&#34;language&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;filettype&#34;</span><span class="p">:</span><span class="s2">&#34;pdf&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;content&#34;</span><span class="p">:</span><span class="n">data</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;size&#34;</span><span class="p">:</span><span class="s2">&#34;3000&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># insert document</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">myfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><ul>
 <li>上述代码执行成功后，查看数据库：
 mongos&gt;db.hello.find({},{content:0})</li>
 </ul>
 <p>从结果可知代码将PDF格式的文件上传到分布式集群中，content中以二进制形式保存了文件的全部内容。
 {content:0}表示不返回此字段的值。</p>
 <p>参考：<br>
-<a href="https://blog.csdn.net/fandroid/article/details/104434326" target="_blank" rel="noopener">https://blog.csdn.net/fandroid/article/details/104434326</a>
-#!/usr/bin/python3
-from pymongo import MongoClient</p>
-<h1 id="connecting-to-database-dbtestfile-collectionhello-1">connecting to database. db:testfile, collection:hello</h1>
-<p>myclient = MongoClient(&lsquo;mongodb://localhost:40009/&rsquo;)
-db = myclient.testfile
-collection = db.hello</p>
-<h1 id="find-a-file-to-download-with-content-value-stored-in-testpdf">find a file to download with &ldquo;content&rdquo; value. Stored in test.pdf</h1>
-<p>mydoc = collection.find_one({&ldquo;userid&rdquo;:&ldquo;5&rdquo;},{&quot;_id&quot;:0,&ldquo;content&rdquo;:1})
-myfile = open(file=&lsquo;D:/workspace/test.pdf&rsquo;,mode=&lsquo;ab&rsquo;)
-data = myfile.write(mydoc[&ldquo;content&rdquo;])</p>
-<p>myfile.close()</p>
-<ul>
+<a href="https://blog.csdn.net/fandroid/article/details/104434326" target="_blank" rel="noopener">https://blog.csdn.net/fandroid/article/details/104434326</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/python3</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pymongo</span> <span class="kn">import</span> <span class="n">MongoClient</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># connecting to database. db:testfile, collection:hello  </span>
+</span></span><span class="line"><span class="cl"><span class="n">myclient</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span><span class="s1">&#39;mongodb://localhost:40009/&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">db</span> <span class="o">=</span> <span class="n">myclient</span><span class="o">.</span><span class="n">testfile</span>
+</span></span><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">hello</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># find a file to download with &#34;content&#34; value. Stored in test.pdf </span>
+</span></span><span class="line"><span class="cl"><span class="n">mydoc</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s2">&#34;userid&#34;</span><span class="p">:</span><span class="s2">&#34;5&#34;</span><span class="p">},{</span><span class="s2">&#34;_id&#34;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&#34;content&#34;</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="n">myfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;D:/workspace/test.pdf&#39;</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;ab&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">myfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">mydoc</span><span class="p">[</span><span class="s2">&#34;content&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">myfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><ul>
 <li>
 <p>可以在D:/workspace/test.pdf中查看到下载的文件 。<br>
 上述例子说明，MongoDB可以直接作为一个存储小文件（小于16MB）的分布式文件系统，主要依赖三点：<br>
@@ -1580,41 +1585,51 @@ MongoDB可以部署成分片集群，实现海量数据存储、读写分离<br>
 <a href="https://blog.csdn.net/fandroid/article/details/104434636" target="_blank" rel="noopener">https://blog.csdn.net/fandroid/article/details/104434636</a></p>
 </li>
 <li>
-<p>大文件上传到GridFS：<br>
-#!/usr/bin/python3</p>
+<p>大文件上传到GridFS：</p>
 </li>
 </ul>
-<p>from pymongo import MongoClient
-from gridfs import GridFS</p>
-<h1 id="connecting-to-database-dbtestfile">connecting to database. db:testfile</h1>
-<p>myclient = MongoClient(&lsquo;mongodb://localhost:40009/&rsquo;)
-db = myclient.testfile</p>
-<h1 id="create-a-new-instance-of-gridfs">Create a new instance of GridFS</h1>
-<p>gridfs_col = GridFS(db)</p>
-<h1 id="open-a-file-to-upload-1">open a file to upload</h1>
-<p>myfile = open(file=&lsquo;D:/workspace/books.pdf&rsquo;,mode=&lsquo;rb&rsquo;)
-mydata = myfile.read()</p>
-<h1 id="upload-file-to-gridfs">upload file to GridFS</h1>
-<p>myfile = gridfs_col.put(data=mydata,filename=&ldquo;books.pdf&rdquo;)</p>
-<p>print(myfile)</p>
-<p>通过db.fs.files.find()可以查看文件是否上传成功；</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/python3</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pymongo</span> <span class="kn">import</span> <span class="n">MongoClient</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">gridfs</span> <span class="kn">import</span> <span class="n">GridFS</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># connecting to database. db:testfile </span>
+</span></span><span class="line"><span class="cl"><span class="n">myclient</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span><span class="s1">&#39;mongodb://localhost:40009/&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">db</span> <span class="o">=</span> <span class="n">myclient</span><span class="o">.</span><span class="n">testfile</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Create a new instance of GridFS</span>
+</span></span><span class="line"><span class="cl"><span class="n">gridfs_col</span> <span class="o">=</span> <span class="n">GridFS</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># open a file to upload</span>
+</span></span><span class="line"><span class="cl"><span class="n">myfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;D:/workspace/books.pdf&#39;</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mydata</span> <span class="o">=</span> <span class="n">myfile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># upload file to GridFS</span>
+</span></span><span class="line"><span class="cl"><span class="n">myfile</span> <span class="o">=</span> <span class="n">gridfs_col</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mydata</span><span class="p">,</span><span class="n">filename</span><span class="o">=</span><span class="s2">&#34;books.pdf&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">myfile</span><span class="p">)</span>
+</span></span></code></pre></div><p>通过db.fs.files.find()可以查看文件是否上传成功；</p>
 <ul>
-<li>从GridFS下载大文件：
-#!/usr/bin/python3</li>
+<li>从GridFS下载大文件：</li>
 </ul>
-<p>from pymongo import MongoClient
-from gridfs import GridFS</p>
-<h1 id="connecting-to-database-dbtestfile-1">connecting to database. db:testfile</h1>
-<p>myclient = MongoClient(&lsquo;mongodb://localhost:40009/&rsquo;)
-db = myclient.testfile</p>
-<h1 id="create-a-new-instance-of-gridfs-1">Create a new instance of GridFS</h1>
-<p>gridfs_col = GridFS(db)</p>
-<h1 id="find-a-file-to-download-with-bookspdf-value-stored-in-111pdf">find a file to download with &ldquo;books.pdf&rdquo; value. Stored in 111.pdf</h1>
-<p>mydata = gridfs_col.get_version(&ldquo;books.pdf&rdquo;).read()
-myfile = open(file=&lsquo;D:/workspace/111.pdf&rsquo;,mode=&lsquo;wb&rsquo;)
-rs = myfile.write(mydata)</p>
-<p>print(rs)</p>
-<ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/python3</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pymongo</span> <span class="kn">import</span> <span class="n">MongoClient</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">gridfs</span> <span class="kn">import</span> <span class="n">GridFS</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># connecting to database. db:testfile  </span>
+</span></span><span class="line"><span class="cl"><span class="n">myclient</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span><span class="s1">&#39;mongodb://localhost:40009/&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">db</span> <span class="o">=</span> <span class="n">myclient</span><span class="o">.</span><span class="n">testfile</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Create a new instance of GridFS</span>
+</span></span><span class="line"><span class="cl"><span class="n">gridfs_col</span> <span class="o">=</span> <span class="n">GridFS</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># find a file to download with &#34;books.pdf&#34; value. Stored in 111.pdf</span>
+</span></span><span class="line"><span class="cl"><span class="n">mydata</span> <span class="o">=</span> <span class="n">gridfs_col</span><span class="o">.</span><span class="n">get_version</span><span class="p">(</span><span class="s2">&#34;books.pdf&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">myfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;D:/workspace/111.pdf&#39;</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">rs</span> <span class="o">=</span> <span class="n">myfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">mydata</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">rs</span><span class="p">)</span>
+</span></span></code></pre></div><ul>
 <li>结合大小文件的上传下载分析：
 可以实现存储海量数据的分布式文件存储方案
 对于用户上传的任何文件：
@@ -1682,7 +1697,7 @@ GridFS不适合小文件存储，因为从GridFS中读取数据涉及到两次�
       </div>
 
       <div class="body-footer">
-        <p>Last updated on Jun 19, 2024 3:07 PM</p>
+        <p>Last updated on Jun 19, 2024 3:11 PM</p>
 
         
 
