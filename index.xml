@@ -81,15 +81,21 @@
     查看资源
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;一在线数据库检索资源&#34;&gt;一、在线数据库检索资源&lt;/h2&gt;
+&lt;h2 id=&#34;一课题组知识库&#34;&gt;一、课题组知识库&lt;/h2&gt;
+&lt;h3 id=&#34;1推荐课程&#34;&gt;1.推荐课程&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://dblp.uni-trier.de/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DBLP&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.sci-hub.ren/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;sci-hub&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://scholar.google.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;谷歌学术&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://xueshu.baidu.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;百度学术&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnki.net/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;中国知网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hanlab.mit.edu/courses/2023-fall-65940&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TinyML and Efficient Deep Learning Computing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://efficientdlbook.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Efficient Deep Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;高效深度学习：模型压缩与设计（汪玉）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://novel.ict.ac.cn/aics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《智能计算系统》官网&lt;/a&gt;，&lt;a href=&#34;https://space.bilibili.com/494117284&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B站视频&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;二学术刊物&#34;&gt;二、学术刊物&lt;/h2&gt;
+&lt;h3 id=&#34;2知识库&#34;&gt;2.知识库&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#&#34;&gt;知识库建设&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;文献库：加入Zotero文献管理小组，将zotero注册后的邮箱发送到 &lt;a href=&#34;mailto:ffshen@nau.edu.cn&#34;&gt;ffshen@nau.edu.cn&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;二学术资源&#34;&gt;二、学术资源&lt;/h2&gt;
+&lt;h3 id=&#34;1学术刊物&#34;&gt;1.学术刊物&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.ccf.org.cn/Academic_Evaluation/By_category/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;中国计算机学会推荐国际学术会议和期刊目录&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.ccf.org.cn/Academic_Evaluation/By_category/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CCF发布计算领域高质量科技期刊分级目录&lt;/a&gt;&lt;/li&gt;
@@ -100,6 +106,14 @@
 &lt;li&gt;&lt;a href=&#34;http://www.aas.net.cn/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;自动化学报&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://crad.ict.ac.cn/CN/1000-1239/home.shtml&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;计算机研究与发展&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id=&#34;2学术论文检索方法&#34;&gt;2.学术论文检索方法&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;英文刊物：&lt;a href=&#34;https://dblp.uni-trier.de/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DBLP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;英文刊物下载：&lt;a href=&#34;https://www.sci-hub.ren/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;sci-hub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;中文刊物：&lt;a href=&#34;https://www.cnki.net/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;中国知网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://scholar.google.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;谷歌学术&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://xueshu.baidu.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;百度学术&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;三顶级会议期刊&#34;&gt;三、顶级会议/期刊&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;FAST、USENIX ATC、PPOPP、MSST、MASCOTS、SYSTOR、TOS、TC、TPDS、VLDB&lt;/li&gt;
@@ -109,7 +123,7 @@
 &lt;li&gt;人工智能：AAAI，CVPR，ICCV，ICML，IJCAI，TPAMI&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;有源代码的会议（见论文右上角的图标Artifact Evaluation）：FAST、USENIX ATC、SOSP、OSDI、HPCA、PPOPP&lt;/p&gt;
-&lt;h2 id=&#34;四学者网站和学术资源&#34;&gt;四、学者网站和学术资源&lt;/h2&gt;
+&lt;h2 id=&#34;四知名学者团队官网&#34;&gt;四、知名学者/团队官网&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;学者网站：
 &lt;ul&gt;
@@ -122,7 +136,12 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;五科研方法&#34;&gt;五、科研方法&lt;/h2&gt;
+&lt;h2 id=&#34;五学术论文写作方法&#34;&gt;五、学术论文写作方法&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cse.iitb.ac.in/~uday/soft-copies/writing-a-good-paper.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;How to Write a Good Paper?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cs.purdue.edu/homes/ninghui/courses/591RS2_16/slides/HowToWriteACSPaper.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;How To Write A CS Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.owlnet.rice.edu/~cainproj/courses/comp482/comp482PaperGuide_F07.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;A Guide to Writing a Successful Paper&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -1584,7 +1603,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-956134782&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-593167482&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1594,7 +1613,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-956134782&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-593167482&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
