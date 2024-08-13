@@ -13,6 +13,15 @@
     </image>
     
     <item>
+      <title>Our paper &#34;TPE-BFL:Training Parameter Encryption scheme for Blockchain based Federated Learning System&#34; is published by Computer Networks (CCF B, 中科院二区). Congratulations to Qiwei Liang.</title>
+      <link>https://fanfanshen.github.io/news/2024-paper-tpe-bfl/</link>
+      <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/news/2024-paper-tpe-bfl/</guid>
+      <description>&lt;p&gt;论文链接：&lt;a href=&#34;https://authors.elsevier.com/a/1ja6C4xsUsBc1l&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TPE-BFL:Training Parameter Encryption scheme for Blockchain based Federated Learning System&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Our paper was awarded the best paper of 2023 in 《武汉大学学报（理学版）》. Congratulations to Bofan Yang.</title>
       <link>https://fanfanshen.github.io/news/2024-reward-bestpaper/</link>
       <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
@@ -157,7 +166,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-593167482&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-587691243&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -167,7 +176,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-593167482&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-587691243&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
