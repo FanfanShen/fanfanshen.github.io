@@ -13,6 +13,15 @@
     </image>
     
     <item>
+      <title>Our paper &#34;CKKS and Local Differential Privacy based Model Parameters Encryption for Personalized Federated Learning&#34; is accepted by The 6th International Conference on System Reliability and Safety Engineering. Congratulations to Lijie Hui.</title>
+      <link>https://fanfanshen.github.io/news/2024-paper-ckks/</link>
+      <pubDate>Fri, 06 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/news/2024-paper-ckks/</guid>
+      <description>&lt;p&gt;Hangzhou, China | October 11-14, 2024&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Our paper &#34;TPE-BFL:Training Parameter Encryption scheme for Blockchain based Federated Learning System&#34; is published by Computer Networks (CCF B, 中科院二区). Congratulations to Qiwei Liang.</title>
       <link>https://fanfanshen.github.io/news/2024-paper-tpe-bfl/</link>
       <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
@@ -166,7 +175,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-157924683&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-928645713&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -176,7 +185,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-157924683&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-928645713&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
