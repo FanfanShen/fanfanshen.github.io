@@ -5,9 +5,9 @@
     <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter5/</link>
       <atom:link href="https://fanfanshen.github.io/courses/bigdatastorage/chapter5/index.xml" rel="self" type="application/rss+xml" />
     <description>第5章 WiredTiger存储引擎</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 09 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 09 Apr 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://fanfanshen.github.io/media/icon_hu7729264130191091259.png</url>
       <title>第5章 WiredTiger存储引擎</title>
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter5/</link>
     </image>
@@ -22,83 +22,26 @@
 将应用修改的数据由内存写到磁盘上&lt;br&gt;
 &lt;strong&gt;分类&lt;/strong&gt;&lt;br&gt;
 一、典型的B—tree数据结构&lt;br&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-51-1&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.1-1.png&#34; alt=&#34;5.1-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      5.1-1
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.1-1.png&#34;
+    alt=&#34;5.1-1&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;5.1-1&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;br&gt;
 在整个B-tree中从上往下依次为根节点、内部节点、叶子节点。每一个节点就是一个page，数据以page为单位在内存和磁盘之间进行调度。每个page的大小决定了相应节点的分支数量，每条索引记录会包含一个数据指针，该指针指向一条数据记录所在文件的偏移量
 二、磁盘中的基础数据结构&lt;br&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-51-2&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.1-2.png&#34; alt=&#34;5.1-2&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      5.1-2
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.1-2.png&#34;
+    alt=&#34;5.1-2&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;5.1-2&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;三、内存中的基础数据结构&lt;br&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-51-3&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.1-3.png&#34; alt=&#34;5.1-3&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      5.1-3
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.1-3.png&#34;
+    alt=&#34;5.1-3&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;5.1-3&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;四、page的其他数据结构&lt;br&gt;
 1、WT_PAGE_MODIFY：用于保存page上的事务、脏数据字节大小等与page修改相关的信息&lt;br&gt;
@@ -117,30 +60,11 @@
 &lt;strong&gt;定义&lt;/strong&gt;&lt;br&gt;
 当内存中的“脏页”达到一定比例或cache使用量达到一定比例时就会触发相应的evict page线程来将pages（包含干净的pages和脏pages）按一定的算法（LRU队列）淘汰出去。
 &lt;strong&gt;触发page eviction条件的几种参数控制&lt;/strong&gt;&lt;br&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-52-1&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.2-1.png&#34; alt=&#34;5.2-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      5.2-1
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.2-1.png&#34;
+    alt=&#34;5.2-1&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;5.2-1&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;/p&gt;
 </description>
     </item>
@@ -153,30 +77,11 @@
       <description>&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;br&gt;
 页面淘汰之前，通过reconcile生成磁盘映像page大小，并写入磁盘&lt;br&gt;
 &lt;strong&gt;流程图&lt;/strong&gt;&lt;br&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-53-1&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.3-1.png&#34; alt=&#34;5.3-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      5.3-1
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.3-1.png&#34;
+    alt=&#34;5.3-1&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;5.3-1&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;/p&gt;
 </description>
     </item>
@@ -189,30 +94,11 @@
       <description>&lt;p&gt;&lt;strong&gt;规则&lt;/strong&gt;
 WiredTiger启动时，向操作系统申请一部分内存称Internal Cache，如果主机上只运行MongoDB相关的服务进程，则剩下的内存可以作为文件系统的缓存并由操作系统负责管理。
 整个内存使用情况如下图
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-54-1&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.4-1.png&#34; alt=&#34;5.4-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      5.4-1
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.4-1.png&#34;
+    alt=&#34;5.4-1&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;5.4-1&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;/p&gt;
 </description>
     </item>
@@ -229,30 +115,11 @@ WiredTiger启动时，向操作系统申请一部分内存称Internal Cache，�
 第四步：pages被选中，加入淘汰队列，等待被evict线程淘汰出内存&lt;br&gt;
 第五步：evict线程会将干净的pages直接从内存丢弃（page没修改），将经过reconcile处理后的磁盘映像写到磁盘再丢弃“脏的”pages。&lt;br&gt;
 &lt;strong&gt;流程图&lt;/strong&gt;&lt;br&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-55-1&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.5-1.png&#34; alt=&#34;5.5-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      5.5-1
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.5-1.png&#34;
+    alt=&#34;5.5-1&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;5.5-1&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;/p&gt;
 </description>
     </item>
@@ -269,30 +136,11 @@ WiredTiger启动时，向操作系统申请一部分内存称Internal Cache，�
 Checkpoint相当于一个日志，记录了上次Checkpoint后相关数据文件的变化&lt;br&gt;
 &lt;strong&gt;checkpoint包含的关键信息&lt;/strong&gt;&lt;br&gt;
 先看图&lt;br&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-56-1&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.6-1.png&#34; alt=&#34;5.6-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      5.6-1
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.6-1.png&#34;
+    alt=&#34;5.6-1&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;5.6-1&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;每一个checkpoint包含1个root、3个列表及磁盘文件大小&lt;br&gt;
 详细信息解释:&lt;br&gt;
@@ -302,30 +150,11 @@ Checkpoint相当于一个日志，记录了上次Checkpoint后相关数据文件
 (4)discarded list page:用于记录最后一次 checkpoint之后，在这次 checkpoint 执行时，丢弃不再使用的page，并会记录每个丢弃page的size、offset和checksume&lt;br&gt;
 (5)fle size:在这次 checkpoint执行后，用于记录磁盘中数据文件的大小。&lt;br&gt;
 &lt;strong&gt;checkpoint原理图&lt;/strong&gt;&lt;br&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-56-2&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.6-2.png&#34; alt=&#34;5.6-2&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      5.6-2
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.6-2.png&#34;
+    alt=&#34;5.6-2&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;5.6-2&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;/p&gt;
 </description>
     </item>
@@ -344,30 +173,11 @@ WiredTiger.lock，运行实例的锁文件&lt;br&gt;
 mongod.lock，锁文件&lt;br&gt;
 storage.bson，配置文件&lt;br&gt;
 sizeStorer.wt，文档容量信息 &lt;br&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-57-1&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.7-1.png&#34; alt=&#34;5.7-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      5.7-1
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.7-1.png&#34;
+    alt=&#34;5.7-1&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;5.7-1&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;/p&gt;
 </description>
     </item>
@@ -384,30 +194,11 @@ sizeStorer.wt，文档容量信息 &lt;br&gt;
 持久性：一旦提交事务，数据的更改就不会丢失。&lt;br&gt;
 &lt;strong&gt;事务的数据结构&lt;/strong&gt; &lt;br&gt;
 事务在内存里面也会维护相应的数据结构以支撑事务的并发、回滚、持久化等操作&lt;br&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-58-1&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.8-1.png&#34; alt=&#34;5.8-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      5.8-1
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter5/images/5.8-1.png&#34;
+    alt=&#34;5.8-1&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;5.8-1&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;strong&gt;字段解释&lt;/strong&gt;&lt;br&gt;
 (1)id字段:这是事务的全局唯一标识，通过分析它与具体的操作关联，就能够知道一个事务包含哪些操作。&lt;br&gt;

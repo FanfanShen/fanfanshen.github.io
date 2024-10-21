@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2 | Fanfan Shen&#39;s Homepage</title>
+    <link>https://fanfanshen.github.io/publication_types/2/</link>
+      <atom:link href="https://fanfanshen.github.io/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
+    <description>2</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 08 Oct 2019 18:19:04 +0800</lastBuildDate>
+    <image>
+      <url>https://fanfanshen.github.io/media/icon_hu7729264130191091259.png</url>
+      <title>2</title>
+      <link>https://fanfanshen.github.io/publication_types/2/</link>
+    </image>
+    
+    <item>
+      <title>Reuse Locality aware Cache Partitioning for Last-Level Cache</title>
+      <link>https://fanfanshen.github.io/publications/2019cee/</link>
+      <pubDate>Tue, 08 Oct 2019 18:19:04 +0800</pubDate>
+      <guid>https://fanfanshen.github.io/publications/2019cee/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Periodic Learning based Region Selection for Energy Efficient MLC STT-RAM Cache</title>
+      <link>https://fanfanshen.github.io/publications/2019js/</link>
+      <pubDate>Tue, 08 Oct 2019 18:17:35 +0800</pubDate>
+      <guid>https://fanfanshen.github.io/publications/2019js/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

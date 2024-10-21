@@ -5,9 +5,9 @@
     <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter6/</link>
       <atom:link href="https://fanfanshen.github.io/courses/bigdatastorage/chapter6/index.xml" rel="self" type="application/rss+xml" />
     <description>第6章 复制集</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 20 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 20 Apr 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://fanfanshen.github.io/media/icon_hu7729264130191091259.png</url>
       <title>第6章 复制集</title>
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter6/</link>
     </image>
@@ -35,30 +35,11 @@
 &lt;p&gt;在生产环境中一个复制集最少应该包含三个节点，其中有一个必须是主节点，典型的部署结构如下图：&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-61-1&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.1-1.png&#34; alt=&#34;6.1-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      6.1-1
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.1-1.png&#34;
+    alt=&#34;6.1-1&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;6.1-1&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;
@@ -68,37 +49,21 @@
 &lt;p&gt;从它的名字arbiter可以看出，它起到的作用只是当primary节点故障时，能够参与到复制集剩下的节点中**，选择出一个新**的primary节点，它自己永远不会变为primary节点，也不会参与数据的读写。也就是说，数据库的数据会存在primary和second节点中，second节点相当于一个备份，当然second节点可以有多个，当primary节点故障时，second节点有可能变为primary节点。故障转移流程如图所示。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-61-2&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.1-2.png&#34; alt=&#34;6.1-2&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      6.1-2
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.1-2.png&#34;
+    alt=&#34;6.1-2&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;6.1-2&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;ol start=&#34;7&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;更多复制集的概念和原理可参考如下链接：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/duanxz/p/10730096.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.cnblogs.com/duanxz/p/10730096.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/qq_24598601/article/details/81150614&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://blog.csdn.net/qq_24598601/article/details/81150614&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.mongodb.com/manual/replication/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://docs.mongodb.com/manual/replication/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 </description>
@@ -205,30 +170,11 @@
 &lt;p&gt;未报错即启动成功。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-62-1&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-1.png&#34; alt=&#34;6.2-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      6.2-1
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-1.png&#34;
+    alt=&#34;6.2-1&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;6.2-1&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;启动一个mongo客户端，连接到MongoDB实例&lt;/li&gt;
@@ -241,30 +187,11 @@
 &lt;p&gt;&lt;code&gt;.\mongo.exe --port 40000  //启动客户端并连接到40000&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-62-2&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-2.png&#34; alt=&#34;6.2-2&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      6.2-2
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-2.png&#34;
+    alt=&#34;6.2-2&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;6.2-2&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;ul&gt;
 &lt;li&gt;
@@ -306,80 +233,23 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;rs.status()&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-3.png&#34;
+    alt=&#34;6.2-3&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;6.2-3&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-4.png&#34;
+    alt=&#34;6.2-4&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;6.2-4&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-62-3&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-3.png&#34; alt=&#34;6.2-3&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      6.2-3
-    &lt;/figcaption&gt;&lt;/figure&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-62-4&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-4.png&#34; alt=&#34;6.2-4&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      6.2-4
-    &lt;/figcaption&gt;&lt;/figure&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-62-5&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-5.png&#34; alt=&#34;6.2-5&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      6.2-5
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-5.png&#34;
+    alt=&#34;6.2-5&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;6.2-5&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;ul&gt;
 &lt;li&gt;复制集的状态信息输出是基于primary节点实例的，在secondary实例上也可以输出复制集的状态信息。&lt;/li&gt;
@@ -417,30 +287,11 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;查看实例上的数据库rs0:PRIMARY&amp;gt;&lt;code&gt; show dbs&lt;/code&gt;，可以看到默认的数据库&lt;/p&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-默认的数据库&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%871.png&#34; alt=&#34;默认的数据库&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          默认的数据库
-        &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%871.png&#34;
+        alt=&#34;默认的数据库&#34;&gt;&lt;figcaption&gt;
+          &lt;p&gt;默认的数据库&lt;/p&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
 
 &lt;/li&gt;
 &lt;li&gt;
@@ -451,30 +302,11 @@
 &lt;ul&gt;
 &lt;li&gt;rs0:PRIMARY&amp;gt; &lt;code&gt;show collections&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-集合&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%872.png&#34; alt=&#34;集合&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          集合
-        &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%872.png&#34;
+        alt=&#34;集合&#34;&gt;&lt;figcaption&gt;
+          &lt;p&gt;集合&lt;/p&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
 
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -482,55 +314,17 @@
 &lt;li&gt;
 &lt;p&gt;利用mongo客户端登录到复制集的secondary节点上。
 &amp;gt;&lt;code&gt;.\mongo.exe --port 40001&lt;/code&gt;，数据库集合内容是一样的&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%873.png&#34;
+        alt=&#34;主节点集合&#34;&gt;&lt;figcaption&gt;
+          &lt;p&gt;主节点集合&lt;/p&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-主节点集合&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%873.png&#34; alt=&#34;主节点集合&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          主节点集合
-        &lt;/figcaption&gt;&lt;/figure&gt;
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-次节点集合&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%874.png&#34; alt=&#34;次节点集合&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          次节点集合
-        &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%874.png&#34;
+        alt=&#34;次节点集合&#34;&gt;&lt;figcaption&gt;
+          &lt;p&gt;次节点集合&lt;/p&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
 
 &lt;ul&gt;
 &lt;li&gt;
@@ -570,30 +364,11 @@
 &lt;li&gt;rs0:PRIMARY&amp;gt; &lt;code&gt;use local&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;rs0:PRIMARY&amp;gt;&lt;code&gt;db.oplog.rs.find({“op”:“i”})&lt;/code&gt;//筛选出插入操作的内容&lt;/li&gt;
 &lt;/ul&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-查看过程&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%877.png&#34; alt=&#34;查看过程&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          查看过程
-        &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%877.png&#34;
+        alt=&#34;查看过程&#34;&gt;&lt;figcaption&gt;
+          &lt;p&gt;查看过程&lt;/p&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
 
 &lt;ul&gt;
 &lt;li&gt;里面有几个重要字段，其中&amp;quot;ts&amp;quot;表示是这条记录的时间截，&amp;ldquo;t&amp;quot;是秒数，&amp;ldquo;i&amp;quot;每秒操作的次数；&lt;/li&gt;
@@ -609,58 +384,20 @@
 &lt;li&gt;rs0:SECONDARY&amp;gt; use students&lt;/li&gt;
 &lt;li&gt;rs0:SECONDARY&amp;gt; db.scores.find()&lt;/li&gt;
 &lt;/ul&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-次节点数据库同步&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%878.png&#34; alt=&#34;次节点数据库同步&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          次节点数据库同步
-        &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%878.png&#34;
+        alt=&#34;次节点数据库同步&#34;&gt;&lt;figcaption&gt;
+          &lt;p&gt;次节点数据库同步&lt;/p&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
 
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;同步流程&lt;/p&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-同步图解&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%879.png&#34; alt=&#34;同步图解&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          同步图解
-        &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%879.png&#34;
+        alt=&#34;同步图解&#34;&gt;&lt;figcaption&gt;
+          &lt;p&gt;同步图解&lt;/p&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
 
 &lt;ul&gt;
 &lt;li&gt;当primary节点完成插入操作后，secondary节点为了保证数据的同步也会完成一些动作
@@ -765,30 +502,11 @@
 &lt;p&gt;以下第二条记录正是在primary节点上插入的记录，再次证明数据确实同步过来了。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-插入记录&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%8710.png&#34; alt=&#34;插入记录&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          插入记录
-        &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%8710.png&#34;
+        alt=&#34;插入记录&#34;&gt;&lt;figcaption&gt;
+          &lt;p&gt;插入记录&lt;/p&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
 
 &lt;/li&gt;
 &lt;li&gt;
@@ -827,58 +545,20 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-数据同步原理&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%8711.png&#34; alt=&#34;数据同步原理&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          数据同步原理
-        &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%8711.png&#34;
+        alt=&#34;数据同步原理&#34;&gt;&lt;figcaption&gt;
+          &lt;p&gt;数据同步原理&lt;/p&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
 
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;上面两中情况都得到了验证，但是有一点要注意，mongDB默认情况下只能在primary节点上进行读写操作，如下图所示：&lt;/p&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-图示&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%8712.png&#34; alt=&#34;图示&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          图示
-        &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%8712.png&#34;
+        alt=&#34;图示&#34;&gt;&lt;figcaption&gt;
+          &lt;p&gt;图示&lt;/p&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
 
 &lt;/li&gt;
 &lt;li&gt;
@@ -914,30 +594,11 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;默认情况下复制集的写关注只针对primary节点，如下图所示:&lt;/p&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-图示&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%8713.png&#34; alt=&#34;图示&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          图示
-        &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%8713.png&#34;
+        alt=&#34;图示&#34;&gt;&lt;figcaption&gt;
+          &lt;p&gt;图示&lt;/p&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
 
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -953,30 +614,11 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;w=2的写关注执行流程图&lt;/p&gt;
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    &lt;figure  id=&#34;figure-流程图&#34;&gt;
-      &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-        &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%e5%9b%be%e7%89%8714.png&#34; alt=&#34;流程图&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-      &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-          流程图
-        &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%8714.png&#34;
+        alt=&#34;流程图&#34;&gt;&lt;figcaption&gt;
+          &lt;p&gt;流程图&lt;/p&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
 
 &lt;/li&gt;
 &lt;/ul&gt;

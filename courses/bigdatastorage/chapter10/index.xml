@@ -5,9 +5,9 @@
     <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter10/</link>
       <atom:link href="https://fanfanshen.github.io/courses/bigdatastorage/chapter10/index.xml" rel="self" type="application/rss+xml" />
     <description>第10章 权限控制</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 11 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 11 Nov 2025 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://fanfanshen.github.io/media/icon_hu7729264130191091259.png</url>
       <title>第10章 权限控制</title>
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter10/</link>
     </image>
@@ -17,30 +17,11 @@
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter10/10.1/</link>
       <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter10/10.1/</guid>
-      <description>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-用户角色与权限关系图&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter10/images/%e5%9b%be%e7%89%871.png&#34; alt=&#34;用户角色与权限关系图&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      用户角色与权限关系图
-    &lt;/figcaption&gt;&lt;/figure&gt;
+      <description>&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter10/images/%E5%9B%BE%E7%89%871.png&#34;
+    alt=&#34;用户角色与权限关系图&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;用户角色与权限关系图&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;身份认证信息&lt;/strong&gt;：用户名、密码和数据库归属关系&lt;/li&gt;
@@ -98,55 +79,17 @@
 &lt;p&gt;测试&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter10/images/%E5%9B%BE%E7%89%872.png&#34;
+    alt=&#34;测试结果&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;测试结果&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-测试结果&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter10/images/%e5%9b%be%e7%89%872.png&#34; alt=&#34;测试结果&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      测试结果
-    &lt;/figcaption&gt;&lt;/figure&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-测试样例&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter10/images/%e5%9b%be%e7%89%873.png&#34; alt=&#34;测试样例&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      测试样例
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter10/images/%E5%9B%BE%E7%89%873.png&#34;
+    alt=&#34;测试样例&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;测试样例&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 </description>
     </item>
@@ -194,7 +137,8 @@
       <description>&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;用户权限设置&lt;/strong&gt;：
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/pl-boke/p/10063351.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考网站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;1.增加用户&lt;/strong&gt;
@@ -271,30 +215,11 @@
 &lt;blockquote&gt;
 &lt;p&gt;更多用户管理的命令可以输入db.后再按tab键查看。&lt;/p&gt;
 &lt;/blockquote&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-更多用户管理命令&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter10/images/%e5%9b%be%e7%89%874.png&#34; alt=&#34;更多用户管理命令&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      更多用户管理命令
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter10/images/%E5%9B%BE%E7%89%874.png&#34;
+    alt=&#34;更多用户管理命令&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;更多用户管理命令&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 </description>
     </item>
@@ -314,57 +239,19 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;actions:[&amp;#34;find&amp;#34;]}], roles:[]})
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-结果1&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter10/images/%e5%9b%be%e7%89%875.png&#34; alt=&#34;结果1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      结果1
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter10/images/%E5%9B%BE%E7%89%875.png&#34;
+    alt=&#34;结果1&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;结果1&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;/li&gt;
 &lt;li&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-结果2&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter10/images/%e5%9b%be%e7%89%876.png&#34; alt=&#34;结果2&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      结果2
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter10/images/%E5%9B%BE%E7%89%876.png&#34;
+    alt=&#34;结果2&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;结果2&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;/li&gt;
 &lt;/ul&gt;

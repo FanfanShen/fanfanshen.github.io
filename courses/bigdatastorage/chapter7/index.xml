@@ -5,9 +5,9 @@
     <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter7/</link>
       <atom:link href="https://fanfanshen.github.io/courses/bigdatastorage/chapter7/index.xml" rel="self" type="application/rss+xml" />
     <description>第7章 分片集群</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 09 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 09 Apr 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://fanfanshen.github.io/media/icon_hu7729264130191091259.png</url>
       <title>第7章 分片集群</title>
       <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter7/</link>
     </image>
@@ -36,30 +36,11 @@
 2、配置服务器上的数据如果丢失，那么整个分片集群就无法使用&lt;br&gt;
 3、在生产环境中通常利用三台配置服务器来实现冗余备份，这三台服务器是独立的，并不是复制集架构
 &lt;em&gt;&lt;strong&gt;具体结构见下图&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-71-1&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.1-1.png&#34; alt=&#34;7.1-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      7.1-1
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.1-1.png&#34;
+    alt=&#34;7.1-1&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;7.1-1&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;/p&gt;
 </description>
     </item>
@@ -191,30 +172,11 @@ shards:&lt;br&gt;
 {  &amp;ldquo;_id&amp;rdquo; : &amp;ldquo;rs1&amp;rdquo;,  &amp;ldquo;host&amp;rdquo; : &amp;ldquo;rs1/ localhost :40003, localhost :40004&amp;rdquo; }&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/em&gt;
 此时在整个分片集群中还没有创建任何其它数据库，通过路由进程mongos连接集群，执行命令show dbs可以看到集群中只有系统默认创建的一个config数据库，且这个数据库只存在于三个配置服务器上，config数据库中的集合包含了整个集群的配置信息，执行命令show collections，可以看到有如下集合：&lt;br&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-72-2&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.2-2.png&#34; alt=&#34;7.2-2&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      7.2-2
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.2-2.png&#34;
+    alt=&#34;7.2-2&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;7.2-2&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;15、正确关闭集群
 第一步：关闭所有mongoss路由实例&lt;br&gt;
@@ -228,30 +190,11 @@ db.shutdownServer()
 &lt;p&gt;&lt;strong&gt;现实生活环境中的实际部署的问题&lt;/strong&gt;  &lt;br&gt;
 通过前面的分析可知，一个生产环境最少需要9个mongod实例进程，一个mongos进程实例，理论上说最少需要10台机器才能组成。 &lt;br&gt;
 但是这些进程中有些并不需要很多软硬件资源，它们可以与其它进程共存部署在同一个机器上，如复制集中arbiter进程、mongos进程可以部署到应用程序所在的服务器，综合考虑后可以得到下面一个典型的部署：&lt;br&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-72-1&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.2-1.png&#34; alt=&#34;7.2-1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      7.2-1
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.2-1.png&#34;
+    alt=&#34;7.2-1&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;7.2-1&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;/p&gt;
 </description>
     </item>
@@ -274,30 +217,11 @@ mongo &amp;ndash;port 40009&lt;br&gt;
 &lt;li&gt;mongos&amp;gt; sh.status()&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;可以看到此时数据库eshop还没支持分片，且数据库中所有未分片的集合将保存在片rs1中；&lt;/p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-a-caption&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-1.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      A caption
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-1.png&#34;
+    alt=&#34;A caption&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;A caption&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;3）分片&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -311,30 +235,11 @@ mongo &amp;ndash;port 40009&lt;br&gt;
 开始键值	结束键值	所在分片&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-a-caption&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-2.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      A caption
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-2.png&#34;
+    alt=&#34;A caption&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;A caption&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;ul&gt;
 &lt;li&gt;另外chunks所包含的文档，并不是物理上的包含，它是一种逻辑包含，它只表示带有片键的文档会落在哪个范围内，而这个范围的文档对应的chunk位于哪个片是可以查询到的，后续的读写操作就定位到这个片上的具体集合中进行。&lt;br&gt;
@@ -344,59 +249,21 @@ mongos&amp;gt; sh.enableSharding(&amp;ldquo;eshop&amp;rdquo;)  //使数据库支
 mongos&amp;gt; db.users.createIndex({city:1})  //创建基于片键的索引&lt;br&gt;
 mongos&amp;gt; sh.shardCollection(&amp;ldquo;eshop.users&amp;rdquo;,{city:1})  //使集合分片&lt;/li&gt;
 &lt;/ul&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-a-caption&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-3.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      A caption
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-3.png&#34;
+    alt=&#34;A caption&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;A caption&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;ul&gt;
 &lt;li&gt;成功执行上面命令后，再次查看集群状态信息：
 mongos&amp;gt; sh.status()&lt;/li&gt;
 &lt;/ul&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-a-caption&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-4.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      A caption
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-4.png&#34;
+    alt=&#34;A caption&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;A caption&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;ul&gt;
 &lt;li&gt;
@@ -422,58 +289,20 @@ for(var i = 0; i&amp;lt;10000;i++) db.users.insert({userid:i,username:&amp;ldquo
 &lt;p&gt;连接mongos&lt;br&gt;
 use config&lt;br&gt;
 db.settings.save({_id:”chunksize”,value:16})&lt;/p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-a-caption&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-5.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-      A caption
-    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-5.png&#34;
+    alt=&#34;A caption&#34;&gt;&lt;figcaption&gt;
+      &lt;p&gt;A caption&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;ul&gt;
 &lt;li&gt;再次观察集群的状态，字段databases值变为：&lt;/li&gt;
 &lt;/ul&gt;
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;figure  id=&#34;figure-a-caption&#34;&gt;
-   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-6.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-       A caption
-     &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-6.png&#34;
+     alt=&#34;A caption&#34;&gt;&lt;figcaption&gt;
+       &lt;p&gt;A caption&lt;/p&gt;
+     &lt;/figcaption&gt;
+ &lt;/figure&gt;
 
 &lt;ul&gt;
 &lt;li&gt;说明此时集群中有5个块，其中在片rs0上有2个块，在片rs1上有3个块，每个块包含一定区间范围的文档。为了更加清楚的知道这些块是如何分割和迁移的，可以查看changelog集合中的记录信息进行分析。&lt;/li&gt;
@@ -481,83 +310,26 @@ db.settings.save({_id:”chunksize”,value:16})&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;从命令db.changelog.find()输出内容中可以看到有以下几步：&lt;br&gt;
 第一步：分割大于64MB的块，原来此块的片键的区间范围是-∞到∞，分割后区间变为-∞到&amp;quot;beijing&amp;quot;、&amp;ldquo;beijing&amp;quot;到∞两个区间。&lt;/p&gt;
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;figure  id=&#34;figure-a-caption&#34;&gt;
-   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-7.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-       A caption
-     &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-7.png&#34;
+     alt=&#34;A caption&#34;&gt;&lt;figcaption&gt;
+       &lt;p&gt;A caption&lt;/p&gt;
+     &lt;/figcaption&gt;
+ &lt;/figure&gt;
 
 &lt;p&gt;第二步：随着继续插入文档，区间&amp;quot;beijing&amp;quot;到∞所包含的块的大小超过64MB，此时这个区间又被分割为&amp;quot;beijing&amp;quot;到&amp;quot;guangzhou&amp;rdquo;、&amp;ldquo;guangzhou&amp;quot;到∞这两个区间。&lt;/p&gt;
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;figure  id=&#34;figure-a-caption&#34;&gt;
-   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-8.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-       A caption
-     &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-8.png&#34;
+     alt=&#34;A caption&#34;&gt;&lt;figcaption&gt;
+       &lt;p&gt;A caption&lt;/p&gt;
+     &lt;/figcaption&gt;
+ &lt;/figure&gt;
 
 &lt;p&gt;第三步：rs0有三个区块，这一步做的就是将区间-∞到&amp;quot;beijing&amp;quot;对应的chunk从片rs0迁移到片rs1，最终结果是分片rs0上包含&amp;quot;beijing&amp;quot;到&amp;quot;guangzhou&amp;rdquo;、&amp;ldquo;guangzhou&amp;quot;到∞两个块；分片rs1上包含区间-∞到&amp;quot;beijing&amp;quot;的块。&lt;/p&gt;
 &lt;p&gt;不断增加数据，分片分割，依次类推，mongoDB就是这样来实现海量数据的分布式存储的，同时由于每个片又是由复制集组成，保证了数据的可靠性。&lt;/p&gt;
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;figure  id=&#34;figure-a-caption&#34;&gt;
-   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-9.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-       A caption
-     &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-9.png&#34;
+     alt=&#34;A caption&#34;&gt;&lt;figcaption&gt;
+       &lt;p&gt;A caption&lt;/p&gt;
+     &lt;/figcaption&gt;
+ &lt;/figure&gt;
 
 &lt;ul&gt;
 &lt;li&gt;7.3.2  集群平衡器&lt;br&gt;
@@ -565,55 +337,17 @@ db.settings.save({_id:”chunksize”,value:16})&lt;/p&gt;
 MongoDB的平衡器是一个后台进程，监视每个分片上块的数目。当给定分片上的块数达到特定的迁移阈值时，平衡器会尝试在分片之间自动迁移块，使得每个分片达到相等数量的块。平衡器将比较多块的分片中的块迁移到块数量较少的分片中。平衡器迁移块，直到集合在分片之间的块均匀分布。&lt;br&gt;
 平衡器的迁移阈值&lt;/li&gt;
 &lt;/ul&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-10.png&#34;
+     alt=&#34;A caption&#34;&gt;&lt;figcaption&gt;
+       &lt;p&gt;A caption&lt;/p&gt;
+     &lt;/figcaption&gt;
+ &lt;/figure&gt;
 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;figure  id=&#34;figure-a-caption&#34;&gt;
-   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-10.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-       A caption
-     &lt;/figcaption&gt;&lt;/figure&gt;
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;figure  id=&#34;figure-a-caption&#34;&gt;
-   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-11.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-       A caption
-     &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-11.png&#34;
+     alt=&#34;A caption&#34;&gt;&lt;figcaption&gt;
+       &lt;p&gt;A caption&lt;/p&gt;
+     &lt;/figcaption&gt;
+ &lt;/figure&gt;
 
 &lt;p&gt;所有块的迁移都遵循如下流程：&lt;br&gt;
 1.平衡器进程将moveChunk命令发送到源分片。&lt;br&gt;
@@ -626,30 +360,11 @@ MongoDB的平衡器是一个后台进程，监视每个分片上块的数目。�
 &lt;li&gt;7.3.3  集群的写与读
 客户端应用程序对集群的读写都是通过mongos这个路由进程来进行的，与对单个mongod实例读写类似。如下图所示：&lt;/li&gt;
 &lt;/ul&gt;
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- &lt;figure  id=&#34;figure-a-caption&#34;&gt;
-   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-12.png&#34; alt=&#34;A caption&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-   &lt;/div&gt;&lt;figcaption data-pre=&#34;Figure&amp;nbsp;&#34; data-post=&#34;:&amp;nbsp;&#34; class=&#34;numbered&#34;&gt;
-       A caption
-     &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter7/images/7.3-12.png&#34;
+     alt=&#34;A caption&#34;&gt;&lt;figcaption&gt;
+       &lt;p&gt;A caption&lt;/p&gt;
+     &lt;/figcaption&gt;
+ &lt;/figure&gt;
 
 &lt;p&gt;数据的查询效率对集群来说非常重要；&lt;br&gt;
 集群查询性能的因素包括：索引和片键&lt;br&gt;

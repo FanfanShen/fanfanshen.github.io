@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wowchemy | Fanfan Shen&#39;s Homepage</title>
+    <link>https://fanfanshen.github.io/tags/wowchemy/</link>
+      <atom:link href="https://fanfanshen.github.io/tags/wowchemy/index.xml" rel="self" type="application/rss+xml" />
+    <description>Wowchemy</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://fanfanshen.github.io/media/icon_hu7729264130191091259.png</url>
+      <title>Wowchemy</title>
+      <link>https://fanfanshen.github.io/tags/wowchemy/</link>
+    </image>
+    
+    <item>
+      <title>科研类</title>
+      <link>https://fanfanshen.github.io/projects/22bigdata/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/projects/22bigdata/</guid>
+      <description>&lt;p&gt;主持、江苏省高等学校自然科学研究重大项目(22KJA520004)，2022.7-2025.8
+主题：审计大数据高性能高可靠存储与计算技术&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

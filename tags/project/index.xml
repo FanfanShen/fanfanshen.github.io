@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project | Fanfan Shen&#39;s Homepage</title>
+    <link>https://fanfanshen.github.io/tags/project/</link>
+      <atom:link href="https://fanfanshen.github.io/tags/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Project</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://fanfanshen.github.io/media/icon_hu7729264130191091259.png</url>
+      <title>Project</title>
+      <link>https://fanfanshen.github.io/tags/project/</link>
+    </image>
+    
+    <item>
+      <title>2022年以前的结题项目</title>
+      <link>https://fanfanshen.github.io/projects/others/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/projects/others/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;主持、国家自然科学基金(61902189)、2020.1-2022.12，已结题&lt;/li&gt;
+&lt;li&gt;主持、江苏省自然科学基金(BK20180821)、2018.7-2021.6，已结题&lt;/li&gt;
+&lt;li&gt;主持、江苏省高等学校自然科学研究面上项目(18KJB520026)、2018.9-2020.8，已结题&lt;/li&gt;
+&lt;li&gt;主持、江苏省教育科学“十三五”规划重点课题(C-a/2018/01/09)、2018.6-2020.6，已结题&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

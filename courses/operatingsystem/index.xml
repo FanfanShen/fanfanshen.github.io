@@ -1,130 +1,146 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>《计算机操作系统》课程 | Fanfan Shen&#39;s Homepage</title>
+    <title>计算机操作系统 | Fanfan Shen&#39;s Homepage</title>
     <link>https://fanfanshen.github.io/courses/operatingsystem/</link>
       <atom:link href="https://fanfanshen.github.io/courses/operatingsystem/index.xml" rel="self" type="application/rss+xml" />
-    <description>《计算机操作系统》课程</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <description>计算机操作系统</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 19 Oct 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
-      <title>《计算机操作系统》课程</title>
+      <url>https://fanfanshen.github.io/courses/operatingsystem/featured.jpg</url>
+      <title>计算机操作系统</title>
       <link>https://fanfanshen.github.io/courses/operatingsystem/</link>
     </image>
     
     <item>
       <title>2023年授课信息</title>
-      <link>https://fanfanshen.github.io/courses/operatingsystem/history/2024os/</link>
+      <link>https://fanfanshen.github.io/courses/operatingsystem/2023plan/</link>
       <pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/operatingsystem/history/2024os/</guid>
+      <guid>https://fanfanshen.github.io/courses/operatingsystem/2023plan/</guid>
       <description>&lt;p&gt;2023年授课信息：&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;Lesson Number&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;章节&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;内容&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;备注&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第1章 操作系统引论1.1-1.5节 &lt;br /&gt;&lt;a href=&#34;https://fanfanshen.github.io/courses/OperatingSystem/mindmap/chapter1.png&#34;&gt;第1章思维导图&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;操作系统的目标和作用、操作系统的发展过程、操作系统的基本特性、操作系统的主要功能、操作系统的结构设计&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;2&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第1章 操作系统引论1.6节1.7节&lt;br /&gt;第2章 进程描述与控制 2.1-2.4节&lt;br /&gt;&lt;a href=&#34;https://fanfanshen.github.io/courses/OperatingSystem/mindmap/chapter2.png&#34;&gt;第2章思维导图&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;前趋图、进程的描述、控制、通信&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第1章作业，课后1，2，25&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;3&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第2章 进程描述与控制 2.5-2.6节&lt;br /&gt;第3章 处理机调度与死锁 3.1-3.2节&lt;br /&gt;&lt;a href=&#34;https://fanfanshen.github.io/courses/OperatingSystem/mindmap/chapter3.png&#34;&gt;第3章思维导图&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;线程的基本概念和实现，处理机调度概述，调度算法&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第2章作业，1，2，21&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;4&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第3章 处理机调度与死锁 3.3-3.7节&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;实时调度，死锁，预防死锁，避免死锁&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;5&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第3章 处理机调度与死锁 3.8节&lt;br /&gt;第4章 进程同步 4.1-4.5节&lt;br /&gt;&lt;a href=&#34;https://fanfanshen.github.io/courses/OperatingSystem/mindmap/chapter4.png&#34;&gt;第4章思维导图&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;死锁的检测与解除，进程同步的基本概念，软件同步机制，硬件同步机制，信号量机制，管程机制&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第3章作业，课后1，2，20，22&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;6&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第4章 进程同步 4.6-4.7节&lt;br /&gt;第5章 存储器管理5.1-5.2节&lt;br /&gt;&lt;a href=&#34;https://fanfanshen.github.io/courses/OperatingSystem/mindmap/chapter5.png&#34;&gt;第5章思维导图&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;经典进程的同步问题、Linux进程同步机制，存储器的层次结构，程序的装入和链接。&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第4章作业，课后1，2，13，15，16&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;7&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第5章 存储器管理5.3-5.5&lt;br /&gt;&lt;a href=&#34;https://fanfanshen.github.io/courses/OperatingSystem/mindmap/chapter5.png&#34;&gt;第5章思维导图&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;对换与覆盖、连续分配存储管理方式、分页存储管理方式&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;8&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第5章 存储器管理5.6-5.7&lt;br /&gt;&lt;a href=&#34;https://fanfanshen.github.io/courses/OperatingSystem/mindmap/chapter5.png&#34;&gt;第5章思维导图&lt;/a&gt;&lt;br /&gt;第6章  虚拟存储器6.1-6.3 &lt;br /&gt; &lt;a href=&#34;https://fanfanshen.github.io/courses/OperatingSystem/mindmap/chapter6.png&#34;&gt;第6章思维导图&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;分段存储管理方式、IA-32/x86-64内存管理、虚拟存储器概述、请求分页存储管理方式、页面置换算法&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第5章作业，课后15，18&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;9&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第6章 虚拟存储器6.4-6.6 &lt;br /&gt; &lt;a href=&#34;https://fanfanshen.github.io/courses/OperatingSystem/mindmap/chapter6.png&#34;&gt;第6章思维导图&lt;/a&gt; &lt;br /&gt; 第7章 输入输出系统7.1-7.2 &lt;br /&gt; &lt;a href=&#34;https://fanfanshen.github.io/courses/OperatingSystem/mindmap/chapter7.png&#34;&gt;第7章思维导图&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;抖动、请求分段存储管理方式、I/0系统的功能模型接口、I/O设备控制器、&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第6章作业，课后13，15，18&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;10&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第7章 输入输出系统7.3-7.7 &lt;br /&gt; &lt;a href=&#34;https://fanfanshen.github.io/courses/OperatingSystem/mindmap/chapter7.png&#34;&gt;第7章思维导图&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;中断和中断处理程序、设备驱动程序、与设备无关的I/O软件、用户层的I/O软件、缓冲区管理&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;11&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;习题讲解、期中测试&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;作业讲解、测试&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;12&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第7章 输入输出系统7.8 &lt;br /&gt; 第8章文件管理8.1和8.2 &lt;br /&gt; &lt;a href=&#34;https://fanfanshen.github.io/courses/OperatingSystem/mindmap/chapter8.png&#34;&gt;第8章思维导图&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;磁盘调度、文件和文件系统、文件的逻辑结构&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;13&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第8章文件管理8.1和8.2 &lt;br /&gt; &lt;a href=&#34;https://fanfanshen.github.io/courses/OperatingSystem/mindmap/chapter8.png&#34;&gt;第8章思维导图&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;文件目录、文件共享、文件保护&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;作业13，14&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;14&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第9章磁盘存储器管理 9.1和9.2 &lt;br /&gt;  &lt;a href=&#34;https://fanfanshen.github.io/courses/OperatingSystem/mindmap/chapter9.png&#34;&gt;第9章思维导图&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;外存的组织方式、文件存储空间管理&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;作业15，16&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;15&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;第9章磁盘存储器管理 9.3-9.6 &lt;br /&gt; &lt;a href=&#34;https://fanfanshen.github.io/courses/OperatingSystem/mindmap/chapter9.png&#34;&gt;第9章思维导图&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;磁盘速度、可靠性、一致性等新技术&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;16&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;复习课、习题课&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;练习：&lt;a href=&#34;https://www.doc88.com/p-73247196945596.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;配套练习题库&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Lesson Number&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;章节&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;内容&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;备注&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第1章 操作系统引论1.1-1.5节 &lt;br /&gt;
+&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;操作系统的目标和作用、操作系统的发展过程、操作系统的基本特性、操作系统的主要功能、操作系统的结构设计&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第1章 操作系统引论1.6节1.7节&lt;br /&gt;第2章 进程描述与控制 2.1-2.4节&lt;br /&gt;
+&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;前趋图、进程的描述、控制、通信&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第1章作业，课后1，2，25&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;3&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第2章 进程描述与控制 2.5-2.6节&lt;br /&gt;第3章 处理机调度与死锁 3.1-3.2节&lt;br /&gt;
+&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;线程的基本概念和实现，处理机调度概述，调度算法&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第2章作业，1，2，21&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第3章 处理机调度与死锁 3.3-3.7节&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;实时调度，死锁，预防死锁，避免死锁&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;5&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第3章 处理机调度与死锁 3.8节&lt;br /&gt;第4章 进程同步 4.1-4.5节&lt;br /&gt;
+&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;死锁的检测与解除，进程同步的基本概念，软件同步机制，硬件同步机制，信号量机制，管程机制&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第3章作业，课后1，2，20，22&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;6&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第4章 进程同步 4.6-4.7节&lt;br /&gt;第5章 存储器管理5.1-5.2节&lt;br /&gt;
+&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;经典进程的同步问题、Linux进程同步机制，存储器的层次结构，程序的装入和链接。&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第4章作业，课后1，2，13，15，16&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;7&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第5章 存储器管理5.3-5.5&lt;br /&gt;
+&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;对换与覆盖、连续分配存储管理方式、分页存储管理方式&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第5章 存储器管理5.6-5.7&lt;br /&gt;
+&lt;br /&gt;第6章  虚拟存储器6.1-6.3 &lt;br /&gt; 
+&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;分段存储管理方式、IA-32/x86-64内存管理、虚拟存储器概述、请求分页存储管理方式、页面置换算法&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第5章作业，课后15，18&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;9&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第6章 虚拟存储器6.4-6.6 &lt;br /&gt; 
+ &lt;br /&gt; 第7章 输入输出系统7.1-7.2 &lt;br /&gt; 
+&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;抖动、请求分段存储管理方式、I/0系统的功能模型接口、I/O设备控制器、&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第6章作业，课后13，15，18&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;10&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第7章 输入输出系统7.3-7.7 &lt;br /&gt; 
+&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;中断和中断处理程序、设备驱动程序、与设备无关的I/O软件、用户层的I/O软件、缓冲区管理&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;11&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;习题讲解、期中测试&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;作业讲解、测试&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;12&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第7章 输入输出系统7.8 &lt;br /&gt; 第8章文件管理8.1和8.2 &lt;br /&gt; 
+&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;磁盘调度、文件和文件系统、文件的逻辑结构&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;13&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第8章文件管理8.1和8.2 &lt;br /&gt; 
+&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;文件目录、文件共享、文件保护&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;作业13，14&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;14&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第9章磁盘存储器管理 9.1和9.2 &lt;br /&gt;  
+&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;外存的组织方式、文件存储空间管理&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;作业15，16&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;15&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第9章磁盘存储器管理 9.3-9.6 &lt;br /&gt; 
+&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;磁盘速度、可靠性、一致性等新技术&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;16&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;复习课、习题课&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;练习：
+&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 </description>
     </item>

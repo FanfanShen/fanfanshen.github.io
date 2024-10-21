@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Recent &amp; Upcoming Talks | Fanfan Shen&#39;s Homepage</title>
+    <title>Students | Fanfan Shen&#39;s Homepage</title>
     <link>https://fanfanshen.github.io/students/</link>
       <atom:link href="https://fanfanshen.github.io/students/index.xml" rel="self" type="application/rss+xml" />
-    <description>Recent &amp; Upcoming Talks</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <description>Students</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 15 Oct 2024 13:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://fanfanshen.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
-      <title>Recent &amp; Upcoming Talks</title>
+      <url>https://fanfanshen.github.io/media/icon_hu7729264130191091259.png</url>
+      <title>Students</title>
       <link>https://fanfanshen.github.io/students/</link>
     </image>
     
     <item>
       <title>学生情况</title>
       <link>https://fanfanshen.github.io/students/member/</link>
-      <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
+      <pubDate>Tue, 15 Oct 2024 13:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/students/member/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    欢迎研究生、本科生加入我们，一起学习，共同进步！联系邮箱：ffshen@nau.edu.cn
-  &lt;/div&gt;
+      <description>&lt;div class=&#34;flex px-4 py-3 mb-6 rounded-md bg-primary-100 dark:bg-primary-900&#34;&gt;
+&lt;span class=&#34;pr-3 pt-1 text-primary-600 dark:text-primary-300&#34;&gt;
+  &lt;svg height=&#34;24&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;m11.25 11.25l.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0m-9-3.75h.008v.008H12z&#34;/&gt;&lt;/svg&gt;
+&lt;/span&gt;
+  &lt;span class=&#34;dark:text-neutral-300&#34;&gt;欢迎研究生、本科生加入我们，一起学习，共同进步！联系邮箱：ffshen@nau.edu.cn&lt;/span&gt;
 &lt;/div&gt;
 &lt;h2 id=&#34;一指导学生情况&#34;&gt;一、指导学生情况&lt;/h2&gt;
 &lt;ul&gt;
@@ -49,6 +50,7 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;二在读研究生&#34;&gt;二、在读研究生&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;2024级&lt;/strong&gt;：刘梓昂，张文静，李织纯，董昊宇&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;2023级&lt;/strong&gt;：苏文璋，李倩倩&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;2022级&lt;/strong&gt;：杨博帆，梁琦玮，惠丽洁&lt;/li&gt;
 &lt;/ul&gt;
