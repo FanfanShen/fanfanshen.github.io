@@ -124,8 +124,17 @@
           &lt;td style=&#34;text-align: left&#34;&gt;1.连续分配存储管理方式、分页存储管理方式;2.分段存储管理方式、IA-32/x86-64内存管理  &lt;br /&gt; &lt;font color=&#34;blue&#34;&gt;提前预习内容：&lt;/font&gt; &lt;br /&gt;1.首次适应算法，循环首次适应算法P34，最佳适应算法，最坏适应算法P35，内存回收P40，页表P50-51，例题P55；&lt;br /&gt;2.第4章作业，段表P67-69&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
       &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;9&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第6章 虚拟存储器6.1-6.3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;虚拟存储器概述、请求分页存储管理方式、页面置换算法  &lt;br /&gt; &lt;font color=&#34;blue&#34;&gt;提前预习内容：&lt;/font&gt; &lt;br /&gt;物理块的分配策略P12，缺页率P15-16，先进先出置换算法P21，最近最少使用算法P22，访问内存的有效时间P28&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;h2 id=&#34;五学习反馈&#34;&gt;五、学习反馈&lt;/h2&gt;
+&lt;p&gt;
+&lt;/p&gt;
 </description>
     </item>
     
