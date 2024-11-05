@@ -5,7 +5,7 @@
     <link>https://fanfanshen.github.io/tags/os/</link>
       <atom:link href="https://fanfanshen.github.io/tags/os/index.xml" rel="self" type="application/rss+xml" />
     <description>OS</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 19 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 29 Oct 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://fanfanshen.github.io/media/icon_hu10226378635250344412.png</url>
       <title>OS</title>
@@ -15,7 +15,7 @@
     <item>
       <title>计算机操作系统</title>
       <link>https://fanfanshen.github.io/courses/operatingsystem/</link>
-      <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 29 Oct 2024 00:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/courses/operatingsystem/</guid>
       <description>&lt;h2 id=&#34;一课程介绍&#34;&gt;一、课程介绍&lt;/h2&gt;
 &lt;p&gt;《操作系统》课程是计算机考研408指定课程。操作系统是计算机系统的指挥中心，它既是系统中各种资源的管理者，又是服务的提供者。操作系统在计算机系统中所处的地位和作用决定本课程在计算机学科课程中特殊重要的核心位置。本课程主要讲授操作系统的基本概念、基本原理、设计方法和实现技术，包括：操作系统概述、进程线程与作业、中断与处理机调度、互斥同步、死锁、存储管理、输入输出系统、文件系统等内容。&lt;/p&gt;
@@ -128,6 +128,12 @@
           &lt;td style=&#34;text-align: center&#34;&gt;9&lt;/td&gt;
           &lt;td style=&#34;text-align: center&#34;&gt;第6章 虚拟存储器6.1-6.3&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;虚拟存储器概述、请求分页存储管理方式、页面置换算法  &lt;br /&gt; &lt;font color=&#34;blue&#34;&gt;提前预习内容：&lt;/font&gt; &lt;br /&gt;物理块的分配策略P12，缺页率P15-16，先进先出置换算法P21，最近最少使用算法P22，访问内存的有效时间P28&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;10&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第6章 虚拟存储器6.4-6.6，7.1；第7章 输入输出系统7.2-7.5&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;抖动与工作集、请求分段存储管理方式、虚拟存储器实现实例、；  &lt;br /&gt; &lt;font color=&#34;blue&#34;&gt;提前预习内容：&lt;/font&gt; &lt;br /&gt;第5章作业，抖动的预防方法P35，分段的共享P39，IO软件的层次结构P6；IO通道P21、中断处理程序P31、设备驱动程序框架P36、设备分片P41-42&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
