@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>论文 | Fanfan Shen&#39;s Homepage</title>
+    <link>https://fanfanshen.github.io/tags/%E8%AE%BA%E6%96%87/</link>
+      <atom:link href="https://fanfanshen.github.io/tags/%E8%AE%BA%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    <description>论文</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 08 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://fanfanshen.github.io/media/icon_hu10226378635250344412.png</url>
+      <title>论文</title>
+      <link>https://fanfanshen.github.io/tags/%E8%AE%BA%E6%96%87/</link>
+    </image>
+    
+    <item>
+      <title>Our paper &#34;TD3-based trajectory optimization for energy consumption minimization in UAV-assisted MEC system&#34; is published by Computer Networks (CCF B, 中科院二区). Congratulations to Bofan Yang.</title>
+      <link>https://fanfanshen.github.io/news/2024-paper-td3/</link>
+      <pubDate>Fri, 08 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/news/2024-paper-td3/</guid>
+      <description>&lt;p&gt;论文链接：
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
