@@ -5,12 +5,38 @@
     <link>https://fanfanshen.github.io/publications/</link>
       <atom:link href="https://fanfanshen.github.io/publications/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 08 Apr 2024 18:00:43 +0800</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 17 Nov 2024 18:00:43 +0800</lastBuildDate>
     <image>
       <url>https://fanfanshen.github.io/media/icon_hu10226378635250344412.png</url>
       <title>Publications</title>
       <link>https://fanfanshen.github.io/publications/</link>
     </image>
+    
+    <item>
+      <title>Please refer to the following link for the full list of publications</title>
+      <link>https://fanfanshen.github.io/publications/fulllist/</link>
+      <pubDate>Sun, 17 Nov 2024 18:00:43 +0800</pubDate>
+      <guid>https://fanfanshen.github.io/publications/fulllist/</guid>
+      <description>&lt;p&gt;Please refer to the following link: 
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>TPE-BFL:Training Parameter Encryption scheme for Blockchain based Federated Learning System</title>
+      <link>https://fanfanshen.github.io/publications/2024pdpsotd3/</link>
+      <pubDate>Sun, 17 Nov 2024 18:00:43 +0800</pubDate>
+      <guid>https://fanfanshen.github.io/publications/2024pdpsotd3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TPE-BFL:Training Parameter Encryption scheme for Blockchain based Federated Learning System</title>
+      <link>https://fanfanshen.github.io/publications/2024tpebfl/</link>
+      <pubDate>Tue, 08 Oct 2024 18:00:43 +0800</pubDate>
+      <guid>https://fanfanshen.github.io/publications/2024tpebfl/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>BMSE:Blockchain-based multi-keyword searchable encryption for electronic medical records</title>
