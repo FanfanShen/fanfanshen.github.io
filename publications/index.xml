@@ -5,12 +5,20 @@
     <link>https://fanfanshen.github.io/publications/</link>
       <atom:link href="https://fanfanshen.github.io/publications/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 08 Dec 2021 18:00:43 +0800</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 08 Apr 2024 18:00:43 +0800</lastBuildDate>
     <image>
       <url>https://fanfanshen.github.io/media/icon_hu10226378635250344412.png</url>
       <title>Publications</title>
       <link>https://fanfanshen.github.io/publications/</link>
     </image>
+    
+    <item>
+      <title>BMSE:Blockchain-based multi-keyword searchable encryption for electronic medical records</title>
+      <link>https://fanfanshen.github.io/publications/2024bmse/</link>
+      <pubDate>Mon, 08 Apr 2024 18:00:43 +0800</pubDate>
+      <guid>https://fanfanshen.github.io/publications/2024bmse/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Reinforcement Learning based Data Compression for Energy-Efficient Non-volatile Caches</title>
