@@ -156,6 +156,12 @@
           &lt;td style=&#34;text-align: left&#34;&gt;文件和文件系统，文件的逻辑结构  &lt;br /&gt; &lt;font color=&#34;blue&#34;&gt;提前预习内容：&lt;/font&gt; &lt;br /&gt; 文件P6，文件系统层次结构P10-11，顺序文件记录地址P18，索引顺序文件P24&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
       &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;14&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;第8章 文件管理；第9章磁盘存储器管理&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;文件目录，文件共享，文件保护；外存的组织方式  &lt;br /&gt; &lt;font color=&#34;blue&#34;&gt;提前预习内容：&lt;/font&gt; &lt;br /&gt; 索引结点P29-30，路径名和当前目录P35，目录查询技术P38，访问矩阵和切换权P46；连续组织方式P7，隐式显示链接P10-11，索引，多级索引组织方式P18-19，混合式索引P22，例题P26&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;五学习反馈&#34;&gt;五、学习反馈&lt;/h2&gt;
