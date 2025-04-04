@@ -54,10 +54,6 @@
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://fanfanshen.github.io/library/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://fanfanshen.github.io/courses/bigdatastorage/chapter10/10.1/</loc>
     <lastmod>2025-11-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -80,6 +76,10 @@
   </url><url>
     <loc>https://fanfanshen.github.io/courses/</loc>
     <lastmod>2025-11-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://fanfanshen.github.io/library/</loc>
+    <lastmod>2025-03-30T13:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://fanfanshen.github.io/tags/os/</loc>
