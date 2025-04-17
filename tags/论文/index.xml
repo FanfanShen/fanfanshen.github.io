@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>论文 | Fanfan Shen&#39;s Homepage</title>
+    <title>论文 | 沈凡凡 - 南京审计大学计算机学院 - 学术主页</title>
     <link>https://fanfanshen.github.io/tags/%E8%AE%BA%E6%96%87/</link>
       <atom:link href="https://fanfanshen.github.io/tags/%E8%AE%BA%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
     <description>论文</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 08 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 17 Apr 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://fanfanshen.github.io/media/icon_hu10226378635250344412.png</url>
       <title>论文</title>
@@ -13,19 +13,9 @@
     </image>
     
     <item>
-      <title>Our paper &#34;TD3-based trajectory optimization for energy consumption minimization in UAV-assisted MEC system&#34; is published by Computer Networks (CCF B, 中科院二区). Congratulations to Bofan Yang.</title>
-      <link>https://fanfanshen.github.io/news/2024-paper-td3/</link>
-      <pubDate>Fri, 08 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/news/2024-paper-td3/</guid>
-      <description>&lt;p&gt;论文链接：
-&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>学生情况</title>
       <link>https://fanfanshen.github.io/students/</link>
-      <pubDate>Fri, 08 Nov 2024 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
       <guid>https://fanfanshen.github.io/students/</guid>
       <description>&lt;div class=&#34;flex px-4 py-3 mb-6 rounded-md bg-primary-100 dark:bg-primary-900&#34;&gt;
 &lt;span class=&#34;pr-3 pt-1 text-primary-600 dark:text-primary-300&#34;&gt;
@@ -34,44 +24,190 @@
   &lt;span class=&#34;dark:text-neutral-300&#34;&gt;&lt;u&gt;课题组注重构建良好的导学关系，秉持“知行合一”培养理念，努力创造奋进、健康、和谐的学习及生活环境。&lt;/u&gt;课题组研究生在校期间获得多项荣誉和奖励，包括一等奖学金、专项奖学金、立项省级研究生项目等。欢迎研究生、本科生加入我们，一起学习，共同进步！欢迎发送邮件给我：ffshen@nau.edu.cn&lt;/span&gt;
 &lt;/div&gt;
 &lt;h2 id=&#34;一指导学生情况&#34;&gt;一、指导学生情况&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;进行中的工作
+&lt;h3 id=&#34;正在进行的工作&#34;&gt;正在进行的工作&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Fanfan Shen，Lijie Hui，Chao Xu，Zhiquan Liu，Jun Feng，Yanxiang He，Dynamic Grouping Scheme for Personalized Federated Meta-Learning，submited to Information Processing and Management, 2025&lt;/li&gt;
 &lt;li&gt;Fanfan Shen，Wenzhang Su，Chao Xu，Zhiquan Liu，Jun Feng，Yanxiang He，FedBKD: Federated Learning with Bidirectional Knowledge Distillation for Label Distribution Skew, submited to IEEE Transactions on Neural Networks and Learning Systems, 2025&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;11-研究生&#34;&gt;1.1 研究生&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;2024年11月，hui lijie，zhang wenjing，获得一等奖学金&lt;/li&gt;
-&lt;li&gt;2024年11月，yang bofan，发表论文，TD3-based trajectory optimization for energy consumption minimization in UAV-assisted MEC system，CCF B, 中科院二区&lt;/li&gt;
-&lt;li&gt;2024年9月，hui lijie，发表论文，CKKS and Local Differential Privacy based Model Parameters Encryption for Personalized Federated Learning，The 6th International Conference on System Reliability and Safety Engineering&lt;/li&gt;
-&lt;li&gt;2024年8月，liang qiwei，发表论文，TPE-BFL:Training Parameter Encryption scheme for Blockchain based Federated Learning System，Computer Networks，CCF B, 中科院二区&lt;/li&gt;
-&lt;li&gt;2024年6月，liu haipeng，获得校优秀毕业生，一等奖学金&lt;/li&gt;
-&lt;li&gt;2024年4月，yang bofan，获得2024年江苏省研究生实践创新计划项目，立项，资助1.5万元&lt;/li&gt;
-&lt;li&gt;2024年4月，史林，发表论文，BMSE: Blockchain-based multi-keyword searchable encryption for electronic medical records，Computer Standards &amp;amp; Interfaces，中科院2区&lt;/li&gt;
-&lt;li&gt;2023年11月，yang bofan，获得一等奖学金&lt;/li&gt;
-&lt;li&gt;2023年7月，tang xingyi，发表论文，基于iFA-LSTM的恶意行为检测方法，计算机工程与科学，北大核心&lt;/li&gt;
-&lt;li&gt;2023年6月，tang xingyi，获得2023年江苏省研究生实践创新计划项目，立项，资助1.5万元&lt;/li&gt;
-&lt;li&gt;2023年6月，liu haipeng，获得2023年江苏省研究生实践创新计划项目，立项，资助1.5万元&lt;/li&gt;
-&lt;li&gt;2023年3月，liu haipeng，发表论文，基于AHP的多特征融合图像质量评价算法，计算机仿真，北大核心&lt;/li&gt;
-&lt;li&gt;2023年4月，yang bofan，基于深度强化学习的无人机矿井自主巡航研究，武汉大学学报，北大核心，获评优秀论文&lt;/li&gt;
-&lt;li&gt;2022年3月，shi lin，2022年度江苏省研究生科研与实践创新计划项目，立项，1.5万元&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h3 id=&#34;11-指导研究生情况如下&#34;&gt;1.1 指导研究生情况如下&lt;/h3&gt;
+&lt;font size=3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;&lt;strong&gt;年份&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;学生姓名&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;成果&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2024&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;汤星译&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;基于改进萤火虫算法和长短期记忆网络的恶意行为检测方法&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;北核&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2024&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;刘海鹏&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;基于AHP的多特征融合图像质量评价算法&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;北核&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2024&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;惠丽洁&lt;br&gt;张文静&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;获得校一等奖学金&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2024&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;杨博帆&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;TD3-based trajectory optimization for energy consumption minimization in UAV-assisted MEC system&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;CCF B&lt;br&gt;2区&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2024&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;惠丽洁&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;CKKS and Local Differential Privacy based Model Parameters Encryption for Personalized Federated Learning&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2024&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;梁琦玮&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;TPE-BFL:Training Parameter Encryption scheme for Blockchain based Federated Learning System&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;CCF B&lt;br&gt;2区&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2024&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;刘海鹏&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;获得校优秀毕业生，一等奖学金&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2024&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;杨博帆&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2024年江苏省研究生实践创新计划立项1.5万元&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2024&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;史林&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;BMSE: Blockchain-based multi-keyword searchable encryption for electronic medical records&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2区&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2023&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;杨博帆&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;一等奖学金&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2023&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;汤星译&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2023年江苏省研究生实践创新计划立项1.5万元&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2023&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;刘海鹏&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2023年江苏省研究生实践创新计划立项1.5万元&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2023&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;杨博帆&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;基于深度强化学习的无人机矿井自主巡航研究&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;北核优秀&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2023&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;杨博帆、吴盼盼等&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;中国大学生服务外包创新创业大赛省级三等奖2项&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2022&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;史林&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2022年度江苏省研究生科研与实践创新计划立项1.5万元&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/font&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;12-本科生&#34;&gt;1.2 本科生&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;2024年，指导学生发表论文，大数据技术在国家审计中的应用-基于审计效率的视角，袁媛，陶琴&lt;/li&gt;
-&lt;li&gt;2024年，指导学生获得iCAN大学生创新创业大赛，省二等奖，孙铭泽、吕嘉宁、陈征、刘可儿、王巾嘉&lt;/li&gt;
-&lt;li&gt;2024年，指导学生获得江苏省区块链优秀解决方案竞赛，省二等奖，黄译乐、陆雨嘉、朱士成、刘梦、邱文豪&lt;/li&gt;
-&lt;li&gt;2023年，指导学生获得大学生创新创业训练计划项目，国家级，已结项，袁媛，颜敏杰，陶琴&lt;/li&gt;
-&lt;li&gt;2023年，指导学生获得中国大学生服务外包创新创业大赛，省级三等奖2项&lt;/li&gt;
-&lt;li&gt;2023年，指导学生获得蓝桥杯省二等奖&lt;/li&gt;
-&lt;li&gt;2022年6月，本科生，夏锐禹，校优秀本科生毕业设计，目前为北京工业大学硕士生&lt;/li&gt;
-&lt;li&gt;2021年7月，指导学生获得中国大学生计算机设计大赛（14届），国家级，二等奖，学生：左量、吴子怡、许傲&lt;/li&gt;
-&lt;li&gt;2021年5月，指导学生获得中国大学生计算机设计大赛，江苏省级，三等奖，学生：左量、吴子怡、许傲&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h3 id=&#34;12-指导本科生情况如下&#34;&gt;1.2 指导本科生情况如下&lt;/h3&gt;
+&lt;font size=3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;&lt;strong&gt;年份&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;学生姓名&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;成果&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;&lt;strong&gt;备注&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2024&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;袁媛、陶琴&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;大数据技术在国家审计中的应用-基于审计效率的视角&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;论文&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2024&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;孙铭泽、吕嘉宁 &lt;br&gt; 陈征、刘可儿、王巾嘉&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;iCAN大学生创新创业大赛省二等奖&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2024&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;黄译乐、陆雨嘉&lt;br&gt;朱士成、刘梦、邱文豪&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;江苏省区块链优秀解决方案竞赛省二等奖&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2023&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;袁媛，颜敏杰，陶琴&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;大学生创新创业训练计划项目国家级&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;已结项&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2023&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;王淦&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;蓝桥杯省二等奖&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2022&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;夏锐禹&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;校优秀本科生毕业设计&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2021&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;左量、吴子怡、许傲&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;中国大学生计算机设计大赛国家级二等奖&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2021&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;左量、吴子怡、许傲&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;中国大学生计算机设计大赛江苏省级三等奖&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/font&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Our paper &#34;TD3-based trajectory optimization for energy consumption minimization in UAV-assisted MEC system&#34; is published by Computer Networks (CCF B, 中科院二区). Congratulations to Bofan Yang.</title>
+      <link>https://fanfanshen.github.io/news/2024-paper-td3/</link>
+      <pubDate>Fri, 08 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://fanfanshen.github.io/news/2024-paper-td3/</guid>
+      <description>&lt;p&gt;论文链接：
+&lt;/p&gt;
 </description>
     </item>
     

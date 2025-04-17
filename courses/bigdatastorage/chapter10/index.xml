@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>第10章 权限控制 | Fanfan Shen&#39;s Homepage</title>
+    <title>第10章 权限控制 | 沈凡凡 - 南京审计大学计算机学院 - 学术主页</title>
     <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter10/</link>
       <atom:link href="https://fanfanshen.github.io/courses/bigdatastorage/chapter10/index.xml" rel="self" type="application/rss+xml" />
     <description>第10章 权限控制</description>

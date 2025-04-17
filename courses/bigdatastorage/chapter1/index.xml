@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>第1章 初识MongoDB | Fanfan Shen&#39;s Homepage</title>
+    <title>第1章 初识MongoDB | 沈凡凡 - 南京审计大学计算机学院 - 学术主页</title>
     <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter1/</link>
       <atom:link href="https://fanfanshen.github.io/courses/bigdatastorage/chapter1/index.xml" rel="self" type="application/rss+xml" />
     <description>第1章 初识MongoDB</description>
