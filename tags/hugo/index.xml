@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo | 沈凡凡 - 南京审计大学计算机学院 - 学术主页</title>
-    <link>https://fanfanshen.github.io/tags/hugo/</link>
-      <atom:link href="https://fanfanshen.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.fanfanshen.cn/tags/hugo/</link>
+      <atom:link href="https://www.fanfanshen.cn/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <description>Hugo</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://fanfanshen.github.io/media/icon_hu10226378635250344412.png</url>
+      <url>https://www.fanfanshen.cn/media/icon_hu10226378635250344412.png</url>
       <title>Hugo</title>
-      <link>https://fanfanshen.github.io/tags/hugo/</link>
+      <link>https://www.fanfanshen.cn/tags/hugo/</link>
     </image>
     
     <item>
       <title>科研类</title>
-      <link>https://fanfanshen.github.io/projects/22bigdata/</link>
+      <link>https://www.fanfanshen.cn/projects/22bigdata/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/projects/22bigdata/</guid>
+      <guid>https://www.fanfanshen.cn/projects/22bigdata/</guid>
       <description>&lt;p&gt;主持、江苏省高等学校自然科学研究重大项目(22KJA520004)，2022.7-2025.8
 主题：审计大数据高性能高可靠存储与计算技术&lt;/p&gt;
 </description>

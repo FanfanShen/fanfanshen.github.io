@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>第9章 管理与监控 | 沈凡凡 - 南京审计大学计算机学院 - 学术主页</title>
-    <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter9/</link>
-      <atom:link href="https://fanfanshen.github.io/courses/bigdatastorage/chapter9/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter9/</link>
+      <atom:link href="https://www.fanfanshen.cn/courses/bigdatastorage/chapter9/index.xml" rel="self" type="application/rss+xml" />
     <description>第9章 管理与监控</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 03 Jun 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://fanfanshen.github.io/media/icon_hu10226378635250344412.png</url>
+      <url>https://www.fanfanshen.cn/media/icon_hu10226378635250344412.png</url>
       <title>第9章 管理与监控</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter9/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter9/</link>
     </image>
     
     <item>
       <title>9.1 数据的导入导出</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter9/9.1/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter9/9.1/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter9/9.1/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter9/9.1/</guid>
       <description>&lt;p&gt;mongoexport和mongoimport工具完成，本质：实现集合中每一条BSON格式的文档记录与本地系统上内容为JSON格式或CVS格式文件&lt;strong&gt;转换&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;JSON格式&lt;/strong&gt;文件是按行组织内容，每行为一个json对象；&lt;/li&gt;
@@ -58,9 +58,9 @@
     
     <item>
       <title>9.2 备份与恢复</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter9/9.2/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter9/9.2/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter9/9.2/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter9/9.2/</guid>
       <description>&lt;p&gt;支持定期备份与恢复，可开发自动备份脚本；&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;备份&lt;/strong&gt;工具mongodump&lt;/li&gt;
@@ -88,9 +88,9 @@
     
     <item>
       <title>9.3 命令行工具监控管理</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter9/9.3/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter9/9.3/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter9/9.3/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter9/9.3/</guid>
       <description>&lt;p&gt;监控是系统维护人员经常要做的事情，CPU、内存、磁盘空间和I/O频率是最需要监控的地方；&lt;/p&gt;
 &lt;p&gt;MongoDB提供了工具和命令用于&lt;strong&gt;监控数据库系统&lt;/strong&gt;的运行情况；&lt;/p&gt;
 &lt;p&gt;也可以用Linux操作系统上的命令来监控主机运行情况；&lt;/p&gt;
@@ -126,9 +126,9 @@
     
     <item>
       <title>9.4 可视化数据库操作</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter9/9.4/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter9/9.4/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter9/9.4/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter9/9.4/</guid>
       <description>&lt;p&gt;&lt;strong&gt;compass工具&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;参考：https://blog.csdn.net/sunshineGGB/article/details/122477159&lt;/li&gt;

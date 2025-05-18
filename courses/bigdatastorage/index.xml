@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>《大数据存储技术》课程 | 沈凡凡 - 南京审计大学计算机学院 - 学术主页</title>
-    <link>https://fanfanshen.github.io/courses/bigdatastorage/</link>
-      <atom:link href="https://fanfanshen.github.io/courses/bigdatastorage/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.fanfanshen.cn/courses/bigdatastorage/</link>
+      <atom:link href="https://www.fanfanshen.cn/courses/bigdatastorage/index.xml" rel="self" type="application/rss+xml" />
     <description>《大数据存储技术》课程</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://fanfanshen.github.io/courses/bigdatastorage/featured.jpg</url>
+      <url>https://www.fanfanshen.cn/courses/bigdatastorage/featured.jpg</url>
       <title>《大数据存储技术》课程</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/</link>
     </image>
     
   </channel>

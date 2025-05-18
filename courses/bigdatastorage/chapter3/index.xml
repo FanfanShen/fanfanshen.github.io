@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>第3章 索引 | 沈凡凡 - 南京审计大学计算机学院 - 学术主页</title>
-    <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/</link>
-      <atom:link href="https://fanfanshen.github.io/courses/bigdatastorage/chapter3/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter3/</link>
+      <atom:link href="https://www.fanfanshen.cn/courses/bigdatastorage/chapter3/index.xml" rel="self" type="application/rss+xml" />
     <description>第3章 索引</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 08 Apr 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://fanfanshen.github.io/media/icon_hu10226378635250344412.png</url>
+      <url>https://www.fanfanshen.cn/media/icon_hu10226378635250344412.png</url>
       <title>第3章 索引</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter3/</link>
     </image>
     
     <item>
       <title>3.1 创建索引</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.1/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter3/3.1/</link>
       <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.1/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter3/3.1/</guid>
       <description>&lt;h2 id=&#34;索引的创建方法&#34;&gt;索引的创建方法&lt;/h2&gt;
 &lt;h3 id=&#34;语法格式&#34;&gt;语法格式：&lt;/h3&gt;
 &lt;ul&gt;
@@ -31,7 +31,7 @@
 &lt;h3 id=&#34;查询创建的索引&#34;&gt;查询创建的索引：&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;db.customers.getIndexes()&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;createindex可选参数参考表&#34;&gt;createIndex()可选参数参考表&lt;/h3&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter3/images/%E5%9B%BE%E7%89%871.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter3/images/%E5%9B%BE%E7%89%871.png&#34;
     alt=&#34;可选参数参考表&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;可选参数参考表&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -42,9 +42,9 @@
     
     <item>
       <title>3.2 删除索引</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.2/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter3/3.2/</link>
       <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.2/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter3/3.2/</guid>
       <description>&lt;h2 id=&#34;321-索引的删除方法&#34;&gt;3.2.1 索引的删除方法&lt;/h2&gt;
 &lt;h3 id=&#34;语法格式如下&#34;&gt;语法格式如下：&lt;/h3&gt;
 &lt;ul&gt;
@@ -62,9 +62,9 @@
     
     <item>
       <title>3.3 单字段索引</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.3/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter3/3.3/</link>
       <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.3/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter3/3.3/</guid>
       <description>&lt;h2 id=&#34;331-了解单字段索引&#34;&gt;3.3.1 了解单字段索引&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;MongoDB默认为所有集合都创建了一个 &lt;strong&gt;_id字段的单字段索引，而且这个索引是唯一的，不能删除&lt;/strong&gt; ；&lt;/li&gt;
@@ -98,7 +98,7 @@ key表示索引建立在哪个字段上；
 ns索引所在的命名空间&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;效果如图&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter3/images/%E5%9B%BE%E7%89%872.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter3/images/%E5%9B%BE%E7%89%872.png&#34;
     alt=&#34;显示单字段索引&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;显示单字段索引&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -110,14 +110,14 @@ ns索引所在的命名空间&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;db.customers.find({name:&amp;quot;ramda9&amp;quot;}).explain(&amp;quot;executionStats&amp;quot;) //使用索引字段作为查询选择器 &lt;/code&gt;
 &lt;code&gt;db.customers.find({country:&amp;quot;Malaysia&amp;quot;}).explain(&amp;quot;executionStats&amp;quot;) //不使用索引字段作为查询选择器&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;使用索引：&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter3/images/%E5%9B%BE%E7%89%873.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter3/images/%E5%9B%BE%E7%89%873.png&#34;
     alt=&#34;使用索引&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;使用索引&lt;/p&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;不使用索引：&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter3/images/%E5%9B%BE%E7%89%874.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter3/images/%E5%9B%BE%E7%89%874.png&#34;
     alt=&#34;不使用索引&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;不使用索引&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -133,9 +133,9 @@ executionTimeMillis：预测需要执行的时间&lt;/p&gt;
     
     <item>
       <title>3.4 复合索引</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.4/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter3/3.4/</link>
       <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.4/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter3/3.4/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;MongoDB支持多个字段的复合索引，复合索引支持匹配多个字段的查询。&lt;/li&gt;
 &lt;/ul&gt;
@@ -155,11 +155,11 @@ executionTimeMillis：预测需要执行的时间&lt;/p&gt;
     
     <item>
       <title>3.5 数组的多键索引</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.5/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter3/3.5/</link>
       <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.5/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter3/3.5/</guid>
       <description>&lt;h2 id=&#34;351-数组的多键索引在b-tree叶子节点上的排列样式&#34;&gt;3.5.1 数组的多键索引在B-Tree叶子节点上的排列样式&lt;/h2&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter3/images/%E5%9B%BE%E7%89%875.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter3/images/%E5%9B%BE%E7%89%875.png&#34;
     alt=&#34;排列样式&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;排列样式&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -169,7 +169,7 @@ executionTimeMillis：预测需要执行的时间&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;如果数组的元素值为一个嵌套文档，结构如下&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter3/images/%E5%9B%BE%E7%89%876.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter3/images/%E5%9B%BE%E7%89%876.png&#34;
     alt=&#34;嵌套文档&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;嵌套文档&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -182,7 +182,7 @@ executionTimeMillis：预测需要执行的时间&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;创建图示&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter3/images/%E5%9B%BE%E7%89%877.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter3/images/%E5%9B%BE%E7%89%877.png&#34;
     alt=&#34;数组多键索引&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;数组多键索引&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -193,9 +193,9 @@ executionTimeMillis：预测需要执行的时间&lt;/p&gt;
     
     <item>
       <title>3.6 其他索引</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.6/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter3/3.6/</link>
       <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter3/3.6/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter3/3.6/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;全文索引，在字符串或字符串数组上

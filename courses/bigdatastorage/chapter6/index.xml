@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>第6章 复制集 | 沈凡凡 - 南京审计大学计算机学院 - 学术主页</title>
-    <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter6/</link>
-      <atom:link href="https://fanfanshen.github.io/courses/bigdatastorage/chapter6/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter6/</link>
+      <atom:link href="https://www.fanfanshen.cn/courses/bigdatastorage/chapter6/index.xml" rel="self" type="application/rss+xml" />
     <description>第6章 复制集</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 20 Apr 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://fanfanshen.github.io/media/icon_hu10226378635250344412.png</url>
+      <url>https://www.fanfanshen.cn/media/icon_hu10226378635250344412.png</url>
       <title>第6章 复制集</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter6/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter6/</link>
     </image>
     
     <item>
       <title>6.1复制集概述</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter6/6.1/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter6/6.1/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter6/6.1/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter6/6.1/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;复制集Replica Sets与分片集群sharding是MongoDB最具有特色的功能：&lt;/li&gt;
 &lt;/ol&gt;
@@ -35,7 +35,7 @@
 &lt;p&gt;在生产环境中一个复制集最少应该包含三个节点，其中有一个必须是主节点，典型的部署结构如下图：&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.1-1.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/6.1-1.png&#34;
     alt=&#34;6.1-1&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;6.1-1&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -49,7 +49,7 @@
 &lt;p&gt;从它的名字arbiter可以看出，它起到的作用只是当primary节点故障时，能够参与到复制集剩下的节点中**，选择出一个新**的primary节点，它自己永远不会变为primary节点，也不会参与数据的读写。也就是说，数据库的数据会存在primary和second节点中，second节点相当于一个备份，当然second节点可以有多个，当primary节点故障时，second节点有可能变为primary节点。故障转移流程如图所示。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.1-2.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/6.1-2.png&#34;
     alt=&#34;6.1-2&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;6.1-2&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -71,9 +71,9 @@
     
     <item>
       <title>6.2完整部署一个复制集</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter6/6.2/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter6/6.2/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter6/6.2/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter6/6.2/</guid>
       <description>&lt;p&gt;&lt;strong&gt;复制集的创建和配置：&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;创建复制集中每个节点存放数据的目录&lt;/li&gt;
@@ -170,7 +170,7 @@
 &lt;p&gt;未报错即启动成功。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-1.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/6.2-1.png&#34;
     alt=&#34;6.2-1&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;6.2-1&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -187,7 +187,7 @@
 &lt;p&gt;&lt;code&gt;.\mongo.exe --port 40000  //启动客户端并连接到40000&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-2.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/6.2-2.png&#34;
     alt=&#34;6.2-2&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;6.2-2&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -233,19 +233,19 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;rs.status()&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-3.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/6.2-3.png&#34;
     alt=&#34;6.2-3&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;6.2-3&lt;/p&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-4.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/6.2-4.png&#34;
     alt=&#34;6.2-4&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;6.2-4&lt;/p&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/6.2-5.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/6.2-5.png&#34;
     alt=&#34;6.2-5&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;6.2-5&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -269,9 +269,9 @@
     
     <item>
       <title>6.3 单字段索引</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter6/6.3/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter6/6.3/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter6/6.3/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter6/6.3/</guid>
       <description>&lt;h2 id=&#34;631-数据同步&#34;&gt;6.3.1 数据同步&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -287,7 +287,7 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;查看实例上的数据库rs0:PRIMARY&amp;gt;&lt;code&gt; show dbs&lt;/code&gt;，可以看到默认的数据库&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%871.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%871.png&#34;
         alt=&#34;默认的数据库&#34;&gt;&lt;figcaption&gt;
           &lt;p&gt;默认的数据库&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -302,7 +302,7 @@
 &lt;ul&gt;
 &lt;li&gt;rs0:PRIMARY&amp;gt; &lt;code&gt;show collections&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%872.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%872.png&#34;
         alt=&#34;集合&#34;&gt;&lt;figcaption&gt;
           &lt;p&gt;集合&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -314,13 +314,13 @@
 &lt;li&gt;
 &lt;p&gt;利用mongo客户端登录到复制集的secondary节点上。
 &amp;gt;&lt;code&gt;.\mongo.exe --port 40001&lt;/code&gt;，数据库集合内容是一样的&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%873.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%873.png&#34;
         alt=&#34;主节点集合&#34;&gt;&lt;figcaption&gt;
           &lt;p&gt;主节点集合&lt;/p&gt;
         &lt;/figcaption&gt;
     &lt;/figure&gt;
 
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%874.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%874.png&#34;
         alt=&#34;次节点集合&#34;&gt;&lt;figcaption&gt;
           &lt;p&gt;次节点集合&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -364,7 +364,7 @@
 &lt;li&gt;rs0:PRIMARY&amp;gt; &lt;code&gt;use local&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;rs0:PRIMARY&amp;gt;&lt;code&gt;db.oplog.rs.find({“op”:“i”})&lt;/code&gt;//筛选出插入操作的内容&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%877.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%877.png&#34;
         alt=&#34;查看过程&#34;&gt;&lt;figcaption&gt;
           &lt;p&gt;查看过程&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -384,7 +384,7 @@
 &lt;li&gt;rs0:SECONDARY&amp;gt; use students&lt;/li&gt;
 &lt;li&gt;rs0:SECONDARY&amp;gt; db.scores.find()&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%878.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%878.png&#34;
         alt=&#34;次节点数据库同步&#34;&gt;&lt;figcaption&gt;
           &lt;p&gt;次节点数据库同步&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -393,7 +393,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;同步流程&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%879.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%879.png&#34;
         alt=&#34;同步图解&#34;&gt;&lt;figcaption&gt;
           &lt;p&gt;同步图解&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -502,7 +502,7 @@
 &lt;p&gt;以下第二条记录正是在primary节点上插入的记录，再次证明数据确实同步过来了。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%8710.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%8710.png&#34;
         alt=&#34;插入记录&#34;&gt;&lt;figcaption&gt;
           &lt;p&gt;插入记录&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -545,7 +545,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%8711.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%8711.png&#34;
         alt=&#34;数据同步原理&#34;&gt;&lt;figcaption&gt;
           &lt;p&gt;数据同步原理&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -554,7 +554,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;上面两中情况都得到了验证，但是有一点要注意，mongDB默认情况下只能在primary节点上进行读写操作，如下图所示：&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%8712.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%8712.png&#34;
         alt=&#34;图示&#34;&gt;&lt;figcaption&gt;
           &lt;p&gt;图示&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -594,7 +594,7 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;默认情况下复制集的写关注只针对primary节点，如下图所示:&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%8713.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%8713.png&#34;
         alt=&#34;图示&#34;&gt;&lt;figcaption&gt;
           &lt;p&gt;图示&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -614,7 +614,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;w=2的写关注执行流程图&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%8714.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter6/images/%E5%9B%BE%E7%89%8714.png&#34;
         alt=&#34;流程图&#34;&gt;&lt;figcaption&gt;
           &lt;p&gt;流程图&lt;/p&gt;
         &lt;/figcaption&gt;

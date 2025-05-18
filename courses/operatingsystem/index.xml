@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>计算机操作系统 | 沈凡凡 - 南京审计大学计算机学院 - 学术主页</title>
-    <link>https://fanfanshen.github.io/courses/operatingsystem/</link>
-      <atom:link href="https://fanfanshen.github.io/courses/operatingsystem/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.fanfanshen.cn/courses/operatingsystem/</link>
+      <atom:link href="https://www.fanfanshen.cn/courses/operatingsystem/index.xml" rel="self" type="application/rss+xml" />
     <description>计算机操作系统</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 17 Dec 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://fanfanshen.github.io/courses/operatingsystem/featured.jpg</url>
+      <url>https://www.fanfanshen.cn/courses/operatingsystem/featured.jpg</url>
       <title>计算机操作系统</title>
-      <link>https://fanfanshen.github.io/courses/operatingsystem/</link>
+      <link>https://www.fanfanshen.cn/courses/operatingsystem/</link>
     </image>
     
     <item>
       <title>2023年授课信息</title>
-      <link>https://fanfanshen.github.io/courses/operatingsystem/2023plan/</link>
+      <link>https://www.fanfanshen.cn/courses/operatingsystem/2023plan/</link>
       <pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/operatingsystem/2023plan/</guid>
+      <guid>https://www.fanfanshen.cn/courses/operatingsystem/2023plan/</guid>
       <description>&lt;p&gt;2023年授课信息：&lt;/p&gt;
 &lt;table&gt;
   &lt;thead&gt;

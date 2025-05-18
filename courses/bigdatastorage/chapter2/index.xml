@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>第2章 CRUD操作 | 沈凡凡 - 南京审计大学计算机学院 - 学术主页</title>
-    <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/</link>
-      <atom:link href="https://fanfanshen.github.io/courses/bigdatastorage/chapter2/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter2/</link>
+      <atom:link href="https://www.fanfanshen.cn/courses/bigdatastorage/chapter2/index.xml" rel="self" type="application/rss+xml" />
     <description>第2章 CRUD操作</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://fanfanshen.github.io/media/icon_hu10226378635250344412.png</url>
+      <url>https://www.fanfanshen.cn/media/icon_hu10226378635250344412.png</url>
       <title>第2章 CRUD操作</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter2/</link>
     </image>
     
     <item>
       <title>2.1 插入操作</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.1/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter2/2.1/</link>
       <pubDate>Sat, 13 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.1/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter2/2.1/</guid>
       <description>&lt;h1 id=&#34;mongodb中概念对比&#34;&gt;MongoDB中概念对比&lt;/h1&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter2/images/2.1-1.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter2/images/2.1-1.png&#34;
     alt=&#34;2.1-1&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;2.1-1&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -62,22 +62,22 @@ db.collection.insertMany([{d1},{d2}&amp;hellip;]):向指定集合中插入多条
     
     <item>
       <title>2.2 删除操作</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.2/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter2/2.2/</link>
       <pubDate>Sat, 13 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.2/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter2/2.2/</guid>
       <description>&lt;h1 id=&#34;mongodb中基本命令&#34;&gt;MongoDB中基本命令&lt;/h1&gt;
 &lt;h2 id=&#34;数据库删除操作&#34;&gt;数据库删除操作&lt;/h2&gt;
 &lt;p&gt;deleteOne：从集合中删除一条文档记录&lt;br&gt;
 deleteMany:批量删除集合中的文档记录&lt;br&gt;
 &lt;strong&gt;语法&lt;/strong&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter2/images/2.2-1.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter2/images/2.2-1.png&#34;
     alt=&#34;2.2-1&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;2.2-1&lt;/p&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;br&gt;
 &lt;strong&gt;语法解释&lt;/strong&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter2/images/2.2-2.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter2/images/2.2-2.png&#34;
     alt=&#34;2.2-2&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;2.2-2&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -88,22 +88,22 @@ deleteMany:批量删除集合中的文档记录&lt;br&gt;
     
     <item>
       <title>2.3 修改操作</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.3/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter2/2.3/</link>
       <pubDate>Sat, 13 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.3/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter2/2.3/</guid>
       <description>&lt;h1 id=&#34;mongodb中基本命令&#34;&gt;MongoDB中基本命令&lt;/h1&gt;
 &lt;h2 id=&#34;数据库更新操作&#34;&gt;数据库更新操作&lt;/h2&gt;
 &lt;p&gt;updateOne:修改单条文档记录，即使查询多条也只更新第一条&lt;br&gt;
 updateMany：修改所有匹配的文档记录&lt;br&gt;
 &lt;strong&gt;语法&lt;/strong&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter2/images/2.3-1.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter2/images/2.3-1.png&#34;
     alt=&#34;2.3-1&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;2.3-1&lt;/p&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;br&gt;
 &lt;strong&gt;语法解释&lt;/strong&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter2/images/2.3-2.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter2/images/2.3-2.png&#34;
     alt=&#34;2.3-2&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;2.3-2&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -113,14 +113,14 @@ updateMany：修改所有匹配的文档记录&lt;br&gt;
 &lt;p&gt;replaceOne: 将文档记录替换为一条新文档记录&lt;br&gt;
 update：相当于前三条的集合，取决于第二个参数&lt;br&gt;
 &lt;strong&gt;语法&lt;/strong&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter2/images/2.3-3.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter2/images/2.3-3.png&#34;
     alt=&#34;2.3-3&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;2.3-3&lt;/p&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;br&gt;
 &lt;strong&gt;语法解释&lt;/strong&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter2/images/2.3-4.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter2/images/2.3-4.png&#34;
     alt=&#34;2.3-4&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;2.3-4&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -137,28 +137,28 @@ $max保留修改值和原值中最大的值；&lt;/p&gt;
     
     <item>
       <title>2.4 查询操作</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.4/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter2/2.4/</link>
       <pubDate>Sat, 13 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.4/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter2/2.4/</guid>
       <description>&lt;h1 id=&#34;mongodb中基本命令&#34;&gt;MongoDB中基本命令&lt;/h1&gt;
 &lt;h2 id=&#34;数据库查询操作&#34;&gt;数据库查询操作&lt;/h2&gt;
 &lt;p&gt;查询操作（ find() ）:BSON结构数据&lt;br&gt;
 &lt;strong&gt;语法&lt;/strong&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter2/images/2.4-1.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter2/images/2.4-1.png&#34;
     alt=&#34;2.4-1&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;2.4-1&lt;/p&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;br&gt;
 &lt;strong&gt;语法解释&lt;/strong&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter2/images/2.4-2.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter2/images/2.4-2.png&#34;
     alt=&#34;2.4-2&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;2.4-2&lt;/p&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;br&gt;
 &lt;strong&gt;SQL与MongoDB&lt;/strong&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter2/images/2.4-3.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter2/images/2.4-3.png&#34;
     alt=&#34;2.4-3&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;2.4-3&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -185,13 +185,13 @@ $max保留修改值和原值中最大的值；&lt;/p&gt;
 2.匹配数组中的一个元素值&lt;br&gt;
 3.匹配指定位置的元素值&lt;br&gt;
 4.指定数组索引并匹配嵌套文档中的字段值&lt;br&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter2/images/2.4-4.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter2/images/2.4-4.png&#34;
     alt=&#34;2.4-4&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;2.4-4&lt;/p&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;br&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter2/images/2.4-5.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter2/images/2.4-5.png&#34;
     alt=&#34;2.4-5&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;2.4-5&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -201,7 +201,7 @@ $max保留修改值和原值中最大的值；&lt;/p&gt;
 返回匹配文档的指定字段；&lt;br&gt;
 好处：减少返回数据到客户端的网络流量
 &lt;strong&gt;查询示例&lt;/strong&gt;&lt;br&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter2/images/2.4-6.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter2/images/2.4-6.png&#34;
     alt=&#34;2.4-6&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;2.4-6&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -212,16 +212,16 @@ $max保留修改值和原值中最大的值；&lt;/p&gt;
     
     <item>
       <title>2.4 查询操作</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.5/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter2/2.5/</link>
       <pubDate>Sat, 13 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter2/2.5/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter2/2.5/</guid>
       <description>&lt;h1 id=&#34;mongodb中基本命令&#34;&gt;MongoDB中基本命令&lt;/h1&gt;
 &lt;h2 id=&#34;数据库批量写操作&#34;&gt;数据库批量写操作&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;解释&lt;/strong&gt;&lt;br&gt;
 MongoDB支持将插入操作、修改操作、删除操作放在一个bulkwrite之中。执行批量写操作。即多种操作同时进行。&lt;br&gt;
 &lt;strong&gt;语法&lt;/strong&gt;
 语法格式如下：orderd是否按顺序执行
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter2/images/2.1-1.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter2/images/2.1-1.png&#34;
     alt=&#34;2.1-1&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;2.1-1&lt;/p&gt;
     &lt;/figcaption&gt;

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>第4章 聚集操作 | 沈凡凡 - 南京审计大学计算机学院 - 学术主页</title>
-    <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter4/</link>
-      <atom:link href="https://fanfanshen.github.io/courses/bigdatastorage/chapter4/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter4/</link>
+      <atom:link href="https://www.fanfanshen.cn/courses/bigdatastorage/chapter4/index.xml" rel="self" type="application/rss+xml" />
     <description>第4章 聚集操作</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 09 Apr 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://fanfanshen.github.io/media/icon_hu10226378635250344412.png</url>
+      <url>https://www.fanfanshen.cn/media/icon_hu10226378635250344412.png</url>
       <title>第4章 聚集操作</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter4/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter4/</link>
     </image>
     
     <item>
       <title>4.1 单个集合中的基础聚集函数</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter4/4.1/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter4/4.1/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter4/4.1/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter4/4.1/</guid>
       <description>&lt;p&gt;&lt;strong&gt;当需要返回集合中文档记录的总条数或者返回不
 重复的文档记录时，可以使用 MongoDB 提供
 的单个集合中的基础聚集函数.&lt;/strong&gt;&lt;br&gt;
@@ -62,7 +62,7 @@
 &lt;p&gt;也支持返回数组字段中非重复值。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter4/images/4.1-1.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter4/images/4.1-1.png&#34;
     alt=&#34;4.1-1&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;4.1-1&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -73,9 +73,9 @@
     
     <item>
       <title>4.2  管道聚集框架</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter4/4.2/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter4/4.2/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter4/4.2/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter4/4.2/</guid>
       <description>&lt;p&gt;MongoDB的管道聚合框架是参考UNIX上的管道命令实现的，数据通过一个多步骤的管道，&lt;strong&gt;每个步骤&lt;/strong&gt;都会对数据进行&lt;strong&gt;加工&lt;/strong&gt;处理，最后返回需要的结果集。&lt;br&gt;
 &lt;strong&gt;管道提供了高效的数据分析流程，是MongoDB中首选的数据分析方法。&lt;/strong&gt;&lt;br&gt;
 例：&lt;/p&gt;
@@ -85,19 +85,19 @@
   {$group:{_id:&amp;quot;$bookid&#34;,total:{$sum:&amp;quot;$num&amp;quot;}}}&lt;br&gt;
 ])&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter4/images/4.2-1.png&#34;
+&lt;p&gt;&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter4/images/4.2-1.png&#34;
     alt=&#34;A caption&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;A caption&lt;/p&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter4/images/4.2-2.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter4/images/4.2-2.png&#34;
     alt=&#34;A caption&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;A caption&lt;/p&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter4/images/4.2-3.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter4/images/4.2-3.png&#34;
     alt=&#34;A caption&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;A caption&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -139,9 +139,9 @@ pipeline为数组类型参数，包含一系列处理步骤，常用的管道操
     
     <item>
       <title>4.3 MapReduce编程</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/chapter4/4.3/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/chapter4/4.3/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/chapter4/4.3/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/chapter4/4.3/</guid>
       <description>&lt;p&gt;MongoDB提供了当前流行的MapReduce并行编程模型，为&lt;strong&gt;海量数据的查询分析&lt;/strong&gt;提供了一种更加高效的方法。&lt;/p&gt;
 &lt;p&gt;用MongoDB做分布式存储，再用MapReduce来做分析。&lt;/p&gt;
 &lt;p&gt;Map-Reduce操作有两部分：&lt;/p&gt;
@@ -154,7 +154,7 @@ pipeline为数组类型参数，包含一系列处理步骤，常用的管道操
 &lt;p&gt;Map-reduce一般采用自定义JavaScript函数来处理map操作与reduce操作以及可选的最后一个最终操作；&lt;/p&gt;
 &lt;p&gt;采用自定义的JavaScript能够比管道聚集更灵活，然而一般情况下map-reduce&lt;strong&gt;比管道聚集更加低效&lt;/strong&gt;，也更加复杂。&lt;/p&gt;
 &lt;p&gt;Map-reduce进行聚集的示例：
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter4/images/4.3-1.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter4/images/4.3-1.png&#34;
     alt=&#34;4.3-1&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;4.3-1&lt;/p&gt;
     &lt;/figcaption&gt;
@@ -171,13 +171,13 @@ function(key,values){return Array.sum(values)},
 &lt;li&gt;out：输出结果保存在集合order_totals中；&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;处理流程：query -&amp;gt; map -&amp;gt;reduce&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter4/images/4.3-2.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter4/images/4.3-2.png&#34;
     alt=&#34;4.3-2&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;4.3-2&lt;/p&gt;
     &lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;figure&gt;&lt;img src=&#34;https://fanfanshen.github.io/courses/BigDataStorage/chapter4/images/4.3-3.png&#34;
+&lt;figure&gt;&lt;img src=&#34;https://www.fanfanshen.cn/courses/BigDataStorage/chapter4/images/4.3-3.png&#34;
     alt=&#34;4.3-3&#34;&gt;&lt;figcaption&gt;
       &lt;p&gt;4.3-3&lt;/p&gt;
     &lt;/figcaption&gt;

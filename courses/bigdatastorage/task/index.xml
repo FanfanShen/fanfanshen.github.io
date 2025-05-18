@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>实验大作业 | 沈凡凡 - 南京审计大学计算机学院 - 学术主页</title>
-    <link>https://fanfanshen.github.io/courses/bigdatastorage/task/</link>
-      <atom:link href="https://fanfanshen.github.io/courses/bigdatastorage/task/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.fanfanshen.cn/courses/bigdatastorage/task/</link>
+      <atom:link href="https://www.fanfanshen.cn/courses/bigdatastorage/task/index.xml" rel="self" type="application/rss+xml" />
     <description>实验大作业</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 14 May 2025 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://fanfanshen.github.io/media/icon_hu10226378635250344412.png</url>
+      <url>https://www.fanfanshen.cn/media/icon_hu10226378635250344412.png</url>
       <title>实验大作业</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/task/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/task/</link>
     </image>
     
     <item>
       <title>2024实验大作业</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/task/exp/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/task/exp/</link>
       <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/task/exp/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/task/exp/</guid>
       <description>&lt;h2 id=&#34;实验大作业目标&#34;&gt;实验大作业目标&lt;/h2&gt;
 &lt;p&gt;训练系统开发应用能力，自行解决实际问题的能力，以及为未来就业简历增加内容。&lt;/p&gt;
 &lt;h2 id=&#34;选题方向&#34;&gt;选题方向&lt;/h2&gt;
@@ -81,9 +81,9 @@
     
     <item>
       <title>2025实验大作业</title>
-      <link>https://fanfanshen.github.io/courses/bigdatastorage/task/2025exp/</link>
+      <link>https://www.fanfanshen.cn/courses/bigdatastorage/task/2025exp/</link>
       <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/courses/bigdatastorage/task/2025exp/</guid>
+      <guid>https://www.fanfanshen.cn/courses/bigdatastorage/task/2025exp/</guid>
       <description>&lt;h2 id=&#34;实验大作业目标&#34;&gt;实验大作业目标&lt;/h2&gt;
 &lt;p&gt;训练系统开发应用能力，自行解决实际问题的能力，以及为未来就业简历增加内容。&lt;/p&gt;
 &lt;h2 id=&#34;选题方向&#34;&gt;选题方向&lt;/h2&gt;

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>学生 | 沈凡凡 - 南京审计大学计算机学院 - 学术主页</title>
-    <link>https://fanfanshen.github.io/tags/%E5%AD%A6%E7%94%9F/</link>
-      <atom:link href="https://fanfanshen.github.io/tags/%E5%AD%A6%E7%94%9F/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.fanfanshen.cn/tags/%E5%AD%A6%E7%94%9F/</link>
+      <atom:link href="https://www.fanfanshen.cn/tags/%E5%AD%A6%E7%94%9F/index.xml" rel="self" type="application/rss+xml" />
     <description>学生</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 17 Apr 2025 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://fanfanshen.github.io/media/icon_hu10226378635250344412.png</url>
+      <url>https://www.fanfanshen.cn/media/icon_hu10226378635250344412.png</url>
       <title>学生</title>
-      <link>https://fanfanshen.github.io/tags/%E5%AD%A6%E7%94%9F/</link>
+      <link>https://www.fanfanshen.cn/tags/%E5%AD%A6%E7%94%9F/</link>
     </image>
     
     <item>
       <title>学生情况</title>
-      <link>https://fanfanshen.github.io/students/</link>
+      <link>https://www.fanfanshen.cn/students/</link>
       <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/students/</guid>
+      <guid>https://www.fanfanshen.cn/students/</guid>
       <description>&lt;div class=&#34;flex px-4 py-3 mb-6 rounded-md bg-primary-100 dark:bg-primary-900&#34;&gt;
 &lt;span class=&#34;pr-3 pt-1 text-primary-600 dark:text-primary-300&#34;&gt;
   &lt;svg height=&#34;24&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;1.5&#34; d=&#34;m11.25 11.25l.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0m-9-3.75h.008v.008H12z&#34;/&gt;&lt;/svg&gt;
@@ -198,9 +198,9 @@
     
     <item>
       <title>Our paper &#34;TD3-based trajectory optimization for energy consumption minimization in UAV-assisted MEC system&#34; is published by Computer Networks (CCF B, 中科院二区). Congratulations to Bofan Yang.</title>
-      <link>https://fanfanshen.github.io/news/2024-paper-td3/</link>
+      <link>https://www.fanfanshen.cn/news/2024-paper-td3/</link>
       <pubDate>Fri, 08 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/news/2024-paper-td3/</guid>
+      <guid>https://www.fanfanshen.cn/news/2024-paper-td3/</guid>
       <description>&lt;p&gt;论文链接：
 &lt;/p&gt;
 </description>
@@ -208,18 +208,18 @@
     
     <item>
       <title>Our paper &#34;CKKS and Local Differential Privacy based Model Parameters Encryption for Personalized Federated Learning&#34; is accepted by The 6th International Conference on System Reliability and Safety Engineering. Congratulations to Lijie Hui.</title>
-      <link>https://fanfanshen.github.io/news/2024-paper-ckks/</link>
+      <link>https://www.fanfanshen.cn/news/2024-paper-ckks/</link>
       <pubDate>Fri, 06 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/news/2024-paper-ckks/</guid>
+      <guid>https://www.fanfanshen.cn/news/2024-paper-ckks/</guid>
       <description>&lt;p&gt;Hangzhou, China | October 11-14, 2024&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Our paper &#34;TPE-BFL:Training Parameter Encryption scheme for Blockchain based Federated Learning System&#34; is published by Computer Networks (CCF B, 中科院二区). Congratulations to Qiwei Liang.</title>
-      <link>https://fanfanshen.github.io/news/2024-paper-tpe-bfl/</link>
+      <link>https://www.fanfanshen.cn/news/2024-paper-tpe-bfl/</link>
       <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/news/2024-paper-tpe-bfl/</guid>
+      <guid>https://www.fanfanshen.cn/news/2024-paper-tpe-bfl/</guid>
       <description>&lt;p&gt;论文链接：
 &lt;/p&gt;
 </description>
@@ -227,9 +227,9 @@
     
     <item>
       <title>Our paper was awarded the best paper of 2023 in 《武汉大学学报（理学版）》. Congratulations to Bofan Yang.</title>
-      <link>https://fanfanshen.github.io/news/2024-reward-bestpaper/</link>
+      <link>https://www.fanfanshen.cn/news/2024-reward-bestpaper/</link>
       <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/news/2024-reward-bestpaper/</guid>
+      <guid>https://www.fanfanshen.cn/news/2024-reward-bestpaper/</guid>
       <description>&lt;p&gt;
 &lt;/p&gt;
 </description>
@@ -237,17 +237,17 @@
     
     <item>
       <title>Our paper &#34;基于iFA-LSTM的恶意行为检测方法&#34; is accepted by 计算机工程与科学(CCF-T2). Congratulations to Xingyi Tang.</title>
-      <link>https://fanfanshen.github.io/news/2023-paper-ifalstm/</link>
+      <link>https://www.fanfanshen.cn/news/2023-paper-ifalstm/</link>
       <pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/news/2023-paper-ifalstm/</guid>
+      <guid>https://www.fanfanshen.cn/news/2023-paper-ifalstm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Our paper &#34;BMSE:Blockchain-based multi-keyword searchable encryption for electronic medical records&#34; is accepted by Computer Standards &amp; Interfaces (中科院2区)</title>
-      <link>https://fanfanshen.github.io/news/2023-paper-csi/</link>
+      <link>https://www.fanfanshen.cn/news/2023-paper-csi/</link>
       <pubDate>Tue, 14 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://fanfanshen.github.io/news/2023-paper-csi/</guid>
+      <guid>https://www.fanfanshen.cn/news/2023-paper-csi/</guid>
       <description>&lt;p&gt;恭喜课题组成员(史林)的论文被Computer Standards &amp;amp; Interfaces（中科院二区）期刊接收。&lt;/p&gt;
 &lt;p&gt;Title：BMSE: Blockchain-based multi-keyword searchable encryption for electronic medical records&lt;/p&gt;
 </description>
