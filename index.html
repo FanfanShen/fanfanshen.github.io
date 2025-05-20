@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>网站迁移通知</title>
+  <!-- 关键：HTTP-equiv元标签实现初始跳转 -->
+  <meta http-equiv="refresh" content="0;url=https://new-domain.com/">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
   <script>
@@ -90,7 +92,7 @@
         
         <div class="flex items-center justify-between">
           <span class="text-sm text-gray-500">新域名:</span>
-          <span id="newDomain" class="text-base font-medium text-primary break-all">fanfanshen.cn</span>
+          <span id="newDomain" class="text-base font-medium text-primary break-all">fanfanshen.github.io</span>
         </div>
       </div>
       
@@ -122,15 +124,6 @@
     const OLD_DOMAIN = 'fanfanshen.github.io';
     const NEW_DOMAIN = 'fanfanshen.cn';
     const COUNTDOWN_SECONDS = 3; // 倒计时秒数
-    
-    // 检测是否从iframe加载（处理某些特殊情况）
-    function isInIframe() {
-      try {
-        return window.self !== window.top;
-      } catch (e) {
-        return true;
-      }
-    }
     
     // 获取当前URL各部分
     const currentUrl = window.location.href;
@@ -191,11 +184,20 @@
       countdownElement.parentElement.innerHTML = '<span class="text-gray-500">跳转已取消</span>';
     });
     
-    // 处理特殊情况：如果是直接访问此HTML文件而非根目录，尝试重定向到正确路径
-    if (currentPath.includes('domain-redirect.html')) {
-      console.log('[域名跳转] 检测到直接访问跳转页面，尝试重定向到根路径');
-      window.location.href = `${currentProtocol}//${OLD_DOMAIN}/`;
+    // 关键：使用HTML5 History API处理子页面
+    if (window.history && window.history.pushState) {
+      // 防止重复添加历史记录
+      if (sessionStorage.getItem('redirected') !== 'true') {
+        sessionStorage.setItem('redirected', 'true');
+        
+        // 使用pushState改变URL而不刷新页面
+        window.history.pushState({}, '', newUrl);
+        
+        // 记录跳转日志
+        console.log('[域名跳转] 使用History API更新URL:', newUrl);
+      }
     }
   </script>
 </body>
-</html> 
+</html>
+    
