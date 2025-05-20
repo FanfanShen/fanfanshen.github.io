@@ -98,7 +98,7 @@
       <div class="bg-gray-50 rounded-lg p-4 mb-8 animate-slide-up" style="animation-delay: 1s">
         <div class="flex items-center justify-center gap-2">
           <i class="fa-solid fa-link text-gray-400"></i>
-          <span id="currentPath" class="text-sm font-medium text-gray-700 break-all">/products/item1?param=value</span>
+          <span id="currentPath" class="text-sm font-medium text-gray-700 break-all">/</span>
         </div>
       </div>
       
@@ -123,13 +123,14 @@
     const NEW_DOMAIN = 'fanfanshen.cn';
     const COUNTDOWN_SECONDS = 3; // 倒计时秒数
     
-    let countdown = COUNTDOWN_SECONDS;
-    const countdownElement = document.getElementById('countdown');
-    const oldDomainElement = document.getElementById('oldDomain');
-    const newDomainElement = document.getElementById('newDomain');
-    const currentPathElement = document.getElementById('currentPath');
-    const manualRedirectBtn = document.getElementById('manualRedirectBtn');
-    const cancelRedirectBtn = document.getElementById('cancelRedirectBtn');
+    // 检测是否从iframe加载（处理某些特殊情况）
+    function isInIframe() {
+      try {
+        return window.self !== window.top;
+      } catch (e) {
+        return true;
+      }
+    }
     
     // 获取当前URL各部分
     const currentUrl = window.location.href;
@@ -154,12 +155,20 @@
     console.log('[域名跳转] 构建新URL:', newUrl);
     
     // 更新UI显示
+    const oldDomainElement = document.getElementById('oldDomain');
+    const newDomainElement = document.getElementById('newDomain');
+    const currentPathElement = document.getElementById('currentPath');
+    const manualRedirectBtn = document.getElementById('manualRedirectBtn');
+    
     oldDomainElement.textContent = OLD_DOMAIN;
     newDomainElement.textContent = NEW_DOMAIN;
     currentPathElement.textContent = currentUrl.replace(`${currentProtocol}//${currentHost}`, '');
     manualRedirectBtn.href = newUrl;
     
-    // 倒计时函数
+    // 倒计时跳转
+    let countdown = COUNTDOWN_SECONDS;
+    const countdownElement = document.getElementById('countdown');
+    
     function updateCountdown() {
       countdownElement.textContent = countdown;
       
@@ -174,14 +183,19 @@
     // 启动倒计时
     updateCountdown();
     
-    // 取消跳转
-    cancelRedirectBtn.addEventListener('click', function(e) {
+    // 取消跳转功能
+    document.getElementById('cancelRedirectBtn').addEventListener('click', function(e) {
       e.preventDefault();
       clearInterval(countdownInterval);
       document.querySelector('.animate-pulse-slow').classList.remove('animate-pulse-slow');
       countdownElement.parentElement.innerHTML = '<span class="text-gray-500">跳转已取消</span>';
     });
+    
+    // 处理特殊情况：如果是直接访问此HTML文件而非根目录，尝试重定向到正确路径
+    if (currentPath.includes('domain-redirect.html')) {
+      console.log('[域名跳转] 检测到直接访问跳转页面，尝试重定向到根路径');
+      window.location.href = `${currentProtocol}//${OLD_DOMAIN}/`;
+    }
   </script>
 </body>
-</html>
-    
+</html> 
