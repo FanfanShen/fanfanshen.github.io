@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>页面跳转中</title>
+  <title>域名更换通知</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
   <script>
@@ -29,10 +29,10 @@
         content-visibility: auto;
       }
       .animate-fade-in {
-        animation: fadeIn 0.8s ease-in-out;
+        animation: fadeIn 0.6s ease-in-out;
       }
       .animate-slide-up {
-        animation: slideUp 0.8s ease-out;
+        animation: slideUp 0.7s ease-out;
       }
       .animate-pulse-slow {
         animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -60,58 +60,87 @@
     <div class="p-8 text-center">
       <!-- 图标 -->
       <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse-slow">
-        <i class="fa-solid fa-arrow-right-arrow-left text-primary text-3xl"></i>
+        <i class="fa-solid fa-exchange-alt text-primary text-3xl"></i>
       </div>
       
       <!-- 标题 -->
-      <h1 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-dark mb-3 animate-slide-up" style="animation-delay: 0.2s">页面跳转中</h1>
+      <h1 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-dark mb-3 animate-slide-up" style="animation-delay: 0.2s">域名已更换</h1>
       
       <!-- 描述 -->
       <p class="text-gray-600 mb-6 animate-slide-up" style="animation-delay: 0.4s">
-        正跳转至新网站，若失败，请点击下方按钮手动跳转。
+        我们的网站已迁移至新域名，将自动为您跳转到对应页面。
       </p>
       
       <!-- 倒计时 -->
       <div class="mb-8 animate-slide-up" style="animation-delay: 0.6s">
         <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary text-2xl font-bold mb-2">
-          <span id="countdown">5</span>
+          <span id="countdown">3</span>
         </div>
         <p class="text-sm text-gray-500">秒后自动跳转</p>
       </div>
       
-      <!-- 新网站信息 -->
-      <div class="bg-gray-50 rounded-lg p-4 mb-6 animate-slide-up" style="animation-delay: 0.8s">
-        <div class="flex items-center justify-center gap-2">
-          <i class="fa-solid fa-link text-gray-400"></i>
-          <span id="newWebsite" class="text-gray-700 font-medium break-all">https://www.fanfanshen.cn</span>
+      <!-- 新旧域名信息 -->
+      <div class="space-y-4 mb-8 animate-slide-up" style="animation-delay: 0.8s">
+        <div class="bg-gray-50 rounded-lg p-4">
+          <div class="flex items-center justify-center gap-2">
+            <i class="fa-solid fa-arrow-left text-gray-400"></i>
+            <span class="text-gray-700 font-medium break-all" id="oldDomain">fanfanshen.github.io</span>
+          </div>
+        </div>
+        
+        <div class="bg-primary/5 rounded-lg p-4 border border-primary/20">
+          <div class="flex items-center justify-center gap-2">
+            <i class="fa-solid fa-arrow-right text-primary"></i>
+            <span class="text-primary font-medium break-all" id="newDomain">fanfanshen.cn</span>
+          </div>
         </div>
       </div>
       
+      <!-- 当前路径信息 -->
+      <div class="text-sm text-gray-500 mb-6 animate-slide-up" style="animation-delay: 1s">
+        <span>当前访问路径：</span>
+        <span id="currentPath" class="font-medium text-gray-700 break-all">/products/item1</span>
+      </div>
+      
       <!-- 手动跳转按钮 -->
-      <a href="https://www.fanfanshen.cn" target="_blank" class="block w-full py-3 px-4 bg-primary text-white rounded-lg font-medium shadow-md hover:bg-primary/90 transition-all duration-200 transform hover:-translate-y-0.5 animate-slide-up" style="animation-delay: 1s">
+      <a href="#" id="manualRedirectBtn" class="block w-full py-3 px-4 bg-primary text-white rounded-lg font-medium shadow-md hover:bg-primary/90 transition-all duration-200 transform hover:-translate-y-0.5 animate-slide-up" style="animation-delay: 1.2s">
         立即跳转
       </a>
     </div>
   </div>
 
   <script>
-    // 配置参数
-    const redirectUrl = 'https://www.fanfanshen.cn'; // 替换为实际跳转的URL
-    const countdownSeconds = 3; // 倒计时秒数
+    // 配置参数 - 请修改为实际的新旧域名
+    const OLD_DOMAIN = 'fanfanshen.github.io';
+    const NEW_DOMAIN = 'fanfanshen.cn';
+    const COUNTDOWN_SECONDS = 3; // 倒计时秒数
     
-    let countdown = countdownSeconds;
+    let countdown = COUNTDOWN_SECONDS;
     const countdownElement = document.getElementById('countdown');
-    const newWebsiteElement = document.getElementById('newWebsite');
+    const oldDomainElement = document.getElementById('oldDomain');
+    const newDomainElement = document.getElementById('newDomain');
+    const currentPathElement = document.getElementById('currentPath');
+    const manualRedirectBtn = document.getElementById('manualRedirectBtn');
     
-    // 更新新网站URL显示
-    newWebsiteElement.textContent = redirectUrl;
+    // 获取当前URL信息
+    const currentUrl = window.location.href;
+    const currentPath = window.location.pathname + window.location.search + window.location.hash;
+    
+    // 构建新URL
+    const newUrl = `https://${NEW_DOMAIN}${currentPath}`;
+    
+    // 更新UI显示
+    oldDomainElement.textContent = OLD_DOMAIN;
+    newDomainElement.textContent = NEW_DOMAIN;
+    currentPathElement.textContent = currentPath || '/';
+    manualRedirectBtn.href = newUrl;
     
     // 倒计时函数
     function updateCountdown() {
       countdownElement.textContent = countdown;
       
       if (countdown <= 0) {
-        window.location.href = redirectUrl;
+        window.location.href = newUrl;
       } else {
         countdown--;
         setTimeout(updateCountdown, 1000);
@@ -121,15 +150,8 @@
     // 启动倒计时
     updateCountdown();
     
-    // 平滑滚动效果
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
+    // 记录跳转日志（可选）
+    console.log(`[域名跳转] 从 ${OLD_DOMAIN}${currentPath} 跳转到 ${NEW_DOMAIN}${currentPath}`);
   </script>
 </body>
 </html>
