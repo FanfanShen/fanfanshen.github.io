@@ -130,23 +130,23 @@
                             <i class="fa fa-search text-2xl text-[#E82E2E] mb-2"></i>
                             <span class="text-sm">万方</span>
                         </button>
-                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="DeepSeek" data-url="https://chat.deepseek.com/">
+                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="DBLP" data-url="https://dblp.org/search?q=">
                             <i class="fa fa-search text-2xl text-[#FF7D00] mb-2"></i>
-                            <span class="text-sm">DeepSeek</span>
+                            <span class="text-sm">DBLP</span>
                         </button>
-                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="github" data-url="https://github.com/search?q=">
+                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="ACM" data-url="https://dl.acm.org/action/doSearch?AllField=">
+                            <i class="fa fa-book text-2xl text-[#118800] mb-2"></i>
+                            <span class="text-sm">ACM</span>
+                        </button>
+                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="IEEE" data-url="https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=">
                             <i class="fa fa-github text-2xl text-[#181717] mb-2"></i>
-                            <span class="text-sm">GitHub</span>
+                            <span class="text-sm">IEEE</span>
                         </button>
                         <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="bilibili" data-url="https://search.bilibili.com/all?keyword=">
                             <i class="fa fa-play-circle text-2xl text-[#FB7299] mb-2"></i>
                             <span class="text-sm">哔哩哔哩</span>
                         </button>
-                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="douban" data-url="https://www.douban.com/search?q=">
-                            <i class="fa fa-book text-2xl text-[#118800] mb-2"></i>
-                            <span class="text-sm">豆瓣</span>
-                        </button>
-                    </div>
+                           </div>
                 </div>
             </div>
 
@@ -154,6 +154,10 @@
             <div class="mb-12">
                 <h3 class="text-lg font-medium text-gray-700 mb-4">文献数据库</h3>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                    <a href="https://dblp.org/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
+                        <i class="fa fa-shopping-bag text-primary"></i>
+                        <span>DBLP</span>
+                    </a>
                     <a href="https://www.cnki.net/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
                         <i class="fa fa-shopping-bag text-primary"></i>
                         <span>知网</span>
@@ -183,15 +187,15 @@
 
            <!-- 常用学术工具库区域 -->
             <div class="mb-12">
-                <h3 class="text-lg font-medium text-gray-700 mb-4">文献工具库</h3>
+                <h3 class="text-lg font-medium text-gray-700 mb-4">学术工具库</h3>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-                    <a href="https://www.cnki.net/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
+                    <a href="https://chat.deepseek.com/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
                         <i class="fa fa-shopping-bag text-primary"></i>
-                        <span>知网</span>
+                        <span>DeepSeek</span>
                     </a>
-                    <a href="https://www.wanfangdata.com.cn/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
+                    <a href="https://www.doubao.com/chat/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
                         <i class="fa fa-video-camera text-primary"></i>
-                        <span>万方</span>
+                        <span>doubao</span>
                     </a>
                     <a href="https://www.webofscience.com" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
                         <i class="fa fa-music text-primary"></i>
@@ -214,31 +218,21 @@
 
             <!-- 热门搜索 -->
             <div>
-                <h3 class="text-lg font-medium text-gray-700 mb-4">热门搜索</h3>
+                <h3 class="text-lg font-medium text-gray-700 mb-4">热门趋势</h3>
                 <div class="space-y-3">
                     <div class="flex items-center p-2 hover:bg-neutral rounded-lg transition-colors">
                         <span class="flex items-center justify-center w-6 h-6 bg-primary text-white rounded-md text-sm font-bold mr-3">1</span>
-                        <span>2025年最新科技趋势</span>
+                        <span>趋势1test</span>
                         <span class="ml-auto text-xs text-red-500">热搜</span>
                     </div>
                     <div class="flex items-center p-2 hover:bg-neutral rounded-lg transition-colors">
                         <span class="flex items-center justify-center w-6 h-6 bg-primary/90 text-white rounded-md text-sm font-bold mr-3">2</span>
-                        <span>新能源汽车政策解读</span>
+                        <span>趋势2test</span>
                         <span class="ml-auto text-xs text-orange-500">新</span>
                     </div>
                     <div class="flex items-center p-2 hover:bg-neutral rounded-lg transition-colors">
                         <span class="flex items-center justify-center w-6 h-6 bg-primary/80 text-white rounded-md text-sm font-bold mr-3">3</span>
-                        <span>全球气候变化最新研究</span>
-                        <span class="ml-auto text-xs text-gray-500">热门</span>
-                    </div>
-                    <div class="flex items-center p-2 hover:bg-neutral rounded-lg transition-colors">
-                        <span class="flex items-center justify-center w-6 h-6 bg-gray-200 text-gray-600 rounded-md text-sm font-bold mr-3">4</span>
-                        <span>健康饮食指南2025</span>
-                        <span class="ml-auto text-xs text-gray-500">热门</span>
-                    </div>
-                    <div class="flex items-center p-2 hover:bg-neutral rounded-lg transition-colors">
-                        <span class="flex items-center justify-center w-6 h-6 bg-gray-200 text-gray-600 rounded-md text-sm font-bold mr-3">5</span>
-                        <span>元宇宙发展现状与未来</span>
+                        <span>趋势3test</span>
                         <span class="ml-auto text-xs text-gray-500">热门</span>
                     </div>
                 </div>
