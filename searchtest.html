@@ -100,7 +100,7 @@
                     <div class="absolute inset-y-0 right-0 flex items-center">
                         <div class="flex items-center h-full pr-2 border-r border-gray-200">
                             <button id="engine-toggle" class="flex items-center space-x-1 px-2 text-gray-500 hover:text-primary transition-colors">
-                                <span id="current-engine">百度</span>
+                                <span id="current-engine">panda</span>
                                 <i class="fa fa-chevron-down text-xs"></i>
                             </button>
                         </div>
@@ -114,6 +114,10 @@
                 <!-- 搜索引擎选择面板 -->
                 <div id="engine-panel" class="absolute left-0 right-0 mt-2 bg-white rounded-xl shadow-lg border border-gray-100 p-4 z-10 hidden transform origin-top transition-all duration-300">
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="panda" data-url="https://sc.panda985.com/scholar?hl=zh-cn&q=">
+                            <i class="fa fa-search text-2xl text-[#181717] mb-2"></i>
+                            <span class="text-sm">panda</span>
+                        </button>
                         <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="烂番薯" data-url="https://scholar.lanfanshu.cn/scholar?hl=zh-CN&as_sdt=0%2C5&q=">
                             <i class="fa fa-search text-2xl text-[#2319DC] mb-2"></i>
                             <span class="text-sm">烂番薯</span>
@@ -121,6 +125,14 @@
                         <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="灯塔" data-url="https://www.dotaindex.com/paper_search?type=1&q=">
                             <i class="fa fa-search text-2xl text-[#008373] mb-2"></i>
                             <span class="text-sm">灯塔</span>
+                        </button>
+                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="Sci-Hub" data-url="https://x.sci-hub.org.cn/scholar?hl=zh-TW&as_sdt=0%2C5&q=">
+                            <i class="fa fa-search text-2xl text-[#FB7299] mb-2"></i>
+                            <span class="text-sm">Sci-Hub</span>
+                        </button>
+                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="DBLP" data-url="https://dblp.org/search?q=">
+                            <i class="fa fa-search text-2xl text-[#FF7D00] mb-2"></i>
+                            <span class="text-sm">DBLP</span>
                         </button>
                         <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="知网" data-url="https://kns.cnki.net/kns8s/defaultresult/index?kw=">
                             <i class="fa fa-search text-2xl text-[#4285F4] mb-2"></i>
@@ -130,23 +142,11 @@
                             <i class="fa fa-search text-2xl text-[#E82E2E] mb-2"></i>
                             <span class="text-sm">万方</span>
                         </button>
-                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="DBLP" data-url="https://dblp.org/search?q=">
-                            <i class="fa fa-search text-2xl text-[#FF7D00] mb-2"></i>
-                            <span class="text-sm">DBLP</span>
-                        </button>
                         <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="ACM" data-url="https://dl.acm.org/action/doSearch?AllField=">
-                            <i class="fa fa-book text-2xl text-[#118800] mb-2"></i>
+                            <i class="fa fa-search text-2xl text-[#118800] mb-2"></i>
                             <span class="text-sm">ACM</span>
                         </button>
-                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="IEEE" data-url="https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=">
-                            <i class="fa fa-github text-2xl text-[#181717] mb-2"></i>
-                            <span class="text-sm">IEEE</span>
-                        </button>
-                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="bilibili" data-url="https://search.bilibili.com/all?keyword=">
-                            <i class="fa fa-play-circle text-2xl text-[#FB7299] mb-2"></i>
-                            <span class="text-sm">哔哩哔哩</span>
-                        </button>
-                           </div>
+                    </div>
                 </div>
             </div>
 
@@ -155,19 +155,19 @@
                 <h3 class="text-lg font-medium text-gray-700 mb-4">文献数据库</h3>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
                     <a href="https://dblp.org/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
-                        <i class="fa fa-shopping-bag text-primary"></i>
+                        <i class="fa fa-book text-primary"></i>
                         <span>DBLP</span>
                     </a>
                     <a href="https://www.cnki.net/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
-                        <i class="fa fa-shopping-bag text-primary"></i>
+                        <i class="fa fa-book text-primary"></i>
                         <span>知网</span>
                     </a>
                     <a href="https://www.wanfangdata.com.cn/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
-                        <i class="fa fa-video-camera text-primary"></i>
+                        <i class="fa fa-book text-primary"></i>
                         <span>万方</span>
                     </a>
                     <a href="https://www.webofscience.com" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
-                        <i class="fa fa-music text-primary"></i>
+                        <i class="fa fa-book text-primary"></i>
                         <span>WOS</span>
                     </a>
                     <a href="https://ieeexplore.ieee.org/Xplore/home.jsp" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
@@ -175,11 +175,11 @@
                         <span>IEEE</span>
                     </a>
                     <a href="https://link.springer.com/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
-                        <i class="fa fa-graduation-cap text-primary"></i>
+                        <i class="fa fa-book text-primary"></i>
                         <span>springer</span>
                     </a>
                     <a href="https://dl.acm.org/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
-                        <i class="fa fa-map-marker text-primary"></i>
+                        <i class="fa fa-book text-primary"></i>
                         <span>ACM</span>
                     </a>
                 </div>
@@ -190,28 +190,20 @@
                 <h3 class="text-lg font-medium text-gray-700 mb-4">学术工具库</h3>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
                     <a href="https://chat.deepseek.com/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
-                        <i class="fa fa-shopping-bag text-primary"></i>
+                        <i class="fa fa-file-search text-primary"></i>
                         <span>DeepSeek</span>
                     </a>
                     <a href="https://www.doubao.com/chat/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
-                        <i class="fa fa-video-camera text-primary"></i>
+                        <i class="fa fa-file-search text-primary"></i>
                         <span>doubao</span>
                     </a>
-                    <a href="https://www.webofscience.com" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
-                        <i class="fa fa-music text-primary"></i>
-                        <span>WOS</span>
+                    <a href="https://ac.scmor.com/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
+                        <i class="fa fa-sticky-note text-primary"></i>
+                        <span>学术镜像</span>
                     </a>
-                    <a href="https://ieeexplore.ieee.org/Xplore/home.jsp" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
-                        <i class="fa fa-book text-primary"></i>
-                        <span>IEEE</span>
-                    </a>
-                    <a href="https://link.springer.com/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
-                        <i class="fa fa-graduation-cap text-primary"></i>
-                        <span>springer</span>
-                    </a>
-                    <a href="https://dl.acm.org/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
-                        <i class="fa fa-map-marker text-primary"></i>
-                        <span>ACM</span>
+                    <a href="https://www.sci-hub.ru/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
+                        <i class="fa fa-file-search text-primary"></i>
+                        <span>sci-hub</span>
                     </a>
                 </div>
             </div>
@@ -275,7 +267,7 @@
         const enginePanel = document.getElementById('engine-panel');
         const currentEngine = document.getElementById('current-engine');
         const engineButtons = document.querySelectorAll('.engine-btn');
-        let currentEngineUrl = 'https://www.baidu.com/s?wd=';
+        let currentEngineUrl = 'https://sc.panda985.com/scholar?hl=zh-cn&q=';
 
         engineToggle.addEventListener('click', () => {
             enginePanel.classList.toggle('hidden');
