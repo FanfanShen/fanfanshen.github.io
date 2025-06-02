@@ -353,10 +353,21 @@
         const searchInput = document.getElementById('search-input');
         const searchButton = document.getElementById('search-button');
 
+       // function performSearch() {
+       //     const query = searchInput.value.trim();
+       //     if (query) {
+       //         window.location.href = currentEngineUrl + encodeURIComponent(query);
+       //     }
+        //}
+
         function performSearch() {
             const query = searchInput.value.trim();
             if (query) {
-                window.location.href = currentEngineUrl + encodeURIComponent(query);
+                window.open(
+                currentEngineUrl + encodeURIComponent(query),
+                '_blank',
+                'noopener noreferrer'
+                );
             }
         }
 
