@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学术搜索</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36BFFA',
+                        neutral: '#F5F7FA',
+                        dark: '#1D2129',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .search-shadow {
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            }
+            .engine-hover {
+                transition: all 0.3s ease;
+            }
+            .engine-hover:hover {
+                transform: translateY(-3px);
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-white text-dark min-h-screen flex flex-col">
+    <!-- not use 导航栏    
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-12">
+                <div class="flex items-center">
+                    <svg class="w-10 h-10 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h1 class="text-xl font-bold text-primary">学术搜索</h1>
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-primary font-medium">首页</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">图片</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">新闻</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">视频</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">学术</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="hidden md:block text-gray-600 hover:text-primary transition-colors">
+                    <i class="fa fa-bell-o text-lg"></i>
+                </button>
+                <button class="hidden md:flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors">
+                    <i class="fa fa-user-o text-lg"></i>
+                    <span>登录</span>
+                </button>
+                <button class="md:hidden text-gray-600">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    -->
+    
+    <!-- 主内容区 -->
+    <main class="flex-grow flex flex-col items-center justify-center py-12 px-4">
+        <div class="max-w-4xl w-full">
+            <!-- Logo区域 -->
+            <div class="text-center mb-8">
+                <div class="flex items-center justify-center mb-4">
+                    <svg class="w-20 h-20 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h2 class="text-[clamp(2rem,5vw,3rem)] font-bold text-primary ml-2">学术搜索</h2>
+                </div>
+                <p class="text-gray-500 text-sm">一站式聚合学术搜索，全网学术信息尽在掌握</p>
+            </div>
+
+            <!-- 搜索框 -->
+            <div class="relative mb-10">
+                <div class="search-container relative rounded-full bg-white border border-gray-300 hover:border-primary/70 focus-within:border-primary/70 focus-within:ring-2 focus-within:ring-primary/20 transition-all duration-300 search-shadow">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <i class="fa fa-search text-gray-400"></i>
+                    </div>
+                    <input type="text" id="search-input" class="w-full py-4 pl-12 pr-32 rounded-full focus:outline-none text-lg" placeholder="输入关键词开始搜索...">
+                    <div class="absolute inset-y-0 right-0 flex items-center">
+                        <div class="flex items-center h-full pr-2 border-r border-gray-200">
+                            <button id="engine-toggle" class="flex items-center space-x-1 px-2 text-gray-500 hover:text-primary transition-colors">
+                                <span id="current-engine">panda</span>
+                                <i class="fa fa-chevron-down text-xs"></i>
+                            </button>
+                        </div>
+                        <button id="search-button" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full ml-2 flex items-center space-x-1 transition-all duration-300">
+                            <span>搜索</span>
+                            <i class="fa fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 搜索引擎选择面板 -->
+                <div id="engine-panel" class="absolute left-0 right-0 mt-2 bg-white rounded-xl shadow-lg border border-gray-100 p-4 z-10 hidden transform origin-top transition-all duration-300">
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="panda" data-url="https://sc.panda985.com/scholar?hl=zh-cn&q=">
+                            <i class="fa fa-search text-2xl text-[#181717] mb-2"></i>
+                            <span class="text-sm">panda</span>
+                        </button>
+                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="烂番薯" data-url="https://scholar.lanfanshu.cn/scholar?hl=zh-CN&as_sdt=0%2C5&q=">
+                            <i class="fa fa-search text-2xl text-[#2319DC] mb-2"></i>
+                            <span class="text-sm">烂番薯</span>
+                        </button>
+                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="灯塔" data-url="https://www.dotaindex.com/paper_search?type=1&q=">
+                            <i class="fa fa-search text-2xl text-[#008373] mb-2"></i>
+                            <span class="text-sm">灯塔</span>
+                        </button>
+                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="Sci-Hub" data-url="https://x.sci-hub.org.cn/scholar?hl=zh-TW&as_sdt=0%2C5&q=">
+                            <i class="fa fa-search text-2xl text-[#FB7299] mb-2"></i>
+                            <span class="text-sm">Sci-Hub</span>
+                        </button>
+                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="DBLP" data-url="https://dblp.org/search?q=">
+                            <i class="fa fa-search text-2xl text-[#FF7D00] mb-2"></i>
+                            <span class="text-sm">DBLP</span>
+                        </button>
+                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="知网" data-url="https://kns.cnki.net/kns8s/defaultresult/index?kw=">
+                            <i class="fa fa-search text-2xl text-[#4285F4] mb-2"></i>
+                            <span class="text-sm">知网</span>
+                        </button>
+                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="万方" data-url="https://s.wanfangdata.com.cn/paper?q=">
+                            <i class="fa fa-search text-2xl text-[#E82E2E] mb-2"></i>
+                            <span class="text-sm">万方</span>
+                        </button>
+                        <button class="engine-btn flex flex-col items-center p-3 rounded-lg hover:bg-neutral engine-hover" data-engine="ACM" data-url="https://dl.acm.org/action/doSearch?AllField=">
+                            <i class="fa fa-search text-2xl text-[#118800] mb-2"></i>
+                            <span class="text-sm">ACM</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 常用文献库区域 -->
+            <div class="mb-12">
+                <h3 class="text-lg font-medium text-gray-700 mb-4">文献数据库</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                    <a href="https://dblp.org/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
+                        <i class="fa fa-book text-primary"></i>
+                        <span>DBLP</span>
+                    </a>
+                    <a href="https://www.cnki.net/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
+                        <i class="fa fa-book text-primary"></i>
+                        <span>知网</span>
+                    </a>
+                    <a href="https://www.wanfangdata.com.cn/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
+                        <i class="fa fa-book text-primary"></i>
+                        <span>万方</span>
+                    </a>
+                    <a href="https://www.webofscience.com" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
+                        <i class="fa fa-book text-primary"></i>
+                        <span>WOS</span>
+                    </a>
+                    <a href="https://ieeexplore.ieee.org/Xplore/home.jsp" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
+                        <i class="fa fa-book text-primary"></i>
+                        <span>IEEE</span>
+                    </a>
+                    <a href="https://link.springer.com/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
+                        <i class="fa fa-book text-primary"></i>
+                        <span>springer</span>
+                    </a>
+                    <a href="https://dl.acm.org/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
+                        <i class="fa fa-book text-primary"></i>
+                        <span>ACM</span>
+                    </a>
+                </div>
+            </div>
+
+           <!-- 常用学术工具库区域 -->
+            <div class="mb-12">
+                <h3 class="text-lg font-medium text-gray-700 mb-4">学术工具库</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                    <a href="https://chat.deepseek.com/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
+                        <i class="fa fa-search text-primary"></i>
+                        <span>DeepSeek</span>
+                    </a>
+                    <a href="https://www.doubao.com/chat/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
+                        <i class="fa fa-search text-primary"></i>
+                        <span>doubao</span>
+                    </a>
+                    <a href="https://ac.scmor.com/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
+                        <i class="fa fa-sticky-note text-primary"></i>
+                        <span>学术镜像</span>
+                    </a>
+                    <a href="https://www.sci-hub.ru/" target="_blank" class="flex items-center space-x-2 p-3 bg-neutral rounded-lg hover:bg-gray-200 transition-colors">
+                        <i class="fa fa-search text-primary"></i>
+                        <span>sci-hub</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 热门搜索 -->
+            <div>
+                <h3 class="text-lg font-medium text-gray-700 mb-4">热门趋势</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center p-2 hover:bg-neutral rounded-lg transition-colors">
+                        <span class="flex items-center justify-center w-6 h-6 bg-primary text-white rounded-md text-sm font-bold mr-3">1</span>
+                        <span>趋势1test</span>
+                        <span class="ml-auto text-xs text-red-500">热搜</span>
+                    </div>
+                    <div class="flex items-center p-2 hover:bg-neutral rounded-lg transition-colors">
+                        <span class="flex items-center justify-center w-6 h-6 bg-primary/90 text-white rounded-md text-sm font-bold mr-3">2</span>
+                        <span>趋势2test</span>
+                        <span class="ml-auto text-xs text-orange-500">新</span>
+                    </div>
+                    <div class="flex items-center p-2 hover:bg-neutral rounded-lg transition-colors">
+                        <span class="flex items-center justify-center w-6 h-6 bg-primary/80 text-white rounded-md text-sm font-bold mr-3">3</span>
+                        <span>趋势3test</span>
+                        <span class="ml-auto text-xs text-gray-500">热门</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-neutral py-6 border-t border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center justify-center md:justify-start">
+                        <svg class="w-6 h-6 text-primary mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="text-gray-600 font-medium">学术搜索</span>
+                    </div>
+                    <p class="text-gray-500 text-sm text-center md:text-left mt-1">一站式聚合学术搜索，全网学术信息尽在掌握</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm">
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors">关于我们</a>
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors">使用条款</a>
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors">隐私政策</a>
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors">联系我们</a>
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors">帮助中心</a>
+                </div>
+            </div>
+            <div class="mt-6 text-center text-gray-500 text-xs">
+                <p>© 2025 全网学术搜索 版权所有</p>
+                <p>本站部分资源收集于网络，版权归原作者所有。发布的内容若侵犯到您的权益，请联系站长删除，我们将及时处理！</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 搜索引擎选择功能
+        const engineToggle = document.getElementById('engine-toggle');
+        const enginePanel = document.getElementById('engine-panel');
+        const currentEngine = document.getElementById('current-engine');
+        const engineButtons = document.querySelectorAll('.engine-btn');
+        let currentEngineUrl = 'https://sc.panda985.com/scholar?hl=zh-cn&q=';
+
+        engineToggle.addEventListener('click', () => {
+            enginePanel.classList.toggle('hidden');
+            // 添加动画效果
+            if (!enginePanel.classList.contains('hidden')) {
+                enginePanel.classList.add('scale-100', 'opacity-100');
+                enginePanel.classList.remove('scale-95', 'opacity-0');
+            } else {
+                enginePanel.classList.remove('scale-100', 'opacity-100');
+                enginePanel.classList.add('scale-95', 'opacity-0');
+            }
+        });
+
+        // 点击外部关闭面板
+        document.addEventListener('click', (e) => {
+            if (!engineToggle.contains(e.target) && !enginePanel.contains(e.target)) {
+                enginePanel.classList.add('hidden');
+            }
+        });
+
+        // 选择搜索引擎
+        engineButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const engine = btn.getAttribute('data-engine');
+                currentEngineUrl = btn.getAttribute('data-url');
+                currentEngine.textContent = engine;
+                enginePanel.classList.add('hidden');
+            });
+        });
+
+        // 搜索功能
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+
+       // function performSearch() {
+       //     const query = searchInput.value.trim();
+       //     if (query) {
+       //         window.location.href = currentEngineUrl + encodeURIComponent(query);
+       //     }
+        //}
+
+        function performSearch() {
+            const query = searchInput.value.trim();
+            if (query) {
+                window.open(
+                currentEngineUrl + encodeURIComponent(query),
+                '_blank',
+                'noopener noreferrer'
+                );
+            }
+        }
+
+        searchButton.addEventListener('click', performSearch);
+        searchInput.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // 滚动效果
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md', 'py-2');
+                header.classList.remove('py-3');
+            } else {
+                header.classList.remove('shadow-md', 'py-2');
+                header.classList.add('py-3');
+            }
+        });
+
+        // 初始化动画
+        document.addEventListener('DOMContentLoaded', () => {
+            // 添加页面加载动画
+            document.body.classList.add('opacity-0');
+            setTimeout(() => {
+                document.body.classList.add('transition-opacity', 'duration-500');
+                document.body.classList.remove('opacity-0');
+            }, 100);
+        });
+    </script>
+</body>
+</html>
+    
